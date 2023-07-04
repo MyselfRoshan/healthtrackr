@@ -1,0 +1,53 @@
+@use "../abstracts/fontmaps" as *;
+
+// Font Family
+.ff-inter {
+  font-family: $ff-inter;
+}
+
+.ff-expletus {
+  font-family: $ff-expletus;
+}
+
+.ff-leauge-gothic {
+  font-family: $ff-league-gothic;
+}
+
+// Font-size
+@each $screensize, $font-size in $font-sizes {
+  @if $screensize == mobile {
+    @each $property, $value in $font-size {
+      .fs-#{$property} {
+        font-size: var(--fs-#{$property});
+      }
+    }
+  }
+}
+// font-weight
+@each $property, $value in $font-weight {
+  .fw-#{$property} {
+    font-weight: var(--fw-#{$property});
+  }
+}
+
+//text-uppercase
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.fs-mega {
+  line-height: 1.1;
+  letter-spacing: -0.24rem;
+}
+
+// Line height
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.3;
+}
+
+.paragraph-width {
+  max-width: 50ch;
+}
