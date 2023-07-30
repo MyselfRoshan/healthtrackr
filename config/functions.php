@@ -18,3 +18,9 @@ function require_view($path, $attributes = [])
     extract($attributes);
     require base_path("views/{$path}");
 }
+
+function require_svg($path, $attributes = [])
+{
+    extract($attributes);
+    require "resources/images/svg/{$path}";
+}

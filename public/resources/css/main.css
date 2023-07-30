@@ -1,16 +1,17 @@
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter/Variable_wght.woff2") format("woff2");
+  src: url("../fonts/Inter/Variable_wght.woff2") format("woff2");
   font-weight: 100 900;
 }
 @font-face {
   font-family: "Expletus Sans";
-  src: url("/assets/fonts/ExpletusSans/Variable_wght.woff2") format("woff2");
+  src: url("../fonts/ExpletusSans/Variable_wght.woff2") format("woff2");
   font-weight: 400 700;
 }
 @font-face {
   font-family: "League Gothic";
-  src: url("/assets/fonts/LeagueGothic/Regular.woff") format("woff2"), url("/assets/fonts/LeagueGothic/Regular.woff2") format("woff");
+  src: url("../fonts/LeagueGothic/Regular.woff2") format("woff2"),
+    url("../fonts/LeagueGothic/Regular.woff") format("woff");
   font-weight: 400;
 }
 /* Box sizing rules */
@@ -65,7 +66,7 @@ ol[class] {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 a.nav-links {
@@ -396,13 +397,18 @@ body {
 
 .bg-dot-pattern {
   background-color: transparent;
-  background-image: radial-gradient(var(--clr-dark) 1px, transparent 1px), radial-gradient(var(--clr-dark) 1px, var(--clr-tertiary) 1px);
+  background-image: radial-gradient(var(--clr-dark) 1px, transparent 1px),
+    radial-gradient(var(--clr-dark) 1px, var(--clr-tertiary) 1px);
   background-position: 0 0, 30px 30px;
   background-size: 60px 60px;
 }
 
 .bg-gradient {
-  background: linear-gradient(135deg, var(--clr-primary-800), var(--clr-secondary-600));
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary-800),
+    var(--clr-secondary-600)
+  );
 }
 
 .ff-inter {
@@ -1912,7 +1918,7 @@ body {
   width: 6.25rem;
   height: 6.25rem;
   -webkit-margin-after: 1.25rem;
-          margin-block-end: 1.25rem;
+  margin-block-end: 1.25rem;
   background: linear-gradient(135deg, #000 0%, #073b4c 100%);
 }
 .revolution__heading {
@@ -1921,9 +1927,11 @@ body {
 .revolution__feature {
   grid-column: span 4;
 }
-.revolution__feature:nth-of-type(1), .revolution__feature:nth-of-type(2), .revolution__feature:nth-of-type(3) {
+.revolution__feature:nth-of-type(1),
+.revolution__feature:nth-of-type(2),
+.revolution__feature:nth-of-type(3) {
   -webkit-margin-after: 40px;
-          margin-block-end: 40px;
+  margin-block-end: 40px;
 }
 
 .get-started {
@@ -1942,9 +1950,9 @@ body {
   grid-column: 4/10;
   text-align: var(--txt-align);
   -webkit-margin-before: 1.5rem;
-          margin-block-start: 1.5rem;
+  margin-block-start: 1.5rem;
   -webkit-margin-after: 1.5rem;
-          margin-block-end: 1.5rem;
+  margin-block-end: 1.5rem;
 }
 .get-started__btn-container {
   grid-column: 5/9;
@@ -1967,7 +1975,7 @@ body {
 .sucess__heading {
   grid-column: 1/-1;
   -webkit-margin-after: 4rem;
-          margin-block-end: 4rem;
+  margin-block-end: 4rem;
 }
 .sucess__image-container {
   grid-column: span 4;
@@ -1997,7 +2005,8 @@ body {
   display: grid;
   place-items: center;
 }
-.footer__copyright, .footer__created-at {
+.footer__copyright,
+.footer__created-at {
   grid-column: 5/9;
   text-align: center;
 }
@@ -2273,8 +2282,8 @@ body {
   grid-template-columns: var(--menu-width) calc(100% - var(--menu-width));
   transition: 0.3s ease;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .dashboard .menu-item,
 .dashboard .menu-toggle {
@@ -2312,7 +2321,11 @@ body {
   grid-auto-flow: column;
   grid-template-columns: 60px 1fr;
   border-radius: 50px;
-  background: linear-gradient(120deg, var(--clr-secondary) 0%, var(--clr-yellow) 100%);
+  background: linear-gradient(
+    120deg,
+    var(--clr-secondary) 0%,
+    var(--clr-yellow) 100%
+  );
 }
 .dashboard__menu-list .profile__pic {
   width: 64px;
@@ -2393,7 +2406,11 @@ body {
     var(--clr-yellow) 450%
   );
   padding: 6rem;
-  background: linear-gradient(120deg, var(--clr-secondary) 0%, var(--clr-yellow) 100%);
+  background: linear-gradient(
+    120deg,
+    var(--clr-secondary) 0%,
+    var(--clr-yellow) 100%
+  );
   border-radius: 10rem 1rem 10rem 1rem;
   box-shadow: 0px 0px 15px 5px var(--clr-yellow);
 }
@@ -2419,4 +2436,4 @@ body {
 .profile__change .name {
   display: flex;
   justify-content: space-between;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */

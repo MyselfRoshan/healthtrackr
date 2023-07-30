@@ -2,33 +2,14 @@
 <html>
 <html>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, width=device-width" />
-  <title>Health Trackr</title>
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <!-- End of Favicon -->
-
-  <!-- Css -->
-  <link rel="stylesheet" href="resources/css/main.css" />
-  <!-- End of Css -->
-
-  <!-- Script -->
-  <script defer src="/resources/scripts/signinRedirect.js"></script>
-  <!-- End of Script -->
-</head>
+<?php require_view("partials/head.php") ?>
 
 <body>
   <main>
     <section class="hero bg-dot-pattern">
       <div class="container grid-layout">
         <div class="hero__icon bg-primary">
-          <img class="hero__icon-img" alt="" src="/resources/icons/logo.png" />
+          <img class="hero__icon-img" alt="" src="./resources/images/logo-only.png" />
         </div>
         <h1 class="hero__heading fs-mega ff-expletus fw-700 text-accent">
           Achieve Greatness
@@ -38,9 +19,18 @@
           more energetic life? Start tracking your fitness journey now and
           dominate your goals.
         </p>
-        <button class="btn btn-l fs-500 fw-500 text-light" aria-labelledby="Signup btn">
+        <button class="btn btn-l fs-500 fw-500 text-light" aria-labelledby="Signup button">
           <span></span>
-          Sign up
+          <a href="/signup">
+            Sign up
+          </a>
+          <span></span>
+        </button>
+        <button class="btn btn-l fs-500 fw-500 text-light" aria-labelledby="signin button">
+          <span></span>
+          <a href="/signin">
+            signin
+          </a>
           <span></span>
         </button>
       </div>
@@ -149,7 +139,9 @@
           </p> -->
         <div class="get-started__btn-container">
           <button class="btn btn-m fs-300 fw-700 text-light" aria-labelledby="Signup btn">
-            Sign Up
+            <a href="/signup">
+              Sign Up
+            </a>
           </button>
           <button class="btn btn-m fs-300 fw-700 text-dark">
             Learn More
