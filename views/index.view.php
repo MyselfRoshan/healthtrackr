@@ -9,7 +9,7 @@
     <section class="hero bg-dot-pattern">
       <div class="container grid-layout">
         <div class="hero__icon bg-primary">
-          <img class="hero__icon-img" alt="" src="./resources/images/logo-only.png" />
+          <img class="hero__icon-img" alt="" src="/resources/images/logo-only.png" />
         </div>
         <h1 class="hero__heading fs-mega ff-expletus fw-700 text-accent">
           Achieve Greatness
@@ -29,7 +29,7 @@
         <button class="btn btn-l fs-500 fw-500 text-light" aria-labelledby="signin button">
           <span></span>
           <a href="/signin">
-            signin
+            Signin
           </a>
           <span></span>
         </button>
@@ -44,7 +44,9 @@
     <section class="register bg-primary">
       <article class="register__article container grid-layout">
         <div class="register__icon">
-          <img class="register__icon-svg" alt="" src="/resources/icons/svg__register.svg" />
+
+          <?php require_svg("index/register.svg.php") ?>
+
         </div>
         <h2 class="register__heading ff-leauge-gothic fs-900 text-accent">
           Register & Unleash Your Potential
@@ -120,23 +122,23 @@
     <div class="get-started bg-tertiary">
       <div class="container grid-layout">
         <div class="get-started__icon">
-          <img class="svg-get-started-icon" alt="" src="/resources/icons/svg__get-started.svg" />
+          <?php require_svg("index/get-started.svg.php") ?>
         </div>
         <h2 class="get-started__heading ff-leauge-gothic fs-900 text-accent">
+          Get Started
+        </h2>
+        <p class="get-started__txt fw-500 text-dark">
+          What are you waiting for? Join now and let’s embark on this
+          incredible journey towards optimal health together.
+        </p>
+        <!-- <h2 class="get-started__heading ff-leauge-gothic fs-900 text-accent">
           Set Goals
         </h2>
         <p class="get-started__txt fw-500 text-dark">
           Transform your well-being by setting measurable goals and tracking
           your progress like a champ. It's time to unlock your full health
           potential!
-        </p>
-        <!-- <h2 class="get-started__heading ff-leauge-gothic fs-900 text-accent">
-            Get Started
-          </h2>
-          <p class="get-started__txt fw-500 text-dark">
-            What are you waiting for? Join now and let’s embark on this
-            incredible journey towards optimal health together.
-          </p> -->
+        </p> -->
         <div class="get-started__btn-container">
           <button class="btn btn-m fs-300 fw-700 text-light" aria-labelledby="Signup btn">
             <a href="/signup">
@@ -200,16 +202,19 @@
           </p>
         </div>
         <div class="inspiration__icon">
-          <img class="divmask-group-icon" alt="" src="/resources/icons/div_mask-group.svg" />
 
-          <img class="divmask-group-icon" alt="" src="/resources/icons/div_mask-group1.svg" class="divmask-group-icon" alt="" src="/resources/icons/div_mask-group1.svg" />
+          <?php require_svg("index/inspiration.svg.php") ?>
+          <?php require_svg("index/inspiration1.svg.php") ?>
+
         </div>
       </article>
     </div>
     <footer class="footer bg-primary">
       <div class="container grid-layout">
         <div class="footer__icon">
-          <img src="/resources/icons/footer.svg" alt="" />
+
+          <?php require_svg("index/footer.svg.php") ?>
+
         </div>
         <p class="footer__copyright text-dark">© 2023 Health Trackr</p>
         <p class="footer__created-at">Generated on June 22, 2023</p>

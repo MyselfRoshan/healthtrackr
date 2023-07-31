@@ -21,7 +21,7 @@ menuItems.forEach((menuItem) => {
       menuItem.classList.remove("active");
       const menuItemIcon = menuItem.firstElementChild.firstElementChild;
       const iconType = menuItemIcon.getAttribute("name");
-      console.log(iconType);
+      // console.log(iconType);
       if (!iconType.includes("-outline"))
         menuItemIcon.setAttribute("name", iconType.concat("-outline"));
     });

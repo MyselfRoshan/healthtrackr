@@ -22,5 +22,5 @@ function require_view($path, $attributes = [])
 function require_svg($path, $attributes = [])
 {
     extract($attributes);
-    require "resources/images/svg/{$path}";
+    require "resources/svg/{$path}";
 }
