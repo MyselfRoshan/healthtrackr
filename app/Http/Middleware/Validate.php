@@ -6,14 +6,15 @@ class Validate
 {
     public static function isEmpty($value)
     {
-        return empty($value);
+
+        return empty(trim($value));
     }
     public static function username($value)
     {
         // Alphanumeric username
         return preg_match('/^[a-zA-Z]+[_0-9]*/', $value);
     }
-    public static function email($value)
+    public static function isEmail($value)
     {
         return filter_var($value, FILTER_VALIDATE_EMAIL);
     }

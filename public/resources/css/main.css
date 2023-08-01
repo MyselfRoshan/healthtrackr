@@ -2243,7 +2243,7 @@ body {
 }
 .input-signup__container .label {
   position: absolute;
-  inset-block: 0;
+  inset-block-start: 1rem;
   inset-inline-start: 1rem;
   pointer-events: none;
 }
