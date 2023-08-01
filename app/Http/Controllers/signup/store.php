@@ -9,13 +9,13 @@ extract($_POST);
 // Firstname validation
 if (Validate::isEmpty($fname))
     // $alerts['fname'] = "*First Name is required" . date('Y-m-d H:m:i');
-    $zone = $node->field_mytimezone['und'][0]['value'];
+    // $zone = $node->field_mytimezone['und'][0]['value'];
 
-$dt = new DateTime();
+    // $dt = new DateTime();
 
-$dt->setTimezone(new DateTimeZone($zone));
+    // $dt->setTimezone(new DateTimeZone($zone));
 
-echo $dt->format('H:i');
+    echo $dt->format('H:i');
 echo date_default_timezone_set('Asia/Kathmandu');
 echo date_default_timezone_get();
 dd(getdate());
