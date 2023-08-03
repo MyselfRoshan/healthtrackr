@@ -1,16 +1,17 @@
 <?php
 
-$router->get('/', 'app/Http/Controllers/index.php');
+$router->get('/', 'index.php');
 
 
-$router->get('/signup', 'app/Http/Controllers/signup/create.php');
-$router->post('/signup', 'app/Http/Controllers/signup/store.php');
+$router->get('/signup', 'signup/create.php')->only('guest');
+$router->post('/signup', 'signup/store.php')->only('guest');
 
 
-$router->get('/signin', 'app/Http/Controllers/session/create.php');
-$router->post('/signin', 'app/Http/Controllers/session/store.php');
-$router->delete('/signin', 'app/Http/Controllers/session/destroy.php');
+$router->get('/signin', 'session/create.php')->only('guest');
+$router->post('/signin', 'session/store.php')->only('guest');
+$router->delete('/signin', 'session/destroy.php')->only('auth');
 
 // For dasboard, profile, input make uri /username/dashboard
 
-$router->get("/{$session->user}/dashboard", 'app/Http/Controllers/dashboard.php');
+$router->get("/dashboard", 'dashboard.php')->only('auth');
+// $router->get("/{$session->user}/dashboard", 'dashboard.php')->only('auth');

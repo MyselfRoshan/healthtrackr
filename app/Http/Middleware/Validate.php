@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use Database\Database;
+
 class Validate
 {
     public static function isEmpty($value)
@@ -9,7 +11,7 @@ class Validate
 
         return empty(trim($value));
     }
-    public static function username($value)
+    public static function alphaNumeric($value)
     {
         // Alphanumeric username
         return preg_match('/^[a-zA-Z]+[_0-9]*/', $value);
@@ -25,5 +27,10 @@ class Validate
     public static function password($value)
     {
         return preg_match('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,255}$/m', $value);
+    }
+
+    // TO do find duplicate email or username from the user database
+    public static function duplicate($value){
+        Database::select("SELECT FROM public.user WHERE  ")
     }
 }

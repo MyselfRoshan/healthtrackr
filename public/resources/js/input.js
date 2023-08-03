@@ -6,15 +6,16 @@ inputTxtFields.forEach((inputTxtField) => {
     localStorage.setItem(`${inputTxtField.id}`, inputTxtField.value);
   });
 });
-document.addEventListener("DOMContentLoaded", function () {
-  inputTxtFields.forEach((inputTxtField) => {
-    let getInputTxtFieldValue = "";
-    // If null and "" return else set local storage value to input value
-    if (!localStorage.getItem(`${inputTxtField.id}`)) return;
-    getInputTxtFieldValue = localStorage.getItem(`${inputTxtField.id}`);
-    inputTxtField.setAttribute("value", getInputTxtFieldValue);
-  });
-});
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   inputTxtFields.forEach((inputTxtField) => {
+//     let getInputTxtFieldValue = "";
+//     // If null and "" return else set local storage value to input value
+//     if (!localStorage.getItem(`${inputTxtField.id}`)) return;
+//     getInputTxtFieldValue = localStorage.getItem(`${inputTxtField.id}`);
+//     inputTxtField.setAttribute("value", getInputTxtFieldValue);
+//   });
+// });
 //  Toggle password to text and vice versa
 const togglePassword = document.querySelector("#toggle-password");
 const password = document.querySelector("#password");

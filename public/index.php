@@ -15,8 +15,8 @@ spl_autoload_register(function ($class) {
 });
 
 // session_start();
-$session = Session::getInstance();
-$session->user = "MyselfRoshan";
+// $session = Session::getInstance();
+// $session->user = "MyselfRoshan";
 // dd($_SESSION);
 // dd($session->user);
 $router = new Router();
