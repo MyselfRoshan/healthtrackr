@@ -2,7 +2,6 @@
 
 use App\Router;
 use App\Session;
-use Database\Database;
 
 const BASE_PATH = __DIR__ . "/../";
 require BASE_PATH . "config/bootstrap.php";
@@ -14,11 +13,13 @@ spl_autoload_register(function ($class) {
     require base_path("{$class}.php");
 });
 
-// session_start();
-// $session = Session::getInstance();
-// $session->user = "MyselfRoshan";
-// dd($_SESSION);
-// dd($session->user);
+// Signin the user automatically if cookie is set but Session isn't
+$session = Session::getInstance();
+if (!isset($session->user) && isset($_COOKIE['remember_me'])) {
+    $session->startSession();
+    $session->user = json_decode($_COOKIE['remember_me'], true);
+}
+
 $router = new Router();
 $routes = require base_path("routes/routes.php");
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];

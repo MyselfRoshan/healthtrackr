@@ -7,15 +7,6 @@ inputTxtFields.forEach((inputTxtField) => {
   });
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   inputTxtFields.forEach((inputTxtField) => {
-//     let getInputTxtFieldValue = "";
-//     // If null and "" return else set local storage value to input value
-//     if (!localStorage.getItem(`${inputTxtField.id}`)) return;
-//     getInputTxtFieldValue = localStorage.getItem(`${inputTxtField.id}`);
-//     inputTxtField.setAttribute("value", getInputTxtFieldValue);
-//   });
-// });
 //  Toggle password to text and vice versa
 const togglePassword = document.querySelector("#toggle-password");
 const password = document.querySelector("#password");
@@ -29,3 +20,14 @@ togglePassword.addEventListener("click", () => {
   password.setAttribute("type", pskType);
   togglePassword.setAttribute("name", iconType);
 });
+
+// Only letters a-z and A-z allowed
+function onlyAlphabets(e) {
+  let ASCIICode = e.which ?? e.keyCode;
+  if (
+    (ASCIICode >= 65 && ASCIICode <= 90) ||
+    (ASCIICode >= 97 && ASCIICode <= 122)
+  )
+    return true;
+  return false;
+}

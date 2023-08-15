@@ -96,6 +96,17 @@ class Session
         unset($_SESSION[$name]);
     }
 
+    /**
+     * Regenerates the session ID and updates the session state.
+     *
+     * @return void
+     **/
+    public function regenerateId()
+    {
+        if ($this->sessionState == self::SESSION_STARTED) {
+            session_regenerate_id();
+        }
+    }
 
     /**
      *    Destroys the current session.

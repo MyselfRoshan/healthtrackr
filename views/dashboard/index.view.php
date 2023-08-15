@@ -8,7 +8,7 @@
     <?php require_view("partials/sidebar.php") ?>
     <div class="dashboard__content">
       <div class="wrapper m-16">
-        <?php require_view("partials/profile.php") ?>
+        <?php require_view("partials/dashboard.php") ?>
       </div>
     </div>
   </div>

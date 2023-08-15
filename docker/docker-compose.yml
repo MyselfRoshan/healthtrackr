@@ -21,10 +21,10 @@ services:
 
   nginx:
     image: nginx:1.19-alpine
-    container_name: nginx
+    container_name: ht_server
     restart: always
     ports:
-      - "8000:80"
+      - "80:80"
     depends_on:
       - app
     volumes:

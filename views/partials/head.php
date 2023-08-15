@@ -17,15 +17,8 @@
     <!-- Scripts -->
     <?php if (isset($scripts) && count($scripts) > 0) : ?>
         <?php foreach ($scripts as $scriptBody) : ?>
-            <script defer <?= $scriptBody ?>"></script>
+            <?php echo "<script defer {$scriptBody} ></script>" ?>
         <?php endforeach ?>
     <?php endif ?>
-
-    <?php
-    /*  if (isset($scripts) && count($scripts) > 0)
-                foreach ($scripts as $script) {
-                    echo  $script;
-                }  */
-    ?>
     <!-- End of Scripts -->
 </head>

@@ -2,13 +2,15 @@
 
 namespace App\Http\Middleware;
 
+use App\Session;
+
 class Guest
 {
     public function handle()
     {
-        if ($_SESSION['user'] ?? false) {
-            header('location: /');
-            die();
+        $session = Session::getInstance();
+        if ($session->user ?? false) {
+            redirect("/{$session->user['username']}");
         }
     }
 }

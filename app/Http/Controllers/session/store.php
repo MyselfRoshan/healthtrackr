@@ -1,60 +1,44 @@
 <?php
 
+use App\Http\Forms\SigninForm;
 use App\Http\Middleware\Validate;
+use App\Session;
 use Database\Database;
 
 extract($_POST);
-// Email validation
-if (Validate::isEmpty($lemail))
-    $alerts['lemail'] = "*Email is required";
-else if (!Validate::email($lemail))
-    $alerts['lemail'] = "Invalid email!!!";
-// Password validation
-if (Validate::isEmpty($lpassword))
-    $alerts['lpassword'] = "*Password is required";
-else if (!Validate::length($lpassword))
-    $alerts['lpassword'] = "At least 8 character long";
-elseif (!Validate::password($lpassword))
-    $alerts['lpassword'] = "At least one uppercase,one lowercase and one special character";
-// If $alerts is found redirect to same page else redirect to signup page
-if (!empty($alerts)) {
-    require_view('login.view.php', [
-        'alerts' => $alerts,
+
+$form = new SigninForm();
+if (!$form->validate($_POST)) {
+
+    require_view('signin.view.php', [
         'scripts' => [
-            '/resources/js/ajaxRedirect.js',
-        ]
+            "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
+            "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
+            "src='/resources/js/input.js'",
+        ],
+        'alerts' => $form->getAlerts()
     ]);
 } else {
-    $query = "SELECT username,email,password FROM users WHERE email=:email";
+    $column = Validate::isEmail($usrname_email) ? 'email' : 'username';
+    $query = "SELECT username,email FROM public.user WHERE {$column} = :params";
     $params = [
-        'email' => [$lemail, PDO::PARAM_STR]
+        "params" => [$usrname_email, PDO::PARAM_STR]
     ];
     $user = Database::select($query, $params)->fetch();
 
-    if (!password_verify($lpassword, $user['password'])) {
 
-        require_view('login.view.php', [
-            'alerts' => [
-                'lpassword' => "Incorrect password",
-            ],
-            'scripts' => [
-                '/resources/js/ajaxRedirect.js',
-            ]
-        ]);
-    } else {
-        login($user);
-        header("location: /board");
-        die();
+    $session = Session::getInstance();
+    $session->regenerateID();
+    $session->user = [
+        'username' => $user['username'],
+        'email' => $user['email']
+    ];
+
+    if (isset($remember_me)) {
+
+        $expiry_date = time() + (30 * 24 * 60 * 60); // 30 days
+        setcookie("remember_me", json_encode($user), $expiry_date);
     }
 
-    if (!$user) {
-        require_view('login.view.php', [
-            'alerts' => [
-                'lemail' => 'Email not found',
-            ],
-            'scripts' => [
-                '/resources/js/ajaxRedirect.js',
-            ]
-        ]);
-    }
+    redirect("/{$session->user['username']}");
 }
