@@ -1,0 +1,57 @@
+@use "../abstracts/layout-scale" as *;
+@use "../abstracts/mixins" as *;
+
+/*
+* Change the name of grid-layout to grid-layout or something fancy
+* make grid responsive with 8 columns for tablet and 4 columns for mobile
+* make container more useful
+*/
+.container {
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: var(--cpx, 0.75rem);
+  @include mediaquery(s) {
+    padding: var(--cpy, 2rem) var(--cpx, 1rem);
+  }
+  @include mediaquery(m) {
+    padding: var(--cpy, 4.5rem) var(--cpx, 0);
+    width: unset;
+    // width: 45rem;
+  }
+  @include mediaquery(l) {
+    padding: var(--cpy, 5.25rem) var(--cpx, 0);
+    // width: 52.5rem;
+    width: var(--cw, clamp(52.5rem, 80vw, 55rem));
+  }
+  @include mediaquery(xl) {
+    padding-block: var(--cpy, 6.25rem);
+    padding-inline: var(--cpx, clamp(10rem, 12vw, 12.5rem));
+    width: 100%;
+  }
+  @include mediaquery(xxl) {
+    padding-block: var(--cpy, 6.25rem);
+    padding-inline: var(--cpx, 0);
+    width: var(--cw, 62.5rem);
+  }
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  @include mediaquery(s) {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+  }
+  @include mediaquery(l) {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+}
+
+@include mediaquery(s) {
+  .grid-signin {
+    display: grid;
+    grid-template-columns: 0.5666666666666667fr 0.43333333333333335fr;
+  }
+}

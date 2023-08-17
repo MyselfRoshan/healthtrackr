@@ -1,0 +1,176 @@
+@use "../abstracts/layout-scale" as *;
+@use "../abstracts/mixins" as *;
+.signin {
+  // change container property
+  .container {
+    --cpy: 0;
+    --cpx: 0;
+    --cw: min(100%, 90rem);
+    height: min(100dvh, 56.25rem);
+  }
+
+  &__illustration {
+    display: none;
+    @include mediaquery(s) {
+      display: block;
+    }
+    grid-column: 1/2;
+    justify-self: center;
+    align-self: center;
+    overflow: hidden;
+    > svg {
+      max-height: 39rem;
+      aspect-ratio: 1;
+    }
+  }
+  &__logo {
+    // make use of clamp instead of width and max-width
+    --width: clamp(100px, 10vw, 140px);
+    // --width: clamp(60px, 6vw, 100px);
+    width: var(--width);
+    height: calc(1.3485926384163316 * var(--width));
+    // max-height: 218px;
+    // max-width: 161.65px;
+  }
+
+  .ff-expletus {
+    @include mediaquery(xl) {
+      --flow-gap: 2rem;
+    }
+  }
+
+  .ff-expletus {
+    --flow-gap: 2.5rem;
+  }
+  &__form {
+    --flex-direction: column;
+    @include mediaquery(l) {
+      --flow-gap: 1rem;
+      padding-block: 2rem;
+    }
+    @include mediaquery(xl) {
+      --flow-gap: 1.25rem;
+      padding-block: 3rem;
+    }
+    @include mediaquery(xxl) {
+      --flow-gap: 1.5rem;
+      padding-block: 3.25rem;
+    }
+
+    grid-column: 2/-1;
+    max-width: 39rem;
+
+    .btn {
+      --bg: var(--clr-primary);
+      --bs: var(--clr-dark-200);
+      --hbs: var(--clr-tertiary-400);
+
+      // &:last-of-type {
+      //   --flow-gap: 2rem;
+
+      //   --bg: var(--clr-ash);
+      //   --bs: var(--clr-dark-100);
+      //   --hbs: var(--clr-light-100);
+      //   --hbg: var(--clr-light);
+
+      //   span:nth-of-type(2) {
+      //     --flow-gap: none;
+      //     display: inline-flex;
+      //     align-items: center;
+      //     justify-content: center;
+      //     gap: 0.75rem;
+      //   }
+      //   .icon__google {
+      //     --size: 1.25rem;
+      //     width: var(--size);
+      //     height: var(--size);
+
+      //     svg {
+      //       height: var(--size);
+      //     }
+      //   }
+      // }
+    }
+
+    // hr {
+    //   --flow-gap: 2rem;
+
+    //   height: 4px;
+    //   color: var(--clr-light);
+    //   width: min(400px, 100%);
+    // }
+  }
+  &__action {
+    --flex-direction: row;
+    --justify-content: space-between;
+    width: 25rem;
+  }
+
+  .forgot-password {
+    --flow-gap: none;
+  }
+}
+
+.input {
+  // .input-signup
+  &-signin {
+    --flow-gap: none;
+
+    --c: var(--clr-light);
+    --bg: var(--clr-light-100);
+    --oc: var(--clr-primary-100);
+    --bs: var(--clr-primary-100);
+    // focus
+    --fc: var(--clr-dark);
+    --fc: var(--clr-primary);
+    --fbg: var(--clr-light-300);
+    --foc: var(--clr-primary);
+    --fbs: var(--clr-tertiary-200);
+
+    text-indent: 2.0625rem;
+
+    &:focus {
+      + #toggle-password {
+        color: var(--clr-primary);
+        cursor: pointer;
+      }
+    }
+    &__container {
+      position: relative;
+      // password container gap
+      &:nth-child(2) {
+        @include mediaquery(xxl) {
+          --flow-gap: 1.75rem;
+        }
+        @include mediaquery(xxl) {
+          --flow-gap: 2rem;
+        }
+      }
+      // email container gap
+      &:nth-last-of-type(3) {
+        @include mediaquery(xl) {
+          --flow-gap: 2.5rem;
+          
+          .validation-alerts {
+            --flow-gap: 1rem;
+          }
+        }
+        @include mediaquery(xxl) {
+          --flow-gap: 3rem;
+        }
+      }
+
+      ion-icon {
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+}
+
+.no-account {
+  --flow-gap: auto;
+  @include mediaquery(l) {
+    --flow-gap: 6rem;
+  }
+}

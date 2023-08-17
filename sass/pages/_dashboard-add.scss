@@ -1,0 +1,72 @@
+.dashboard__content {
+  .card {
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+
+    header {
+      --justify-content: space-between;
+    }
+
+    .dropdown-items {
+      height: 0;
+      display: none;
+      transition: height 500ms ease-in-out, opacity 500ms ease;
+
+      &.active {
+        height: fit-content;
+        display: block;
+      }
+    }
+    .btn {
+      font-family: var(--ff-inter);
+      font-size: var(--fs-300);
+      font-weight: var(--fw-600);
+    }
+
+    li {
+      color: var(--clr-accent);
+      font-weight: var(--fw-500);
+      font-size: var(--fs-300);
+      width: 50ch;
+    }
+  }
+
+  .exercise {
+    &__type {
+      border-bottom: 0.125rem solid var(--clr-light);
+
+      .btn {
+        --bg: var(--clr-secondary);
+        color: var(--clr-light);
+      }
+    }
+  }
+
+  .hydration {
+    .btn {
+      --bg: var(--clr-accent);
+      color: var(--clr-light);
+    }
+  }
+
+  .sleep {
+    &__info {
+      border-bottom: 0.125rem solid var(--clr-light);
+    }
+    li {
+      color: var(--clr-secondary-800);
+    }
+
+    .btn {
+      --bg: var(--clr-secondary);
+      color: var(--clr-light);
+    }
+  }
+
+  .food-intake {
+    &__info {
+      border-bottom: 0.125rem solid var(--clr-light);
+    }
+  }
+}

@@ -4,7 +4,7 @@
             My Profile
         </h2>
         <p class="text-light">Manage your profile Settings</p>
-        <div class="profile__pic__section d-flex mt-6">
+        <!-- <div class="profile__pic__section d-flex mt-6">
             <div class="profile__pic">
                 <img src="/resources/images/default-profile.png" alt="" />
             </div>
@@ -23,6 +23,19 @@
                     <span></span>
                 </button>
             </div>
+        </div> -->
+        <div class="profile__pic">
+            <img id="profile__pic" src="/resources/images/default-profile.png" alt="Profile picture" />
+            <div id="upload" class="round-right">
+                <input type="file" id="profile__pic-uploader" name="profile_pic" accept=".png, .jpg, .jpeg" />
+                <ion-icon name="camera-outline"></ion-icon>
+            </div>
+            <button id="cancel" class="round-left d-none" type="submit">
+                <ion-icon name="close"></ion-icon>
+            </button>
+            <button type="submit" id="confirm" class="round-right d-none">
+                <ion-icon name="checkmark"></ion-icon>
+            </button>
         </div>
     </header>
     <form action="" class="profile__change flow">

@@ -21,7 +21,7 @@
         </div>
         <h2 class="ff-expletus fs-900 fw-700 text-light">Signin</h2>
         <div class="input-signin__container">
-          <ion-icon name="person" aria-label="Email or Password" class="my-auto ms-5 fs-600 text-secondary"></ion-icon>
+          <ion-icon name="person" aria-label="Email or Password" class="mt-3.5 ms-5 fs-600 text-secondary"></ion-icon>
           <input type="text" id="usrname_email" class="input-text input-signin" name="usrname_email" value="<?= $_POST['usrname_email'] ?? '' ?>" placeholder="Email or Username" aria-placeholder="Email or Username" />
           <small class="validation-alerts">
 
@@ -31,9 +31,9 @@
         </div>
 
         <div class="input-signin__container">
-          <ion-icon name="lock-closed" aria-label="Password" class="my-auto ms-5 fs-600 text-secondary"></ion-icon>
+          <ion-icon name="lock-closed" aria-label="Password" class="mt-3.5 ms-5 fs-600 text-secondary"></ion-icon>
           <input type="password" id="password" class="input-text input-signin" name="password" value="<?= $_POST['password'] ?? '' ?>" placeholder="Password" aria-placeholder="Password" />
-          <ion-icon name="eye-outline" id="toggle-password" class="my-auto ms-auto me-5 fs-600 text-light"></ion-icon>
+          <ion-icon name="eye-outline" id="toggle-password" class="mt-3.5 ms-auto me-5 fs-600 text-light"></ion-icon>
           <small class="validation-alerts">
 
             <?= $alerts['password'] ?? '' ?>
@@ -45,7 +45,7 @@
             <input type="checkbox" name="remember_me" id="remember-me" class="remember-me" />
             <label for="remember-me" id="label__remember-me" class="label text-primary">Remember me</label>
           </div>
-          <a href="/password_reset" class="forgot-password">Forgot password?</a>
+          <a href="/forgotPassword" class="forgot-password">Forgot password?</a>
         </div>
         <button role="button" class="btn btn-m btn__hover-effect text-light" aria-labelledby="signin btn">
           <span></span>
