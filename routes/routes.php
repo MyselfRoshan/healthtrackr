@@ -11,6 +11,8 @@ $router->get('/signin', 'session/create.php')->only('guest');
 $router->post('/signin', 'session/store.php')->only('guest');
 $router->delete('/logout', 'session/destroy.php')->only('auth');
 
+$router->get('/forgotPassword', 'forgotPassword/create.php')->only('guest');
+
 // For dasboard, profile, input make uri /username/dashboard
 
 if (isset($session->user)) {

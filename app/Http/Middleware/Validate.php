@@ -82,13 +82,14 @@ class Validate
      */
     public static function passwordMatches($usrname_email, $plainPassword)
     {
+        // if (!trim($usrname_email)) return false;
         $column = static::isEmail($usrname_email) ? 'email' : 'username';
         $query = "SELECT {$column},password FROM public.user WHERE {$column} = :params";
         $params = [
             "params" => [$usrname_email, PDO::PARAM_STR]
         ];
         $user = Database::select($query, $params)->fetch();
-
-        return password_verify($plainPassword, $user['password']);
+        if (!empty($user))
+            return password_verify($plainPassword, $user['password']);
     }
 }

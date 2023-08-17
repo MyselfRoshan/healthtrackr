@@ -17,18 +17,25 @@ class SigninForm
     {
         extract($postRequestArray);
 
-        // Username validation
+        // Username or email validation
         if (Validate::isEmpty($usrname_email))
             $this->alerts['usrname_email'] = "*Username or email is required";
         elseif (!Validate::userExits($usrname_email))
-            $this->alerts['usrname_email'] = "User with this username or email doesn't exist";
+            $this->alerts['usrname_email'] = "Username or email doesn't exist";
+
 
         // Email validation
 
         // Password validation
         if (Validate::isEmpty($password))
             $this->alerts['password'] = "*Password is required";
-        elseif (!Validate::passwordMatches($usrname_email, $password))
+        else if (Validate::userExits($usrname_email) && !Validate::length($password))
+            $this->alerts['password'] = "Incorrect password";
+        elseif (Validate::userExits($usrname_email) && !Validate::password($password))
+            $this->alerts['password'] = "Incorrect password";
+        elseif (Validate::isEmpty($usrname_email) && !Validate::isEmpty($password))
+            $this->alerts['usrname_email'] = "*Username or email is required";
+        elseif (Validate::userExits($usrname_email) && !Validate::passwordMatches($usrname_email, $password))
             $this->alerts['password'] = "Incorrect password";
 
         return empty($this->alerts);

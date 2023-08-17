@@ -59,7 +59,7 @@
           <label class="label fs-300 fw-500 d-flex" for="password" id="label-password">
             <span class="label__text text-dark-400">Password</span>
           </label>
-          <ion-icon name="eye-outline" id="toggle-password" class="fs-600 text-dark-400 my-auto ms-auto me-6"></ion-icon>
+          <ion-icon name="eye-outline" id="toggle-password" class="fs-600 text-dark-400 mt-3.5 ms-auto me-6"></ion-icon>
           <small class="validation-alerts">
 
             <?= $alerts['password'] ?? '' ?>

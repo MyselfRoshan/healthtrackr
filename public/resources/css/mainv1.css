@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Inter";
-  src: url("/resources/fonts/Inter/Variable_wght.woff2") format("woff2");
+  src: url("../fonts/Inter/Variable_wght.woff2") format("woff2");
   font-weight: 100 900;
 }
 @font-face {
   font-family: "Expletus Sans";
-  src: url("/resources/fonts/ExpletusSans/Variable_wght.woff2") format("woff2");
+  src: url("../fonts/ExpletusSans/Variable_wght.woff2") format("woff2");
   font-weight: 400 700;
 }
 @font-face {
   font-family: "League Gothic";
-  src: url("/resources/fonts/LeagueGothic/Regular.woff") format("woff2"), url("/resources/fonts/LeagueGothic/Regular.woff2") format("woff");
+  src: url("../fonts/LeagueGothic/Regular.woff") format("woff2"), url("../fonts/LeagueGothic/Regular.woff2") format("woff");
   font-weight: 400;
 }
 /* Box sizing rules */
@@ -138,14 +138,12 @@ body {
   --clr-secondary-100: hsla(36, 88%, 53%, 0.1);
   --clr-secondary-400: hsla(36, 88%, 53%, 0.4);
   --clr-secondary-600: hsla(36, 88%, 53%, 0.6);
-  --clr-secondary-800: hsla(36, 88%, 53%, 0.8);
   --clr-secondary: hsl(36, 88%, 53%);
   --clr-tertiary-200: hsla(164, 95%, 43%, 0.1);
   --clr-tertiary-400: hsla(164, 95%, 43%, 0.4);
   --clr-tertiary: hsl(164, 95%, 43%);
   --clr-accent-400: hsla(195, 83%, 16%, 0.4);
   --clr-accent: hsl(195, 83%, 16%);
-  --clr-blue-200: hsla(230, 100%, 41%, 0.2);
   --clr-blue: hsl(230, 100%, 41%);
   --clr-ash-100: hsla(0, 0%, 85%, 0.1);
   --clr-ash-400: hsla(0, 0%, 85%, 0.4);
@@ -157,12 +155,8 @@ body {
   --clr-dark-100: hsla(0, 0%, 10%, 0.1);
   --clr-dark-200: hsla(0, 0%, 10%, 0.2);
   --clr-dark-400: hsla(0, 0%, 10%, 0.4);
-  --clr-dark-900: hsla(0, 0%, 10%, 0.9);
   --clr-dark: hsl(0, 0%, 10%);
   --clr-yellow: hsl(42, 100%, 70%);
-  --ff-expletus: Expletus Sans, sans-serif;
-  --ff-inter: Inter, sans-serif;
-  --ff-league-gothic: League Gothic, sans-serif;
   /* font-size variables */
   --fs-mega: 6rem;
   --fs-1000: clamp(2.61rem, 2.5rem + 0.55vw, 3rem);
@@ -248,14 +242,6 @@ body {
   color: hsla(36, 88%, 53%, 0.6);
 }
 
-.bg-secondary-800 {
-  background-color: hsla(36, 88%, 53%, 0.8);
-}
-
-.text-secondary-800 {
-  color: hsla(36, 88%, 53%, 0.8);
-}
-
 .bg-secondary {
   background-color: hsl(36, 88%, 53%);
 }
@@ -302,14 +288,6 @@ body {
 
 .text-accent {
   color: hsl(195, 83%, 16%);
-}
-
-.bg-blue-200 {
-  background-color: hsla(230, 100%, 41%, 0.2);
-}
-
-.text-blue-200 {
-  color: hsla(230, 100%, 41%, 0.2);
 }
 
 .bg-blue {
@@ -398,14 +376,6 @@ body {
 
 .text-dark-400 {
   color: hsla(0, 0%, 10%, 0.4);
-}
-
-.bg-dark-900 {
-  background-color: hsla(0, 0%, 10%, 0.9);
-}
-
-.text-dark-900 {
-  color: hsla(0, 0%, 10%, 0.9);
 }
 
 .bg-dark {
@@ -548,10 +518,6 @@ body {
   gap: var(--grid-gap, 0);
   align-items: var(--align-items, center);
   justify-items: var(--justify-items, center);
-}
-
-.d-none {
-  display: none;
 }
 
 .flow * + * {
@@ -1813,22 +1779,17 @@ body {
 }
 
 .btn {
-  font-family: var(--ff-expletus);
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--br, 0.75rem);
-  text-decoration: none;
   background: var(--bg, var(--clr-primary));
   box-shadow: 0 4px 4px var(--bs, var(--clr-primary-400));
   transition: box-shadow 500ms ease-in-out;
 }
 .btn:is(:hover, :focus-visible) {
   box-shadow: 0 4px 4px var(--hbs, var(--clr-tertiary-400));
-}
-.btn a {
-  text-decoration: none;
 }
 .btn-s {
   padding-inline: var(--px, 1em);
@@ -1892,29 +1853,14 @@ body {
 }
 .btn__outline {
   --bs: hsla(0, 100%, 50%, 0.4);
+  --bs: none;
   --hbs: hsla(0, 100%, 50%, 0.4);
-  --bg: transparent;
   border: 2px solid red;
-  color: hsl(0, 100%, 50%);
-  transition: background 500ms ease-in-out, color 500ms ease-in;
+  background-color: transparent;
+  color: red;
 }
 .btn__outline ion-icon {
-  color: hsl(0, 100%, 50%);
-}
-.btn__outline:is(:hover, :focus-visible) {
-  --bg: red;
-  --hc: var(--clr-light);
-  color: var(--hc);
-}
-.btn__outline:is(:hover, :focus-visible) ion-icon {
-  color: var(--hc);
-}
-
-.validation-alerts {
-  font-size: var(--fs-200);
-  font-weight: var(--fs-700);
-  color: hsl(0, 100%, 40%);
-  display: block;
+  color: red;
 }
 
 .hero {
@@ -2109,10 +2055,19 @@ body {
     padding-block: 3.25rem;
   }
 }
-.signin__form .btn {
+.signin__form .remember-me {
+  border: none;
+}
+.signin__form .btn:first-of-type {
   --bg: var(--clr-primary);
   --bs: var(--clr-dark-200);
   --hbs: var(--clr-tertiary-400);
+}
+.signin__form hr {
+  --flow-gap: 2rem;
+  height: 4px;
+  color: var(--clr-light);
+  width: min(400px, 100%);
 }
 .signin__action {
   --flex-direction: row;
@@ -2157,9 +2112,6 @@ body {
   .input-signin__container:nth-last-of-type(3) {
     --flow-gap: 2.5rem;
   }
-  .input-signin__container:nth-last-of-type(3) .validation-alerts {
-    --flow-gap: 1rem;
-  }
 }
 @media (min-width: 90em) {
   .input-signin__container:nth-last-of-type(3) {
@@ -2187,7 +2139,7 @@ body {
 }
 @media (min-width: 80em) {
   .signup {
-    --cpy: min(6.25rem, 3vw);
+    --cpy: min(6.25rem, 0vw);
     --cpx: clamp(11.125rem, 13.9vw, 12.5rem);
   }
 }
@@ -2256,9 +2208,6 @@ body {
   max-width: 25rem;
   position: relative;
 }
-.input-signup__container .validation-alerts {
-  --flow-gap:0.5rem;
-}
 .input-signup__container .label {
   position: absolute;
   inset-block-start: 1rem;
@@ -2293,14 +2242,8 @@ body {
   --flow-gap: none;
 }
 
-.account {
-  text-align: center;
-  --flow-gap: 2rem;
-}
-
 .dashboard {
   --menu-width: 80px;
-  height: 100%;
   max-width: 90rem;
   display: grid;
   grid-template-columns: var(--menu-width) calc(100% - var(--menu-width));
@@ -2330,7 +2273,6 @@ body {
   --flex-gap: 1rem;
   grid-column: 1;
   overflow: hidden;
-  height: 100dvh;
   height: 100%;
   padding-block: 1.5rem;
 }
@@ -2358,8 +2300,6 @@ body {
   outline: 3px solid var(--clr-secondary);
 }
 .dashboard__menu-list .profile__logout {
-  cursor: pointer;
-  border: none;
   background: transparent;
   width: 3rem;
   aspect-ratio: 1;
@@ -2422,60 +2362,6 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.dashboard__content .card {
-  border-radius: 2rem;
-  padding: 3rem 2rem;
-  margin-bottom: 3rem;
-}
-.dashboard__content .card header {
-  --justify-content: space-between;
-}
-.dashboard__content .card .dropdown-items {
-  height: 0;
-  display: none;
-  transition: height 500ms ease-in-out, opacity 500ms ease;
-}
-.dashboard__content .card .dropdown-items.active {
-  height: -moz-fit-content;
-  height: fit-content;
-  display: block;
-}
-.dashboard__content .card .btn {
-  font-family: var(--ff-inter);
-  font-size: var(--fs-300);
-  font-weight: var(--fw-600);
-}
-.dashboard__content .card li {
-  color: var(--clr-accent);
-  font-weight: var(--fw-500);
-  font-size: var(--fs-300);
-  width: 50ch;
-}
-.dashboard__content .exercise__type {
-  border-bottom: 0.125rem solid var(--clr-light);
-}
-.dashboard__content .exercise__type .btn {
-  --bg: var(--clr-secondary);
-  color: var(--clr-light);
-}
-.dashboard__content .hydration .btn {
-  --bg: var(--clr-accent);
-  color: var(--clr-light);
-}
-.dashboard__content .sleep__info {
-  border-bottom: 0.125rem solid var(--clr-light);
-}
-.dashboard__content .sleep li {
-  color: var(--clr-secondary-800);
-}
-.dashboard__content .sleep .btn {
-  --bg: var(--clr-secondary);
-  color: var(--clr-light);
-}
-.dashboard__content .food-intake__info {
-  border-bottom: 0.125rem solid var(--clr-light);
-}
-
 .profile__section {
   --bg-label-focus: linear-gradient(
     120deg,
@@ -2488,68 +2374,20 @@ body {
   box-shadow: 0px 0px 15px 5px var(--clr-yellow);
 }
 .profile__pic {
-  width: -moz-fit-content;
-  width: fit-content;
-  position: relative;
-}
-.profile__pic .round-left {
-  left: 0;
-  background-color: hsl(0, 100%, 50%);
-}
-.profile__pic .round-left:hover {
-  background-color: hsl(0, 90%, 55%);
-  scale: 1.05;
-}
-.profile__pic .round-left ion-icon {
-  color: var(--clr-light);
-}
-.profile__pic .round-right {
-  right: 0;
-  background-color: var(--clr-primary);
-}
-.profile__pic .round-right:hover {
-  background-color: var(--clr-tertiary);
-  scale: 1.05;
-}
-.profile__pic .round-right ion-icon {
-  color: var(--clr-accent);
-}
-.profile__pic .round-left,
-.profile__pic .round-right {
-  --size: 2.5rem;
-  cursor: pointer;
-  border: none;
-  position: absolute;
-  bottom: 0;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  line-height: 2rem;
-  text-align: center;
-  overflow: hidden;
-  isolation: isolate;
-  transition: scale 500ms ease;
-}
-.profile__pic .round-left input,
-.profile__pic .round-right input {
-  position: absolute;
-  opacity: 0;
-  left: 0;
-  scale: 3;
-  z-index: 1;
-}
-.profile__pic .round-left ion-icon,
-.profile__pic .round-right ion-icon {
-  font-size: 1.4rem;
-  position: absolute;
-  inset: 0;
-  margin: auto;
+  width: auto;
 }
 .profile__pic > img {
-  border: 3px solid var(--clr-light);
   border-radius: 50%;
-  width: 10rem;
+  width: 8rem;
   aspect-ratio: 1;
+}
+.profile__pic__section {
+  --justify-content: flex-start;
+  --flex-gap: 1rem;
+  --bg-label-focus: red;
+}
+.profile__pic-btns {
+  --hew: 10.5rem;
 }
 .profile__change {
   max-width: 25rem;
@@ -2557,19 +2395,4 @@ body {
 .profile__change .name {
   display: flex;
   justify-content: space-between;
-}
-
-.forgot-password ion-icon[name=key-outline] {
-  font-size: var(--fs-900);
-  color: var(--clr-primary);
-}
-.forgot-password ion-icon[name=mail-outline] {
-  font-size: var(--fs-1000);
-  color: var(--clr-primary);
-}
-.forgot-password .label,
-.forgot-password p {
-  margin-block: 0.75rem 2rem;
-  text-align: center;
-  width: 48ch;
 }/*# sourceMappingURL=main.css.map */

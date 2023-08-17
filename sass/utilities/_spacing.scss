@@ -1,0 +1,60 @@
+@use "../abstracts/layout-scale" as *;
+@use "../abstracts/displaymap" as *;
+
+.flow * + * {
+  margin-top: var(--flow-gap, 1rem);
+}
+
+@each $space, $value in $spacing {
+  // Padding utility classes
+  @if $space != "auto" {
+    .p-#{$space} {
+      padding: #{$value} !important;
+    }
+    .px-#{$space} {
+      padding-left: #{$value} !important;
+      padding-right: #{$value} !important;
+    }
+    .py-#{$space} {
+      padding-top: #{$value} !important;
+      padding-bottom: #{$value} !important;
+    }
+    .ps-#{$space} {
+      padding-left: #{$value} !important;
+    }
+    .pt-#{$space} {
+      padding-top: #{$value} !important;
+    }
+    .pe-#{$space} {
+      padding-right: #{$value} !important;
+    }
+    .pb-#{$space} {
+      padding-bottom: #{$value} !important;
+    }
+  }
+
+  // Margin utility classes
+  .m-#{$space} {
+    margin: #{$value} !important;
+  }
+  .mx-#{$space} {
+    margin-left: #{$value} !important;
+    margin-right: #{$value} !important;
+  }
+  .my-#{$space} {
+    margin-top: #{$value} !important;
+    margin-bottom: #{$value} !important;
+  }
+  .ms-#{$space} {
+    margin-left: #{$value} !important;
+  }
+  .mt-#{$space} {
+    margin-top: #{$value} !important;
+  }
+  .me-#{$space} {
+    margin-right: #{$value} !important;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$value} !important;
+  }
+}
