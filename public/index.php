@@ -6,13 +6,6 @@ use App\Session;
 const BASE_PATH = __DIR__ . "/../";
 require BASE_PATH . "config/bootstrap.php";
 
-// auto require class when corresponding namespace is called
-spl_autoload_register(function ($class) {
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    $class = lcfirst($class);
-    require base_path("{$class}.php");
-});
-
 // Signin the user automatically if cookie is set but Session isn't
 $session = Session::getInstance();
 if (!isset($session->user) && isset($_COOKIE['remember_me'])) {

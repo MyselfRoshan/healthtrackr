@@ -1,9 +1,17 @@
 <?php
 
+/** 
+ * Include psr-4 autoload feature
+ */
+
+require_once BASE_PATH . "vendor/autoload.php";
+
 /**
  * included helper functions here
  */
+
 require_once BASE_PATH . "app/Helper/functions.php";
+
 /**
  * include env file here
  */

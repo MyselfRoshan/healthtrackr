@@ -1,4 +1,8 @@
 <?php
+
+namespace App\Helper;
+
+
 class Token
 {
     /**
@@ -64,7 +68,7 @@ class Token
      * 
      * @return string Token generated using $payload, $key and $expire
      */
-    private function generateToken($payload, $expire, $key)
+    private static function generateToken($payload, $expire, $key)
     {
         //Header
         $header = [
@@ -97,7 +101,7 @@ class Token
      * @return int 2 Token is expired
      * @return array Payload and verified status encoded in the passed token
      */
-    private function verifyToken($token, $key)
+    private static function verifyToken($token, $key)
     {
         // Explode the provided token into an array of header, payload and signature
         $token_parts = explode('.', $token);

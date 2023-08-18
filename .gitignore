@@ -1,3 +1,4 @@
 storage
 config/env.php
 .env
+/vendor/
