@@ -18,7 +18,11 @@
           you a password reset link.
         </label>
         <input type="email" id="email" class="input-text" name="email" placeholder="Eg: example@dot.com" value="" aria-labelledby="label-email" />
+        <small class="validation-alerts">
 
+          <?= $alerts['email'] ?? '' ?>
+
+        </small>
         <button role="button" class="btn btn-m btn__hover-effect fw-500 text-light" aria-labelledby="Signin btn">
           <span></span>
           Send password reset email

@@ -82,7 +82,7 @@ class Validate
      */
     public static function passwordMatches($usrname_email, $plainPassword)
     {
-        // if (!trim($usrname_email)) return false;
+        if (!trim($usrname_email)) return false;
         $column = static::isEmail($usrname_email) ? 'email' : 'username';
         $query = "SELECT {$column},password FROM public.user WHERE {$column} = :params";
         $params = [

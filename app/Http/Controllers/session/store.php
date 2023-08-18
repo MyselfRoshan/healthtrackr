@@ -1,5 +1,6 @@
 <?php
 
+use App\Helper\Token;
 use App\Http\Forms\SigninForm;
 use App\Http\Middleware\Validate;
 use App\Session;
@@ -33,9 +34,10 @@ if (!$form->validate($_POST)) {
         'username' => $user['username'],
         'email' => $user['email']
     ];
-
+    // $a = Token::generateAccessToken($session->user);
+    // d($a);
+    // d(Token::verifyAccessToken($a));
     if (isset($remember_me)) {
-
         $expiry_date = time() + (30 * 24 * 60 * 60); // 30 days
         setcookie("remember_me", json_encode($user), $expiry_date);
     }
