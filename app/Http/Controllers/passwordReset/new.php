@@ -11,6 +11,9 @@ $params = [
 $user = Database::select($query, $params)->fetch();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    /** 
+     * Implement validation for new password and make front end look good
+     */
     extract($_POST);
 
     $query = "UPDATE public.user
