@@ -2,6 +2,7 @@
 
 // Home
 
+use App\Helper\PasswordResetToken;
 use Database\Database;
 
 $router->get('/', 'index.php')->only('guest');
@@ -17,9 +18,10 @@ $router->post('/signin', 'session/store.php')->only('guest');
 $router->delete('/logout', 'session/destroy.php')->only('auth');
 
 // Forgot Password
-$router->get('/forgotPassword', 'forgotPassword/create.php')->only('guest');
-$router->post('/forgotPassword', 'forgotPassword/store.php')->only('guest');
-// $router->get("/forgotPassword/{$user['reset_token_hash']}", 'forgotPassword/new.php');
+$router->get('/password-reset', 'passwordReset/create.php')->only('guest');
+$router->post('/password-reset', 'passwordReset/store.php')->only('guest');
+$router->get("/password-reset/{$session->reset_token}", 'passwordReset/new.php');
+$router->post("/password-reset/{$session->reset_token}", 'passwordReset/new.php');
 
 // User dashboard
 

@@ -4,7 +4,7 @@ namespace App\Http\Forms;
 
 use App\Http\Middleware\Validate;
 
-class ForgotPasswordForm
+class PasswordResetForm
 {
     private array $alerts = [];
 

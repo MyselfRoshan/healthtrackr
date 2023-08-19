@@ -8,6 +8,14 @@
     <div class="container">
       <form method="POST" class="d-grid flow">
         <header class="d-grid">
+
+          <?php if (isset($token_expired) ?? false) : ?>
+            <div class="link-expired d-flex mb-8" role="alert">
+              <ion-icon name="alert-circle-outline" style="margin-right: 10px;"></ion-icon>
+              <p class="m-0">Your password reset link has expired. Please initiate the reset process again.</p>
+            </div>
+          <?php endif ?>
+
           <ion-icon name="key-outline"></ion-icon>
           <h2 class="fs-700 fw-600 ff-expletus text-dark">
             Forgot Password?

@@ -9,7 +9,8 @@ class Middleware
 {
     public const MAP = [
         'guest' => Guest::class,
-        'auth' => Auth::class
+        'auth' => Auth::class,
+        'email' => Email::class
     ];
 
     public static function resolve($value)

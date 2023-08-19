@@ -45,7 +45,7 @@
             <input type="checkbox" name="remember_me" id="remember-me" class="remember-me" />
             <label for="remember-me" id="label__remember-me" class="label text-primary">Remember me</label>
           </div>
-          <a href="/forgotPassword" class="forgot-password">Forgot password?</a>
+          <a href="/password-reset" class="forgot-password">Forgot password?</a>
         </div>
         <button role="button" class="btn btn-m btn__hover-effect text-light" aria-labelledby="signin btn">
           <span></span>

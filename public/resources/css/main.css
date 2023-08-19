@@ -2559,6 +2559,17 @@ body {
   justify-content: space-between;
 }
 
+.forgot-password .link-expired {
+  --flex-gap:0.75rem;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  font-weight: var(--fw-500);
+  color: hsl(45, 94%, 27%);
+  background-color: hsl(46, 100%, 90%);
+}
+.forgot-password ion-icon[name=alert-circle-outline] {
+  font-size: var(--fs-900);
+}
 .forgot-password ion-icon[name=key-outline] {
   font-size: var(--fs-900);
   color: var(--clr-primary);
