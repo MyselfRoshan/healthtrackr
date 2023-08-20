@@ -127,7 +127,8 @@
     --foc: var(--clr-primary);
     --fbs: var(--clr-tertiary-200);
 
-    text-indent: 2.0625rem;
+    // padding
+    --px:3rem;
 
     &:focus {
       + #toggle-password {

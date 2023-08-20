@@ -1,3 +1,7 @@
+window.addEventListener("beforeunload", () => {
+  localStorage.clear();
+});
+
 // Function that doesn't revert back the value of inputfield after losing focus
 const inputTxtFields = document.querySelectorAll(".input-signup");
 inputTxtFields.forEach((inputTxtField) => {
@@ -5,6 +9,12 @@ inputTxtFields.forEach((inputTxtField) => {
     inputTxtField.setAttribute("value", inputTxtField.value);
     localStorage.setItem(`${inputTxtField.id}`, inputTxtField.value);
   });
+});
+
+const inputResetPswd = document.querySelector(".input__password-reset");
+inputResetPswd.addEventListener("input", () => {
+  inputResetPswd.setAttribute("value", inputResetPswd.value);
+  localStorage.setItem(`${inputResetPswd.id}`, inputResetPswd.value);
 });
 
 //  Toggle password to text and vice versa
