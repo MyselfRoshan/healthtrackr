@@ -18,7 +18,7 @@
         </p>
         <a href="/signin" class="btn btn-m btn__hover-effect fw-500 text-light">
           <span></span>
-          Return to sign in
+          &leftarrow; Return to sign in
           <span></span>
         </a>
       </form>

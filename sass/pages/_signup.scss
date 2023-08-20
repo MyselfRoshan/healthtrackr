@@ -125,7 +125,7 @@
 }
 
 .input-signup__container:focus-within .label__text,
-:not(.input-signup[value=""]) + .label .label__text {
+.signup :not(.input-signup[value=""]) + .label .label__text {
   font-size: 12px;
   transform: translate(0, -150%);
   background: var(--bg-label-focus, white);

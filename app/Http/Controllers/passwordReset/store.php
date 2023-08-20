@@ -12,11 +12,11 @@ extract($_POST);
 $form = new PasswordResetForm();
 if (!$form->validate($_POST)) {
 
-    require_view('passwordReset/index.view..php', [
+    require_view('passwordReset/index.view.php', [
         'scripts' => [
             'type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"',
             'nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"',
-            'src="resources/js/input.js"',
+            'src="/resources/js/input.js"',
         ],
         'alerts' => $form->getAlerts()
     ]);
@@ -40,7 +40,6 @@ if (!$form->validate($_POST)) {
         ];
         Database::insert($query, $params);
     }
-    d($session->reset_token);
 
     $mailer = Mailer::getInstance();
     // Receipts
@@ -95,7 +94,6 @@ if (!$form->validate($_POST)) {
             'scripts' => [
                 'type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"',
                 'nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"',
-                'src="resources/js/input.js"',
             ],
         ]);
     } catch (Exception $e) {

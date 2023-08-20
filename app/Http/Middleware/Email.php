@@ -9,7 +9,7 @@ class Email
     public function handle()
     {
         $session = Session::getInstance();
-        if (($session->reset_token && $session->reset_token_expires_at <= time()) ?? false) {
+        if (!$session->reset_token ?? false) {
             redirect("/");
         }
     }

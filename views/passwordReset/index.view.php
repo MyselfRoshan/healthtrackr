@@ -9,11 +9,13 @@
       <form method="POST" class="d-grid flow">
         <header class="d-grid">
 
-          <?php if (isset($token_expired) ?? false) : ?>
+          <?php if (isset($_SESSION['reset_token_expires_at']) && strtotime($_SESSION['reset_token_expires_at']) <= time()) : ?>
             <div class="link-expired d-flex mb-8" role="alert">
               <ion-icon name="alert-circle-outline" style="margin-right: 10px;"></ion-icon>
               <p class="m-0">Your password reset link has expired. Please initiate the reset process again.</p>
             </div>
+            <?php unset($_SESSION['reset_token_expires_at']) ?>
+            <?php unset($_SESSION['reset_token']) ?>
           <?php endif ?>
 
           <ion-icon name="key-outline"></ion-icon>
@@ -21,7 +23,7 @@
             Forgot Password?
           </h2>
         </header>
-        <label class="label fs-400 text-dark" for="email" id="label-email">
+        <label class="label-email fs-400 text-dark" for="email" id="label-email">
           Enter your user account's verified email address and we will send
           you a password reset link.
         </label>

@@ -12,12 +12,12 @@
           <h2 class="fs-700 fw-600 ff-expletus text-dark">Change password for @<?= $username ?></h2>
         </header>
         <p>
-          Make sure it's at least 8 characters including a number, a uppercase letter and a lowercase letter.
+          Make sure it's at least 8 characters including a special character, a uppercase letter and a lowercase letter.
         </p>
-        <div class="input-signup__container">
-          <input type="password" id="password" class="input-text input-signup" name="password" value="<?= $_POST['password'] ?? '' ?>" aria-labelledby="label-password" />
+        <div class="input__password-reset__container">
+          <input type="password" id="password" class="input-text input__password-reset pe-14" name="password" value="<?= $_POST['password'] ?? '' ?>" aria-labelledby="label-password" />
           <label class="label fs-300 fw-500 d-flex" for="password" id="label-password">
-            <span class="label__text text-dark-400">Password</span>
+            <span class="label__text text-dark-400">New Password</span>
           </label>
           <ion-icon name="eye-outline" id="toggle-password" class="fs-600 text-dark-400 mt-3.5 ms-auto me-6"></ion-icon>
           <small class="validation-alerts">

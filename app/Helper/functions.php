@@ -32,25 +32,14 @@ function require_svg($path, $attributes = [])
     require "resources/svg/{$path}";
 }
 
-// function login($user)
-// {
-//     // $_SESSION['user'] = [
-//     //     'username' => $user['username'],
-//     //     'email' => $user['email']
-//     // ];
-//     // session_regenerate_id(true);
-//     // session_regenerate_id(true);
-//     $session = Session::getInstance();
-//     $session->user = [
-//         'username' => $user['username'],
-//         'email' => $user['email']
-//     ];
-// }
-
-function redirect($path)
+function redirect(string $path, int|null $afterInSeconds = null)
 {
-    header("location: {$path}");
-    exit();
+    if ($afterInSeconds)
+        header("Refresh: {$afterInSeconds}; URL={$path}");
+    else {
+        header("Location: {$path}");
+        exit();
+    }
 }
 
 function generateRandomToken($length = 32)
