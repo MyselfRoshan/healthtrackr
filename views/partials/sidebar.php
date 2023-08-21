@@ -8,20 +8,19 @@
           </div> -->
     </div>
 
+    <div class="menu-item active">
+        <div class="menu-item__icon">
+            <ion-icon name="add-outline"></ion-icon>
+        </div>
+        <span class="menu-item__desc" hidden hidden>Add</span>
+    </div>
+
     <div class="menu-item">
-        <!-- <a href="/<?= $_SESSION['user']['username'] ?>" class="menu-item active"> -->
         <div class="menu-item__icon">
             <ion-icon name="grid-outline"></ion-icon>
         </div>
         <span class="menu-item__desc" hidden>Overview</span>
         </a>
-    </div>
-
-    <div class="menu-item">
-        <div class="menu-item__icon">
-            <ion-icon name="add-outline"></ion-icon>
-        </div>
-        <span class="menu-item__desc" hidden hidden>Add</span>
     </div>
 
     <div class="menu-item">
