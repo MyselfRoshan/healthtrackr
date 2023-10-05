@@ -11,12 +11,6 @@ inputTxtFields.forEach((inputTxtField) => {
   });
 });
 
-const inputResetPswd = document.querySelector(".input__password-reset");
-inputResetPswd.addEventListener("input", () => {
-  inputResetPswd.setAttribute("value", inputResetPswd.value);
-  localStorage.setItem(`${inputResetPswd.id}`, inputResetPswd.value);
-});
-
 //  Toggle password to text and vice versa
 const togglePassword = document.querySelector("#toggle-password");
 const password = document.querySelector("#password");

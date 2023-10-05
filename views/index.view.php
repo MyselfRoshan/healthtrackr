@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<html>
 
 <?php require_view("partials/head.php") ?>
 
@@ -222,7 +221,5 @@
     </footer>
   </main>
 </body>
-
-</html>
 
 </html>

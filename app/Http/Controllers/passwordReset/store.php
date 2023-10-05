@@ -52,12 +52,12 @@ if (!$form->validate($_POST)) {
     <p>If you did request a password reset, please click the link below to reset your password:</p>
     
     <p>
-        <a href="http://localhost/password-reset/{$session->reset_token}" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none;">Reset Password</a>
+        <a href="{$_SERVER['HTTP_ORIGIN']}/password-reset/{$session->reset_token}" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none;">Reset Password</a>
     </p>
     
     <p>If the above link doesn't work, you can copy and paste the following URL into your browser:</p>
     
-    <p>http://localhost/password-reset/{$session->reset_token}</p>
+    <p> {$_SERVER['HTTP_ORIGIN']}/password-reset/{$session->reset_token}</p>
     
     <p>This link will expire in 1 hour for security reasons.</p>
     
@@ -75,7 +75,7 @@ if (!$form->validate($_POST)) {
     
     If you did request a password reset, please copy and paste the link below into your browser's address bar to reset your password:
     
-    http://localhost/password-reset/{$session->reset_token}
+    {$_SERVER['HTTP_ORIGIN']}/password-reset/{$session->reset_token}
     
     This link will expire in 1 hour for security reasons.
     

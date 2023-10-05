@@ -8,7 +8,6 @@
     <div class="container">
       <form method="POST" class="d-grid flow">
         <header class="d-grid">
-          <!-- <ion-icon name="key-outline"></ion-icon> -->
           <ion-icon name="mail-outline"></ion-icon>
           <h2 class="fs-700 fw-600 ff-expletus text-dark">Check your mail</h2>
         </header>
