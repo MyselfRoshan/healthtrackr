@@ -20,7 +20,9 @@
 @use "./pages/index";
 @use "./pages/signin";
 @use "./pages/signup";
-@use "./pages/dashboard";
-@use "./pages/dashboard-add";
-@use "./pages/profile-section";
 @use "./pages/forgot-password";
+@use "./pages/user/user-index";
+@use "./pages/user/add";
+@use "./pages/user/profile";
+@use "./pages/daily-exercise";
+@use "./pages/stay-hydrate";

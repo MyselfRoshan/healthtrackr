@@ -519,6 +519,10 @@ body {
   text-transform: uppercase;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .fs-mega {
   line-height: 1.1;
   letter-spacing: -0.24rem;
@@ -1794,6 +1798,23 @@ body {
     grid-template-columns: 0.5666666667fr 0.4333333333fr;
   }
 }
+.add-wrapper {
+  padding: 4rem;
+  background-color: var(--clr-light);
+  border-radius: 1rem;
+  box-shadow: 0px 0px 13px var(--clr-dark-400);
+}
+.add-wrapper input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
 .input-text {
   border: none;
   width: var(--iw, 25rem);
@@ -1822,12 +1843,13 @@ body {
   text-decoration: none;
   background: var(--bg, var(--clr-primary));
   box-shadow: 0 4px 4px var(--bs, var(--clr-primary-400));
-  transition: box-shadow 500ms ease-in-out;
+  transition: box-shadow 500ms ease-in-out, background 500ms ease;
 }
 .btn:is(:hover, :focus-visible) {
   box-shadow: 0 4px 4px var(--hbs, var(--clr-tertiary-400));
 }
 .btn a {
+  color: inherit;
   text-decoration: none;
 }
 .btn-s {
@@ -2257,7 +2279,7 @@ body {
   position: relative;
 }
 .input-signup__container .validation-alerts {
-  --flow-gap:0.5rem;
+  --flow-gap: 0.5rem;
 }
 .input-signup__container .label {
   position: absolute;
@@ -2280,7 +2302,8 @@ body {
 }
 
 .input-signup__container:focus-within .label__text,
-.signup :not(.input-signup[value=""]) + .label .label__text {
+.signup :not(.input-signup[value=""]) + .label .label__text,
+#hydrationForm :not(.input-signup[value=""]) + .label .label__text {
   font-size: 12px;
   transform: translate(0, -150%);
   background: var(--bg-label-focus, white);
@@ -2296,6 +2319,77 @@ body {
 .account {
   text-align: center;
   --flow-gap: 2rem;
+}
+
+.forgot-password .link-expired {
+  --flex-gap:0.75rem;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  font-weight: var(--fw-500);
+  color: hsl(45, 94%, 27%);
+  background-color: hsl(46, 100%, 90%);
+}
+.forgot-password ion-icon[name=alert-circle-outline] {
+  font-size: var(--fs-900);
+}
+.forgot-password ion-icon[name=key-outline] {
+  font-size: var(--fs-900);
+  color: var(--clr-primary);
+}
+.forgot-password ion-icon[name=mail-outline] {
+  font-size: var(--fs-1000);
+  color: var(--clr-primary);
+}
+.forgot-password .label-email,
+.forgot-password p {
+  margin-block: 0.75rem 2rem;
+  text-align: center;
+  width: 48ch;
+}
+.forgot-password .input__password-reset {
+  --foc: var(--clr-primary);
+}
+.forgot-password .input__password-reset__container {
+  max-width: 25rem;
+  position: relative;
+}
+.forgot-password .input__password-reset__container .validation-alerts {
+  --flow-gap:0.5rem;
+}
+.forgot-password .input__password-reset__container .label {
+  position: absolute;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
+  pointer-events: none;
+}
+.forgot-password .input__password-reset__container .label__text {
+  transition: all 250ms ease-out;
+}
+.forgot-password .input__password-reset__container #toggle-password {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+.forgot-password .input__password-reset__container:focus-within .label__text,
+.forgot-password .input__password-reset__container:focus-within #toggle-password {
+  color: var(--clr-primary);
+}
+.forgot-password .success-container {
+  text-align: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+.forgot-password .success-container p {
+  color: #555;
+}
+
+.input__password-reset__container:focus-within .label__text,
+.forgot-password :not(.input-text[value=""]) + .label .label__text {
+  font-size: 12px;
+  transform: translate(0, -150%);
+  background: var(--bg-label-focus, white);
+  padding-inline: 8px;
 }
 
 .dashboard {
@@ -2422,13 +2516,118 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.dashboard__content .card {
-  border-radius: 2rem;
-  padding: 3rem 2rem;
-  margin-bottom: 3rem;
+.dashboard__content {
+  --color-text: #616161;
+  --color-text-btn: var(--clr-light);
+  --card1-gradient-color1: #f12711;
+  --card1-gradient-color2: #f5af19;
+  --card2-gradient-color1: #7f00ff;
+  --card2-gradient-color2: #e100ff;
+  --card3-gradient-color1: #3f2b96;
+  --card3-gradient-color2: #a8c0ff;
+  --card4-gradient-color1: #11998e;
+  --card4-gradient-color2: #38ef7d;
 }
-.dashboard__content .card header {
-  --justify-content: space-between;
+.dashboard__content header h2 {
+  text-transform: uppercase;
+}
+.dashboard__content .cards {
+  --grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.dashboard__content .card {
+  cursor: pointer;
+  display: inline-block;
+  width: 240px;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  border: 5px solid #fff;
+  overflow: hidden;
+  color: var(--color-text);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all 0.5s ease-in-out;
+}
+.dashboard__content .card:hover {
+  background-color: var(--clr-ash);
+  transform: scale(1.01);
+}
+.dashboard__content .card img {
+  height: 80%;
+}
+.dashboard__content .card svg {
+  height: 70%;
+}
+.dashboard__content .card__header {
+  height: 200px;
+  width: 100%;
+  background: red;
+  border-radius: 100% 0% 100% 0%/0% 50% 50% 100%;
+  display: grid;
+  place-items: center;
+}
+.dashboard__content .card__header.one {
+  background: linear-gradient(to bottom left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+}
+.dashboard__content .card__header.two {
+  background: linear-gradient(to bottom left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+}
+.dashboard__content .card__header.three {
+  background: linear-gradient(to bottom left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+}
+.dashboard__content .card__header.four {
+  background: linear-gradient(to bottom left, var(--card4-gradient-color1), var(--card4-gradient-color2));
+}
+.dashboard__content .card__header.five {
+  background: linear-gradient(to bottom left, var(--clr-dark), var(--clr-dark-100));
+}
+.dashboard__content .card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.dashboard__content .card__title {
+  color: var(--clr-accent);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--ff-expletus);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-700);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.dashboard__content .card__text {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.dashboard__content .card__btn {
+  --br: 5rem;
+  --px: 2rem;
+  --bs: var(--clr-dark-400);
+  --hbs: var(--color-text);
+  font-family: var(--ff-inter);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-600);
+  color: var(--color-text-btn);
+  margin-block-end: 1rem;
+}
+.dashboard__content .card__btn.one {
+  background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+}
+.dashboard__content .card__btn.two {
+  background: linear-gradient(to left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+}
+.dashboard__content .card__btn.three {
+  background: linear-gradient(to left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+}
+.dashboard__content .card__btn.four {
+  background: linear-gradient(to left, var(--card4-gradient-color1), var(--card4-gradient-color2));
+}
+.dashboard__content .card__btn.five {
+  background: linear-gradient(to left, var(--clr-dark), var(--clr-dark-100));
 }
 .dashboard__content .card .dropdown-items {
   height: 0;
@@ -2439,11 +2638,6 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   display: block;
-}
-.dashboard__content .card .btn {
-  font-family: var(--ff-inter);
-  font-size: var(--fs-300);
-  font-weight: var(--fw-600);
 }
 .dashboard__content .card li {
   color: var(--clr-accent);
@@ -2559,73 +2753,180 @@ body {
   justify-content: space-between;
 }
 
-.forgot-password .link-expired {
-  --flex-gap:0.75rem;
-  border-radius: 0.25rem;
-  padding: 1rem;
-  font-weight: var(--fw-500);
-  color: hsl(45, 94%, 27%);
-  background-color: hsl(46, 100%, 90%);
+/* Exercise form container */
+.daily-exercise {
+  /* Exercise dropdown styling */
+  /* Exercise steps styling */
+  /* Header for exercise steps */
+  /* Step styling */
+  /* ... Rest of the styles ... */
+  /* Videos container */
+  /* Button styling */
+  /* Input and select styling */
+  /* Responsive layout adjustments */
 }
-.forgot-password ion-icon[name=alert-circle-outline] {
-  font-size: var(--fs-900);
+.daily-exercise #exerciseForm {
+  margin-bottom: 20px;
 }
-.forgot-password ion-icon[name=key-outline] {
-  font-size: var(--fs-900);
-  color: var(--clr-primary);
+.daily-exercise #exercise {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--clr-tertiary-800);
+  font-size: 16px;
+  color: #333;
 }
-.forgot-password ion-icon[name=mail-outline] {
-  font-size: var(--fs-1000);
-  color: var(--clr-primary);
+.daily-exercise #exerciseSteps {
+  display: none;
+  counter-reset: step-counter;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.forgot-password .label-email,
-.forgot-password p {
-  margin-block: 0.75rem 2rem;
-  text-align: center;
-  width: 48ch;
-}
-.forgot-password .input__password-reset {
-  --foc: var(--clr-primary);
-}
-.forgot-password .input__password-reset__container {
-  max-width: 25rem;
-  position: relative;
-}
-.forgot-password .input__password-reset__container .validation-alerts {
-  --flow-gap:0.5rem;
-}
-.forgot-password .input__password-reset__container .label {
-  position: absolute;
-  inset-block-start: 1rem;
-  inset-inline-start: 1rem;
-  pointer-events: none;
-}
-.forgot-password .input__password-reset__container .label__text {
-  transition: all 250ms ease-out;
-}
-.forgot-password .input__password-reset__container #toggle-password {
-  cursor: pointer;
+.daily-exercise #exerciseSteps.active {
   display: block;
-  position: absolute;
-  inset: 0;
 }
-.forgot-password .input__password-reset__container:focus-within .label__text,
-.forgot-password .input__password-reset__container:focus-within #toggle-password {
-  color: var(--clr-primary);
+.daily-exercise #exerciseSteps h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
 }
-.forgot-password .success-container {
-  text-align: center;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 0.5rem;
-}
-.forgot-password .success-container p {
+.daily-exercise .step {
+  --align-items: center;
+  --justify-items: start;
+  font-size: 16px;
   color: #555;
 }
+.daily-exercise .step::before {
+  counter-increment: step-counter;
+  content: "Step" counter(step-counter) ". ";
+  display: inline-block;
+  width: 3.875rem;
+}
+.daily-exercise .step-number {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 25px;
+  margin-right: 10px;
+}
+.daily-exercise .step-instruction {
+  flex-grow: 1;
+}
+.daily-exercise #exerciseVideos {
+  margin-bottom: 20px;
+}
+.daily-exercise .btn {
+  --br: 5px;
+  padding: 0.625em 1em;
+  font-family: var(--ff-inter);
+  color: var(--clr-light);
+}
+.daily-exercise .btn:hover {
+  --bg: var(--clr-tertiary);
+}
+.daily-exercise input[type=datetime-local],
+.daily-exercise input[type=number],
+.daily-exercise select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+@media (max-width: 600px) {
+  .daily-exercise #exerciseForm {
+    padding: 10px;
+  }
+}
 
-.input__password-reset__container:focus-within .label__text,
-.forgot-password :not(.input-text[value=""]) + .label .label__text {
-  font-size: 12px;
-  transform: translate(0, -150%);
-  background: var(--bg-label-focus, white);
-  padding-inline: 8px;
+.glass-quote {
+  width: 50ch;
+  text-align: center;
+}
+.glass-water {
+  --wave: -100%;
+  --side: 206%;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  background-color: #8ddbf5;
+  box-shadow: inset 0 0 50px #1c637a;
+  -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+}
+.glass-water::before {
+  content: "";
+  position: absolute;
+  width: var(--side);
+  height: var(--side);
+  top: var(--wave);
+  left: -50%;
+  background-color: #ececec;
+  border-radius: 40%;
+  animation: wave 12s linear infinite;
+}
+.glass-water::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--side) + 5%);
+  height: calc(var(--side) + 5%);
+  top: var(--wave);
+  left: -52%;
+  background-color: rgba(236, 236, 236, 0.5019607843);
+  border-radius: 40%;
+  animation: wave 12s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.glass-info {
+  --flex-gap: 0;
+  --flex-direction: column;
+  width: 10rem;
+}
+.glass__controller {
+  --flex-gap: 1rem;
+}
+.glass-add, .glass-remove {
+  padding: 0.3em;
+  display: flex;
+  font-size: var(--fs-800);
+  border: none;
+  border-radius: 50%;
+  background-color: hsl(195, 84%, 76%);
+  box-shadow: inset 0 0 20px hsl(195, 63%, 29%);
+}
+.glass-add:disabled, .glass-remove:disabled {
+  background-color: hsl(192, 13.8%, 78.6%);
+  box-shadow: none;
+}
+.glass-add:hover, .glass-remove:hover {
+  box-shadow: inset 0 0 13px hsl(195, 63%, 29%), 0 0 10px 2px hsl(195, 84%, 76%);
+}
+.glass-water__form .btn-m {
+  --bg: hsl(195, 84%, 76%);
+  color: var(--clr-black);
+  box-shadow: inset 0 0 25px hsl(195, 63%, 29%);
+}
+.glass-water__form .btn-m:is(:hover, :focus-within) {
+  box-shadow: inset 0 0 15px hsl(195, 63%, 29%), 0 0 10px 2px hsl(195, 84%, 76%);
 }/*# sourceMappingURL=main.css.map */

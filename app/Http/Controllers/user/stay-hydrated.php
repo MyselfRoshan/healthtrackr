@@ -1,11 +1,11 @@
 <?php
 
-
-require_view('dashboard/index.view.php', [
+require_view('user/stay-hydrated.view.php', [
     'scripts' => [
         "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
         "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
         "src='/resources/js/dashboardSidebar.js'",
-        "src='/resources/js/dropdown.js'"
+        "src='/resources/js/dropdown.js'",
+        "src='/resources/js/stay-hydrated.js'"
     ]
 ]);
