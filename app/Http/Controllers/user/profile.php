@@ -1,6 +1,6 @@
 <?php
 
-require_view('dashboard/profile.view.php', [
+require_view('user/profile.view.php', [
     'scripts' => [
         "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
         "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",

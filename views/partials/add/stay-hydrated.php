@@ -7,8 +7,9 @@
   <form class="glass-water__form">
     <div class="glass-inputs-container py-4">
       <label for="date-to-record">Choose Date:</label>
-      <input type="date" id="date-to-record" max="<?= date('Y-m-d') ?>" value="<?= date('Y-m-d') ?>" name="dateToRecord" />
+      <input type="date" id="date-to-record" max="<?= date('Y-m-d') ?>" min="<?= date("Y-m-d", strtotime("-1 year")) ?>" value="<?= date('Y-m-d') ?>" name="dateToRecord" />
       <!-- <?= date('Y-m-d\TH:i'); ?> -->
+      <!-- <?= date("Y-m-d", strtotime("-1 year")) ?> -->
 
       <label for="duration">Set Target (1 glass = 250ml):</label>
       <input type="number" id="set-glass-target" name="setGlassTarget" min="1" max="50" value="8" aria-labelledby="label__set-glass-target" />
