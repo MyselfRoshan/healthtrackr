@@ -77,7 +77,7 @@
         </div>
         <button class="btn btn-m btn__hover-effect text-light">
             <span></span>
-            Update Info
+            Update Profile
             <span></span>
         </button>
     </form>

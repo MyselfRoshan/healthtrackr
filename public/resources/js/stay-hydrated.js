@@ -1,4 +1,5 @@
 const glassWater = document.querySelector(".glass-water");
+const glassWaterForm = document.querySelector(".glass-water__form");
 const glassAdd = document.querySelector(".glass-add");
 const glassRemove = document.querySelector(".glass-remove");
 const setGlassTarget = document.querySelector("#set-glass-target");
@@ -12,6 +13,11 @@ const minimumGlassTarget = parseInt(setGlassTarget.getAttribute("min"));
 const waterPerGlass = 250; //250ml
 
 let Water = JSON.parse(localStorage.getItem("Water")) || {};
+
+console.log(glassWaterForm);
+glassWaterForm.addEventListener("submit", (e) => {
+  e.preventDefault;
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const currentDate = dateToRecord.value;
@@ -35,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     glassRemove.setAttribute("disabled", "true");
   if (glassToIntakeValue == maximumGlassTarget - 1)
     glassAdd.setAttribute("disabled", "true");
-  // waterLevel("new-target");
+  waterLevel("new-target");
 
   setGlassTarget.addEventListener("change", (e) => {
     let inputValue = e.target.value;
@@ -74,12 +80,23 @@ document.addEventListener("DOMContentLoaded", () => {
  *? Only fires eventlistener if the entered date is valid
  */
 dateToRecord.addEventListener("input", (e) => {
-  Water[e.target.value] = {
-    target: setGlassTarget.value,
-    intaked: glassToIntake.textContent,
-  };
-  localStorage.setItem("Water", JSON.stringify(Water));
-  console.log(Water);
+  const selectedDate = new Date(e.target.value);
+  const minDate = new Date(e.target.min);
+  const maxDate = new Date(e.target.max);
+
+  // const now = new Date();
+  // const year = now.getFullYear();
+  // const month = (now.getMonth() + 1).toString().padStart(2, "0");
+  // const day = now.getDate().toString().padStart(2, "0");
+  // inputValue = `${year}-${month}-${day}`;
+  if (selectedDate >= minDate && selectedDate <= maxDate) {
+    Water[e.target.value] = {
+      target: setGlassTarget.value,
+      intaked: glassToIntake.textContent,
+    };
+    localStorage.setItem("Water", JSON.stringify(Water));
+    console.log(Water);
+  }
 });
 
 glassAdd.addEventListener("click", () => {
