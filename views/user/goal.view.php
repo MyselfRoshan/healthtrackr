@@ -5,10 +5,10 @@
 
 <body>
   <div class="dashboard">
-    <?php require_view("partials/sidebar.php",['d']) ?>
+    <?php require_view("partials/sidebar.php",['g']) ?>
     <div class="dashboard__content">
       <div class="wrapper m-16">
-        <?php require_view("partials/dashboard.php") ?>
+        <?php require_view("partials/goal.php") ?>
       </div>
     </div>
   </div>
