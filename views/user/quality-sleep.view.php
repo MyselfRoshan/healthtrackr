@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link rel="stylesheet" href="/resources/css/timepicker.css" />
 <?php require_view("partials/head.php", ['scripts' => $scripts]) ?>
 
 <body>

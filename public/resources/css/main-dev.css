@@ -10,8 +10,7 @@
 }
 @font-face {
   font-family: "League Gothic";
-  src: url("/resources/fonts/LeagueGothic/Regular.woff") format("woff2"),
-    url("/resources/fonts/LeagueGothic/Regular.woff2") format("woff");
+  src: url("/resources/fonts/LeagueGothic/Regular.woff") format("woff2"), url("/resources/fonts/LeagueGothic/Regular.woff2") format("woff");
   font-weight: 400;
 }
 /* Box sizing rules */
@@ -66,7 +65,7 @@ ol[class] {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
-  text-decoration-skip-ink: auto;
+          text-decoration-skip-ink: auto;
 }
 
 a.nav-links {
@@ -436,18 +435,13 @@ body {
 
 .bg-dot-pattern {
   background-color: transparent;
-  background-image: radial-gradient(var(--clr-dark) 1px, transparent 1px),
-    radial-gradient(var(--clr-dark) 1px, var(--clr-tertiary) 1px);
+  background-image: radial-gradient(var(--clr-dark) 1px, transparent 1px), radial-gradient(var(--clr-dark) 1px, var(--clr-tertiary) 1px);
   background-position: 0 0, 30px 30px;
   background-size: 60px 60px;
 }
 
 .bg-gradient {
-  background: linear-gradient(
-    135deg,
-    var(--clr-primary-800),
-    var(--clr-secondary-600)
-  );
+  background: linear-gradient(135deg, var(--clr-primary-800), var(--clr-secondary-600));
 }
 
 .ff-inter {
@@ -1993,8 +1987,7 @@ div.ndp-nepali-box {
   border: 1px solid #a6c9e2;
   background-color: #fdfefe;
   padding: 1px;
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 div.ndp-nepali-calendar-div div.ndp-nepali-box {
@@ -2242,9 +2235,7 @@ div.ndp-nepali-box a {
 .revolution__feature {
   grid-column: span 4;
 }
-.revolution__feature:nth-of-type(1),
-.revolution__feature:nth-of-type(2),
-.revolution__feature:nth-of-type(3) {
+.revolution__feature:nth-of-type(1), .revolution__feature:nth-of-type(2), .revolution__feature:nth-of-type(3) {
   margin-block-end: 40px;
 }
 
@@ -2316,8 +2307,7 @@ div.ndp-nepali-box a {
   display: grid;
   place-items: center;
 }
-.footer__copyright,
-.footer__created-at {
+.footer__copyright, .footer__created-at {
   grid-column: 5/9;
   text-align: center;
 }
@@ -2405,7 +2395,7 @@ div.ndp-nepali-box a {
   --fbg: var(--clr-light-300);
   --foc: var(--clr-primary);
   --fbs: var(--clr-tertiary-200);
-  --px: 3rem;
+  --px:3rem;
 }
 .input-signin:focus + #toggle-password {
   color: var(--clr-primary);
@@ -2564,21 +2554,21 @@ div.ndp-nepali-box a {
 }
 
 .forgot-password .link-expired {
-  --flex-gap: 0.75rem;
+  --flex-gap:0.75rem;
   border-radius: 0.25rem;
   padding: 1rem;
   font-weight: var(--fw-500);
   color: hsl(45, 94%, 27%);
   background-color: hsl(46, 100%, 90%);
 }
-.forgot-password ion-icon[name="alert-circle-outline"] {
+.forgot-password ion-icon[name=alert-circle-outline] {
   font-size: var(--fs-900);
 }
-.forgot-password ion-icon[name="key-outline"] {
+.forgot-password ion-icon[name=key-outline] {
   font-size: var(--fs-900);
   color: var(--clr-primary);
 }
-.forgot-password ion-icon[name="mail-outline"] {
+.forgot-password ion-icon[name=mail-outline] {
   font-size: var(--fs-1000);
   color: var(--clr-primary);
 }
@@ -2596,7 +2586,7 @@ div.ndp-nepali-box a {
   position: relative;
 }
 .forgot-password .input__password-reset__container .validation-alerts {
-  --flow-gap: 0.5rem;
+  --flow-gap:0.5rem;
 }
 .forgot-password .input__password-reset__container .label {
   position: absolute;
@@ -2614,9 +2604,7 @@ div.ndp-nepali-box a {
   inset: 0;
 }
 .forgot-password .input__password-reset__container:focus-within .label__text,
-.forgot-password
-  .input__password-reset__container:focus-within
-  #toggle-password {
+.forgot-password .input__password-reset__container:focus-within #toggle-password {
   color: var(--clr-primary);
 }
 .forgot-password .success-container {
@@ -2644,8 +2632,8 @@ div.ndp-nepali-box a {
   grid-template-columns: var(--menu-width) calc(100% - var(--menu-width));
   transition: 0.3s ease;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .dashboard .menu-item,
 .dashboard .menu-toggle {
@@ -2684,11 +2672,7 @@ div.ndp-nepali-box a {
   grid-auto-flow: column;
   grid-template-columns: 60px 1fr;
   border-radius: 50px;
-  background: linear-gradient(
-    120deg,
-    var(--clr-secondary) 0%,
-    var(--clr-yellow) 100%
-  );
+  background: linear-gradient(120deg, var(--clr-secondary) 0%, var(--clr-yellow) 100%);
 }
 .dashboard__menu-list .profile__pic {
   width: 64px;
@@ -2722,6 +2706,7 @@ div.ndp-nepali-box a {
   align-items: center;
   grid-auto-flow: column;
   grid-template-columns: 60px 1fr;
+  text-decoration: none;
 }
 .menu-item.active {
   --ibr: 0.75rem;
@@ -2815,39 +2800,19 @@ div.ndp-nepali-box a {
   place-items: center;
 }
 .dashboard__content .card__header.one {
-  background: linear-gradient(
-    to bottom left,
-    var(--card1-gradient-color1),
-    var(--card1-gradient-color2)
-  );
+  background: linear-gradient(to bottom left, var(--card1-gradient-color1), var(--card1-gradient-color2));
 }
 .dashboard__content .card__header.two {
-  background: linear-gradient(
-    to bottom left,
-    var(--card2-gradient-color1),
-    var(--card2-gradient-color2)
-  );
+  background: linear-gradient(to bottom left, var(--card2-gradient-color1), var(--card2-gradient-color2));
 }
 .dashboard__content .card__header.three {
-  background: linear-gradient(
-    to bottom left,
-    var(--card3-gradient-color1),
-    var(--card3-gradient-color2)
-  );
+  background: linear-gradient(to bottom left, var(--card3-gradient-color1), var(--card3-gradient-color2));
 }
 .dashboard__content .card__header.four {
-  background: linear-gradient(
-    to bottom left,
-    var(--card4-gradient-color1),
-    var(--card4-gradient-color2)
-  );
+  background: linear-gradient(to bottom left, var(--card4-gradient-color1), var(--card4-gradient-color2));
 }
 .dashboard__content .card__header.five {
-  background: linear-gradient(
-    to bottom left,
-    var(--clr-dark),
-    var(--clr-dark-100)
-  );
+  background: linear-gradient(to bottom left, var(--clr-dark), var(--clr-dark-100));
 }
 .dashboard__content .card__content {
   display: flex;
@@ -2883,32 +2848,16 @@ div.ndp-nepali-box a {
   margin-block-end: 1rem;
 }
 .dashboard__content .card__btn.one {
-  background: linear-gradient(
-    to left,
-    var(--card1-gradient-color1),
-    var(--card1-gradient-color2)
-  );
+  background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2));
 }
 .dashboard__content .card__btn.two {
-  background: linear-gradient(
-    to left,
-    var(--card2-gradient-color1),
-    var(--card2-gradient-color2)
-  );
+  background: linear-gradient(to left, var(--card2-gradient-color1), var(--card2-gradient-color2));
 }
 .dashboard__content .card__btn.three {
-  background: linear-gradient(
-    to left,
-    var(--card3-gradient-color1),
-    var(--card3-gradient-color2)
-  );
+  background: linear-gradient(to left, var(--card3-gradient-color1), var(--card3-gradient-color2));
 }
 .dashboard__content .card__btn.four {
-  background: linear-gradient(
-    to left,
-    var(--card4-gradient-color1),
-    var(--card4-gradient-color2)
-  );
+  background: linear-gradient(to left, var(--card4-gradient-color1), var(--card4-gradient-color2));
 }
 .dashboard__content .card__btn.five {
   background: linear-gradient(to left, var(--clr-dark), var(--clr-dark-100));
@@ -2959,11 +2908,7 @@ div.ndp-nepali-box a {
   border: 2px solid var(--clr-primary);
   grid-column: span 3;
   width: 100%;
-  background: linear-gradient(
-    120deg,
-    var(--clr-secondary) 0%,
-    var(--clr-yellow) 100%
-  );
+  background: linear-gradient(120deg, var(--clr-secondary) 0%, var(--clr-yellow) 100%);
 }
 .profile__section {
   --grid-gap: 1.5rem;
@@ -3045,8 +2990,7 @@ div.ndp-nepali-box a {
   border-radius: 0.5rem;
   border: 2px solid var(--clr-primary);
   width: 100%;
-  background: radial-gradient(var(--clr-yellow) 0%, var(--clr-secondary) 100%)
-    cover;
+  background: radial-gradient(circle at center, var(--clr-yellow) 0%, var(--clr-secondary) 100%);
 }
 .profile__change .name {
   display: flex;
@@ -3171,8 +3115,8 @@ div.ndp-nepali-box a {
 .daily-exercise .btn:hover {
   --bg: var(--clr-tertiary);
 }
-.daily-exercise input[type="datetime-local"],
-.daily-exercise input[type="number"],
+.daily-exercise input[type=datetime-local],
+.daily-exercise input[type=number],
 .daily-exercise select {
   width: 100%;
   padding: 10px;
@@ -3202,7 +3146,7 @@ div.ndp-nepali-box a {
   background-color: #8ddbf5;
   box-shadow: inset 0 0 50px #1c637a;
   -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
 }
 .glass-water::before {
   content: "";
@@ -3243,8 +3187,7 @@ div.ndp-nepali-box a {
 .glass__controller {
   --flex-gap: 1rem;
 }
-.glass-add,
-.glass-remove {
+.glass-add, .glass-remove {
   padding: 0.3em;
   display: flex;
   font-size: var(--fs-800);
@@ -3253,12 +3196,10 @@ div.ndp-nepali-box a {
   background-color: hsl(195, 84%, 76%);
   box-shadow: inset 0 0 20px hsl(195, 63%, 29%);
 }
-.glass-add:hover,
-.glass-remove:hover {
+.glass-add:hover, .glass-remove:hover {
   box-shadow: inset 0 0 13px hsl(195, 63%, 29%), 0 0 10px 2px hsl(195, 84%, 76%);
 }
-.glass-add:is(disabled:hover, :disabled),
-.glass-remove:is(disabled:hover, :disabled) {
+.glass-add:is(disabled:hover, :disabled), .glass-remove:is(disabled:hover, :disabled) {
   background-color: hsl(192, 13.8%, 78.6%);
   box-shadow: none;
 }
@@ -3349,4 +3290,4 @@ div.ndp-nepali-box a {
 .notification.closed {
   scale: 0;
   height: 0;
-} /*# sourceMappingURL=main-dev.css.map */
+}/*# sourceMappingURL=main-dev.css.map */
