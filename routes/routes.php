@@ -28,8 +28,9 @@ if (isset($session->user)) {
     $router->get("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
     $router->get("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep.php')->only('auth');
 
+    // Profile
     $router->get("/{$session->user['username']}", 'user/index.php')->only('auth');
-    $router->get("/{$session->user['username']}/profile", 'user/profile.php')->only('auth');
+    $router->get("/{$session->user['username']}/profile", 'user/profile/create.php')->only('auth');
 
 
     $router->get("/{$session->user['username']}/reminder", 'user/reminder.php')->only('auth');
