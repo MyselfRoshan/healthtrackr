@@ -1,45 +1,47 @@
+<?php
+
+if(!isset($attributes[0])) $attributes[0]='';
+?>
 <div class="dashboard__menu-list bg-primary-800 d-flex" role="menu">
     <div class="menu-toggle" role="switch">
         <div class="menu-item__icon">
             <ion-icon name="menu"></ion-icon>
         </div>
         <!-- <div class="logo">
-            <img src="../assets/images/logo-only.png" alt="logo" srcset="" />
+            <img src="../resources/images/logo-only.png" alt="logo" srcset="" />
           </div> -->
     </div>
 
-    <div class="menu-item active">
+    <a href="/<?= $_SESSION['user']['username'] ?>" class="menu-item <?php echo $attributes[0]==='d'?'active':''?> ">
         <div class="menu-item__icon">
-            <ion-icon name="add-outline"></ion-icon>
+            <ion-icon name="grid<?php echo $attributes[0]==='d'?'-outline':''?>"></ion-icon>
         </div>
-        <span class="menu-item__desc" hidden hidden>Add</span>
-    </div>
+        <span class="menu-item__desc" hidden>Dashboard</span>
+    </a>
 
-    <div class="menu-item">
+    <a href="/<?= $_SESSION['user']['username'] ?>/add" class="menu-item <?php echo $attributes[0]==='a'?'active':''?>">
         <div class="menu-item__icon">
-            <ion-icon name="grid-outline"></ion-icon>
+            <ion-icon name="add<?php echo $attributes[0]==='a'?'-outline':''?>"></ion-icon>
         </div>
-        <span class="menu-item__desc" hidden>Overview</span>
-        </a>
-    </div>
+        <span class="menu-item__desc" hidden>Add</span>
+    </a>
 
-    <div class="menu-item">
+    <a href="/<?= $_SESSION['user']['username'] ?>/reminder" class="menu-item <?php echo $attributes[0]==='r'?'active':''?>">
         <div class="menu-item__icon">
-            <ion-icon name="calendar-clear-outline"></ion-icon>
+            <ion-icon name="calendar-clear<?php echo $attributes[0]==='r'?'-outline':''?>"></ion-icon>
         </div>
         <span class="menu-item__desc" hidden>Reminder</span>
-    </div>
+    </a>
 
-    <div class="menu-item">
+    <a href="/<?= $_SESSION['user']['username'] ?>/goal" class="menu-item <?php echo $attributes[0]==='g'?'active':''?>">
         <div class="menu-item__icon">
-            <ion-icon name="flag-outline"></ion-icon>
+            <ion-icon name="flag<?php echo $attributes[0]==='g'?'-outline':''?>"></ion-icon>
         </div>
         <span class="menu-item__desc" hidden>Goal</span>
-    </div>
+    </a>
     <div class="profile">
 
         <a href="/<?= $_SESSION['user']['username'] ?>/profile" class="profile__pic">
-
             <img src="/resources/images/default-profile.png" alt="Profile picture" />
         </a>
         <div class="profile__desc d-flex">

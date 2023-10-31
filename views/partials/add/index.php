@@ -12,7 +12,7 @@
             <h3 class="card__title">Daily Exercise</h3>
             <p class="card__text">Don't wish for a good body, work for it</p>
             <button class="card__btn btn btn-s one">
-                <a href="<?= $_SESSION['user']['username'] ?>/add/daily-exercise">Start now</a>
+                <a href="/<?= $_SESSION['user']['username'] ?>/add/daily-exercise">Start now</a>
             </button>
         </div>
     </article>
@@ -27,7 +27,7 @@
             <p class="card__text">Keep yourself refreshed throughout the day</p>
 
             <button class="card__btn btn btn-s four">
-                <a href="<?= $_SESSION['user']['username'] ?>/add/stay-hydrated">Start now</a>
+                <a href="/<?= $_SESSION['user']['username'] ?>/add/stay-hydrated">Start now</a>
             </button>
         </div>
     </article>
@@ -42,7 +42,7 @@
             <p class="card__text">Nourish your body with healthy food choices</p>
 
             <button class="card__btn btn btn-s three">
-                <a href="<?= $_SESSION['user']['username'] ?>/add/balanced-nutrition">Start now</a>
+                <a href="/<?= $_SESSION['user']['username'] ?>/add/balanced-nutrition">Start now</a>
             </button>
         </div>
     </article>
@@ -57,7 +57,7 @@
             <p class="card__text">Refresh your body and mind with good sleep</p>
 
             <button class="card__btn btn btn-s five">
-                <a href="<?= $_SESSION['user']['username'] ?>/add/quality-sleep">Start now</a>
+                <a href="/<?= $_SESSION['user']['username'] ?>/add/quality-sleep">Start now</a>
             </button>
         </div>
     </article>

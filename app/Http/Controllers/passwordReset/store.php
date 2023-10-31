@@ -46,7 +46,6 @@ if (!$form->validate($_POST)) {
     $mailer->setFrom(MAILER_NOREPLY_SENDER_EMAIL_ADDRESS, MAILER_NOREPLY_SENDER_NAME);
     $mailer->addAddress($email);
     $HTMLBody = <<<HTMLBody
-    
     <p>Hello there,</p>
     <p>We received a request to reset your password. If you didn't make this request, you can ignore this email.</p>
     <p>If you did request a password reset, please click the link below to reset your password:</p>

@@ -10,7 +10,7 @@ class Mailer
     public function __construct()
     {
         // Server settings
-        $this->instance = new PHPMailer();
+        $this->instance = new PHPMailer(true);
         $this->instance->isSMTP();
         $this->instance->isHTML();
         $this->instance->Host       = MAILER_HOST;
