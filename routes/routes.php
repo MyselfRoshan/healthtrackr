@@ -31,6 +31,7 @@ if (isset($session->user)) {
     // Profile
     $router->get("/{$session->user['username']}", 'user/index.php')->only('auth');
     $router->get("/{$session->user['username']}/profile", 'user/profile/create.php')->only('auth');
+    $router->post("/{$session->user['username']}/profile", 'user/profile/store.php')->only('auth');
 
 
     $router->get("/{$session->user['username']}/reminder", 'user/reminder.php')->only('auth');

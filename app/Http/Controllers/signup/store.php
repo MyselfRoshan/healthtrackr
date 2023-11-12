@@ -1,5 +1,6 @@
 <?php
 
+use App\Helper\Timezone;
 use App\Http\Forms\SignupForm;
 use Database\Database;
 
@@ -19,9 +20,12 @@ if (!$form->validate($_POST)) {
         'alerts' => $form->getAlerts()
     ]);
 } else {
-    // $query = "INSERT INTO public.user(first_name, last_name, username, email, password, created_on) VALUES(:fname,:lname,:username,:email,:password, NOW()";
-    $query = "INSERT INTO public.user(first_name, last_name, username, email, password)
-    VALUES(:fname,:lname,:username,:email,:password)";
+    // $timeZone=json_decode($_COOKIE['timeZone']);
+    // Timezone::detect_timezone_id($timeZone->offset, $timeZone->dst);
+    // $query = "INSERT INTO public.user(first_name, last_name, username, email, password, last_login)
+    // VALUES(:fname,:lname,:username,:email,:password, CURRENT_TIMESTAMP)";
+    $query = "INSERT INTO public.user(first_name, last_name, username, email, password, timezone, last_login)
+    VALUES(:fname,:lname,:username,:email,:password,:timezone,CURRENT_TIMESTAMP)";
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
     $params = [
         'fname' => [$fname, PDO::PARAM_STR],
@@ -29,6 +33,7 @@ if (!$form->validate($_POST)) {
         'username' => [$username, PDO::PARAM_STR],
         'email' => [$email, PDO::PARAM_STR],
         'password' => [$hashedPassword, PDO::PARAM_STR],
+        'timezone' => [$_COOKIE['timeZone'], PDO::PARAM_STR],
     ];
     Database::insert($query, $params);
     redirect('/signin');

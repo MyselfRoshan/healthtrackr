@@ -2,7 +2,6 @@
 <html>
 
 <?php require_view("partials/head.php") ?>
-
 <body>
   <main>
     <section class="hero bg-dot-pattern">

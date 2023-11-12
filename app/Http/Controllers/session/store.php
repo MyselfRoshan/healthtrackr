@@ -26,7 +26,14 @@ if (!$form->validate($_POST)) {
         "params" => [$usrname_email, PDO::PARAM_STR]
     ];
     $user = Database::select($query, $params)->fetch();
-
+    // Update user last login
+    $query = "UPDATE public.user
+    SET last_login = CURRENT_TIMESTAMP
+    WHERE email = :email";
+    $params = [
+        "email" => [$user['email'], PDO::PARAM_STR]
+    ];
+    Database::update($query, $params);
 
     $session = Session::getInstance();
     $session->regenerateID();
