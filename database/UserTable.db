@@ -6,10 +6,11 @@ CREATE TABLE IF NOT EXISTS public."user"
 	username VARCHAR ( 50 ) UNIQUE NOT NULL,
 	password VARCHAR ( 255 ) NOT NULL,
 	email VARCHAR( 255) UNIQUE NOT NULL,
-	created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	last_login TIMESTAMP,
+	created_on TIMESTAMP( 0 ) DEFAULT CURRENT_TIMESTAMP,
+	last_login TIMESTAMP( 0 ),
     reset_token_hash VARCHAR ( 255 ),
-    reset_token_expires_at TIMESTAMP
+    reset_token_expires_at TIMESTAMP( 0 ),
+	timezone VARCHAR (40)
 )
 
 

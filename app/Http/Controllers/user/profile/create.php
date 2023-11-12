@@ -4,13 +4,16 @@ use App\Session;
 use Database\Database;
 
 $session = Session::getInstance();
-$query = "SELECT first_name,last_name,username,email,last_login,created_on FROM public.user WHERE username = :params";
+$query = "SELECT first_name,last_name,username,email,last_login,created_on,timezone FROM public.user WHERE username = :params";
 $params = [
     "params" => [$session->user['username'], PDO::PARAM_STR]
 ];
 $user = Database::select($query, $params)->fetch();
 
-d($user);
+// d($user);
+$user['last_login']=timeago($user['last_login']);
+$user['created_on']=getUserDate($user['created_on'],$user['timezone'])->format('jS, F Y');
+// d(new DateTime($user['created_on'], new DateTimeZone($user['timezone'])));
 // $session->regenerateID();
 // $session->user = [
 //     'username' => $user['username'],

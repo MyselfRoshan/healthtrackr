@@ -32,20 +32,20 @@
  *
  * @returns {{offset: number, dst: number}}
  */
-function getTimeZoneData() {
-  var today = new Date();
-  var jan = new Date(today.getFullYear(), 0, 1);
-  var jul = new Date(today.getFullYear(), 6, 1);
-  var dst =
-    today.getTimezoneOffset() <
-    Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-
-  return {
-    offset: -today.getTimezoneOffset() / 60,
-    dst: +dst,
-  };
-}
-document.cookie;
-document.cookie = `timeZone=${JSON.stringify(
-  getTimeZoneData(),
-)}; SameSite=None; Secure`;
+// function getTimeZoneData() {
+//   // var today = new Date();
+//   // var jan = new Date(today.getFullYear(), 0, 1);
+//   // var jul = new Date(today.getFullYear(), 6, 1);
+//   // var dst =
+//   //   today.getTimezoneOffset() <
+//   //   Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+// Timezone::get_timezone_id()
+//   // return {
+//   //   offset: -today.getTimezoneOffset() / 60,
+//   //   dst: +dst,
+//   // };
+//   return Intl.DateTimeFormat().resolvedOptions().timeZone
+// }
+// document.cookie;
+document.cookie = `timeZone=${Intl.DateTimeFormat().resolvedOptions().timeZone}; SameSite=None; Secure`;
+console.log(cookie.timeZone)

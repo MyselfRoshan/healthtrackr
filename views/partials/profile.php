@@ -39,11 +39,11 @@
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Last login:</dt>
-        <dd><?= timeago($user['last_login']) ?></dd>
+        <dd><?= $user['last_login'] ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Created on:</dt>
-        <dd><?= date('D jS, F Y h:i A', $user['created_on']) ?></dd>
+        <dd><?= $user['created_on'] ?></dd>
       </div>
     </dl>
   </header>
@@ -108,7 +108,6 @@
   </form>
 </section>
 <?php
-$date = new DateTime($user['created_on']);
-dd($date->format('D jS, F Y h:i A'));
-// dd();
+// $date = new DateTime($user['created_on']);
+// dd($date->format('D jS, F Y h:i A'));
 ?>

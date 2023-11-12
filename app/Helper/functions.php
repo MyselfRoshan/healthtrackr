@@ -74,3 +74,10 @@ function timeago($date)
         }
     }
 }
+
+function getUserDate($UTCdate,$timeZone){
+    $d=new DateTime();
+    $d->setTimestamp(strtotime($UTCdate));
+    $d->setTimezone(new DateTimeZone($timeZone));
+    return $d;
+}

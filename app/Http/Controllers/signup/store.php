@@ -20,9 +20,8 @@ if (!$form->validate($_POST)) {
         'alerts' => $form->getAlerts()
     ]);
 } else {
-    $timeZone=json_decode($_COOKIE['timeZone']);
-    Timezone::detect_timezone_id($timeZone->offset, $timeZone->dst);
-// dd(Timezone::get_timezone_id());
+    // $timeZone=json_decode($_COOKIE['timeZone']);
+    // Timezone::detect_timezone_id($timeZone->offset, $timeZone->dst);
     // $query = "INSERT INTO public.user(first_name, last_name, username, email, password, last_login)
     // VALUES(:fname,:lname,:username,:email,:password, CURRENT_TIMESTAMP)";
     $query = "INSERT INTO public.user(first_name, last_name, username, email, password, timezone, last_login)
@@ -34,7 +33,7 @@ if (!$form->validate($_POST)) {
         'username' => [$username, PDO::PARAM_STR],
         'email' => [$email, PDO::PARAM_STR],
         'password' => [$hashedPassword, PDO::PARAM_STR],
-        'timezone' => [Timezone::get_timezone_id(), PDO::PARAM_STR],
+        'timezone' => [$_COOKIE['timeZone'], PDO::PARAM_STR],
     ];
     Database::insert($query, $params);
     redirect('/signin');
