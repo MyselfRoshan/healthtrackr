@@ -1,47 +1,31 @@
 <?php
 
-use App\Helper\Token;
-use App\Http\Forms\SigninForm;
-use App\Http\Middleware\Validate;
 use App\Session;
 use Database\Database;
+// extract($_POST);
 
-extract($_POST);
+$upload_dir = BASE_PATH . 'public/uploads/';
+$session = Session::getInstance();
+$uploaded = false;
+$save_path = '';
+if ($_FILES['profile_pic']['error'] == UPLOAD_ERR_OK) {
+    $temp_name = $_FILES['profile_pic']['tmp_name'];
+    $name = basename($_FILES['profile_pic']['name']);
+    $img_extension = pathinfo($_FILES['profile_pic']['name'], PATHINFO_EXTENSION);
+    $new_name = uniqid('IMG-', true) . "." . $img_extension;
+    $save_path = $upload_dir . $new_name;
+    move_uploaded_file($temp_name, $save_path);
+    $uploaded = true;
+}
+if ($uploaded) {
+    $query = "UPDATE public.user
+    SET profile_pic = :profile_pic
+    WHERE email = :email";
+    $params = [
+        ":profile_pic" => ["/uploads/{$new_name}", PDO::PARAM_STR],
+        "email" => [$session->user['email'], PDO::PARAM_STR]
+    ];
 
-echo "POST";
-// $form = new SigninForm();
-// if (!$form->validate($_POST)) {
-
-//     require_view('signin.view.php', [
-//         'scripts' => [
-//             "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
-//             "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
-//             "src='/resources/js/input.js'",
-//         ],
-//         'alerts' => $form->getAlerts()
-//     ]);
-// } else {
-//     $column = Validate::isEmail($usrname_email) ? 'email' : 'username';
-//     $query = "SELECT username,email FROM public.user WHERE {$column} = :params";
-//     $params = [
-//         "params" => [$usrname_email, PDO::PARAM_STR]
-//     ];
-//     $user = Database::select($query, $params)->fetch();
-
-
-//     $session = Session::getInstance();
-//     $session->regenerateID();
-//     $session->user = [
-//         'username' => $user['username'],
-//         'email' => $user['email']
-//     ];
-//     // $a = Token::generateAccessToken($session->user);
-//     // d($a);
-//     // d(Token::verifyAccessToken($a));
-//     if (isset($remember_me)) {
-//         $expiry_date = time() + (30 * 24 * 60 * 60); // 30 days
-//         setcookie("remember_me", json_encode($user), $expiry_date);
-//     }
-
-//     redirect("/{$session->user['username']}");
-// }
+    Database::update($query, $params);
+    redirect("/{$session->user['username']}/profile");
+}
