@@ -1,12 +1,12 @@
 <section class="profile__section d-grid">
   <header class="profile__header px-10 py-12">
-    <form method="POST" class="profile__pic mx-auto">
+    <form method="POST" class="profile__pic mx-auto" enctype="multipart/form-data">
       <img id="profile__pic" src="/resources/images/default-profile.png" alt="Profile picture" />
-      <button id="upload" class="round-right">
+      <div id="upload" class="round-right">
         <input type="file" id="profile__pic-uploader" name="profile_pic" accept=".png, .jpg, .jpeg" />
         <ion-icon name="camera-outline"></ion-icon>
-      </button>
-      <button id="cancel" class="round-left d-none" type="submit">
+      </div>
+      <button type="button" id="cancel" class="round-left d-none">
         <ion-icon name="close"></ion-icon>
       </button>
       <button type="submit" id="confirm" class="round-right d-none">
