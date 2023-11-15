@@ -2990,7 +2990,7 @@ div.ndp-nepali-box a {
   border-radius: 0.5rem;
   border: 2px solid var(--clr-primary);
   width: 100%;
-  background: radial-gradient(circle at center, var(--clr-yellow) 0%, var(--clr-secondary) 100%);
+  background: radial-gradient(var(--clr-yellow) 0%, var(--clr-secondary) 100%) cover;
 }
 .profile__change .name {
   display: flex;

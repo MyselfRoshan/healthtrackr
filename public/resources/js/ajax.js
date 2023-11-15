@@ -1,4 +1,4 @@
-const ajax = (url, method = "get", data = {}) => {
+const ajax = async (url, method = "get", data = {}) => {
   method = method.toLowerCase;
 
   let options = {
@@ -13,11 +13,11 @@ const ajax = (url, method = "get", data = {}) => {
 
   if (csrfMethods.has(method)) {
     options.body = JSON.stringify({ ...data, ...getCsrfFields() });
-/**
- * 
- *    } else if (method === "get") {
+  } else if (method === "get") {
     url += "?" + new URLSearchParams(data).toString();
-  } */
+  }
 
-  return fetch(url, options).then((response) => response.json());
+  return fetch(url, options).then(response => response.json());
 };
+
+export default ajax;

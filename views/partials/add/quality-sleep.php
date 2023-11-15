@@ -4,8 +4,8 @@
       Quality Sleep
     </h1>
   </header>
-  <form id="qualitySleepForm">
-    <div class="glass-input-containers py-4">
+  <form method="post" id="qualitySleepForm" enctype="multipart/form-data">
+    <div class=" glass-input-containers py-4">
       <label for="select-date">Choose Date:</label>
       <input type="text" id="select-date" name="selectDate" readonly />
       <!-- load data from localStorage to html and remove data-default  if available in LocalStorage else don't to anything  -->

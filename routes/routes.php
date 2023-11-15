@@ -23,10 +23,15 @@ $router->post("/password-reset/{$session->reset_token}", 'passwordReset/new.php'
 if (isset($session->user)) {
     // Add
     $router->get("/{$session->user['username']}/add", 'user/add.php')->only('auth');
-    $router->get("/{$session->user['username']}/add/daily-exercise", 'user/daily-exercise.php')->only('auth');
+
+    $router->get("/{$session->user['username']}/add/daily-exercise", 'user/daily-exercise/create.php')->only('auth');
+    $router->post("/{$session->user['username']}/add/daily-exercise", 'user/daily-exercise/store.php')->only('auth');
+
     $router->get("/{$session->user['username']}/add/stay-hydrated", 'user/stay-hydrated.php')->only('auth');
     $router->get("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
-    $router->get("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep.php')->only('auth');
+
+    $router->get("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/create.php')->only('auth');
+    $router->post("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/store.php')->only('auth');
 
     // Profile
     $router->get("/{$session->user['username']}", 'user/index.php')->only('auth');

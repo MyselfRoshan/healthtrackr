@@ -1,18 +1,38 @@
 CREATE TABLE IF NOT EXISTS public."user"
 (
-    user_id serial PRIMARY KEY,
-	first_name VARCHAR ( 50 ) NOT NULL,
-	last_name VARCHAR ( 50 ) NOT NULL,
-	username VARCHAR ( 50 ) UNIQUE NOT NULL,
-	password VARCHAR ( 255 ) NOT NULL,
-	email VARCHAR( 255) UNIQUE NOT NULL,
-	created_on TIMESTAMP( 0 ) DEFAULT CURRENT_TIMESTAMP,
-	last_login TIMESTAMP( 0 ),
+    user_id SERIAL PRIMARY KEY,
+	first_name VARCHAR (50) NOT NULL,
+	last_name VARCHAR (50) NOT NULL,
+	username VARCHAR (50) UNIQUE NOT NULL,
+	password VARCHAR (255) NOT NULL,
+	email VARCHAR(25) UNIQUE NOT NULL,
+	created_on TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
+	last_login TIMESTAMP(0),
 	profile_pic bytea,
-    reset_token_hash VARCHAR ( 255 ),
-    reset_token_expires_at TIMESTAMP( 0 ),
+    reset_token_hash VARCHAR (255),
+    reset_token_expires_at TIMESTAMP(0),
 	timezone VARCHAR (40)
 )
+
+CREATE TABLE daily_exercise (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES public.user(user_id),
+  exercise_name VARCHAR(255) NOT NULL,
+  set_target INTEGER NOT NULL,
+  performed_time INTEGER NOT NULL,
+  date DATE NOT NULL
+);
+
+CREATE TABLE quality_sleep (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES public.user(user_id),
+  bed_time TIME NOT NULL,
+  wakeup_time TIME NOT NULL,
+  sleep_duration TIME NOT NULL,
+  date DATE NOT NULL
+);
+INSERT INTO quality_sleep (user_id, bed_time, wakeup_time, sleep_duration, date)
+VALUES (1, '23:59', '07:00', '06:30', '2021-01-01');
 
 
 UPDATE public.user SET reset_token_hash = NULL , reset_token_expires_at=null
