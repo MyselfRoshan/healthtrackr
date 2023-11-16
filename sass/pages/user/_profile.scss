@@ -130,14 +130,10 @@
     border-radius: 0.5rem;
     border: 2px solid var(--clr-primary);
     width: 100%;
-
-    // background: linear-gradient(
-    //   120deg,
-    //   var(--clr-secondary) 0%,
-    //   var(--clr-yellow) 100%
-    // );
-    background: radial-gradient(var(--clr-yellow) 0%, var(--clr-secondary) 100%)
-      cover;
+    background: radial-gradient(
+      var(--clr-yellow) 0%,
+      var(--clr-secondary) 100%
+    );
     .name {
       display: flex;
       justify-content: space-between;

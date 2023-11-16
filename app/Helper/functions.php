@@ -75,9 +75,19 @@ function timeago($date)
     }
 }
 
-function getUserDate($UTCdate,$timeZone){
-    $d=new DateTime();
+function getUserDate($UTCdate, $timeZone)
+{
+    $d = new DateTime();
     $d->setTimestamp(strtotime($UTCdate));
     $d->setTimezone(new DateTimeZone($timeZone));
     return $d;
+}
+
+function delete_IMG($file_path): void
+{
+    if (file_exists($file_path)) {
+        unlink($file_path);
+    } else {
+        // File not found.
+    }
 }

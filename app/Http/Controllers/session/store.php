@@ -21,7 +21,7 @@ if (!$form->validate($_POST)) {
     ]);
 } else {
     $column = Validate::isEmail($usrname_email) ? 'email' : 'username';
-    $query = "SELECT username,email FROM public.user WHERE {$column} = :params";
+    $query = "SELECT user_id,username,email,profile_pic FROM public.user WHERE {$column} = :params";
     $params = [
         "params" => [$usrname_email, PDO::PARAM_STR]
     ];
@@ -38,9 +38,11 @@ if (!$form->validate($_POST)) {
     $session = Session::getInstance();
     $session->regenerateID();
     $session->user = [
+        'id' => $user['user_id'],
         'username' => $user['username'],
         'email' => $user['email']
     ];
+    $session->profile_pic = $user['profile_pic'];
     // $a = Token::generateAccessToken($session->user);
     // d($a);
     // d(Token::verifyAccessToken($a));

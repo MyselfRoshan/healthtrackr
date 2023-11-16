@@ -1,9 +1,9 @@
-const ajax = (url, method = "get", data = {}) => {
-  method = method.toLowerCase;
+async function ajax(url, method = "get", data = {}) {
+  method = method.toLowerCase();
 
   let options = {
-    method,
-    header: {
+    method: method,
+    headers: {
       "Content-Type": "application/json",
       "X-Requested-With": "XMLHttpRequest",
     },
@@ -12,12 +12,14 @@ const ajax = (url, method = "get", data = {}) => {
   const csrfMethods = new Set(["post", "put", "delete", "patch"]);
 
   if (csrfMethods.has(method)) {
-    options.body = JSON.stringify({ ...data, ...getCsrfFields() });
-/**
- * 
- *    } else if (method === "get") {
-    url += "?" + new URLSearchParams(data).toString();
-  } */
+    options.body = data;
+  } else if (method === "get") {
+    url += `?${new URLSearchParams(data).toString()}`;
+  }
 
-  return fetch(url, options).then((response) => response.json());
-};
+  return await fetch(url, options);
+  // const response = await fetch(url, options);
+  // return await response.json();
+}
+
+export default ajax;

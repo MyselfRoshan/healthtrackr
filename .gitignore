@@ -1,4 +1,5 @@
 storage
 config/env.php
 .env
-/vendor/
+vendor/
+uploads/*

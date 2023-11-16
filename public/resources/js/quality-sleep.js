@@ -1,3 +1,5 @@
+import ajax from "./ajax.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   // Define your elements
   const selectDate = document.getElementById("select-date");
@@ -5,8 +7,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const wakeupTime = document.getElementById("wakeup-time");
   const sleepDuration = document.querySelector(".sleep-time");
 
-  // Load data from localStorage
-  let Sleep = JSON.parse(localStorage.getItem("Sleep")) || {};
+  // Load data from Databse or localStorage
+  let Sleep = {
+    [NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD")]: {
+      bed: {
+        hour: "22",
+        minute: "00",
+      },
+      wakeup: {
+        hour: "06",
+        minute: "00",
+      },
+      duration: {
+        hour: "8",
+        minute: "00",
+      },
+    },
+  };
+  const setSleep = async () => {
+    const response = await ajax(`${window.location.href}/data`);
+    Sleep =
+      JSON.parse(localStorage.getItem("Sleep")) ?? (await response.json());
+    updateSleepData(NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD"));
+  };
+
+  setSleep();
   // Function to format time with AM/PM
   function to12HourFormat(hours, minutes) {
     const period = hours < 12 ? "AM" : "PM";
@@ -66,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
       sleepDuration.textContent = `${Sleep[date].duration.hour} hours and ${Sleep[date].duration.minute} minutes`;
     }
   }
-
   // Initial load and change event
   selectDate.value = NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD");
   selectDate.nepaliDatePicker({
@@ -121,5 +145,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
       localStorage.setItem("Sleep", JSON.stringify(Sleep));
     },
+  });
+
+  // console.log(Cookie.get("PHPSESSID"));
+  const form = document.querySelector("#qualitySleepForm");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const saveToDatabase = async () => {
+      const response = await ajax(
+        `${window.location.href}`,
+        "post",
+        localStorage["Sleep"],
+      );
+      console.log(response);
+      // console.log(await response.json());
+      if (response.status === 200) console.log("Saved Sucessfully");
+    };
+
+    saveToDatabase();
   });
 });

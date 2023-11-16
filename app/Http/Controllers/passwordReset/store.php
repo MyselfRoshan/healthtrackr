@@ -26,7 +26,7 @@ if (!$form->validate($_POST)) {
     // If reset token expired regenerate new one and save to the database
     if ((!isset($session->reset_token) && !isset($session->reset_token_expires_at)) || strtotime($session->reset_token_expires_at) <= time()) {
         // $token = new PasswordResetToken(32, 15);
-        $token = new PasswordResetToken(21,60);
+        $token = new PasswordResetToken(21, 60);
         $session->reset_token = $token->getToken();
         $session->reset_token_expires_at = $token->getExpiry();
         $query = "UPDATE public.user
@@ -44,7 +44,7 @@ if (!$form->validate($_POST)) {
 
     $mailer = Mailer::getInstance();
     // Receipts
-    $mailer->setFrom(MAILER_NOREPLY_SENDER_EMAIL_ADDRESS, MAILER_NOREPLY_SENDER_NAME);
+    $mailer->setFrom(NOREPLY_SENDER_EMAIL_ADDRESS, NOREPLY_SENDER_NAME);
     $mailer->addAddress($email);
     $HTMLBody = <<<HTMLBody
     <p>Hello there,</p>

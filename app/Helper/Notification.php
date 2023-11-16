@@ -37,7 +37,7 @@ class Notification
     {
         try {
             // Set the recipient and sender
-            $this->mailer->setFrom(MAILER_NOREPLY_SENDER_EMAIL_ADDRESS, MAILER_NOREPLY_SENDER_NAME);
+            $this->mailer->setFrom(NOREPLY_SENDER_EMAIL_ADDRESS, NOREPLY_SENDER_NAME);
             $this->mailer->addAddress($this->recipient);
 
             // Set email subject and message
