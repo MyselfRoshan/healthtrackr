@@ -31,6 +31,7 @@ if (isset($session->user)) {
     $router->get("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
 
     $router->get("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/create.php')->only('auth');
+    $router->get("/{$session->user['username']}/add/quality-sleep/data", 'user/quality-sleep/get.php')->only('auth');
     $router->post("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/store.php')->only('auth');
 
     // Profile

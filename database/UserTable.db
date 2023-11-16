@@ -15,21 +15,21 @@ CREATE TABLE IF NOT EXISTS public."user"
 )
 
 CREATE TABLE daily_exercise (
-  id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES public.user(user_id),
+  date DATE NOT NULL,
   exercise_name VARCHAR(255) NOT NULL,
   set_target INTEGER NOT NULL,
   performed_time INTEGER NOT NULL,
-  date DATE NOT NULL
+  PRIMARY KEY (user_id, date)
 );
 
 CREATE TABLE quality_sleep (
-  id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES public.user(user_id),
+  date DATE NOT NULL,
   bed_time TIME NOT NULL,
   wakeup_time TIME NOT NULL,
   sleep_duration TIME NOT NULL,
-  date DATE NOT NULL
+  PRIMARY KEY (user_id, date)
 );
 INSERT INTO quality_sleep (user_id, bed_time, wakeup_time, sleep_duration, date)
 VALUES (1, '23:59', '07:00', '06:30', '2021-01-01');

@@ -1,0 +1,14 @@
+.page-not-found {
+  position: relative;
+  a {
+    // inset-inline: 0;
+    position: absolute;
+    // margin-inline: 5rem;
+    inset-block-start: 4rem;
+    inset-inline-start: 5rem;
+    color: var(--clr-light);
+    font-family: var(--ff-expletus);
+    font-size: var(--fs-700);
+    text-decoration: none;
+  }
+}

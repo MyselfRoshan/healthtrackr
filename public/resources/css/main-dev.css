@@ -2312,6 +2312,19 @@ div.ndp-nepali-box a {
   text-align: center;
 }
 
+.page-not-found {
+  position: relative;
+}
+.page-not-found a {
+  position: absolute;
+  inset-block-start: 4rem;
+  inset-inline-start: 5rem;
+  color: var(--clr-light);
+  font-family: var(--ff-expletus);
+  font-size: var(--fs-700);
+  text-decoration: none;
+}
+
 .signin .container {
   --cpy: 0;
   --cpx: 0;
@@ -2990,7 +3003,7 @@ div.ndp-nepali-box a {
   border-radius: 0.5rem;
   border: 2px solid var(--clr-primary);
   width: 100%;
-  background: radial-gradient(var(--clr-yellow) 0%, var(--clr-secondary) 100%) cover;
+  background: radial-gradient(var(--clr-yellow) 0%, var(--clr-secondary) 100%);
 }
 .profile__change .name {
   display: flex;
