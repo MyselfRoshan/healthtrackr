@@ -25,3 +25,4 @@ composer dump-autoload -o
 - [ ] Make admin dashboard if have time
 - [ ] Add "Delete" button in profile to delete account.
 - [ ] Implement token system to login in rather tha user id
+

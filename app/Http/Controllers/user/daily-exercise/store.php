@@ -25,4 +25,3 @@ foreach ($data as $date => $row) {
         'actual' => [$row['actual'], PDO::PARAM_STR]
     ];
     Database::insert($query, $params);
-}
