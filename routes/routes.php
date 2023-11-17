@@ -25,6 +25,7 @@ if (isset($session->user)) {
     $router->get("/{$session->user['username']}/add", 'user/add.php')->only('auth');
 
     $router->get("/{$session->user['username']}/add/daily-exercise", 'user/daily-exercise/create.php')->only('auth');
+    $router->get("/{$session->user['username']}/add/daily-exercise/data", 'user/daily-exercise/data.php')->only('auth');
     $router->post("/{$session->user['username']}/add/daily-exercise", 'user/daily-exercise/store.php')->only('auth');
 
     $router->get("/{$session->user['username']}/add/stay-hydrated", 'user/stay-hydrated/create.php')->only('auth');

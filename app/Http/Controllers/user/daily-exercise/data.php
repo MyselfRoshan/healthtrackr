@@ -4,7 +4,7 @@ use App\Session;
 use Database\Database;
 
 $session = Session::getInstance();
-$query = "SELECT date,bed_time,wakeup_time,sleep_duration FROM public.quality_sleep WHERE user_id = :uid";
+$query = "SELECT date, name, target, actual FROM public.daily_exercise WHERE user_id = :uid";
 $params = [
     "uid" => [$session->user['id'], PDO::PARAM_INT]
 ];
@@ -17,23 +17,15 @@ $data = Database::select($query, $params)->fetchAll();
 //     duration: { hour: 10, minute: 40 },
 //   },
 // };
-$sleep = [];
-function getHourMinute($time)
-{
-    $value = explode(":", $time, -1);
-    return [
-        'hour' => $value[0],
-        'minute' => $value[1]
-    ];
-}
+$exercise = [];
 foreach ($data as $d) {
-    $sleep = [
-        ...$sleep,
+    $exercise = [
+        ...$exercise,
         $d['date'] => [
-            'bed' => getHourMinute($d['bed_time']),
-            'wakeup' => getHourMinute($d['wakeup_time']),
-            'duration' => getHourMinute($d['sleep_duration'])
+            'name' => $d['name'],
+            'target' => $d['target'],
+            'actual' => $d['actual'],
         ]
     ];
 }
-echo json_encode($sleep);
+echo json_encode($exercise);

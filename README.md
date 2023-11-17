@@ -18,9 +18,8 @@ composer dump-autoload -o
 
 ## TO do:
 
-- [ ] Finish database connection for daily exercise.
-- [ ] Implementation of databae in daily-exercise, stay-hydrated and balanced-diet.
-- [ ] Add send notification toggle in eacha and every add section card.
+- [x] Implementation of databae in daily-exercise, stay-hydrated and balanced-diet.
+- [ ] Add send notification toggle in each and every add section card.
 - [ ] Creation of Notification System to send through email.
 - [ ] Make Dashboard using bookmarks in HT (firefox).
 - [ ] Make admin dashboard if have time
