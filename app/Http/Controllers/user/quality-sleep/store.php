@@ -1,5 +1,4 @@
 <?php
-// Converts it into a PHP object
 
 use App\Session;
 use Database\Database;
@@ -21,15 +20,10 @@ foreach ($data as $date => $row) {
                   sleep_duration = EXCLUDED.sleep_duration;";
     $params = [
         'uid' => [$session->user['id'], PDO::PARAM_INT],
+        'date' => [$date, PDO::PARAM_STR],
         'bed_time' => [$bed_time, PDO::PARAM_STR],
         'wakeup_time' => [$wakeup_time, PDO::PARAM_STR],
-        'sleep_duration' => [$sleep_duration, PDO::PARAM_STR],
-        'date' => [$date, PDO::PARAM_STR]
+        'sleep_duration' => [$sleep_duration, PDO::PARAM_STR]
     ];
     Database::insert($query, $params);
 }
-
-// $a = [
-//     'hi' => 'hello'
-// ];
-// echo json_encode($a);
