@@ -18,9 +18,11 @@ composer dump-autoload -o
 
 ## TO do:
 
-- [ ] Implementation of databae in daily-exercise, stay-hydrated and balanced-diet.
-- [ ] Add send notification toggle in eacha and every add section card.
+- [x] Implementation of databae in daily-exercise, stay-hydrated and balanced-diet.
+- [ ] Add send notification toggle in each and every add section card.
 - [ ] Creation of Notification System to send through email.
 - [ ] Make Dashboard using bookmarks in HT (firefox).
 - [ ] Make admin dashboard if have time
 - [ ] Add "Delete" button in profile to delete account.
+- [ ] Implement token system to login in rather tha user id
+

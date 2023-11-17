@@ -2777,6 +2777,44 @@ div.ndp-nepali-box a {
 .dashboard__content header h2 {
   text-transform: uppercase;
 }
+.dashboard__content header .switch {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+.dashboard__content header label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 42px;
+  height: 22px;
+  background: var(--clr-ash);
+  display: block;
+  border-radius: 10px;
+  position: relative;
+}
+.dashboard__content header label::after {
+  content: "a";
+  --diameter: 16px;
+  --spacing: 3px;
+  position: absolute;
+  top: var(--spacing);
+  left: var(--spacing);
+  width: var(--diameter);
+  height: var(--diameter);
+  background: #fff;
+  border-radius: var(--diameter);
+  transition: 0.3s;
+}
+.dashboard__content header label:active::after {
+  width: 13px;
+}
+.dashboard__content header input:checked + label {
+  background: var(--clr-primary);
+}
+.dashboard__content header input:checked + label::after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
 .dashboard__content .cards {
   --grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

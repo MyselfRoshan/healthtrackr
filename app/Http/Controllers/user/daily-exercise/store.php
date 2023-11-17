@@ -2,40 +2,26 @@
 
 use App\Session;
 use Database\Database;
-// extract($_POST);
 
-$upload_dir = BASE_PATH . 'public/uploads/';
 $session = Session::getInstance();
-$uploaded = false;
-$save_path = '';
-if ($_FILES['profile_pic']['error'] == UPLOAD_ERR_OK) {
-    $temp_name = $_FILES['profile_pic']['tmp_name'];
-    $name = basename($_FILES['profile_pic']['name']);
-    $img_extension = pathinfo($_FILES['profile_pic']['name'], PATHINFO_EXTENSION);
-    $new_name = uniqid('IMG-', true) . "." . $img_extension;
-    $save_path = $upload_dir . $new_name;
-    move_uploaded_file($temp_name, $save_path);
-    $uploaded = true;
-}
-if ($uploaded) {
-    // Delete previous profile picture
-    $query = "SELECT profile_pic FROM public.user WHERE email = :email";
-    $params = [
-        "email" => [$session->user['email'], PDO::PARAM_STR]
-    ];
-    $user = Database::select($query, $params)->fetch();
-    if (isset($user['profile_pic']))
-        unlink(BASE_PATH . "public/{$user['profile_pic']}");
+$data = json_decode(file_get_contents('php://input'), true);
 
-    // Add new uploaded profile picture
-    $query = "UPDATE public.user
-    SET profile_pic = :profile_pic
-    WHERE email = :email";
+echo json_encode($data);
+// Insert the quality sleep data into database and if the primary key is duplicate then update the data from user to database.
+$response = [];
+foreach ($data as $date => $row) {
+    $query = "INSERT INTO public.daily_exercise(user_id, date, name, target, actual)
+    VALUES(:uid, :date, :name, :target, :actual)
+    ON CONFLICT (user_id, date)
+    DO UPDATE SET
+    name = EXCLUDED.name,
+    target = EXCLUDED.target,
+    actual = EXCLUDED.actual;";
     $params = [
-        "profile_pic" => ["/uploads/{$new_name}", PDO::PARAM_STR],
-        "email" => [$session->user['email'], PDO::PARAM_STR]
+        'uid' => [$session->user['id'], PDO::PARAM_INT],
+        'date' => [$date, PDO::PARAM_STR],
+        'name' => [$row['name'], PDO::PARAM_STR],
+        'target' => [$row['target'], PDO::PARAM_STR],
+        'actual' => [$row['actual'], PDO::PARAM_STR]
     ];
-
-    Database::update($query, $params);
-    redirect("/{$session->user['username']}/profile");
-}
+    Database::insert($query, $params);

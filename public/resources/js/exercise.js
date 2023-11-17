@@ -1,6 +1,6 @@
-{
-  "yoga": {
-    "steps": [
+export default {
+  yoga: {
+    steps: [
       "Start with a comfortable standing position.",
       "Inhale deeply and raise your arms above your head.",
       "Exhale slowly as you bend forward at your hips, keeping your back straight.",
@@ -13,20 +13,20 @@
       "Inhale and step your right foot forward into a lunge.",
       "Exhale and step your left foot forward to meet your right.",
       "Inhale and rise up, reaching your arms overhead.",
-      "Exhale and return to a standing position."
+      "Exhale and return to a standing position.",
     ],
-    "videos": []
+    videos: [],
   },
-  "badminton": {
-    "steps": [
+  badminton: {
+    steps: [
       "Hold the racket with a firm grip.",
       "Position yourself in a ready stance with knees slightly bent.",
-      "Keep your eye on the shuttlecock and move to hit it."
+      "Keep your eye on the shuttlecock and move to hit it.",
     ],
-    "videos": []
+    videos: [],
   },
-  "jogging": {
-    "steps": [
+  jogging: {
+    steps: [
       "Put on comfortable running shoes and attire.",
       "Start with a brisk walk to warm up your muscles.",
       "Begin jogging at a comfortable pace.",
@@ -34,29 +34,29 @@
       "Breathe deeply and rhythmically as you run.",
       "Choose a route with a mix of terrains for variety.",
       "Pay attention to your surroundings and be cautious of traffic.",
-      "Slow down to a walk to cool down and stretch after your jog."
+      "Slow down to a walk to cool down and stretch after your jog.",
     ],
-    "videos": []
+    videos: [],
   },
-  "pushups": {
-    "steps": [
+  pushups: {
+    steps: [
       "Start in a plank position with your hands slightly wider than shoulder-width apart.",
       "Engage your core and lower yourself down by bending your elbows.",
       "Keep your body in a straight line from head to heels.",
       "Pause when your chest is just above the ground.",
       "Exhale as you push back up to the starting position.",
-      "Repeat for the desired number of repetitions."
+      "Repeat for the desired number of repetitions.",
     ],
-    "videos": []
+    videos: [],
   },
-  "jumping_jacks": {
-    "steps": [
+  jumping_jacks: {
+    steps: [
       "Stand with your feet together and arms by your sides.",
       "Jump and spread your feet apart while raising your arms above your head.",
       "Land softly on the balls of your feet.",
       "Jump again and return to the starting position.",
-      "Repeat the jumping motion while maintaining a steady pace."
+      "Repeat the jumping motion while maintaining a steady pace.",
     ],
-    "videos": []
-  }
-}
+    videos: [],
+  },
+};

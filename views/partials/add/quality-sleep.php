@@ -3,6 +3,7 @@
     <h1 class="ff-leauge-gothic fs-700 text-accent text-center">
       Quality Sleep
     </h1>
+    <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
   </header>
   <form method="post" id="qualitySleepForm" enctype="multipart/form-data">
     <div class=" glass-input-containers py-4">

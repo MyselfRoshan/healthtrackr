@@ -1,6 +1,5 @@
 <?php
 
-use App\Helper\Timezone;
 use App\Http\Forms\SignupForm;
 use Database\Database;
 

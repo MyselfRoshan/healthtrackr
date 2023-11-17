@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS public."user"
 (
-    user_id SERIAL PRIMARY KEY,
+  user_id SERIAL PRIMARY KEY,
 	first_name VARCHAR (50) NOT NULL,
 	last_name VARCHAR (50) NOT NULL,
 	username VARCHAR (50) UNIQUE NOT NULL,
@@ -8,18 +8,26 @@ CREATE TABLE IF NOT EXISTS public."user"
 	email VARCHAR(25) UNIQUE NOT NULL,
 	created_on TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
 	last_login TIMESTAMP(0),
-	profile_pic bytea,
-    reset_token_hash VARCHAR (255),
-    reset_token_expires_at TIMESTAMP(0),
 	timezone VARCHAR (40)
+	profile_pic VARCHAR(50),
+  reset_token_hash VARCHAR (255),
+  reset_token_expires_at TIMESTAMP(0),
 )
 
 CREATE TABLE daily_exercise (
   user_id INTEGER NOT NULL REFERENCES public.user(user_id),
   date DATE NOT NULL,
-  exercise_name VARCHAR(255) NOT NULL,
-  set_target INTEGER NOT NULL,
-  performed_time INTEGER NOT NULL,
+  name VARCHAR(20) NOT NULL,
+  target SMALLINT NOT NULL,
+  actual SMALLINT NOT NULL,
+  PRIMARY KEY (user_id, date)
+);
+
+CREATE TABLE stay_hydrated (
+  user_id INTEGER NOT NULL REFERENCES public.user(user_id),
+  date DATE NOT NULL,
+  target SMALLINT NOT NULL,
+  intaked SMALLINT NOT NULL,
   PRIMARY KEY (user_id, date)
 );
 
