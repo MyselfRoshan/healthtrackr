@@ -1,9 +1,17 @@
 <section class="quality-sleep add-wrapper">
-  <header>
+  <header class="d-flex">
     <h1 class="ff-leauge-gothic fs-700 text-accent text-center">
       Quality Sleep
     </h1>
-    <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+    <div class="d-flex">
+      <span class="text-dark-400 fw-500 me-3">
+        Send notification
+      </span>
+      <!-- <div class="notification-toggler"> -->
+      <input type="checkbox" id="switch" />
+      <label for="switch">Toggle</label>
+      <!-- </div> -->
+    </div>
   </header>
   <form method="post" id="qualitySleepForm" enctype="multipart/form-data">
     <div class=" glass-input-containers py-4">

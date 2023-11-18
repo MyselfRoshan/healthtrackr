@@ -10,14 +10,17 @@
   --card4-gradient-color1: #11998e;
   --card4-gradient-color2: #38ef7d;
   header {
+    --justify-content: space-between;
     h2 {
       text-transform: uppercase;
     }
 
-    .switch {
+    // notification toggle start
+    #switch {
       height: 0;
       width: 0;
       visibility: hidden;
+      display: none;
     }
 
     label {
@@ -26,12 +29,13 @@
       width: 42px;
       height: 22px;
       background: var(--clr-ash);
+      // background: var(--card1-gradient-color1);
       display: block;
       border-radius: 10px;
       position: relative;
 
       &::after {
-        content: "a";
+        content: "";
         --diameter: 16px;
         --spacing: 3px;
         position: absolute;
@@ -56,6 +60,7 @@
       }
     }
   }
+  // notification toggle end
 
   .cards {
     --grid-gap: 2rem;

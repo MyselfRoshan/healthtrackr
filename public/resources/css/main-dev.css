@@ -2774,13 +2774,17 @@ div.ndp-nepali-box a {
   --card4-gradient-color1: #11998e;
   --card4-gradient-color2: #38ef7d;
 }
+.dashboard__content header {
+  --justify-content: space-between;
+}
 .dashboard__content header h2 {
   text-transform: uppercase;
 }
-.dashboard__content header .switch {
+.dashboard__content header #switch {
   height: 0;
   width: 0;
   visibility: hidden;
+  display: none;
 }
 .dashboard__content header label {
   cursor: pointer;
@@ -2793,7 +2797,7 @@ div.ndp-nepali-box a {
   position: relative;
 }
 .dashboard__content header label::after {
-  content: "a";
+  content: "";
   --diameter: 16px;
   --spacing: 3px;
   position: absolute;
