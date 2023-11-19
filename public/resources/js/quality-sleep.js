@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   };
-  
-  setSleep();
+
+  Sleep = JSON.parse(localStorage.getItem("Sleep"));
+  updateSleepData(currentDate);
 
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
@@ -85,13 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* ***Functions*** */
-  // Function To get Sleep obj from Database or Local Storage
-  async function setSleep() {
-    const response = await ajax(`${window.location.href}/data`);
-    Sleep =
-      JSON.parse(localStorage.getItem("Sleep")) ?? (await response.json());
-    updateSleepData(currentDate);
-  }
 
   // Function To saves Sleep obj to Database
   async function saveToDatabase() {

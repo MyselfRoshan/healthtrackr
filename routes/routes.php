@@ -24,23 +24,32 @@ if (isset($session->user)) {
     // Add
     $router->get("/{$session->user['username']}/add", 'user/add.php')->only('auth');
 
+    // Daily Exercise
     $router->get("/{$session->user['username']}/add/daily-exercise", 'user/daily-exercise/create.php')->only('auth');
     $router->get("/{$session->user['username']}/add/daily-exercise/data", 'user/daily-exercise/data.php')->only('auth');
     $router->post("/{$session->user['username']}/add/daily-exercise", 'user/daily-exercise/store.php')->only('auth');
 
+    // Stay Hydrated
     $router->get("/{$session->user['username']}/add/stay-hydrated", 'user/stay-hydrated/create.php')->only('auth');
     $router->get("/{$session->user['username']}/add/stay-hydrated/data", 'user/stay-hydrated/data.php')->only('auth');
     $router->post("/{$session->user['username']}/add/stay-hydrated", 'user/stay-hydrated/store.php')->only('auth');
 
+    // Balanced Nutrition
     $router->get("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
     // $router->post("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
 
+    // Quality Sleep
     $router->get("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/create.php')->only('auth');
     $router->get("/{$session->user['username']}/add/quality-sleep/data", 'user/quality-sleep/data.php')->only('auth');
     $router->post("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/store.php')->only('auth');
 
+    // Notification
+    $router->post("/{$session->user['username']}/add/daily-exercise/notification", 'user/notification/store.php')->only('auth');
+    $router->post("/{$session->user['username']}/add/stay-hydrated/notification", 'user/notification/store.php')->only('auth');
+    $router->post("/{$session->user['username']}/add/quality-sleep/notification", 'user/notification/store.php')->only('auth');
     // Profile
     $router->get("/{$session->user['username']}", 'user/index.php')->only('auth');
+    $router->get("/{$session->user['username']}/charts", 'user/charts.php')->only('auth');
     $router->get("/{$session->user['username']}/profile", 'user/profile/create.php')->only('auth');
     $router->post("/{$session->user['username']}/profile", 'user/profile/store.php')->only('auth');
 

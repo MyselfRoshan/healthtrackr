@@ -20,10 +20,30 @@
   }
 
   .btn {
+    transition: box-shadow 500ms ease-in-out, background 500ms ease,
+      scale 250ms ease-in;
+  }
+  .btn:first-of-type {
     --bg: var(--clr-secondary);
-    --bs: var(--clr-dark-400);
-    --hbs: var(--clr-secondary-400);
-    grid-column: 6/8;
+    grid-column: 5/7;
+    box-shadow: -4px 4px var(--clr-light);
+    &:is(:hover, :focus-visible) {
+      --bg: var(--clr-light);
+      color: var(--clr-secondary);
+      box-shadow: -4px -4px var(--clr-secondary);
+      scale: 1.05;
+    }
+  }
+  .btn:last-of-type {
+    --bg: var(--clr-light);
+    grid-column: 7/9;
+    box-shadow: 4px 4px var(--clr-secondary);
+    &:is(:hover, :focus-visible) {
+      --bg: var(--clr-secondary);
+      color: var(--clr-light);
+      box-shadow: 4px -4px var(--clr-light);
+      scale: 1.05;
+    }
   }
 }
 

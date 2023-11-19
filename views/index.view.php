@@ -2,6 +2,7 @@
 <html>
 
 <?php require_view("partials/head.php") ?>
+
 <body>
   <main>
     <section class="hero bg-dot-pattern">
@@ -17,17 +18,17 @@
           more energetic life? Start tracking your fitness journey now and
           dominate your goals.
         </p>
-        <button class="btn btn-l fs-500 fw-500 text-light" aria-labelledby="Signup button">
-          <span></span>
-          <a href="/signup">
-            Sign up
-          </a>
-          <span></span>
-        </button>
         <button class="btn btn-l fs-500 fw-500 text-light" aria-labelledby="signin button">
           <span></span>
           <a href="/signin">
             Signin
+          </a>
+          <span></span>
+        </button>
+        <button class="btn btn-l fs-500 fw-500 text-secondary" aria-labelledby="Signup button">
+          <span></span>
+          <a href="/signup">
+            Sign up
           </a>
           <span></span>
         </button>
@@ -219,6 +220,8 @@
       </div>
     </footer>
   </main>
+  <!-- Apex chart -->
+  <!-- End of Apex chart -->
 </body>
 
 </html>
