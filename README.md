@@ -19,10 +19,12 @@ composer dump-autoload -o
 ## TO do:
 
 - [x] Implementation of databae in daily-exercise, stay-hydrated and balanced-diet.
-- [ ] Add send notification toggle in each and every add section card.
-- [ ] Creation of Notification System to send through email.
 - [ ] Make Dashboard using bookmarks in HT (firefox).
+  - [Using Apex Charts](https://apexcharts.com/) : [Demo dashboard](https://demo.adminkit.io/charts-apexcharts)
+  - [Mooris chart](https://morrisjs.github.io/morris.js/) : [Demo dashboard](https://colorlib.com/polygon/concept/pages/chart-morris.html)
+  - [E charts](https://github.com/apache/echarts) : [Demo dashboard](https://colorlib.com/polygon/gentelella/echarts.html)
+- [ ] Add send notification toggle in each and every add section card (USE php corn job to send notification).
+- [ ] Creation of Notification System to send through email.
 - [ ] Make admin dashboard if have time
 - [ ] Add "Delete" button in profile to delete account.
 - [ ] Implement token system to login in rather tha user id
-

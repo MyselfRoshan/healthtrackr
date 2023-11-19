@@ -1,11 +1,10 @@
 <?php
 
-use App\Helper\Mailer;
+use App\Helper\Mail;
 use App\Helper\PasswordResetToken;
 use App\Http\Forms\PasswordResetForm;
 use App\Session;
 use Database\Database;
-use PHPMailer\PHPMailer\Exception;
 
 extract($_POST);
 
@@ -26,7 +25,7 @@ if (!$form->validate($_POST)) {
     // If reset token expired regenerate new one and save to the database
     if ((!isset($session->reset_token) && !isset($session->reset_token_expires_at)) || strtotime($session->reset_token_expires_at) <= time()) {
         // $token = new PasswordResetToken(32, 15);
-        $token = new PasswordResetToken(21, 60);
+        $token = new PasswordResetToken(32);
         $session->reset_token = $token->getToken();
         $session->reset_token_expires_at = $token->getExpiry();
         $query = "UPDATE public.user
@@ -42,10 +41,6 @@ if (!$form->validate($_POST)) {
         Database::insert($query, $params);
     }
 
-    $mailer = Mailer::getInstance();
-    // Receipts
-    $mailer->setFrom(NOREPLY_SENDER_EMAIL_ADDRESS, NOREPLY_SENDER_NAME);
-    $mailer->addAddress($email);
     $HTMLBody = <<<HTMLBody
     <p>Hello there,</p>
     <p>We received a request to reset your password. If you didn't make this request, you can ignore this email.</p>
@@ -66,37 +61,15 @@ if (!$form->validate($_POST)) {
     <p>Best regards,<br>Health Trackr Team</p>
 
     HTMLBody;
+    $subject = "Click Here to Reset Your Password";
+    $mail = new Mail($email, $subject, $HTMLBody);
+    $mail->send();
 
-    $altBody = <<<altBody
-
-    Hello there,
-
-    We received a request to reset your password. If you didn't make this request, you can ignore this email.
-
-    If you did request a password reset, please copy and paste the link below into your browser's address bar to reset your password:
-
-    {$_SERVER['HTTP_ORIGIN']}/password-reset/{$session->reset_token}
-
-    This link will expire in 1 hour for security reasons.
-
-    If you have any questions or need further assistance, please don't hesitate to contact us.
-
-    Best regards,
-    Health Trackr Team
-
-    altBody;
-    try {
-        $mailer->Body = $HTMLBody;
-        $mailer->AltBody = $altBody;
-        // Send the email
-        $mailer->send();
-        require_view('passwordReset/email-sent-sucessfully.view.php', [
-            'scripts' => [
-                'type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"',
-                'nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"',
-            ],
-        ]);
-    } catch (Exception $e) {
-        echo 'Email could not be sent. Error: ', $mailer->ErrorInfo;
-    }
+    // Send the email
+    require_view('passwordReset/email-sent-sucessfully.view.php', [
+        'scripts' => [
+            'type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"',
+            'nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"',
+        ],
+    ]);
 }

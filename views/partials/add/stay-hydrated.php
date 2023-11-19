@@ -1,11 +1,18 @@
 <section class="stay-hydrated add-wrapper">
-  <header>
-    <h1 class="ff-leauge-gothic fs-700 text-accent text-center">
+  <header class="d-flex">
+    <h1 class="ff-leauge-gothic fs-700 text-accent">
       Stay Hydrated
     </h1>
+    <div class="d-flex">
+      <span class="text-tertiary fw-500">
+        Send notification
+      </span>
+      <input type="checkbox" id="switch" name="water_notification" value="" />
+      <label for="switch">Toggle</label>
+    </div>
   </header>
-  <form method="post" id="glassWaterForm" class="glass-water__form" enctype="multipart/form-data">
-    <div class="glass-inputs-container py-4">
+  <form method="post" id="glassWaterForm" enctype="multipart/form-data" class="glass-water__form pt-8">
+    <div class="glass-inputs-container pb-4">
       <label for="select-date">Choose Date:</label>
       <input type="text" id="select-date" name="selectDate" />
 

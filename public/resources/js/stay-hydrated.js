@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
-  setWater();
+  Water = JSON.parse(localStorage.getItem("Water"));
+  updateWaterData(currentDate);
 
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
@@ -62,13 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
   glassRemove.addEventListener("click", () => handleGlassAction(false));
 
   /* ***Functions*** */
-  // Function To get Water obj from Database or Local Storage
-  async function setWater() {
-    const response = await ajax(`${window.location.href}/data`);
-    Water =
-      JSON.parse(localStorage.getItem("Water")) ?? (await response.json());
-    updateWaterData(currentDate);
-  }
 
   // Function saves Water obj to Database
   async function saveToDatabase() {

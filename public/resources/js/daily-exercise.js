@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
       actual: 30,
     },
   };
-  setExercise();
+
+  Exercise = JSON.parse(localStorage.getItem("Exercise"));
+  updateExerciseData(currentDate);
   // Initialize Exercise object from localStorage
 
   // Fetch and store exercise instructions
@@ -51,13 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ***Functions*** */
-  // Function To get Exercise obj from Database or Local Storage
-  async function setExercise() {
-    const response = await ajax(`${window.location.href}/data`);
-    Exercise =
-      JSON.parse(localStorage.getItem("Exercise")) ?? (await response.json());
-    updateExerciseData(currentDate);
-  }
 
   // Function saves Exercise obj to Database
   async function saveToDatabase() {
@@ -66,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "post",
       localStorage.getItem("Exercise"),
     );
-    // console.log(response);
-    console.log(await response.json());
+    console.log(response);
+    // console.log(await response.json());
     if (response.status === 200) console.log("Saved Sucessfully");
   }
   // Function to update exercise instructions based on the selected exercise
