@@ -13,22 +13,25 @@ async function fetchData(endpoint, storageKey) {
 }
 
 function renderChart(dates, targets, intaked) {
-  const maxToDisplay = Math.max(...targets.concat(intaked));
-  console.log(dates, targets, intaked);
-
   const optionsLine = {
     chart: {
-      height: 328,
+      height: 400,
       type: "line",
       zoom: {
+        type: "x",
         enabled: true,
+        autoScaleYaxis: true,
       },
-      dropShadow: {
-        enabled: true,
-        top: 3,
-        left: 2,
-        blur: 4,
-        opacity: 1,
+      fill: {
+        type: "gradient",
+        colors: ["#1A73E8", "#B32824"],
+        gradient: {
+          shadeIntensity: 1,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 0.5,
+          stops: [0, 10, 50],
+        },
       },
     },
     stroke: {
@@ -66,6 +69,7 @@ function renderChart(dates, targets, intaked) {
     },
     labels: dates,
     xaxis: {
+      tickPlacement: "on",
       tooltip: {
         enabled: false,
       },
@@ -75,12 +79,16 @@ function renderChart(dates, targets, intaked) {
         text: "Glasses (1 Glass = 250 ml)",
       },
       min: 0,
-      max: maxToDisplay,
     },
     legend: {
       position: "top",
       horizontalAlign: "right",
       offsetY: -20,
+    },
+    grid: {
+      row: {
+        colors: ["#fff", "#f2f2f2"],
+      },
     },
   };
 
@@ -92,282 +100,190 @@ function renderChart(dates, targets, intaked) {
 
   console.log("Rendering chart with data");
 }
-
+/**
+ * TODO: If waterData && exerciseData && sleepData then show data else print loading
+ *
+ *
+ *       If !waterData.length && !sleepData.length && !exerciseData.length
+ *          Show: Welcome user for first login
+ *       Else if any of the waterData, sleepData or exerciseData are empty dont show any chart
+ *
+ */
 async function fetchDataAndRender() {
   const [exerciseData, sleepData, waterData] = await Promise.all([
     fetchData("/add/daily-exercise/data", "Exercise"),
     fetchData("/add/quality-sleep/data", "Sleep"),
     fetchData("/add/stay-hydrated/data", "Water"),
   ]);
+  /*   if (!waterData.length && !sleepData.length && !exerciseData.length) {
+    console.log(
+      "Welcome USER.Please insert data in Add section to show in the dashboard",
+    );
+  } else */ if (waterData && exerciseData && sleepData) {
+    function convertAndSort(obj) {
+      const dates = Object.keys(obj).sort();
+      const dataArrays = Object.keys(obj[dates[0]]).map(key =>
+        dates.map(date => obj[date][key]),
+      );
 
-  if (waterData && exerciseData && sleepData) {
-    const dates = Object.keys(waterData).sort();
-    const targets = dates.map(date => waterData[date].target);
-    const intaked = dates.map(date => waterData[date].intaked);
-    renderChart(dates, targets, intaked);
-
-    // var options = {
-    //   series: [
-    //     {
-    //       name: "Bob",
-    //       data: [
-    //         {
-    //           x: "Design",
-    //           y: [
-    //             new Date("2019-03-05").getTime(),
-    //             new Date("2019-03-08").getTime(),
-    //           ],
-    //         },
-    //         {
-    //           x: "Code",
-    //           y: [
-    //             new Date("2019-03-08").getTime(),
-    //             new Date("2019-03-11").getTime(),
-    //           ],
-    //         },
-    //         {
-    //           x: "Test",
-    //           y: [
-    //             new Date("2019-03-11").getTime(),
-    //             new Date("2019-03-16").getTime(),
-    //           ],
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       name: "Joe",
-    //       data: [
-    //         {
-    //           x: "Design",
-    //           y: [
-    //             new Date("2019-03-02").getTime(),
-    //             new Date("2019-03-05").getTime(),
-    //           ],
-    //         },
-    //         {
-    //           x: "Code",
-    //           y: [
-    //             new Date("2019-03-06").getTime(),
-    //             new Date("2019-03-09").getTime(),
-    //           ],
-    //         },
-    //         {
-    //           x: "Test",
-    //           y: [
-    //             new Date("2019-03-10").getTime(),
-    //             new Date("2019-03-19").getTime(),
-    //           ],
-    //         },
-    //       ],
-    //     },
-    //   ],
-    //   chart: {
-    //     height: 350,
-    //     type: "rangeBar",
-    //   },
-    //   plotOptions: {
-    //     bar: {
-    //       horizontal: true,
-    //     },
-    //   },
-    //   dataLabels: {
-    //     enabled: true,
-    //     formatter: function (val) {
-    //       var a = new Date(val[0]);
-    //       var b = new Date(val[1]);
-
-    //       var timeDiff = Math.abs(b.getTime() - a.getTime());
-    //       var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-    //       return diffDays + (diffDays > 1 ? " days" : " day");
-    //     },
-    //   },
-    //   fill: {
-    //     type: "gradient",
-    //     gradient: {
-    //       shade: "light",
-    //       type: "vertical",
-    //       shadeIntensity: 0.25,
-    //       gradientToColors: undefined,
-    //       inverseColors: true,
-    //       opacityFrom: 1,
-    //       opacityTo: 1,
-    //       stops: [50, 0, 100, 100],
-    //     },
-    //   },
-    //   xaxis: {
-    //     type: "datetime",
-    //   },
-    //   legend: {
-    //     position: "top",
-    //   },
-    // };
-
-    // var chart = new ApexCharts(
-    //   document.querySelector("#quality-sleep"),
-    //   options,
-    // );
-    // chart.render();
-    /* First attempt */
-    // function formatSleepData(sleepData) {
-    //   const seriesData = [];
-
-    //   Object.entries(sleepData).forEach(([date, sleepEntry]) => {
-    //     const bedTime = new Date(
-    //       `${date} ${sleepEntry.bed.hour}:${sleepEntry.bed.minute}`,
-    //     );
-    //     const wakeupTime = new Date(
-    //       `${date} ${sleepEntry.wakeup.hour}:${sleepEntry.wakeup.minute}`,
-    //     );
-
-    //     seriesData.push({
-    //       x: date,
-    //       y: [bedTime.getTime(), wakeupTime.getTime()],
-    //     });
-    //   });
-
-    //   return [{ name: "Sleep", data: seriesData }];
-    // }
-
-    // // Format the sleep data for ApexCharts
-    // const apexChartSeries = formatSleepData(sleepData);
-
-    // // ApexCharts options
-    // const options = {
-    //   series: apexChartSeries,
-    //   chart: {
-    //     height: 350,
-    //     type: "rangeBar",
-    //   },
-    //   plotOptions: {
-    //     bar: {
-    //       horizontal: true,
-    //     },
-    //   },
-    //   dataLabels: {
-    //     enabled: true,
-    //     formatter: function (val) {
-    //       var a = new Date(val[0]);
-    //       var b = new Date(val[1]);
-
-    //       var timeDiff = Math.abs(b.getTime() - a.getTime());
-    //       var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-    //       return diffDays + (diffDays > 1 ? " days" : " day");
-    //     },
-    //   },
-    //   fill: {
-    //     type: "gradient",
-    //     gradient: {
-    //       shade: "light",
-    //       type: "vertical",
-    //       shadeIntensity: 0.25,
-    //       gradientToColors: undefined,
-    //       inverseColors: true,
-    //       opacityFrom: 1,
-    //       opacityTo: 1,
-    //       stops: [50, 0, 100, 100],
-    //     },
-    //   },
-    //   xaxis: {
-    //     type: "datetime",
-    //   },
-    //   legend: {
-    //     position: "top",
-    //   },
-    // };
-
-    // // Initialize and render the ApexCharts
-    // const chart = new ApexCharts(
-    //   document.querySelector("#quality-sleep"),
-    //   options,
-    // );
-    // chart.render();
-
-    /* Second Attempt */
-
-    let durationHours;
-    let durationMinutes;
-    function formatSleepData(sleepData) {
-      const seriesData = [];
-
-      Object.entries(sleepData).forEach(([dateBS, entry]) => {
-        const date = NepaliFunctions.BS2AD(dateBS, "YYYY-MM-DD");
-        console.log(date);
-        const bedTime = new Date(
-          `${date} ${entry.bed.hour}:${entry.bed.minute}`,
-        );
-        const wakeupTime = new Date(
-          `${date} ${entry.wakeup.hour}:${entry.wakeup.minute}`,
-        );
-        durationHours = parseInt(entry.duration.hour);
-        durationMinutes = parseInt(entry.duration.minute);
-
-        seriesData.push({
-          x: `${entry.bed.hour}:${entry.bed.minute}`,
-          y: [bedTime.getTime(), wakeupTime.getTime()],
-        });
-      });
-
-      return [{ name: "Sleep", data: seriesData }];
+      return [dates, ...dataArrays];
     }
+    function formatTime(timeObj) {
+      return `${timeObj.hour}:${timeObj.minute}`;
+    }
+    const [waterDates, waterTargets, waterIntaked] = convertAndSort(waterData);
+    renderChart(waterDates, waterTargets, waterIntaked);
 
-    // Format the sleep data for ApexCharts
-    const apexChartSeries = formatSleepData(sleepData);
-    console.log(apexChartSeries);
-    // ApexCharts options
-    const options = {
-      series: apexChartSeries,
+    // Call the function for sleepData
+    const [sleepDates, sleepBed, sleepWakeup, sleepDuration] =
+      convertAndSort(sleepData);
+    const formattedSleepBed = sleepBed.map(formatTime);
+    const formattedSleepWakeup = sleepWakeup.map(formatTime);
+    const formattedSleepDuration = sleepDuration.map(formatTime);
+
+    const [exerciseDates, exerciseNames, exerciseTargets, exerciseActual] =
+      convertAndSort(exerciseData);
+    console.log(convertAndSort(exerciseData));
+
+    const exerciseSeries = [
+      {
+        name: "Actual",
+        data: exerciseDates.map((date, index) => {
+          const targetFulfilled =
+            exerciseActual[index] >= exerciseTargets[index];
+          return {
+            x: date,
+            y: exerciseActual[index],
+            goals: [
+              {
+                name: "Expected",
+                value: exerciseTargets[index],
+                strokeHeight: targetFulfilled ? 10 : 5,
+                strokeWidth: targetFulfilled ? 0 : 10,
+                strokeDashArray: 2,
+                strokeLineCap: targetFulfilled ? "round" : "",
+                // strokeLineCap: "round",
+                strokeColor: "hsl(164 95% 43%)",
+              },
+            ],
+          };
+        }),
+      },
+    ];
+    var options = {
+      series: exerciseSeries,
       chart: {
-        height: 350,
-        type: "rangeBar",
+        height: 400,
+        type: "bar",
       },
       plotOptions: {
         bar: {
-          horizontal: true,
+          borderRadius: 10,
+          columnWidth: "50%",
         },
       },
-      dataLabels: {
+      zoom: {
+        type: "x",
         enabled: true,
-        formatter: function (val) {
-          //   var a = new Date(val[0]);
-          //   var b = new Date(val[1]);
-
-          //   // Calculate the difference in hours and minutes
-          //   var diffHours = b.getHours() - a.getHours();
-          //   var diffMinutes = b.getMinutes() - a.getMinutes();
-
-          // Display the sleep duration
-          return `${durationHours} hours ${durationMinutes} minutes`;
-        },
+        autoScaleYaxis: true,
       },
-      fill: {
-        type: "gradient",
-        gradient: {
-          shade: "light",
-          type: "vertical",
-          shadeIntensity: 0.25,
-          gradientToColors: undefined,
-          inverseColors: true,
-          opacityFrom: 1,
-          opacityTo: 1,
-          stops: [50, 0, 100, 100],
+      stroke: {
+        width: 1,
+      },
+
+      grid: {
+        row: {
+          colors: ["#fff", "#f2f2f2"],
         },
       },
       xaxis: {
-        type: "datetime",
+        labels: {
+          rotate: -45,
+        },
+        tickPlacement: "on",
       },
-      legend: {
-        position: "top",
+      yaxis: {
+        title: {
+          text: "Minutes",
+        },
+      },
+      tooltip: {
+        x: {
+          formatter: (val, opt) => {
+            const exerciseName = exerciseNames[opt.dataPointIndex];
+            return `Exercise: ${
+              exerciseName.charAt(0).toUpperCase() + exerciseName.slice(1)
+            }`;
+          },
+        },
       },
     };
-
-    // Initialize and render the ApexCharts
-    const chart = new ApexCharts(
-      document.querySelector("#quality-sleep"),
+    var chart = new ApexCharts(
+      document.querySelector("#daily-exercise__bar-chart"),
       options,
     );
     chart.render();
+
+    /* New radar */
+    function calculateExerciseStats(data) {
+      const exerciseStats = {};
+
+      for (const date in data) {
+        const { name, target, actual } = data[date];
+
+        if (!exerciseStats[name]) {
+          exerciseStats[name] = { totalTarget: 0, totalActual: 0, count: 0 };
+        }
+
+        exerciseStats[name].totalTarget += target;
+        exerciseStats[name].totalActual += actual;
+        exerciseStats[name].count += 1;
+      }
+
+      const averageStats = {};
+
+      for (const exerciseName in exerciseStats) {
+        const { totalTarget, totalActual, count } = exerciseStats[exerciseName];
+        const averageTarget = totalTarget / count;
+        const averageActual = totalActual / count;
+        averageStats[exerciseName] = { averageTarget, averageActual };
+      }
+
+      return averageStats;
+    }
+
+    const averageStats = calculateExerciseStats(exerciseData);
+    const [exerciseRadarNames, exerciseAvgTargets, exerciseAvgActual] =
+      convertAndSort(averageStats);
+
+    console.log("Distinct Exercises:", averageStats, exerciseRadarNames);
+
+    const radarOptions = {
+      series: [
+        { name: "Target", data: exerciseAvgTargets },
+        { name: "Actual", data: exerciseAvgActual },
+      ],
+      chart: {
+        height: 400,
+        type: "radar",
+        dropShadow: { enabled: true, blur: 1, left: 1, top: 1 },
+      },
+      title: {
+        text: "Average Exercise Duration : Minutes per Activity",
+        align: "center",
+        offsetY: 25,
+        offsetX: 20,
+      },
+      stroke: { width: 2 },
+      fill: { opacity: 0.1 },
+      markers: { size: 0 },
+      xaxis: { categories: exerciseRadarNames },
+    };
+
+    new ApexCharts(
+      document.querySelector("#daily-exercise__radar-chart"),
+      radarOptions,
+    ).render();
   } else {
     console.log("Loading...");
   }

@@ -3,3 +3,5 @@
 </header>
 <div id="stay-hydrated" class=""></div>
 <div id="quality-sleep" class=""></div>
+<div id="daily-exercise__bar-chart" class=""></div>
+<div id="daily-exercise__radar-chart" class=""></div>
