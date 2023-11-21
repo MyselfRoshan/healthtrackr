@@ -22,3 +22,5 @@ foreach ($data as $date => $row) {
     ];
     Database::insert($query, $params);
 }
+
+echo json_encode($data);

@@ -8,7 +8,24 @@ const sleepDuration = document.querySelector(".sleep-time");
 document.addEventListener("DOMContentLoaded", function () {
   // Initial load and change event
   const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD");
-  let Sleep = {
+  // let Sleep = {
+  //   [currentDate]: {
+  //     bed: {
+  //       hour: "22",
+  //       minute: "00",
+  //     },
+  //     wakeup: {
+  //       hour: "06",
+  //       minute: "00",
+  //     },
+  //     duration: {
+  //       hour: "8",
+  //       minute: "00",
+  //     },
+  //   },
+  // };
+
+  let Sleep = JSON.parse(localStorage.getItem("Sleep")) ?? {
     [currentDate]: {
       bed: {
         hour: "22",
@@ -24,8 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   };
-
-  Sleep = JSON.parse(localStorage.getItem("Sleep"));
   updateSleepData(currentDate);
 
   selectDate.value = currentDate;

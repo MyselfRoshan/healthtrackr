@@ -16,14 +16,12 @@ const waterPerGlass = 250; // 250ml
 document.addEventListener("DOMContentLoaded", () => {
   // Initial load and change event
   const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD");
-  let Water = {
+  let Water = JSON.parse(localStorage.getItem("Water")) ?? {
     [currentDate]: {
       target: 8,
       intaked: 0,
     },
   };
-
-  Water = JSON.parse(localStorage.getItem("Water"));
   updateWaterData(currentDate);
 
   selectDate.value = currentDate;
@@ -72,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.getItem("Water"),
     );
     console.log(response);
-    // console.log(await response.json());
+    console.log(await response.json());
     if (response.status === 200) console.log("Saved Sucessfully");
   }
 
