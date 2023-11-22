@@ -36,4 +36,4 @@ foreach ($data as $d) {
         ]
     ];
 }
-echo json_encode($sleep);
+echo json_encode($sleep, JSON_FORCE_OBJECT);

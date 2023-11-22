@@ -19,4 +19,4 @@ foreach ($data as $d) {
         ]
     ];
 }
-echo json_encode($water);
+echo json_encode($water, JSON_FORCE_OBJECT);
