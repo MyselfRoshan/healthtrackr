@@ -1,4 +1,5 @@
 import ajax from "./ajax.js";
+import Notification from "./notification.js";
 
 const glassWater = document.querySelector(".glass-water");
 const glassAdd = document.querySelector(".glass-add");
@@ -52,9 +53,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelector("#glassWaterForm").addEventListener("submit", e => {
+  // Event listener for form submission enable clicking after 5 seconds
+  let canClick = true;
+  document.querySelector("#activity-form").addEventListener("submit", e => {
     e.preventDefault();
-    saveToDatabase();
+    const submitButton = document.querySelector("[type=submit]");
+
+    if (canClick) {
+      // Execute your function here
+      saveToDatabase();
+      canClick = false;
+      setTimeout(() => {
+        canClick = true;
+      }, 5000);
+    } else {
+      submitButton.disabled = true;
+      const n = new Notification(document.querySelector(".notification"));
+      console.log(
+        n.create(
+          "<ion-icon name='close-circle'></ion-icon></ion-icon> Error",
+          `Wait for 5 seconds before clicking again.`,
+          6,
+        ),
+      );
+      let countdown = 4;
+      const countdownInterval = setInterval(() => {
+        n.updateDescription(
+          `Wait for ${countdown} second${
+            countdown === 1 ? "" : "s"
+          } before clicking again.`,
+        );
+        countdown--;
+
+        if (countdown < 0) {
+          clearInterval(countdownInterval);
+          submitButton.disabled = false;
+        }
+      }, 1000);
+    }
   });
 
   glassAdd.addEventListener("click", () => handleGlassAction(true));
@@ -70,8 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.getItem("Water"),
     );
     console.log(response);
-    console.log(await response.json());
-    if (response.status === 200) console.log("Saved Sucessfully");
+    // console.log(await response.json());
+    if (response.status === 200) {
+      new Notification(document.querySelector(".notification")).create(
+        "<ion-icon name='checkmark-circle'></ion-icon> Success",
+        "Drinking Water data saved successfully",
+      );
+    }
   }
 
   function waterLevel(controller) {

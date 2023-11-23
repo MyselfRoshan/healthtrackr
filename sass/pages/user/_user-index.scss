@@ -4,9 +4,10 @@ $menu-width-extended: $menu-width + 200px;
 $menu-margin-inline: math.div(($menu-width - 48px), 2);
 .dashboard {
   --menu-width: #{$menu-width};
-  height: 100%;
 
+  height: 100%;
   max-width: 90rem;
+  position: relative;
   display: grid;
   grid-template-columns: var(--menu-width) calc(100% - var(--menu-width));
   transition: 0.3s ease;

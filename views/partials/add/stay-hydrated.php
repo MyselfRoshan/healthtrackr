@@ -11,7 +11,7 @@
       <label for="switch">Toggle</label>
     </div>
   </header>
-  <form method="post" id="glassWaterForm" enctype="multipart/form-data" class="glass-water__form pt-8">
+  <form method="post" id="activity-form" enctype="multipart/form-data" class="glass-water__form pt-8">
     <div class="glass-inputs-container pb-4">
       <label for="select-date">Choose Date:</label>
       <input type="text" id="select-date" name="selectDate" />
@@ -40,3 +40,4 @@
     <button type="submit" class="btn btn-m mt-4 mx-auto">Save</button>
   </form>
 </section>
+<div class="notification"></div>

@@ -12,6 +12,7 @@
 @use "./composition/container";
 
 // block
+@use "./block/notification";
 @use "./block/inputfield";
 @use "./block/button";
 @use "./block/validation-alerts";

@@ -1,4 +1,5 @@
 import ajax from "./ajax.js";
+import Notification from "./notification.js";
 
 const selectDate = document.getElementById("select-date");
 const bedTime = document.getElementById("bed-time");
@@ -8,22 +9,6 @@ const sleepDuration = document.querySelector(".sleep-time");
 document.addEventListener("DOMContentLoaded", function () {
   // Initial load and change event
   const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD");
-  // let Sleep = {
-  //   [currentDate]: {
-  //     bed: {
-  //       hour: "22",
-  //       minute: "00",
-  //     },
-  //     wakeup: {
-  //       hour: "06",
-  //       minute: "00",
-  //     },
-  //     duration: {
-  //       hour: "8",
-  //       minute: "00",
-  //     },
-  //   },
-  // };
 
   let Sleep = JSON.parse(localStorage.getItem("Sleep")) ?? {
     [currentDate]: {
@@ -95,13 +80,46 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  document.querySelector("#qualitySleepForm").addEventListener("submit", e => {
+  // Event listener for form submission enable clicking after 5 seconds
+  let canClick = true;
+  document.querySelector("#activity-form").addEventListener("submit", e => {
     e.preventDefault();
-    saveToDatabase();
+    const submitButton = document.querySelector("[type=submit]");
+
+    if (canClick) {
+      // Execute your function here
+      saveToDatabase();
+      canClick = false;
+      setTimeout(() => {
+        canClick = true;
+      }, 5000);
+    } else {
+      submitButton.disabled = true;
+      const n = new Notification(document.querySelector(".notification"));
+      console.log(
+        n.create(
+          "<ion-icon name='close-circle'></ion-icon></ion-icon> Error",
+          `Wait for 5 seconds before clicking again.`,
+          6,
+        ),
+      );
+      let countdown = 4;
+      const countdownInterval = setInterval(() => {
+        n.updateDescription(
+          `Wait for ${countdown} second${
+            countdown === 1 ? "" : "s"
+          } before clicking again.`,
+        );
+        countdown--;
+
+        if (countdown < 0) {
+          clearInterval(countdownInterval);
+          submitButton.disabled = false;
+        }
+      }, 1000);
+    }
   });
-
   /* ***Functions*** */
-
   // Function To saves Sleep obj to Database
   async function saveToDatabase() {
     const response = await ajax(
@@ -110,8 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.getItem("Sleep"),
     );
     console.log(response);
-    // console.log(await response.json());
-    if (response.status === 200) console.log("Saved Sucessfully");
+    // console.log(response.json());
+    if (response.status === 200) {
+      new Notification(document.querySelector(".notification")).create(
+        "<ion-icon name='checkmark-circle'></ion-icon> Success",
+        "Sleep data saved successfully",
+      );
+    }
   }
 
   // Function to format time with AM/PM

@@ -115,36 +115,38 @@ async function fetchDataAndRender() {
     fetchData("/add/quality-sleep/data", "Sleep"),
     fetchData("/add/stay-hydrated/data", "Water"),
   ]);
-  /*   if (!waterData.length && !sleepData.length && !exerciseData.length) {
+  function convertAndSort(obj) {
+    const dates = Object.keys(obj).sort();
+    const dataArrays = Object.keys(obj[dates[0]]).map(key =>
+      dates.map(date => obj[date][key]),
+    );
+
+    return [dates, ...dataArrays];
+  }
+  function formatTime(timeObj) {
+    return `${timeObj.hour}:${timeObj.minute}`;
+  }
+  function isObjEmpty(objectName) {
+    return (
+      objectName &&
+      Object.keys(objectName).length === 0 &&
+      objectName.constructor === Object
+    );
+  }
+
+  if (
+    isObjEmpty(exerciseData) &&
+    isObjEmpty(waterData) &&
+    isObjEmpty(sleepData)
+  ) {
     console.log(
       "Welcome USER.Please insert data in Add section to show in the dashboard",
     );
-  } else */ if (waterData && exerciseData && sleepData) {
-    function convertAndSort(obj) {
-      const dates = Object.keys(obj).sort();
-      const dataArrays = Object.keys(obj[dates[0]]).map(key =>
-        dates.map(date => obj[date][key]),
-      );
-
-      return [dates, ...dataArrays];
-    }
-    function formatTime(timeObj) {
-      return `${timeObj.hour}:${timeObj.minute}`;
-    }
-    const [waterDates, waterTargets, waterIntaked] = convertAndSort(waterData);
-    renderChart(waterDates, waterTargets, waterIntaked);
-
-    // Call the function for sleepData
-    const [sleepDates, sleepBed, sleepWakeup, sleepDuration] =
-      convertAndSort(sleepData);
-    const formattedSleepBed = sleepBed.map(formatTime);
-    const formattedSleepWakeup = sleepWakeup.map(formatTime);
-    const formattedSleepDuration = sleepDuration.map(formatTime);
-
+  } else if (!isObjEmpty(exerciseData)) {
+    /* Exercise Bar Chart */
     const [exerciseDates, exerciseNames, exerciseTargets, exerciseActual] =
       convertAndSort(exerciseData);
     console.log(convertAndSort(exerciseData));
-
     const exerciseSeries = [
       {
         name: "Actual",
@@ -162,7 +164,6 @@ async function fetchDataAndRender() {
                 strokeWidth: targetFulfilled ? 0 : 10,
                 strokeDashArray: 2,
                 strokeLineCap: targetFulfilled ? "round" : "",
-                // strokeLineCap: "round",
                 strokeColor: "hsl(164 95% 43%)",
               },
             ],
@@ -223,8 +224,7 @@ async function fetchDataAndRender() {
       options,
     );
     chart.render();
-
-    /* New radar */
+    /* Exercise Radar Chart */
     function calculateExerciseStats(data) {
       const exerciseStats = {};
 
@@ -284,6 +284,16 @@ async function fetchDataAndRender() {
       document.querySelector("#daily-exercise__radar-chart"),
       radarOptions,
     ).render();
+  } else if (!isObjEmpty(waterData)) {
+    const [waterDates, waterTargets, waterIntaked] = convertAndSort(waterData);
+    renderChart(waterDates, waterTargets, waterIntaked);
+  } else if (!isObjEmpty(sleepData)) {
+    // Call the function for sleepData
+    const [sleepDates, sleepBed, sleepWakeup, sleepDuration] =
+      convertAndSort(sleepData);
+    const formattedSleepBed = sleepBed.map(formatTime);
+    const formattedSleepWakeup = sleepWakeup.map(formatTime);
+    const formattedSleepDuration = sleepDuration.map(formatTime);
   } else {
     console.log("Loading...");
   }

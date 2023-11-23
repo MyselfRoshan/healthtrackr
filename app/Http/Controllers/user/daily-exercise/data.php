@@ -28,4 +28,4 @@ foreach ($data as $d) {
         ]
     ];
 }
-echo json_encode($exercise);
+echo json_encode($exercise, JSON_FORCE_OBJECT);
