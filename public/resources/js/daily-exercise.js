@@ -1,5 +1,6 @@
 import ajax from "./ajax.js";
 import exerciseInstructions from "./exercise.js";
+import Notification from "./notification.js";
 
 // Select DOM elements
 const selectExercise = document.getElementById("exercise");
@@ -41,10 +42,44 @@ document.addEventListener("DOMContentLoaded", () => {
   handleInputField(targetExerciseDuration, 10, 120);
   handleInputField(actualExerciseDuration, 0, 120);
 
-  // Event listener for form submission
-  document.getElementById("exerciseForm").addEventListener("submit", e => {
+  // Event listener for form submission enable clicking after 5 seconds
+  let canClick = true;
+  document.querySelector("#activity-form").addEventListener("submit", e => {
     e.preventDefault();
-    saveToDatabase();
+    const submitButton = document.querySelector("[type=submit]");
+
+    if (canClick) {
+      // Execute your function here
+      saveToDatabase();
+      canClick = false;
+      setTimeout(() => {
+        canClick = true;
+      }, 5000);
+    } else {
+      submitButton.disabled = true;
+      const n = new Notification(document.querySelector(".notification"));
+      console.log(
+        n.create(
+          "<ion-icon name='close-circle'></ion-icon></ion-icon> Error",
+          `Wait for 5 seconds before clicking again.`,
+          6,
+        ),
+      );
+      let countdown = 4;
+      const countdownInterval = setInterval(() => {
+        n.updateDescription(
+          `Wait for ${countdown} second${
+            countdown === 1 ? "" : "s"
+          } before clicking again.`,
+        );
+        countdown--;
+
+        if (countdown < 0) {
+          clearInterval(countdownInterval);
+          submitButton.disabled = false;
+        }
+      }, 1000);
+    }
   });
 
   /* ***Functions*** */
@@ -57,8 +92,13 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.getItem("Exercise"),
     );
     console.log(response);
-    console.log(response.json());
-    if (response.status === 200) console.log("Saved Successfully");
+    // console.log(response.json());
+    if (response.status === 200) {
+      new Notification(document.querySelector(".notification")).create(
+        "<ion-icon name='checkmark-circle'></ion-icon> Success",
+        "Exercise data saved successfully",
+      );
+    }
   }
 
   // Function to update exercise instructions based on the selected exercise

@@ -11,7 +11,7 @@
       <label for="switch">Toggle</label>
     </div>
   </header>
-  <form method="post" id="qualitySleepForm" enctype="multipart/form-data" class="pt-8">
+  <form method="post" id="activity-form" enctype="multipart/form-data" class="pt-8">
     <div class=" glass-input-containers pb-4">
       <label for="select-date">Choose Date:</label>
       <input type="text" id="select-date" name="selectDate" readonly />
@@ -29,3 +29,4 @@
     </button>
   </form>
 </section>
+<div class="notification"></div>

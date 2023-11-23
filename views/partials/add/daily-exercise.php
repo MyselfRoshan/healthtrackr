@@ -12,7 +12,7 @@
     </div>
   </header>
   <!-- Get inspiration from samsung health -->
-  <form id="exerciseForm" enctype="multipart/form-data" class="pt-8">
+  <form method="post" id="activity-form" enctype="multipart/form-data" class="pt-8">
     <label for="selectDate">Select Date:</label>
     <input type="text" id="selectDate" name="selectDate" />
 
@@ -46,3 +46,4 @@
     <!-- YouTube videos will be populated here -->
   </div>
 </section>
+<div class="notification"></div>
