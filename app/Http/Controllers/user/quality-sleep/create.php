@@ -9,6 +9,7 @@ require_view('user/quality-sleep.view.php', [
         "src='/resources/js/nepali-datepicker.min.js'",
         "src='/resources/js/dashboardSidebar.js'",
         "type='module' src='/resources/js/quality-sleep.js'",
-        "type='module' src='/resources/js/notification.js'",
+        "type='module' src='/resources/js/Notification.js'",
+        "type='module' src='/resources/js/sendReminder.js'",
     ]
 ]);

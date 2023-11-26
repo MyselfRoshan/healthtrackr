@@ -1,5 +1,5 @@
 import ajax from "./ajax.js";
-import Notification from "./notification.js";
+import Notification from "./Notification.js";
 
 const selectDate = document.getElementById("select-date");
 const bedTime = document.getElementById("bed-time");
@@ -8,7 +8,7 @@ const sleepDuration = document.querySelector(".sleep-time");
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initial load and change event
-  const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD");
+  const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY/MM/DD");
 
   let Sleep = JSON.parse(localStorage.getItem("Sleep")) ?? {
     [currentDate]: {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
     language: "english",
-    dateFormat: "YYYY-MM-DD",
+    dateFormat: "YYYY/MM/DD",
     ndpYear: true,
     ndpMonth: true,
     ndpYearCount: 10,

@@ -2786,7 +2786,7 @@ div.ndp-nepali-box a {
 .dashboard {
   --menu-width: 80px;
   height: 100%;
-  max-width: 90rem;
+  max-width: 123.75rem;
   position: relative;
   display: grid;
   grid-template-columns: var(--menu-width) calc(100% - var(--menu-width));
@@ -2928,7 +2928,7 @@ div.ndp-nepali-box a {
 .dashboard__content header h2 {
   text-transform: uppercase;
 }
-.dashboard__content header #switch {
+.dashboard__content header #send-reminder__toggle {
   height: 0;
   width: 0;
   visibility: hidden;

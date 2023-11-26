@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS public."user"
 
 CREATE TABLE daily_exercise (
   user_id INTEGER NOT NULL REFERENCES public.user(user_id),
-  date DATE NOT NULL,
+  date VARCHAR(10) NOT NULL,
   name VARCHAR(20) NOT NULL,
   target SMALLINT NOT NULL,
   actual SMALLINT NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE daily_exercise (
 
 CREATE TABLE stay_hydrated (
   user_id INTEGER NOT NULL REFERENCES public.user(user_id),
-  date DATE NOT NULL,
+  date VARCHAR(10) NOT NULL,
   target SMALLINT NOT NULL,
   intaked SMALLINT NOT NULL,
   PRIMARY KEY (user_id, date)
@@ -33,14 +33,21 @@ CREATE TABLE stay_hydrated (
 
 CREATE TABLE quality_sleep (
   user_id INTEGER NOT NULL REFERENCES public.user(user_id),
-  date DATE NOT NULL,
+  date VARCHAR(10) NOT NULL,
   bed_time TIME NOT NULL,
   wakeup_time TIME NOT NULL,
   sleep_duration TIME NOT NULL,
   PRIMARY KEY (user_id, date)
 );
-INSERT INTO quality_sleep (user_id, bed_time, wakeup_time, sleep_duration, date)
-VALUES (1, '23:59', '07:00', '06:30', '2021-01-01');
 
+CREATE TABLE emails (
+  id SERIAL PRIMARY KEY,
+  subject VARCHAR(255) NOT NULL,
+  status INTEGER NOT NULL,
+  html_body TEXT,
+  text_body TEXT,
+  meta JSONB,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-UPDATE public.user SET reset_token_hash = NULL , reset_token_expires_at=null
+UPDATE public.user SET reset_token_hash = NULL , reset_token_expires_at=null;

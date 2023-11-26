@@ -62,9 +62,11 @@ if (!$form->validate($_POST)) {
 
     HTMLBody;
     $subject = "Click Here to Reset Your Password";
-    $mail = new Mail($email, $subject, $HTMLBody);
     $mail->send();
-
+    $mail = new Mail($email, $subject, $HTMLBody);
+    // Schedule the email to be sent one minute from now using the obtained email ID
+    $scheduledTime = (new DateTime())->add(new DateInterval('PT1M'))->format('Y-m-d H:i:s');
+    $mail->scheduleSend($scheduledTime, $emailId);
     // Send the email
     require_view('passwordReset/email-sent-sucessfully.view.php', [
         'scripts' => [

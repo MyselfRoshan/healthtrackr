@@ -5,10 +5,10 @@
     </h1>
     <div class="d-flex">
       <span class="text-tertiary fw-500">
-        Send notification
+        Send email reminder
       </span>
-      <input type="checkbox" id="switch" name="exercise_notification" value="" />
-      <label for="switch">Toggle</label>
+      <input type="checkbox" id="send-reminder__toggle" name="exercise_notification" value="" />
+      <label for="send-reminder__toggle">Toggle</label>
     </div>
   </header>
   <!-- Get inspiration from samsung health -->

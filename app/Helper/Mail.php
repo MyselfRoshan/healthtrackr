@@ -2,6 +2,8 @@
 
 namespace App\Helper;
 
+use App\Enums\EmailStatus;
+use App\Models\Email;
 use DateTime;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -53,7 +55,7 @@ class Mail
         }
     }
 
-    public function scheduleSend(string $dateTime)
+    public function scheduleSend(string $dateTime, int $emailId)
     {
         // Schedule the email to be sent at a specific date and time
         $now = new DateTime();
@@ -61,24 +63,15 @@ class Mail
 
         if ($scheduledTime > $now) {
             $delay = $scheduledTime->getTimestamp() - $now->getTimestamp();
-            sleep($delay);
+            // sleep($delay);
 
-            return $this->send();
+            // Update the email status to 'Queue' in the database
+            $emailModel = new Email();
+            $emailModel->updateEmailStatus($emailId, EmailStatus::Queue);
+
+            return true;
         }
 
         return false;
     }
 }
-
-// Usage
-// $recipient = 'recipient@example.com';
-// $subject = 'Scheduled Notification';
-// $message = 'This is a scheduled notification.';
-// $scheduledTime = '2023-11-01 12:00:00'; // Replace with your desired date and time
-
-// $notification = new Notification($recipient, $subject, $message);
-// if ($notification->scheduleSend($scheduledTime)) {
-//     echo 'Notification scheduled and sent successfully.';
-// } else {
-//     echo 'Failed to schedule or send the notification.';
-// }

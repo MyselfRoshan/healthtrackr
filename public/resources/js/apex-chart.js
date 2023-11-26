@@ -1,4 +1,6 @@
+import Cookie from "./Cookie.js";
 import ajax from "./ajax.js";
+import Notification from "./Notification.js";
 
 async function fetchData(endpoint, storageKey) {
   try {
@@ -11,12 +13,11 @@ async function fetchData(endpoint, storageKey) {
     return null;
   }
 }
-
 function renderChart(dates, targets, intaked) {
   const optionsLine = {
     chart: {
       height: 400,
-      type: "line",
+      type: "area",
       zoom: {
         type: "x",
         enabled: true,
@@ -107,6 +108,7 @@ function renderChart(dates, targets, intaked) {
  *       If !waterData.length && !sleepData.length && !exerciseData.length
  *          Show: Welcome user for first login
  *       Else if any of the waterData, sleepData or exerciseData are empty dont show any chart
+ *       Do for sleepData
  *
  */
 async function fetchDataAndRender() {
@@ -139,10 +141,15 @@ async function fetchDataAndRender() {
     isObjEmpty(waterData) &&
     isObjEmpty(sleepData)
   ) {
-    console.log(
-      "Welcome USER.Please insert data in Add section to show in the dashboard",
+    new Notification(document.querySelector(".notification")).create(
+      `🎉 Welcome aboard, <span class='text-secondary'>${Cookie.get(
+        "first_name",
+      )}</span> 🎉`,
+      'To get started, kindly add your data in the "Add" section for it to appear on the dashboard.',
+      20,
     );
-  } else if (!isObjEmpty(exerciseData)) {
+  }
+  if (!isObjEmpty(exerciseData)) {
     /* Exercise Bar Chart */
     const [exerciseDates, exerciseNames, exerciseTargets, exerciseActual] =
       convertAndSort(exerciseData);
@@ -200,6 +207,20 @@ async function fetchDataAndRender() {
       xaxis: {
         labels: {
           rotate: -45,
+          /**
+           * Allows users to apply a custom formatter function to x-axis labels.
+           *
+           * @param { String } value - The default value generated
+           * @param { Number } timestamp - In a datetime series, this is the raw timestamp
+           * @param { object } contains dateFormatter for datetime x-axis
+           */
+          formatter: (values,opts) => {
+            // const nepaliDate = NepaliFunctions.ParseDate(value);
+            if(values){
+              const [y, m, d] = values.split("/");
+              return `${NepaliFunctions.GetBsMonth(m-1)} ${d}`;
+            }
+          },
         },
         tickPlacement: "on",
       },
@@ -284,19 +305,23 @@ async function fetchDataAndRender() {
       document.querySelector("#daily-exercise__radar-chart"),
       radarOptions,
     ).render();
-  } else if (!isObjEmpty(waterData)) {
+  }
+  if (!isObjEmpty(waterData)) {
     const [waterDates, waterTargets, waterIntaked] = convertAndSort(waterData);
     renderChart(waterDates, waterTargets, waterIntaked);
-  } else if (!isObjEmpty(sleepData)) {
+  }
+  if (!isObjEmpty(sleepData)) {
     // Call the function for sleepData
     const [sleepDates, sleepBed, sleepWakeup, sleepDuration] =
       convertAndSort(sleepData);
     const formattedSleepBed = sleepBed.map(formatTime);
     const formattedSleepWakeup = sleepWakeup.map(formatTime);
     const formattedSleepDuration = sleepDuration.map(formatTime);
-  } else {
-    console.log("Loading...");
+    console.log(
+      sleepDates.map(sleepDate =>
+        new Date(NepaliFunctions.BS2AD(sleepDate)).getTime(),
+      ),
+    );
   }
 }
-
 fetchDataAndRender();

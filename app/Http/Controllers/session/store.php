@@ -21,7 +21,7 @@ if (!$form->validate($_POST)) {
     ]);
 } else {
     $column = Validate::isEmail($usrname_email) ? 'email' : 'username';
-    $query = "SELECT user_id,username,email,profile_pic FROM public.user WHERE {$column} = :params";
+    $query = "SELECT user_id,first_name,username,email,profile_pic FROM public.user WHERE {$column} = :params";
     $params = [
         "params" => [$usrname_email, PDO::PARAM_STR]
     ];
@@ -40,16 +40,14 @@ if (!$form->validate($_POST)) {
     $session->user = [
         'id' => $user['user_id'],
         'username' => $user['username'],
-        'email' => $user['email']
+        'email' => $user['email'],
     ];
     $session->profile_pic = $user['profile_pic'];
-    // $a = Token::generateAccessToken($session->user);
-    // d($a);
-    // d(Token::verifyAccessToken($a));
+    $expiry_date = time() + (30 * 24 * 60 * 60); // 30 days
     if (isset($remember_me)) {
-        $expiry_date = time() + (30 * 24 * 60 * 60); // 30 days
         setcookie("remember_me", json_encode($user), $expiry_date);
     }
+    setcookie("first_name", $user['first_name'], $expiry_date);
 
     redirect("/{$session->user['username']}");
 }
