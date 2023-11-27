@@ -16,7 +16,7 @@ class Email
         string $subject,
         string $html,
         ?string $text = null
-    ): void {
+    ) {
         $meta=[
             'to'=>$to,
             'from'=>$from
@@ -45,7 +45,7 @@ class Email
         return Database::select($query,$params)->fetchAll();
     }
 
-    public function markEmailSent(int $id): void
+    public function markEmailSent(int $id)
     {
         $query = "UPDATE public.email
              SET status = :status, sent_at = CURRENT_TIMESTAMP

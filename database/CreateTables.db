@@ -40,7 +40,7 @@ CREATE TABLE quality_sleep (
   PRIMARY KEY (user_id, date)
 );
 
-CREATE TABLE emails (
+CREATE TABLE email (
   id SERIAL PRIMARY KEY,
   subject VARCHAR(255) NOT NULL,
   status INTEGER NOT NULL,

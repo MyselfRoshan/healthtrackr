@@ -75,3 +75,4 @@ class Mail
         return false;
     }
 }
+// * * * * * php /var/www/scripts/email.php >> var/log/cron/cron.log

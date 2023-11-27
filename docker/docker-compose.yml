@@ -18,7 +18,6 @@ services:
       - PHP_INI_DATE_TIMEZONE=${PHP_INI_DATE_TIMEZONE}
     volumes:
       - ../:/var/www
-      - ./log/corn:/var/log/cron
 
   nginx:
     image: nginx:1.19-alpine
