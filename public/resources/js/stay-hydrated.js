@@ -1,5 +1,5 @@
 import ajax from "./ajax.js";
-import Notification from "./notification.js";
+import Notification from "./Notification.js";
 
 const glassWater = document.querySelector(".glass-water");
 const glassAdd = document.querySelector(".glass-add");
@@ -16,7 +16,7 @@ const waterPerGlass = 250; // 250ml
 
 document.addEventListener("DOMContentLoaded", () => {
   // Initial load and change event
-  const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD");
+  const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY/MM/DD");
   let Water = JSON.parse(localStorage.getItem("Water")) ?? {
     [currentDate]: {
       target: 8,
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
     language: "english",
-    dateFormat: "YYYY-MM-DD",
+    dateFormat: "YYYY/MM/DD",
     ndpYear: true,
     ndpMonth: true,
     ndpYearCount: 10,

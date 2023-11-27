@@ -7,6 +7,7 @@ require_view('user/stay-hydrated.view.php', [
         "src='/resources/js/nepali-datepicker.min.js'",
         "src='/resources/js/dashboardSidebar.js'",
         "type='module' src='/resources/js/stay-hydrated.js'",
-        "type='module' src='/resources/js/notification.js'",
+        "type='module' src='/resources/js/Notification.js'",
+        "type='module' src='/resources/js/sendReminder.js'",
     ]
 ]);

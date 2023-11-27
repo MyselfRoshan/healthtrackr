@@ -5,10 +5,10 @@
     </h1>
     <div class="d-flex">
       <span class="text-tertiary fw-500">
-        Send notification
+        Send email reminder
       </span>
-      <input type="checkbox" id="switch" name="sleep_notification" value="" />
-      <label for="switch">Toggle</label>
+      <input type="checkbox" id="send-reminder__toggle" name="sleep_notification" value="" />
+      <label for="send-reminder__toggle">Toggle</label>
     </div>
   </header>
   <form method="post" id="activity-form" enctype="multipart/form-data" class="pt-8">

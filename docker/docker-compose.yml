@@ -43,7 +43,7 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - psql-data:/var/lib/postgresql/data
-       
+
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin4
@@ -67,7 +67,14 @@ services:
     ports:
       - "1025:1025"  # SMTP port
       - "8025:8025"  # Web UI port
-  
+
+  # Email Schedule
+  cron:
+    container_name: cron
+    build: ./cron
+    volumes:
+      - ../:/var/www
+      - ./log/corn:/var/log/cron
 
 volumes:
   psql-data:

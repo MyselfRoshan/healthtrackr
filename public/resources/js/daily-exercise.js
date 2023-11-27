@@ -1,6 +1,6 @@
 import ajax from "./ajax.js";
 import exerciseInstructions from "./exercise.js";
-import Notification from "./notification.js";
+import Notification from "./Notification.js";
 
 // Select DOM elements
 const selectExercise = document.getElementById("exercise");
@@ -15,7 +15,7 @@ const actualExerciseDuration = document.getElementById(
 document.addEventListener("DOMContentLoaded", () => {
   // Function to initialize the page
 
-  const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY-MM-DD");
+  const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY/MM/DD");
   let Exercise = JSON.parse(localStorage.getItem("Exercise")) ?? {
     [currentDate]: {
       name: "",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
     language: "english",
-    dateFormat: "YYYY-MM-DD",
+    dateFormat: "YYYY/MM/DD",
     ndpYear: true,
     ndpMonth: true,
     ndpYearCount: 10,
