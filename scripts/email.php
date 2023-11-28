@@ -9,31 +9,25 @@ use App\Models\Email;
 require_once __DIR__ . '/../vendor/autoload.php';
 const BASE_PATH = __DIR__ . "/../";
 require BASE_PATH . "config/bootstrap.php";
-$HTMLBody = <<<HTMLBody
-    <p>Hello there,</p>
-    <p>We received a request to reset your password. If you didn't make this request, you can ignore this email.</p>
-    <p>If you did request a password reset, please click the link below to reset your password:</p>
-    HTMLBody;
-$subject = "Click Here to Reset Your Password";
-// $mail = new Mail($email, $subject, $HTMLBody);
-// $mail->send();
 
-
-$emailModel=new Email();
+$emailModel = new Email();
 $scheduledEmails = $emailModel->getEmailsByStatus(EmailStatus::Queue);
 foreach ($scheduledEmails as $email) {
     $mail = new Mail(
-        $email['meta']['to'],
-        // $email['subject'],
-        // $email['html_body']
-        $subject,
-        $HTMLBody,
+        $email['recipent'],
+        $email['subject'],
+        $email['html_body'],
+        $email['text_body']
     );
-
     $result = $mail->send();
 
     if ($result) {
         // Mark the email as sent in the database
         $emailModel->markEmailSent($email['id']);
+    } else {
+        $emailModel->updateEmailStatus($email['id'], EmailStatus::Failed);
+        sleep(5);
+        $emailModel->updateEmailStatus($email['id'], EmailStatus::Queue);
     }
 }
+echo "corn is working";

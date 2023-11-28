@@ -11,26 +11,20 @@ use PDO;
 class Email
 {
     public function queue(
-        string $to,
-        string $from,
+        string $recipent,
         string $subject,
         string $html,
-        ?string $text = null
+        ?string $text = null,
     ) {
-        $meta=[
-            'to'=>$to,
-            'from'=>$from
-        ];
-
-        $query = "INSERT INTO public.email (subject, status, html_body, text_body, meta, created_at)
-        VALUES (:subject, :status, :html_body, :text_body, :meta , CURRENT_TIMESTAMP)";
+        $query = "INSERT INTO public.email (recipent, subject, status, html_body, text_body, created_at)
+        VALUES (:recipent, :subject, :status, :html_body, :text_body, CURRENT_TIMESTAMP)";
 
         $params = [
+            'recipent' => [$recipent, PDO::PARAM_STR],
             'subject' => [$subject, PDO::PARAM_STR],
             'status' => [EmailStatus::Queue->value, PDO::PARAM_STR],
             'html_body' => [$html, PDO::PARAM_STR],
             'text_body' => [$text, PDO::PARAM_STR],
-            'meta' => [json_encode($meta), PDO::PARAM_STR],
         ];
 
         return Database::insert($query,$params);
@@ -51,15 +45,16 @@ class Email
              SET status = :status, sent_at = CURRENT_TIMESTAMP
              WHERE id = :id";
         $params = [
-            'status' => [EmailStatus::Queue->value, PDO::PARAM_STR],
+            'status' => [EmailStatus::Sent->value, PDO::PARAM_STR],
+            'id' => [$id, PDO::PARAM_INT],
         ];
         return Database::update($query,$params);
     }
 
-    public function updateEmailStatus(int $id, EmailStatus $status): void
+    public function updateEmailStatus(int $id, EmailStatus $status)
     {
         $query = "UPDATE public.email
-            SET status = :status
+            SET status = :status, sent_at = CURRENT_TIMESTAMP
             WHERE id = :id";
 
         $params = [
@@ -67,6 +62,6 @@ class Email
             'id' => [$id, PDO::PARAM_INT],
         ];
 
-        Database::update($query, $params);
+        return Database::update($query, $params);
     }
 }

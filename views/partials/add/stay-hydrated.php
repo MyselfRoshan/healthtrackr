@@ -7,7 +7,7 @@
       <span class="text-tertiary fw-500">
         Send email reminder
       </span>
-      <input type="checkbox" id="send-reminder__toggle" name="water_notification" value="" />
+      <input type="checkbox" id="send-reminder__toggle" name="water_reminder" />
       <label for="send-reminder__toggle">Toggle</label>
     </div>
   </header>

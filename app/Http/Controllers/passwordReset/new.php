@@ -32,17 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
     } else {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
-        // $query = "UPDATE public.user
-        // SET password = :password,
-        //     reset_token_hash = :token_hash,
-        //     reset_token_expires_at = :token_expiry
-        // WHERE email = :email";
-        // $params = [
-        //     'email' => [$user['email'], PDO::PARAM_STR],
-        //     'password' => [$hashedPassword, PDO::PARAM_STR],
-        //     'token_hash' => [null, PDO::PARAM_STR],
-        //     'token_expiry' => [null, PDO::PARAM_STR]
-        // ];
         $query = "UPDATE public.user
         SET password = :password
         WHERE email = :email";

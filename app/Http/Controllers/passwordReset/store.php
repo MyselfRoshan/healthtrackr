@@ -25,14 +25,12 @@ if (!$form->validate($_POST)) {
     $session = Session::getInstance();
     // If reset token expired regenerate new one and save to the database
     if ((!isset($session->reset_token) && !isset($session->reset_token_expires_at)) || strtotime($session->reset_token_expires_at) <= time()) {
-        // $token = new PasswordResetToken(32, 15);
         $token = new PasswordResetToken(32);
         $session->reset_token = $token->getToken();
         $session->reset_token_expires_at = $token->getExpiry();
         $query = "UPDATE public.user
         SET reset_token_hash = :token_hash,
-            reset_token_expires_at = CURRENT_TIMESTAMP + interval '1 minute'
-            -- reset_token_expires_at = CURRENT_TIMESTAMP + interval '1 hour'
+            reset_token_expires_at = CURRENT_TIMESTAMP + interval '1 hour'
         WHERE email = :email";
 
         $params = [
@@ -42,7 +40,7 @@ if (!$form->validate($_POST)) {
         Database::insert($query, $params);
     }
 
-    $HTMLBody = <<<HTMLBody
+    $html_body = <<<HTMLBody
     <p>Hello there,</p>
     <p>We received a request to reset your password. If you didn't make this request, you can ignore this email.</p>
     <p>If you did request a password reset, please click the link below to reset your password:</p>
@@ -60,19 +58,29 @@ if (!$form->validate($_POST)) {
     <p>If you have any questions or need further assistance, please don't hesitate to contact us.</p>
 
     <p>Best regards,<br>Health Trackr Team</p>
-
     HTMLBody;
-    $subject = "Click Here to Reset Your Password";
-    // $mail->send();
-    $mail=new Email();
-    $mail->queue($email,"noreply@healthtrackr.com" ,$subject, $HTMLBody);
 
-    // $mail = new Mail($email, $subject, $HTMLBody);
-    // Schedule the email to be sent one minute from now using the obtained email ID
-    $scheduledTime = (new DateTime())->add(new DateInterval('PT1M'))->format('Y-m-d H:i:s');
-    // $mail->scheduleSend($scheduledTime, 1);
-    // $mail->scheduleSend($scheduledTime, $emailId);
+    $text_body = <<<TEXTBODY
+    Hello there,
+
+    We received a request to reset your password. If you didn't make this request, you can ignore this email.
+
+    If you did request a password reset, please copy and paste the following URL into your browser:
+
+    {$_SERVER['HTTP_ORIGIN']}/password-reset/{$session->reset_token}
+
+    This link will expire in 1 hour for security reasons.
+
+    If you have any questions or need further assistance, please don't hesitate to contact us.
+
+    Best regards,
+    Health Trackr Team
+    TEXTBODY;
+
     // Send the email
+    $subject = "Click Here to Reset Your Password";
+    $mail = new Mail($email, $subject, $html_body, $text_body);
+    $mail->send();
     require_view('passwordReset/email-sent-sucessfully.view.php', [
         'scripts' => [
             'type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"',
