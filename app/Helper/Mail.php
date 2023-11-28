@@ -13,13 +13,15 @@ class Mail
     private $mailer;
     private $recipient;
     private $subject;
-    private $message;
+    private $html_body;
+    private $text_body;
 
-    public function __construct(string $recipient, string $subject, string $message)
+    public function __construct(string $recipient, string $subject, string $html_body, ?string $text_body = null)
     {
         $this->recipient = $recipient;
         $this->subject = $subject;
-        $this->message = $message;
+        $this->html_body = $html_body;
+        $this->text_body = $text_body;
 
         // Create a new PHPMailer instance
         $this->mailer = new PHPMailer(true);
@@ -41,11 +43,11 @@ class Mail
             $this->mailer->setFrom(MAILER_NOREPLY_SENDER_EMAIL_ADDRESS, MAILER_NOREPLY_SENDER_NAME);
             $this->mailer->addAddress($this->recipient);
 
-            // Set email subject and message
+            // Set email subject and html_body
             $this->mailer->Subject = $this->subject;
-            $this->mailer->Body = $this->message;
-            $this->mailer->AltBody = strip_tags($this->mailer->Body);
-
+            $this->mailer->Body = $this->html_body;
+            // remove content from style tag and only show html body
+            $this->mailer->AltBody = $this->text_body ?? strip_tags(preg_replace('/<style[^>]*>.*?<\/style>/si', '', $this->html_body));
             // Send the email
             $this->mailer->send();
 
@@ -54,25 +56,4 @@ class Mail
             return false;
         }
     }
-
-    public function scheduleSend(string $dateTime, int $emailId)
-    {
-        // Schedule the email to be sent at a specific date and time
-        $now = new DateTime();
-        $scheduledTime = new DateTime($dateTime);
-
-        if ($scheduledTime > $now) {
-            $delay = $scheduledTime->getTimestamp() - $now->getTimestamp();
-            // sleep($delay);
-
-            // Update the email status to 'Queue' in the database
-            $emailModel = new Email();
-            $emailModel->updateEmailStatus($emailId, EmailStatus::Queue);
-
-            return true;
-        }
-
-        return false;
-    }
 }
-// * * * * * php /var/www/scripts/email.php >> var/log/cron/cron.log

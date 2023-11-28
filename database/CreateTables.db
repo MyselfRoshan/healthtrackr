@@ -42,12 +42,13 @@ CREATE TABLE quality_sleep (
 
 CREATE TABLE email (
   id SERIAL PRIMARY KEY,
+  recipent VARCHAR(255) NOT NULL,
   subject VARCHAR(255) NOT NULL,
   status INTEGER NOT NULL,
   html_body TEXT,
   text_body TEXT,
-  meta JSONB,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  created_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
+  sent_at TIMESTAMP(0)
 );
 
 UPDATE public.user SET reset_token_hash = NULL , reset_token_expires_at=null;

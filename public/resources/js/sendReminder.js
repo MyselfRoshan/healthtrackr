@@ -1,37 +1,35 @@
 import Notification from "./Notification.js";
 import ajax from "./ajax.js";
 
-document
-  .querySelector("#send-reminder__toggle")
-  .addEventListener("click", e => {
-    const notification = e.target;
+const reminder = document.querySelector("#send-reminder__toggle");
+reminder.addEventListener("click", e => {
+  const isChecked = reminder.hasAttribute("checked");
+  reminder.toggleAttribute("checked");
+  const reminderMessage = `Your email reminder is turned ${
+    isChecked ? "ON" : "OFF"
+  }`;
 
-    notification.value = notification.value === "on" ? "" : "on";
+  const n = new Notification(document.querySelector(".notification"));
+  n.create(
+    "<ion-icon name='checkmark-circle'></ion-icon> Success",
+    reminderMessage,
+    2,
+  );
 
-    const notificationMessage =
-      notification.value === "on"
-        ? "Your notification are turned ON"
-        : "Your notification are turned OFF";
+  toggleNotification();
 
-    const n = new Notification(document.querySelector(".notification"));
-    n.create(
-      "<ion-icon name='checkmark-circle'></ion-icon> Success",
-      notificationMessage,
-      2,
+  async function toggleNotification() {
+    const response = await ajax(
+      `${window.location.href}/notification`,
+      "post",
+      JSON.stringify({
+        [reminder.name]: isChecked,
+      }),
     );
-
-    toggleNotification();
-
-    async function toggleNotification() {
-      const response = await ajax(
-        `${window.location.href}/notification`,
-        "post",
-        JSON.stringify({ [notification.name]: notification.value }),
-      );
-      console.log(response);
-      console.log(await response.json());
-      if (response.status === 200) {
-        console.log("Saved Sucessfully");
-      }
+    console.log(response);
+    console.log(await response.json());
+    if (response.status === 200) {
+      console.log("Saved Sucessfully");
     }
-  });
+  }
+});

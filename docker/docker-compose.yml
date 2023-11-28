@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   app:
@@ -6,16 +6,14 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        USER_ID: '${WWWUSER:-1000}'
-        GROUP_ID: '${WWWGROUP:-1000}'
-        USER: '${USER:-whoami}'
+        - USER_ID=${WWWUSER:-1000}
+        - GROUP_ID=${WWWGROUP:-1000}
+        - USER=${USER:-whoami}
     container_name: healthtrackr
     restart: always
     working_dir: /var/www/
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    environment:
-      - PHP_INI_DATE_TIMEZONE=${PHP_INI_DATE_TIMEZONE}
     volumes:
       - ../:/var/www
 
@@ -65,8 +63,8 @@ services:
     logging:
       driver: "none"
     ports:
-      - "1025:1025"  # SMTP port
-      - "8025:8025"  # Web UI port
+      - "1025:1025" # SMTP port
+      - "8025:8025" # Web UI port
 
   # Email Schedule
   cron:
