@@ -1,6 +1,6 @@
 <?php
 
-/** 
+/**
  * Include psr-4 autoload feature
  */
 

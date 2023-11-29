@@ -1,8 +1,37 @@
-corn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is working
-Fatal error: Uncaught Exception: SQLSTATE[08006] [7] could not translate host name "postgres" to address: Name does not resolve in /var/www/database/Database.php:43
-Stack trace:
-#0 /var/www/app/Models/Email.php(39): Database\Database::select('SELECT * FROM p...', Array)
-#1 /var/www/scripts/email.php(14): App\Models\Email->getEmailsByStatus(Object(App\Enums\EmailStatus))
-#2 {main}
-  thrown in /var/www/database/Database.php on line 43
-corn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is workingcorn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
