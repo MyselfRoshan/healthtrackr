@@ -6,90 +6,70 @@ use App\Session;
 $data = json_decode(file_get_contents('php://input'), true);
 // echo $data['exercise_reminder'] ? json_encode($data['exercise_reminder']) : json_encode("failed");
 // echo json_encode($data);
+
 $session = Session::getInstance();
-if (isset($data['exercise_reminder']) && $data['exercise_reminder'])
+// require should be below $session as it is used inside email_data.php
+require base_path("config/email_data.php");
+
+$email = new Email();
+if (isset($data['exercise_reminder']) && $data['exercise_reminder']) {
+    // Morning Exercisw
+    $email->queue(
+        $session->user['email'],
+        $EMAIL['exercise']['subject'],
+        $EMAIL['exercise']['body'],
+        '6:10'
+    );
+
+    // Evening Exercisw
+    $email->queue(
+        $session->user['email'],
+        $EMAIL['exercise']['subject'],
+        $EMAIL['exercise']['body'],
+        '21:50'
+    );
+} else {
     echo json_encode($data);
-if (isset($data['sleep_reminder']) && $data['sleep_reminder'])
-    echo json_encode($data);
-if (isset($data['water_reminder']) && $data['water_reminder']) {
-    $html_body = <<<HTMLBody
-    <style>
-        .header {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #3498db;
-            padding: 20px;
-            text-align: center;
-        }
+}
+if (isset($data['sleep_reminder']) && $data['sleep_reminder']) {
+    // Bed Time
+    $email->queue(
+        $session->user['email'],
+        $EMAIL['sleep']['subject'],
+        $EMAIL['sleep']['body'],
+        '6:10'
+    );
 
-        h1 {
-            color: #fff;
-        }
-
-        .content {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        ul {
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-left: 20px;
-        }
-
-        .signature {
-            margin-top: 20px;
-            color: #777;
-        }
-    </style>
-    <div class="header" style="background-color: #3498db; padding: 20px; text-align: center;">
-        <h1 style="color: #fff;">Stay Hydrated: It's Time to Drink Water!</h1>
-    </div>
-
-    <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
-        <p>Hi {$session->user['username']},</p>
-
-        <p>We hope you're having a great day! 😊 Just a friendly reminder to stay hydrated by drinking enough water. Proper hydration is essential for your health and well-being.</p>
-
-        <p>Here are a few benefits of staying hydrated:</p>
-        <ul>
-            <li>Helps maintain overall health</li>
-            <li>Supports digestion</li>
-            <li>Boosts energy levels</li>
-            <li>Enhances skin health</li>
-        </ul>
-
-        <p>Take a break now and grab a refreshing glass of water. Your body will thank you!</p>
-
-        <p class="signature">Cheers,<br>
-        Health Trackr Team</p>
-    </div>
-
-    HTMLBody;
-    // mail should be send 8 times a day
-    $subject = "Stay Hydrated: It's Time to Drink Water!";
-    // date_timezone_set($_COOKIE['timeZone']);
-    // echo json_encode($_COOKIE['timeZone']);
-    echo $_COOKIE['timeZone'];
-    // echo json_encode(date_timezone_get());
-    $email = new Email();
-    $email->queue($session->user['email'], $subject, $html_body);
-    // echo json_encode($data);
+    // Evening Time
+    $email->queue(
+        $session->user['email'],
+        $EMAIL['sleep']['subject'],
+        $EMAIL['sleep']['body'],
+        '21:50'
+    );
 } else {
     echo json_encode($data);
 }
 
-echo (date('h:i:s', time()));
+if (isset($data['water_reminder']) && $data['water_reminder']) {
+    // date_timezone_set($_COOKIE['timeZone']);
+
+    // mail should be send 8 times a day
+    $start_time = '06:05';
+    $end_time = '21:55';
+    $repeat_count = 8;
+
+    $scheduleTimeStamps = generateTimeArray($start_time, $end_time, $repeat_count);
+    for ($i = 0; $i < $repeat_count; $i++)
+        $email->queue(
+            $session->user['email'],
+            $EMAIL['water']['subject'],
+            $EMAIL['water']['body'],
+            $scheduleTimeStamps[$i]
+        );
+} else {
+    /** TO DO
+     *  Delete all the notification of type water using type and email column from database
+     */
+}
+// echo json_encode($data);

@@ -3,10 +3,10 @@ import ajax from "./ajax.js";
 
 const reminder = document.querySelector("#send-reminder__toggle");
 reminder.addEventListener("click", e => {
-  const isChecked = reminder.hasAttribute("checked");
+  // const reminder.hasAttribute("checked") = reminder.hasAttribute("checked");
   reminder.toggleAttribute("checked");
   const reminderMessage = `Your email reminder is turned ${
-    isChecked ? "ON" : "OFF"
+    reminder.hasAttribute("checked") ? "ON" : "OFF"
   }`;
 
   const n = new Notification(document.querySelector(".notification"));
@@ -23,7 +23,7 @@ reminder.addEventListener("click", e => {
       `${window.location.href}/notification`,
       "post",
       JSON.stringify({
-        [reminder.name]: isChecked,
+        [reminder.name]: e.target.hasAttribute("checked"),
       }),
     );
     console.log(response);

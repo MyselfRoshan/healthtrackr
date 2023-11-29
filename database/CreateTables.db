@@ -47,8 +47,19 @@ CREATE TABLE email (
   status INTEGER NOT NULL,
   html_body TEXT,
   text_body TEXT,
-  created_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP(0),
   sent_at TIMESTAMP(0)
 );
+
+CREATE TABLE email_schedule (
+  id SERIAL PRIMARY KEY,
+  type VARCHAR(20),
+  email_id INTEGER REFERENCES email(id),
+  start_time TIME(0),
+  end_time TIME(0),
+  repeat_count INTEGER
+);
+
+
 
 UPDATE public.user SET reset_token_hash = NULL , reset_token_expires_at=null;
