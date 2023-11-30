@@ -16,16 +16,16 @@ if (isset($data['exercise_reminder']) && $data['exercise_reminder']) {
     // Morning Exercisw
     $email->queue(
         $session->user['email'],
-        $EMAIL['exercise']['subject'],
-        $EMAIL['exercise']['body'],
+        $EMAIL['morning_exercise']['subject'],
+        $EMAIL['morning_exercise']['body'],
         '6:10'
     );
 
     // Evening Exercisw
     $email->queue(
         $session->user['email'],
-        $EMAIL['exercise']['subject'],
-        $EMAIL['exercise']['body'],
+        $EMAIL['night_exercise']['subject'],
+        $EMAIL['night_exercise']['body'],
         '21:50'
     );
 } else {
@@ -35,16 +35,16 @@ if (isset($data['sleep_reminder']) && $data['sleep_reminder']) {
     // Bed Time
     $email->queue(
         $session->user['email'],
-        $EMAIL['sleep']['subject'],
-        $EMAIL['sleep']['body'],
+        $EMAIL['sleep_time']['subject'],
+        $EMAIL['sleep_time']['body'],
         '6:10'
     );
 
     // Evening Time
     $email->queue(
         $session->user['email'],
-        $EMAIL['sleep']['subject'],
-        $EMAIL['sleep']['body'],
+        $EMAIL['wakeup_time']['subject'],
+        $EMAIL['wakeup_time']['body'],
         '21:50'
     );
 } else {
@@ -73,3 +73,7 @@ if (isset($data['water_reminder']) && $data['water_reminder']) {
      */
 }
 // echo json_encode($data);
+
+/** TO DO
+ *   BAr chart for sleep only show sleep duration of each day
+ */

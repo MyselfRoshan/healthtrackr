@@ -40,7 +40,7 @@ if (!$form->validate($_POST)) {
         Database::insert($query, $params);
     }
 
-    require base_path("config/email_data.php");
+    require base_path("config/email_data2.php");
     // $html_body = <<<HTMLBody
     // <p>Hello there,</p>
     // <p>We received a request to reset your password. If you didn't make this request, you can ignore this email.</p>
@@ -79,11 +79,11 @@ if (!$form->validate($_POST)) {
     // TEXTBODY;
 
     // Send the email
-    $subject = "Click Here to Reset Your Password";
+    // $subject = "Click Here to Reset Your Password";
     $mail = new Mail(
         $email,
         $EMAIL['password_reset']['subject'],
-        $EMAIL['password_reset']['html_body'],
+        $EMAIL['password_reset']['body'],
         $EMAIL['password_reset']['text_body']
     );
     $mail->send();

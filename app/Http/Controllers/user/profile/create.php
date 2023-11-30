@@ -4,9 +4,25 @@ use App\Session;
 use Database\Database;
 
 $session = Session::getInstance();
-$query = "SELECT first_name,last_name,username,email,last_login,created_on,timezone,profile_pic FROM public.user WHERE username = :params";
+$query = "SELECT
+            first_name,
+            last_name,
+            username,
+            email,
+            password,
+            last_login,
+            created_on,
+            timezone,
+            profile_pic,
+            (SELECT age FROM public.profile WHERE user_id = :id) AS age,
+            (SELECT weight FROM public.profile WHERE user_id = :id) AS weight,
+            (SELECT height FROM public.profile WHERE user_id = :id) AS height
+          FROM
+            public.user
+          WHERE
+            user_id = :id";
 $params = [
-    "params" => [$session->user['username'], PDO::PARAM_STR]
+    "id" => [$session->user['id'], PDO::PARAM_STR]
 ];
 $user = Database::select($query, $params)->fetch();
 
@@ -29,5 +45,6 @@ require_view('user/profile.view.php', [
         "src='/resources/js/profile.js'",
         "src='/resources/js/dashboardSidebar.js'"
     ],
-    'user' => $user
+    'user' => $user,
+    'alerts' => []
 ]);

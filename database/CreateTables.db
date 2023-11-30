@@ -14,6 +14,13 @@ CREATE TABLE IF NOT EXISTS public."user"
   reset_token_expires_at TIMESTAMP(0),
 )
 
+CREATE TABLE profile (
+    user_id INT REFERENCES public.user(user_id),
+    age INT,
+    height NUMERIC(5, 2),
+    weight INT
+)
+
 CREATE TABLE daily_exercise (
   user_id INTEGER NOT NULL REFERENCES public.user(user_id),
   date VARCHAR(10) NOT NULL,
@@ -40,26 +47,40 @@ CREATE TABLE quality_sleep (
   PRIMARY KEY (user_id, date)
 );
 
-CREATE TABLE email (
-  id SERIAL PRIMARY KEY,
-  recipent VARCHAR(255) NOT NULL,
-  subject VARCHAR(255) NOT NULL,
-  status INTEGER NOT NULL,
-  html_body TEXT,
-  text_body TEXT,
-  created_at TIMESTAMP(0),
-  sent_at TIMESTAMP(0)
-);
+-- CREATE TABLE email (
+--   id SERIAL PRIMARY KEY,
+--   recipent VARCHAR(255) NOT NULL,
+--   subject VARCHAR(255) NOT NULL,
+--   html_body TEXT,
+--   text_body TEXT,
+--   created_at TIMESTAMP(0),
+--   sent_at TIME(0),
+--   schedule_at TIME(0)
+-- );
+--
+-- CREATE TABLE email_schedule (
+--   id SERIAL PRIMARY KEY,
+--   status INTEGER NOT NULL,
+--   type VARCHAR(20),
+--   turn_on_off_notification_schedule,
+--   start_time TIME(0),
+--   end_time TIME(0),
+--   repeat_count INTEGER
+--   user_id INTEGER REFERENCES user(user_id) ON DELETE CASCADE,
+-- );
 
 CREATE TABLE email_schedule (
   id SERIAL PRIMARY KEY,
   type VARCHAR(20),
-  email_id INTEGER REFERENCES email(id),
+  status INTEGER NOT NULL,
+  turn,
+  type of activities (Exercise choice/enum),
   start_time TIME(0),
   end_time TIME(0),
   repeat_count INTEGER
+  user_id,
+  activity id (Not NUll)
+  status (queue enum, 0 pending, 1 sent, 2 failed, 3 canceled)
 );
-
-
 
 UPDATE public.user SET reset_token_hash = NULL , reset_token_expires_at=null;

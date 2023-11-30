@@ -51,7 +51,8 @@ if (isset($session->user)) {
     $router->get("/{$session->user['username']}", 'user/index.php')->only('auth');
     $router->get("/{$session->user['username']}/charts", 'user/charts.php')->only('auth');
     $router->get("/{$session->user['username']}/profile", 'user/profile/create.php')->only('auth');
-    $router->post("/{$session->user['username']}/profile", 'user/profile/store.php')->only('auth');
+    $router->put("/{$session->user['username']}/profile", 'user/profile/update.php')->only('auth');
+    $router->patch("/{$session->user['username']}/profile", 'user/profile/patch.php')->only('auth');
 
 
     $router->get("/{$session->user['username']}/reminder", 'user/reminder.php')->only('auth');

@@ -137,7 +137,144 @@ $EMAIL = [
         Health Trackr Team</p>
     </div>
     Body,
-    ], 'sleep' => [
+    ], 'morning_exercise' => [
+        'subject' => "Good Morning: Embrace the Outdoors with Exercise!",
+        'body' => <<<Body
+    <style>
+        .header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #2ecc71;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        ul {
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-left: 20px;
+        }
+
+        .signature {
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+    <div class="header" style="background-color: #f39c12; padding: 20px; text-align: center;">
+        <h1 style="color: #fff;">Good Morning: Embrace the Outdoors with Exercise!</h1>
+    </div>
+
+    <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
+        <p>Hi {$session->user['username']},</p>
+
+        <p>We hope you're ready to kickstart your day! 😊 In the morning, embrace the outdoors with activities like jogging or playing a round of badminton. Outdoor exercises are a great way to invigorate your body and mind.</p>
+
+        <p>Benefits of morning outdoor exercise:</p>
+        <ul>
+            <li>Boosts energy and mood</li>
+            <li>Enhances cardiovascular health</li>
+            <li>Improves focus and productivity</li>
+        </ul>
+
+        <p>Get out there, enjoy the fresh air, and make the most of your morning!</p>
+
+        <p class="signature">Stay active,<br>
+        Health Trackr Team</p>
+    </div>
+    Body,
+    ],
+
+    'night_exercise' => [
+        'subject' => "Good Night: Unwind with Relaxing Evening Exercises!",
+        'body' => <<<Body
+    <style>
+        .header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #2ecc71;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        ul {
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-left: 20px;
+        }
+
+        .signature {
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+    <div class="header" style="background-color: #3498db; padding: 20px; text-align: center;">
+        <h1 style="color: #fff;">Good Night: Unwind with Relaxing Evening Exercises!</h1>
+    </div>
+
+    <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
+        <p>Hi {$session->user['username']},</p>
+
+        <p>As the day winds down, it's time to unwind with some gentle indoor exercises. Consider activities like yoga to relax your body and calm your mind. Evening exercises can help you transition into a peaceful night's sleep.</p>
+
+        <p>Benefits of evening indoor exercise:</p>
+        <ul>
+            <li>Promotes relaxation and stress relief</li>
+            <li>Improves flexibility and balance</li>
+            <li>Supports a restful night's sleep</li>
+        </ul>
+
+        <p>Create a serene environment, find a comfortable spot, and let your evening exercise routine guide you towards a peaceful night.</p>
+
+        <p class="signature">Sleep well,<br>
+        Health Trackr Team</p>
+    </div>
+    Body,
+    ],
+    'sleep_time' => [
         'subject' => "Good Night: Prioritize Quality Sleep for a Better Tomorrow!",
         'body' => <<<Body
     <style>
@@ -205,42 +342,72 @@ $EMAIL = [
         Health Trackr Team</p>
     </div>
     Body,
-    ], 'password_reset' => [
-        'subject' => "Click Here to Reset Your Password",
-        'body' => <<<HTMLBody
-    <p>Hello there,</p>
-    <p>We received a request to reset your password. If you didn't make this request, you can ignore this email.</p>
-    <p>If you did request a password reset, please click the link below to reset your password:</p>
+    ], 'wakeup_time' => [
+        'subject' => "Good Morning: Rise and Shine for a New Day!",
+        'body' => <<<Body
+    <style>
+        .header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f39c12;
+            padding: 20px;
+            text-align: center;
+        }
 
-    <p>
-        <a href="{$_SERVER['HTTP_ORIGIN']}/password-reset/{$session->reset_token}" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none;">Reset Password</a>
-    </p>
+        h1 {
+            color: #fff;
+        }
 
-    <p>If the above link doesn't work, you can copy and paste the following URL into your browser:</p>
+        .content {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
 
-    <p> {$_SERVER['HTTP_ORIGIN']}/password-reset/{$session->reset_token}</p>
+        p {
+            margin-bottom: 15px;
+            color: #333;
+        }
 
-    <p>This link will expire in 1 hour for security reasons.</p>
+        ul {
+            margin-bottom: 15px;
+        }
 
-    <p>If you have any questions or need further assistance, please don't hesitate to contact us.</p>
+        li {
+            margin-left: 20px;
+        }
 
-    <p>Best regards,<br>Health Trackr Team</p>
-    HTMLBody,
-        'text_body' => <<<TEXTBODY
-    Hello there,
+        .signature {
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+    <div class="header" style="background-color: #f39c12; padding: 20px; text-align: center;">
+        <h1 style="color: #fff;">Good Morning: Rise and Shine for a New Day!</h1>
+    </div>
 
-    We received a request to reset your password. If you didn't make this request, you can ignore this email.
+    <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
+        <p>Hi {$session->user['username']},</p>
 
-    If you did request a password reset, please copy and paste the following URL into your browser:
+        <p>Wake up and embrace the possibilities of a brand new day! 😊 A positive morning routine sets the tone for the hours ahead.</p>
 
-    {$_SERVER['HTTP_ORIGIN']}/password-reset/{$session->reset_token}
+        <p>Benefits of a morning wakeup routine:</p>
+        <ul>
+            <li>Boosts mood and positivity</li>
+            <li>Enhances productivity and focus</li>
+            <li>Provides a sense of accomplishment</li>
+        </ul>
 
-    This link will expire in 1 hour for security reasons.
+        <p>Take a moment to appreciate the morning, indulge in activities you enjoy, and set your intentions for the day. It's a fresh start!</p>
 
-    If you have any questions or need further assistance, please don't hesitate to contact us.
-
-    Best regards,
-    Health Trackr Team
-    TEXTBODY
+        <p class="signature">Rise and shine,<br>
+        Health Trackr Team</p>
+    </div>
+    Body
     ]
 ];

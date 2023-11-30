@@ -9,13 +9,15 @@ enum EmailStatus: int
     case Queue = 0;
     case Sent = 1;
     case Failed = 2;
+    case Off = 3;
 
     public function toString(): string
     {
         return match ($this) {
             self::Queue  => 'In Queue',
             self::Sent   => 'Sent',
-            self::Failed => 'Failed'
+            self::Failed => 'Failed',
+            self::Off => 'Off'
         };
     }
 }

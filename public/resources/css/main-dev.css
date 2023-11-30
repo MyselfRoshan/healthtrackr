@@ -3204,6 +3204,7 @@ div.ndp-nepali-box a {
   --oc: var(--clr-light-400);
   --foc: var(--clr-light);
   --c: var(--clr-dark-900);
+  --fbg: var(--clr-dark-100);
   --fc: var(--clr-light);
   --iw: 100%;
 }
@@ -3233,7 +3234,18 @@ div.ndp-nepali-box a {
   inset: 0;
 }
 .profile__change .btn {
-  --hew: 9rem;
+  --hew: 10rem;
+  display: inline;
+  font-weight: var(--fw-700);
+}
+.profile__change .btn:first-of-type {
+  --bg: red;
+  --bs: rgba(255, 0, 0, 0.116);
+  --hbs: rgba(255, 0, 0, 0.116);
+}
+.profile__change .btn:first-of-type:is(:hover, :focus-visible) {
+  outline: 2px solid var(--clr-light);
+  --bg: rgba(255, 0, 0, 0.6);
 }
 
 /* Exercise form container */

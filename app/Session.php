@@ -22,7 +22,7 @@ class Session
     /**
      *    Returns THE instance of 'Session'.
      *    The session is automatically initialized if it wasn't.
-     *    
+     *
      *    @return    object
      **/
 
@@ -40,7 +40,7 @@ class Session
 
     /**
      *    (Re)starts the session.
-     *    
+     *
      *    @return    bool    TRUE if the session has been initialized, else FALSE.
      **/
 
@@ -57,7 +57,7 @@ class Session
     /**
      *    Stores datas in the session.
      *    Example: $instance->foo = 'bar';
-     *    
+     *
      *    @param    name    Name of the datas.
      *    @param    value    Your datas.
      *    @return    void
@@ -72,7 +72,7 @@ class Session
     /**
      *    Gets datas from the session.
      *    Example: echo $instance->foo;
-     *    
+     *
      *    @param    name    Name of the datas to get.
      *    @return    mixed    Datas stored in session.
      **/
@@ -110,7 +110,7 @@ class Session
 
     /**
      *    Destroys the current session.
-     *    
+     *
      *    @return    bool    TRUE is session has been deleted, else FALSE.
      **/
 
