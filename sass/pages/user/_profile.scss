@@ -11,6 +11,10 @@
     );
   }
   &__section {
+    .validation-alerts:not(:empty) {
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+    }
     // --bg-label-focus: transparent;
     // --foc: var(--clr-primary);
     // #label-lname {
@@ -180,16 +184,6 @@
       --hew: 10rem;
       display: inline;
       font-weight: var(--fw-700);
-    }
-
-    .btn:first-of-type {
-      --bg: red;
-      --bs: rgba(255, 0, 0, 0.116);
-      --hbs: rgba(255, 0, 0, 0.116);
-      &:is(:hover, :focus-visible) {
-        outline: 2px solid var(--clr-light);
-        --bg: rgba(255, 0, 0, 0.6);
-      }
     }
   }
 }

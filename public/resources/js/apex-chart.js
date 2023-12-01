@@ -17,7 +17,7 @@ function renderChart(dates, targets, intaked) {
   const optionsLine = {
     chart: {
       height: 400,
-      type: "area",
+      type: "line",
       zoom: {
         type: "x",
         enabled: true,
@@ -34,6 +34,25 @@ function renderChart(dates, targets, intaked) {
           stops: [0, 10, 50],
         },
       },
+    },
+    annotations: {
+      yaxis: [
+        {
+          // Recommended sleep duration
+          y: 8,
+          y2: 20,
+          borderColor: "#00E396",
+          fillColor: "#00a2ff",
+          label: {
+            borderColor: "#00a2ff",
+            style: {
+              color: "#fff",
+              background: "#00a2ff",
+            },
+            text: "Recommended: 2 to 5 liters",
+          },
+        },
+      ],
     },
     stroke: {
       curve: "smooth",
@@ -74,6 +93,15 @@ function renderChart(dates, targets, intaked) {
       tooltip: {
         enabled: false,
       },
+      labels: {
+        formatter: (values, opts) => {
+          // const nepaliDate = NepaliFunctions.ParseDate(value);
+          if (values) {
+            const [y, m, d] = values.split("/");
+            return `${NepaliFunctions.GetBsMonth(m - 1)} ${d}`;
+          }
+        },
+      },
     },
     yaxis: {
       title: {
@@ -94,7 +122,7 @@ function renderChart(dates, targets, intaked) {
   };
 
   const chartLine = new ApexCharts(
-    document.querySelector("#stay-hydrated"),
+    document.querySelector("#water"),
     optionsLine,
   );
   chartLine.render();
@@ -184,6 +212,12 @@ async function fetchDataAndRender() {
         height: 400,
         type: "bar",
       },
+      title: {
+        text: "Exercise",
+        align: "Center",
+        offsetY: 25,
+        offsetX: 20,
+      },
       plotOptions: {
         bar: {
           borderRadius: 10,
@@ -207,18 +241,11 @@ async function fetchDataAndRender() {
       xaxis: {
         labels: {
           rotate: -45,
-          /**
-           * Allows users to apply a custom formatter function to x-axis labels.
-           *
-           * @param { String } value - The default value generated
-           * @param { Number } timestamp - In a datetime series, this is the raw timestamp
-           * @param { object } contains dateFormatter for datetime x-axis
-           */
-          formatter: (values,opts) => {
+          formatter: (values, opts) => {
             // const nepaliDate = NepaliFunctions.ParseDate(value);
-            if(values){
+            if (values) {
               const [y, m, d] = values.split("/");
-              return `${NepaliFunctions.GetBsMonth(m-1)} ${d}`;
+              return `${NepaliFunctions.GetBsMonth(m - 1)} ${d}`;
             }
           },
         },
@@ -241,7 +268,7 @@ async function fetchDataAndRender() {
       },
     };
     var chart = new ApexCharts(
-      document.querySelector("#daily-exercise__bar-chart"),
+      document.querySelector("#exercise__bar-chart"),
       options,
     );
     chart.render();
@@ -290,7 +317,8 @@ async function fetchDataAndRender() {
         dropShadow: { enabled: true, blur: 1, left: 1, top: 1 },
       },
       title: {
-        text: "Average Exercise Duration : Minutes per Activity",
+        // text: "Average Exercise Duration : Minutes per Activity",
+        text: "Average Exercise Duration (Minutes)",
         align: "center",
         offsetY: 25,
         offsetX: 20,
@@ -302,7 +330,7 @@ async function fetchDataAndRender() {
     };
 
     new ApexCharts(
-      document.querySelector("#daily-exercise__radar-chart"),
+      document.querySelector("#exercise__radar-chart"),
       radarOptions,
     ).render();
   }
@@ -317,11 +345,181 @@ async function fetchDataAndRender() {
     const formattedSleepBed = sleepBed.map(formatTime);
     const formattedSleepWakeup = sleepWakeup.map(formatTime);
     const formattedSleepDuration = sleepDuration.map(formatTime);
-    console.log(
-      sleepDates.map(sleepDate =>
-        new Date(NepaliFunctions.BS2AD(sleepDate)).getTime(),
-      ),
-    );
+    function timeToMinutes(time) {
+      const [hours, minutes] = time.split(":").map(Number);
+      return hours * 60 + minutes;
+    }
+    function minutesToTime(minutes) {
+      const hours = Math.floor(minutes / 60);
+      const remainingMinutes = minutes % 60;
+      const formattedHours = String(hours).padStart(2, "0");
+      const formattedMinutes = String(remainingMinutes).padStart(2, "0");
+      return `${formattedHours}:${formattedMinutes}`;
+    }
+    function minutesToTimeWithHoursAndMinutes(minutes) {
+      const hours = Math.floor(minutes / 60);
+      const remainingMinutes = minutes % 60;
+
+      const hoursString = hours > 0 ? `${hours}hr` : "";
+      const minutesString =
+        remainingMinutes > 0 ? `${remainingMinutes}min` : "";
+
+      return `${hoursString} ${minutesString}`.trim();
+    }
+    // console.log(
+    //   timeToMinutes(formattedSleepWakeup[0]),
+    //   formattedSleepDuration.map(timeToMinutes),
+    //   timeToMinutes(formattedSleepBed[0]),
+    // );
+    // var optionsCircle4 = {
+    //   chart: {
+    //     type: "radialBar",
+    //     height: 350,
+    //     width: 380,
+    //   },
+    //   plotOptions: {
+    //     radialBar: {
+    //       size: undefined,
+    //       inverseOrder: true,
+    //       hollow: {
+    //         margin: 5,
+    //         // size: "48%",
+    //         background: "transparent",
+    //       },
+    //       track: {
+    //         show: false,
+    //       },
+    //       startAngle: -180,
+    //       endAngle: 180,
+    //     },
+    //   },
+    //   stroke: {
+    //     lineCap: "round",
+    //   },
+    //   series: [
+    //     timeToMinutes(formattedSleepWakeup[0]),
+    //     timeToMinutes(formattedSleepDuration[0]),
+    //     timeToMinutes(formattedSleepBed[0]),
+    //   ],
+    //   labels: ["Wakeup Time", "Sleep Duration", "Bed Time"],
+    //   legend: {
+    //     show: true,
+    //     floating: true,
+    //     position: "right",
+    //     offsetX: 20,
+    //     offsetY: 240,
+    //   },
+    // };
+    var dates = [];
+    var spikes = [5, -5, 3, -3, 8, -8];
+    for (var i = 0; i < sleepDates.length; i++) {
+      var innerArr = [
+        // NepaliFunctions.BS2AD(sleepDates[i]),
+        // sleepDates[i],
+        new Date(NepaliFunctions.BS2AD(sleepDates[i], "YYYY/MM/DD")).getTime(),
+        timeToMinutes(formattedSleepDuration[i]),
+      ];
+      dates.push(innerArr);
+    }
+    console.log(dates);
+    console.log(formattedSleepDuration);
+    var options = {
+      series: [
+        {
+          name: "Sleep Duration",
+          data: dates,
+        },
+      ],
+      chart: {
+        type: "area",
+        stacked: false,
+        height: 350,
+        zoom: {
+          type: "x",
+          enabled: true,
+          autoScaleYaxis: true,
+        },
+        toolbar: {
+          autoSelected: "zoom",
+        },
+      },
+      annotations: {
+        yaxis: [
+          {
+            // Recommended sleep duration
+            y: 480,
+            borderColor: "#00E396",
+            label: {
+              borderColor: "#00E396",
+              style: {
+                color: "#fff",
+                background: "#00E396",
+              },
+              text: "Recommended: 8 hours",
+            },
+          },
+        ],
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      markers: {
+        size: 0,
+      },
+      title: {
+        text: "Sleep Duration",
+        align: "Center",
+        offsetY: 25,
+        offsetX: 20,
+      },
+      fill: {
+        type: "gradient",
+        gradient: {
+          shadeIntensity: 1,
+          inverseColors: false,
+          opacityFrom: 0.5,
+          opacityTo: 0,
+          stops: [0, 90, 100],
+        },
+      },
+      yaxis: {
+        labels: {
+          formatter: function (val) {
+            return minutesToTime(val);
+          },
+        },
+        title: {
+          text: "Time",
+        },
+      },
+      xaxis: {
+        type: "datetime",
+        labels: {
+          formatter: function (value) {
+            let nepaliDate = NepaliFunctions.AD2BS(
+              new Date(value).toISOString().split("T")[0],
+              "YYYY-MM-DD",
+              "YYYY/MM/DD",
+            );
+            if (nepaliDate) {
+              const [y, m, d] = nepaliDate.split("/");
+              return `${NepaliFunctions.GetBsMonth(m - 1)} ${d}`;
+            }
+          },
+        },
+      },
+      tooltip: {
+        shared: false,
+        y: {
+          formatter: function (val, a, b) {
+            return minutesToTimeWithHoursAndMinutes(val);
+          },
+        },
+      },
+    };
+
+    var chart = new ApexCharts(document.querySelector("#sleep"), options);
+    chart.render();
   }
 }
 fetchDataAndRender();

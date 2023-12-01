@@ -22,11 +22,14 @@ $query = "SELECT
           WHERE
             user_id = :id";
 $params = [
-    "id" => [$session->user['id'], PDO::PARAM_STR]
+  "id" => [$session->user['id'], PDO::PARAM_STR]
 ];
 $user = Database::select($query, $params)->fetch();
 
 // d($user);
+$user['age'] = $user['age'] === 0 ? '' : $user['age'];
+$user['height'] = floatval($user['height']) == 0 ? '' : $user['height'];
+$user['weight'] = $user['weight'] === 0 ? '' : $user['weight'];
 $user['last_login'] = timeago($user['last_login']);
 $user['created_on'] = getUserDate($user['created_on'], $user['timezone'])->format('jS, F Y');
 $user['profile_pic'] = $user['profile_pic'] ?? "/resources/images/default-profile.png";
@@ -38,13 +41,12 @@ $session->profile_pic = $user['profile_pic'];
 //     'email' => $user['email']
 // ];
 require_view('user/profile.view.php', [
-    'scripts' => [
-        "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
-        "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
-        "src='/resources/js/input.js'",
-        "src='/resources/js/profile.js'",
-        "src='/resources/js/dashboardSidebar.js'"
-    ],
-    'user' => $user,
-    'alerts' => []
+  'scripts' => [
+    "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
+    "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
+    "src='/resources/js/profile.js'",
+    "src='/resources/js/dashboardSidebar.js'"
+  ],
+  'user' => $user,
+  'alerts' => []
 ]);

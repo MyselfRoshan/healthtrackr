@@ -4,7 +4,7 @@ window.addEventListener("beforeunload", () => {
 
 // Function that doesn't revert back the value of inputfield after losing focus
 const inputTxtFields = document.querySelectorAll(".input-signup");
-inputTxtFields.forEach((inputTxtField) => {
+inputTxtFields.forEach(inputTxtField => {
   inputTxtField.addEventListener("input", () => {
     inputTxtField.setAttribute("value", inputTxtField.value);
     localStorage.setItem(`${inputTxtField.id}`, inputTxtField.value);

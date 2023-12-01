@@ -28,15 +28,15 @@
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Age:</dt>
-        <dd><?php $user['weight'] ?? "{$user['weight']} years" ?> </dd>
+        <dd><?php echo $user['age'] ?? "{$user['age']} years" ?> </dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Height:</dt>
-        <dd><?= $user['height'] ?></dd>
+        <dd><?= toFeetInches($user['height']) ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Weight:</dt>
-        <dd><?php $user['weight'] ?? "{$user['weight']}kg" ?></dd>
+        <dd><?php echo $user['weight'] ?? "{$user['weight']}kg" ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Last login:</dt>
@@ -75,10 +75,10 @@
         </small>
       </div>
       <div class="input-container">
-        <label class="label fs-300 fw-500 text-dark-400 fw-600" for="username" id="label__username">
+        <label class="label fs-300 fw-500 text-dark-400 fw-600" for="username" id="label-username">
           Username
         </label>
-        <input type="text" id="username" class="input-text" name="username" value="<?= $user['username'] ?>" aria-labelledby="label-username" />
+        <input type="text" id="username" class="input-text" name="username" value="<?= $user['username'] ?>" aria-labelledby="label-username" autocomplete="off" />
         <small class="validation-alerts">
 
           <?= $alerts['username'] ?? '' ?>
@@ -89,7 +89,7 @@
         <label class="label fs-300 fw-500 text-dark-400 fw-600" for="email" id="label-email">
           Email
         </label>
-        <input type="email" id="email" class="input-text" name="email" value="<?= $user['email'] ?>" aria-labelledby="label-email" />
+        <input type="email" id="email" class="input-text" name="email" value="<?= $user['email'] ?>" aria-labelledby="label-email" autocomplete="off" />
         <small class="validation-alerts">
 
           <?= $alerts['email'] ?? '' ?>
@@ -112,7 +112,7 @@
         <label class="label fs-300 fw-500 text-dark-400 fw-600" for="age" id="label-age">
           Age
         </label>
-        <input type="number" id="age" class="input-text" name="age" value="<?= $user['email'] ?>" aria-labelledby="label-age" />
+        <input type="number" id="age" class="input-text" name="age" value="<?= $user['age'] ?>" aria-labelledby="label-age" />
         <small class="validation-alerts">
 
           <?= $alerts['age'] ?? '' ?>
@@ -123,7 +123,7 @@
         <label class="label fs-300 fw-500 text-dark-400 fw-600" for="height" id="label-height">
           Height (ft)
         </label>
-        <input type="text" id="height" name="height" pattern="[3-8]'([0-9]|1[0-1])\"" class=" input-text" name="height" value="<?= $user['height'] ?>" aria-labelledby=" label-height">
+        <input type="text" inputmode="numeric" id="height" name="height" class=" input-text" name="height" value="<?= $user['height'] ?>" aria-labelledby=" label-height">
         <small class="validation-alerts">
 
           <?= $alerts['height'] ?? '' ?>
@@ -143,11 +143,6 @@
       </div>
     </div>
     <div class="btn-container">
-      <button class="btn btn-m text-light me-3">
-        <span></span>
-        Delete Account
-        <span></span>
-      </button>
       <button class="btn btn-m btn__hover-effect text-light">
         <span></span>
         Update Info

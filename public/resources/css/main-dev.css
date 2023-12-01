@@ -2795,6 +2795,25 @@ div.ndp-nepali-box a {
      -moz-user-select: none;
           user-select: none;
 }
+.dashboard-wrapper {
+  position: relative;
+  grid-column: 1;
+}
+.dashboard .charts-container {
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+}
+.dashboard .charts {
+  grid-column: span 1;
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px var(--clr-ash);
+  transition: box-shadow 300ms ease-in-out, scale 250ms ease-in, width 500ms ease-in-out;
+}
+.dashboard .charts:hover {
+  scale: 1.02;
+  box-shadow: 0 8px 16px var(--clr-dark-200);
+}
 .dashboard .menu-item,
 .dashboard .menu-toggle {
   margin-inline: 16px;
@@ -2810,15 +2829,29 @@ div.ndp-nepali-box a {
 .dashboard.menu-open .profile__logout {
   transition: background 1000ms ease-in-out;
 }
+.dashboard.menu-open .profile__logout {
+  grid-column: span 2;
+  border-radius: 100px;
+  width: calc(100% - 30px);
+}
+.dashboard.menu-open .profile__logout span {
+  width: auto;
+  opacity: 1;
+  position: unset;
+  width: auto;
+  height: auto;
+  margin: none;
+  transition: all 500ms ease-out;
+}
 .dashboard__menu-list {
   --flex-direction: column;
   --align-items: flex-start;
   --flex-gap: 1rem;
-  grid-column: 1;
   overflow: hidden;
-  height: 100dvh;
   height: 100%;
   padding-block: 1.5rem;
+  position: fixed;
+  width: var(--menu-width);
 }
 .dashboard__menu-list .profile {
   --flow-gap: 0.5rem;
@@ -2845,15 +2878,27 @@ div.ndp-nepali-box a {
 }
 .dashboard__menu-list .profile__logout {
   cursor: pointer;
-  border: none;
-  background: transparent;
   width: 3rem;
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, var(--clr-secondary) 0%, var(--clr-yellow) 100%);
 }
-.dashboard__menu-list .profile__logout > ion-icon {
-  font-size: var(--fs-500);
+.dashboard__menu-list .profile__logout span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+  font-weight: var(--fw-600);
+  transition: width 500ms ease-in, opacity 500ms ease-in;
 }
 .dashboard__menu-list .profile.active {
   box-shadow: 0px 0px 10px 5px var(--clr-yellow);
@@ -2920,6 +2965,7 @@ div.ndp-nepali-box a {
   --card3-gradient-color2: #a8c0ff;
   --card4-gradient-color1: #11998e;
   --card4-gradient-color2: #38ef7d;
+  grid-column: 2;
 }
 .dashboard__content header {
   --justify-content: space-between;
@@ -3118,6 +3164,10 @@ div.ndp-nepali-box a {
   grid-template-columns: repeat(8, 1fr);
   align-items: start;
 }
+.profile__section .validation-alerts:not(:empty) {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
 .profile__section .details {
   --justify-content: space-between;
   padding-bottom: 0.3rem;
@@ -3237,15 +3287,6 @@ div.ndp-nepali-box a {
   --hew: 10rem;
   display: inline;
   font-weight: var(--fw-700);
-}
-.profile__change .btn:first-of-type {
-  --bg: red;
-  --bs: rgba(255, 0, 0, 0.116);
-  --hbs: rgba(255, 0, 0, 0.116);
-}
-.profile__change .btn:first-of-type:is(:hover, :focus-visible) {
-  outline: 2px solid var(--clr-light);
-  --bg: rgba(255, 0, 0, 0.6);
 }
 
 /* Exercise form container */
