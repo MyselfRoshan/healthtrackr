@@ -49,7 +49,7 @@ class Validate
      */
     public static function duplicate($table, $column, $valueToBeChecked): bool
     {
-        $query = "SELECT {$column} FROM public.{$table} WHERE {$column} = :{$column}";
+        $query = "SELECT {$column} FROM {$table} WHERE {$column} = :{$column}";
         $params = [
             "{$column}" => [$valueToBeChecked, PDO::PARAM_STR]
         ];
@@ -72,7 +72,7 @@ class Validate
      */
     public static function isValueTaken($table, $column, $valueToBeChecked, $excludeColumn, $excludeValue): bool
     {
-        $query = "SELECT COUNT(*) FROM public.{$table} WHERE {$column} = :value AND {$excludeColumn} != :excludeValue";
+        $query = "SELECT COUNT(*) FROM {$table} WHERE {$column} = :value AND {$excludeColumn} != :excludeValue";
         $params = [
             ':value' => [$valueToBeChecked, PDO::PARAM_STR],
             ':excludeValue' => [$excludeValue, PDO::PARAM_INT],
@@ -95,7 +95,7 @@ class Validate
     public static function userExits($valueToBeChecked)
     {
         $column = static::isEmail($valueToBeChecked) ? 'email' : 'username';
-        $query = "SELECT {$column} FROM public.user WHERE {$column} = :params";
+        $query = "SELECT {$column} FROM users WHERE {$column} = :params";
         $params = [
             "params" => [$valueToBeChecked, PDO::PARAM_STR]
         ];
@@ -115,7 +115,7 @@ class Validate
     {
         if (!trim($usrname_email)) return false;
         $column = static::isEmail($usrname_email) ? 'email' : 'username';
-        $query = "SELECT {$column},password FROM public.user WHERE {$column} = :params";
+        $query = "SELECT {$column},password FROM users WHERE {$column} = :params";
         $params = [
             "params" => [$usrname_email, PDO::PARAM_STR]
         ];

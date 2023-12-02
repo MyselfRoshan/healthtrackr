@@ -31,7 +31,7 @@ class ProfileForm
             $this->alerts['username'] = "*Username is required";
         else if (!Validate::alphaNumeric($username))
             $this->alerts['username'] = "Should be alpha numeric eg:john123";
-        elseif (Validate::isValueTaken('user', 'username', $username, 'user_id', $session->user['id']))
+        elseif (Validate::isValueTaken('users', 'username', $username, 'user_id', $session->user['id']))
             $this->alerts['username'] = "User with this username already exists";
 
         // Email validation
@@ -39,7 +39,7 @@ class ProfileForm
             $this->alerts['email'] = "*Email is required";
         else if (!Validate::isEmail($email))
             $this->alerts['email'] = "Invalid email!!!";
-        elseif (Validate::isValueTaken('user', 'email', $email, 'user_id', $session->user['id']))
+        elseif (Validate::isValueTaken('users', 'email', $email, 'user_id', $session->user['id']))
             $this->alerts['email'] = "User with this email already exists";
 
         // Password validation

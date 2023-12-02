@@ -4,7 +4,7 @@ use App\Session;
 use Database\Database;
 
 $session = Session::getInstance();
-$query = "SELECT date,target,intaked FROM public.stay_hydrated WHERE user_id = :uid";
+$query = "SELECT date,target,intaked FROM stay_hydrated WHERE user_id = :uid";
 $params = [
     "uid" => [$session->user['id'], PDO::PARAM_INT]
 ];

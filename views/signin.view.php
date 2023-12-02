@@ -7,14 +7,14 @@
     <div class="container grid-signin">
       <div class="signin__illustration">
 
-        <?php require_svg("signin.svg.php") ?>
+        <?php require_svg("signin.svg") ?>
 
       </div>
       <form method="post" class="signin__form flow d-flex bg-gradient pt-16 pb-12">
         <div class="logo">
           <div class="signin__logo">
 
-            <?php require_svg("logo.svg.php") ?>
+            <?php require_svg("logo.svg") ?>
 
           </div>
         </div>
@@ -56,7 +56,7 @@
           <span></span>
           <span>
             <span class="icon__google">
-              <?php require_svg("logo-google.svg.php") ?>
+              <?php require_svg("logo-google.svg") ?>
             </span>
             Signin with Google
           </span>

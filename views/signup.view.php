@@ -83,7 +83,7 @@
         </p>
       </form>
       <div class="signup__illustration">
-        <?php require_svg("sign-up.svg.php") ?>
+        <?php require_svg("sign-up.svg") ?>
       </div>
     </div>
   </section>

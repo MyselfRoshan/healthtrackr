@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS public."user"
+CREATE TABLE IF NOT EXISTS users
 (
   user_id SERIAL PRIMARY KEY,
 	first_name VARCHAR (50) NOT NULL,
@@ -8,21 +8,21 @@ CREATE TABLE IF NOT EXISTS public."user"
 	email VARCHAR(25) UNIQUE NOT NULL,
 	created_on TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
 	last_login TIMESTAMP(0),
-	timezone VARCHAR (40)
+	timezone VARCHAR (40),
 	profile_pic VARCHAR(50),
   reset_token_hash VARCHAR (255),
-  reset_token_expires_at TIMESTAMP(0),
-)
+  reset_token_expires_at TIMESTAMP(0)
+);
 
 CREATE TABLE profile (
-    user_id INT REFERENCES public.user(user_id) ON DELETE CASCADE,
+    user_id INT REFERENCES users(user_id) ON DELETE CASCADE,
     age INT,
     height NUMERIC(5, 2),
     weight INT
-)
+);
 
 CREATE TABLE daily_exercise (
-  user_id INTEGER NOT NULL REFERENCES public.user(user_id),
+  user_id INTEGER NOT NULL REFERENCES users(user_id),
   date VARCHAR(10) NOT NULL,
   name VARCHAR(20) NOT NULL,
   target SMALLINT NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE daily_exercise (
 );
 
 CREATE TABLE stay_hydrated (
-  user_id INTEGER NOT NULL REFERENCES public.user(user_id),
+  user_id INTEGER NOT NULL REFERENCES users(user_id),
   date VARCHAR(10) NOT NULL,
   target SMALLINT NOT NULL,
   intaked SMALLINT NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE stay_hydrated (
 );
 
 CREATE TABLE quality_sleep (
-  user_id INTEGER NOT NULL REFERENCES public.user(user_id),
+  user_id INTEGER NOT NULL REFERENCES users(user_id),
   date VARCHAR(10) NOT NULL,
   bed_time TIME NOT NULL,
   wakeup_time TIME NOT NULL,
@@ -47,40 +47,38 @@ CREATE TABLE quality_sleep (
   PRIMARY KEY (user_id, date)
 );
 
--- CREATE TABLE email (
---   id SERIAL PRIMARY KEY,
---   recipent VARCHAR(255) NOT NULL,
---   subject VARCHAR(255) NOT NULL,
---   html_body TEXT,
---   text_body TEXT,
---   created_at TIMESTAMP(0),
---   sent_at TIME(0),
---   schedule_at TIME(0)
--- );
---
--- CREATE TABLE email_schedule (
---   id SERIAL PRIMARY KEY,
---   status INTEGER NOT NULL,
---   type VARCHAR(20),
---   turn_on_off_notification_schedule,
---   start_time TIME(0),
---   end_time TIME(0),
---   repeat_count INTEGER
---   user_id INTEGER REFERENCES user(user_id) ON DELETE CASCADE,
--- );
-
-CREATE TABLE email_schedule (
+CREATE TABLE email_reminder (
   id SERIAL PRIMARY KEY,
-  type VARCHAR(20),
-  status INTEGER NOT NULL,
-  turn,
-  type of activities (Exercise choice/enum),
-  start_time TIME(0),
-  end_time TIME(0),
-  repeat_count INTEGER
-  user_id,
-  activity id (Not NUll)
-  status (queue enum, 0 pending, 1 sent, 2 failed, 3 canceled)
+  user_id INTEGER NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+  activity_category VARCHAR(20) NOT NULL,
+  is_enabled BOOLEAN NOT NULL,
+  start_time TIME(0) NOT NULL,
+  end_time TIME(0) NOT NULL,
+  frequency SMALLINT NOT NULL,
+  pending_count SMALLINT DEFAULT 0,
+  sent_count SMALLINT DEFAULT 0,
+  failed_count SMALLINT DEFAULT 0,
+  CONSTRAINT unique_user_activity UNIQUE (user_id, activity_category)
 );
 
-UPDATE public.user SET reset_token_hash = NULL , reset_token_expires_at=null;
+UPDATE email_reminder SET start_time='22:50', end_time='23:00';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UPDATE users SET reset_token_hash = NULL , reset_token_expires_at=null;

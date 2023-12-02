@@ -51,7 +51,7 @@ $EMAIL = [
     </div>
 
     <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
-        <p>Hi {$session->user['username']},</p>
+        <p>Hi {$user['first_name']},</p>
 
         <p>We hope you're having a great day! 😊 Just a friendly reminder to stay hydrated by drinking enough water. Proper hydration is essential for your health and well-being.</p>
 
@@ -119,7 +119,7 @@ $EMAIL = [
     </div>
 
     <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
-        <p>Hi {$session->user['username']},</p>
+        <p>Hi {$user['first_name']},</p>
 
         <p>We hope you're doing well! 😊 It's time to prioritize your health and well-being by engaging in some daily exercise. Regular physical activity has numerous benefits for your body and mind.</p>
 
@@ -187,7 +187,7 @@ $EMAIL = [
     </div>
 
     <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
-        <p>Hi {$session->user['username']},</p>
+        <p>Hi {$user['first_name']},</p>
 
         <p>We hope you're ready to kickstart your day! 😊 In the morning, embrace the outdoors with activities like jogging or playing a round of badminton. Outdoor exercises are a great way to invigorate your body and mind.</p>
 
@@ -256,7 +256,7 @@ $EMAIL = [
     </div>
 
     <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
-        <p>Hi {$session->user['username']},</p>
+        <p>Hi {$user['first_name']},</p>
 
         <p>As the day winds down, it's time to unwind with some gentle indoor exercises. Consider activities like yoga to relax your body and calm your mind. Evening exercises can help you transition into a peaceful night's sleep.</p>
 
@@ -324,7 +324,7 @@ $EMAIL = [
     </div>
 
     <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
-        <p>Hi {$session->user['username']},</p>
+        <p>Hi {$user['first_name']},</p>
 
         <p>We hope you had a wonderful day! 😴 It's crucial to prioritize quality sleep for overall health and well-being. Adequate sleep contributes to better mood, cognitive function, and physical health.</p>
 
@@ -392,7 +392,7 @@ $EMAIL = [
     </div>
 
     <div class="content" style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 5px;">
-        <p>Hi {$session->user['username']},</p>
+        <p>Hi {$user['first_name']},</p>
 
         <p>Wake up and embrace the possibilities of a brand new day! 😊 A positive morning routine sets the tone for the hours ahead.</p>
 

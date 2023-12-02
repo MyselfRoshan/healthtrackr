@@ -7,7 +7,7 @@ use Database\Database;
 
 $session = Session::getInstance();
 $reset_token_hash = hash('sha256', $session->reset_token);
-$query = "SELECT * from public.user
+$query = "SELECT * from users
 WHERE reset_token_hash = :token_hash";
 $params = [
     'token_hash' => [$reset_token_hash, PDO::PARAM_STR]
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
     } else {
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
-        $query = "UPDATE public.user
+        $query = "UPDATE users
         SET password = :password
         WHERE email = :email";
         $params = [

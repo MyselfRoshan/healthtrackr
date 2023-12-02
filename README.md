@@ -23,8 +23,8 @@ composer dump-autoload -o
   - [Using Apex Charts](https://apexcharts.com/) : [Demo dashboard](https://demo.adminkit.io/charts-apexcharts)
   - [Mooris chart](https://morrisjs.github.io/morris.js/) : [Demo dashboard](https://colorlib.com/polygon/concept/pages/chart-morris.html)
   - [E charts](https://github.com/apache/echarts) : [Demo dashboard](https://colorlib.com/polygon/gentelella/echarts.html)
-- [ ] Add send notification toggle in each and every add section card (USE php corn job to send notification).
-- [ ] Creation of Notification System to send through email.
+- [x] Add send notification toggle in each and every add section card (USE php corn job to send notification).
+- [x] Creation of Notification System to send through email.
 - [ ] Make admin dashboard if have time
 - [ ] Add "Delete" button in profile to delete account.
 - [ ] Implement token system to login in rather tha user id

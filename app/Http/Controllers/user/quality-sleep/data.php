@@ -4,7 +4,7 @@ use App\Session;
 use Database\Database;
 
 $session = Session::getInstance();
-$query = "SELECT date,bed_time,wakeup_time,sleep_duration FROM public.quality_sleep WHERE user_id = :uid";
+$query = "SELECT date,bed_time,wakeup_time,sleep_duration FROM quality_sleep WHERE user_id = :uid";
 $params = [
     "uid" => [$session->user['id'], PDO::PARAM_INT]
 ];

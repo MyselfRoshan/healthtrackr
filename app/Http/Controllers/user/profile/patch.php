@@ -19,7 +19,7 @@ if ($_FILES['profile_pic']['error'] == UPLOAD_ERR_OK) {
 }
 if ($uploaded) {
     // Delete previous profile picture
-    $query = "SELECT profile_pic FROM public.user WHERE email = :email";
+    $query = "SELECT profile_pic FROM users WHERE email = :email";
     $params = [
         "email" => [$session->user['email'], PDO::PARAM_STR]
     ];
@@ -28,7 +28,7 @@ if ($uploaded) {
         unlink(BASE_PATH . "public/{$user['profile_pic']}");
 
     // Add new uploaded profile picture
-    $query = "UPDATE public.user
+    $query = "UPDATE users
     SET profile_pic = :profile_pic
     WHERE email = :email";
     $params = [

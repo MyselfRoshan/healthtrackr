@@ -8,9 +8,6 @@ if (!isset($attributes[0])) $attributes[0] = '';
             <div class="menu-item__icon">
                 <ion-icon name="menu"></ion-icon>
             </div>
-            <!-- <div class="logo">
-                <img src="../resources/images/logo-only.png" alt="logo" srcset="" />
-              </div> -->
         </div>
 
         <a href="/<?= $_SESSION['user']['username'] ?>" class="menu-item <?php echo $attributes[0] === 'd' ? 'active' : '' ?> ">
@@ -33,13 +30,13 @@ if (!isset($attributes[0])) $attributes[0] = '';
             </div>
             <span class="menu-item__desc" hidden>Reminder</span>
         </a>
-
+        <!--
         <a href="/<?= $_SESSION['user']['username'] ?>/goal" class="menu-item <?php echo $attributes[0] === 'g' ? 'active' : '' ?>">
             <div class="menu-item__icon">
                 <ion-icon name="flag<?php echo $attributes[0] === 'g' ? '-outline' : '' ?>"></ion-icon>
             </div>
             <span class="menu-item__desc" hidden>Goal</span>
-        </a>
+        </a> -->
         <div class="profile">
 
             <a href="/<?= $_SESSION['user']['username'] ?>/profile" class="profile__pic">

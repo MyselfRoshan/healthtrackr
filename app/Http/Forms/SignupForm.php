@@ -10,7 +10,7 @@ class SignupForm
 
     /**
      * @param array $postRequestArray provide $_POST array as an argument
-     * 
+     *
      * @return bool true if validation is sucessful else false
      */
     public function validate(array $postRequestArray): bool
@@ -29,7 +29,7 @@ class SignupForm
             $this->alerts['username'] = "*Username is required";
         else if (!Validate::alphaNumeric($username))
             $this->alerts['username'] = "Should be alpha numeric eg:john123";
-        elseif (Validate::duplicate('user', 'username', $username))
+        elseif (Validate::duplicate('users', 'username', $username))
             $this->alerts['username'] = "User with this username already exists";
 
 
@@ -38,7 +38,7 @@ class SignupForm
             $this->alerts['email'] = "*Email is required";
         else if (!Validate::isEmail($email))
             $this->alerts['email'] = "Invalid email!!!";
-        elseif (Validate::duplicate('user', 'email', $email))
+        elseif (Validate::duplicate('users', 'email', $email))
             $this->alerts['email'] = "User with this email already exists";
 
         // Password validation

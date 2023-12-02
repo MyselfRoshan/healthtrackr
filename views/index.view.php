@@ -44,7 +44,7 @@
       <article class="register__article container grid-layout">
         <div class="register__icon">
 
-          <?php require_svg("index/register.svg.php") ?>
+          <?php require_svg("index/register.svg") ?>
 
         </div>
         <h2 class="register__heading ff-leauge-gothic fs-900 text-accent">
@@ -121,7 +121,7 @@
     <div class="get-started bg-tertiary">
       <div class="container grid-layout">
         <div class="get-started__icon">
-          <?php require_svg("index/get-started.svg.php") ?>
+          <?php require_svg("index/get-started.svg") ?>
         </div>
         <h2 class="get-started__heading ff-leauge-gothic fs-900 text-accent">
           Get Started
@@ -202,8 +202,8 @@
         </div>
         <div class="inspiration__icon">
 
-          <?php require_svg("index/inspiration.svg.php") ?>
-          <?php require_svg("index/inspiration1.svg.php") ?>
+          <?php require_svg("index/inspiration.svg") ?>
+          <?php require_svg("index/inspiration1.svg") ?>
 
         </div>
       </article>
@@ -212,7 +212,7 @@
       <div class="container grid-layout">
         <div class="footer__icon">
 
-          <?php require_svg("index/footer.svg.php") ?>
+          <?php require_svg("index/footer.svg") ?>
 
         </div>
         <p class="footer__copyright text-dark">© 2023 Health Trackr</p>

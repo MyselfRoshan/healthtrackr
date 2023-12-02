@@ -14,11 +14,11 @@ $query = "SELECT
             created_on,
             timezone,
             profile_pic,
-            (SELECT age FROM public.profile WHERE user_id = :id) AS age,
-            (SELECT weight FROM public.profile WHERE user_id = :id) AS weight,
-            (SELECT height FROM public.profile WHERE user_id = :id) AS height
+            (SELECT age FROM profile WHERE user_id = :id) AS age,
+            (SELECT weight FROM profile WHERE user_id = :id) AS weight,
+            (SELECT height FROM profile WHERE user_id = :id) AS height
           FROM
-            public.user
+            users
           WHERE
             user_id = :id";
 $params = [

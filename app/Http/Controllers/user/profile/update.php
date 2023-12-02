@@ -17,16 +17,15 @@ if (!$form->validate($_POST)) {
             last_name,
             username,
             email,
-            -- password,
             last_login,
             created_on,
             timezone,
             profile_pic,
-            (SELECT age FROM public.profile WHERE user_id = :id) AS age,
-            (SELECT weight FROM public.profile WHERE user_id = :id) AS weight,
-            (SELECT height FROM public.profile WHERE user_id = :id) AS height
+            (SELECT age FROM profile WHERE user_id = :id) AS age,
+            (SELECT weight FROM profile WHERE user_id = :id) AS weight,
+            (SELECT height FROM profile WHERE user_id = :id) AS height
           FROM
-            public.user
+            users
           WHERE
             user_id = :id";
   $params = [
@@ -52,10 +51,7 @@ if (!$form->validate($_POST)) {
     'user' => $user
   ]);
 } else {
-  // d($_POST);
-  // $timeZone=json_decode($_COOKIE['timeZone']);
-  // Timezone::detect_timezone_id($timeZone->offset, $timeZone->dst);
-  $query = "UPDATE public.user
+  $query = "UPDATE users
         SET
           first_name = :fname,
           last_name = :lname,
@@ -77,31 +73,13 @@ if (!$form->validate($_POST)) {
     'username' => $username,
     'email' => $email,
   ];
-  // if (intval($age) && intval($age) && intval($age)) {
 
-  // $query = "INSERT INTO public.profile (user_id, age, height, weight)
-  // VALUES (:id, :age, :height, :weight)
-  // ON CONFLICT (user_id)
-  // DO UPDATE SET
-  //   age = EXCLUDED.age,
-  //   height = EXCLUDED.height,
-  //   weight = EXCLUDED.weight;";
-
-  // $params = [
-  //     'id' => [$session->user['id'], PDO::PARAM_STR],
-  //     'age' => [intval($age), PDO::PARAM_INT],
-  //     'height' => [floatval($height), PDO::PARAM_STR],
-  //     'weight' => [intval($weight), PDO::PARAM_INT],
-  // ];
-  // Database::update($query, $params);
-
-  $queryCheck = "SELECT user_id FROM public.profile WHERE user_id = :id";
+  $queryCheck = "SELECT user_id FROM profile WHERE user_id = :id";
   $paramsCheck = ['id' => [$session->user['id'], PDO::PARAM_STR]];
   $result = Database::select($queryCheck, $paramsCheck)->fetch();
-  // d($result);
   if ($result) {
     // User_id exists, perform an update
-    $query = "UPDATE public.profile
+    $query = "UPDATE profile
         SET
           age = :age,
           height = :height,
@@ -111,7 +89,7 @@ if (!$form->validate($_POST)) {
     ";
   } else {
     // User_id doesn't exist, perform an insert
-    $query = "INSERT INTO public.profile (user_id, age, height, weight)
+    $query = "INSERT INTO profile (user_id, age, height, weight)
         VALUES (:id, :age, :height, :weight);
     ";
   }

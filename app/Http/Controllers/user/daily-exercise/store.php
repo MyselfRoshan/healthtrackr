@@ -13,7 +13,7 @@ if (isset($data)) {
     // Insert the quality sleep data into database and if the primary key is duplicate then update the data from user to database.
     $response = [];
     foreach ($data as $date => $row) {
-        $query = "INSERT INTO public.daily_exercise(user_id, date, name, target, actual)
+        $query = "INSERT INTO daily_exercise(user_id, date, name, target, actual)
         VALUES(:uid, :date, :name, :target, :actual)
         ON CONFLICT (user_id, date)
         DO UPDATE SET

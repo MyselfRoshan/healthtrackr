@@ -7,6 +7,7 @@ async function fetchData(endpoint, storageKey) {
     const response = await ajax(`${window.location.href}${endpoint}`);
     const data = await response.json();
     localStorage.setItem(storageKey, JSON.stringify(data));
+    console.log(data);
     return data;
   } catch (error) {
     console.error(`Error setting ${storageKey} data:`, error);
@@ -144,6 +145,7 @@ async function fetchDataAndRender() {
     fetchData("/add/daily-exercise/data", "Exercise"),
     fetchData("/add/quality-sleep/data", "Sleep"),
     fetchData("/add/stay-hydrated/data", "Water"),
+    fetchData("/notification", "Reminder"),
   ]);
   function convertAndSort(obj) {
     const dates = Object.keys(obj).sort();

@@ -9,7 +9,7 @@ class Token
      * Generate Access Token
      * @method generateAccessToken
      * @param array $payload Elements to be encoded
-     * 
+     *
      * @return string Access Token
      */
     public static function generateAccessToken($payload)
@@ -36,7 +36,7 @@ class Token
      * Generate Refresh Token
      * @method generateRefreshToken
      * @param array $payload Elements to be encoded
-     * 
+     *
      * @return string Refresh Token
      */
     public static function generateRefreshToken($payload)
@@ -65,7 +65,7 @@ class Token
      * @param array $payload Elements to be encoded
      * @param string $key Secret key used to generate and verify token
      * @param int $expire (optional) Token expiry time in seconds
-     * 
+     *
      * @return string Token generated using $payload, $key and $expire
      */
     private static function generateToken($payload, $expire, $key)

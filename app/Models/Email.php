@@ -1,73 +1,146 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Models;
 
-use App\Enums\EmailStatus;
+use App\Enums\ActivityCategory;
 use Database\Database;
 use PDO;
 
 class Email
 {
-    /** TO DO
-     *  Get timezone from database instead of hard coding to 'Asia/Kathmandu'
-     */
     public function queue(
-        string $recipent,
-        string $subject,
-        string $html,
-        ?string $scheduled_at = null,
-        ?string $text = null,
+        int $userId,
+        ActivityCategory $activityCategory,
+        string $startTime,
+        string $endTime,
+        int $frequency,
     ) {
-        $query = "INSERT INTO public.email (recipent, subject, status, html_body, text_body, created_at, scheduled_at)
-        VALUES (:recipent, :subject, :status, :html_body, :text_body, CURRENT_TIMESTAMP AT TIME ZONE 'Asia/Kathmandu', :scheduled_at)";
-        // VALUES (:recipent, :subject, :status, :html_body, :text_body, CURRENT_TIMESTAMP AT TIME ZONE '{$_COOKIE['timeZone']}', :scheduled_at)";
+        // $query = "INSERT INTO email_reminder (user_id, activity_category, is_enabled, start_time, end_time, frequency)
+        // VALUES (:user_id, :activity_category, :is_enabled, :start_time, :end_time, :frequency)";
+
+        $query = "INSERT INTO email_reminder (user_id, activity_category, is_enabled, start_time, end_time, frequency)
+               VALUES (:user_id, :activity_category, true , :start_time, :end_time, :frequency)
+               ON CONFLICT (user_id, activity_category)
+               DO UPDATE SET is_enabled = true;";
 
         $params = [
-            'recipent' => [$recipent, PDO::PARAM_STR],
-            'subject' => [$subject, PDO::PARAM_STR],
-            'status' => [EmailStatus::Queue->value, PDO::PARAM_STR],
-            'html_body' => [$html, PDO::PARAM_STR],
-            'scheduled_at' => [$scheduled_at, PDO::PARAM_STR],
-            'text_body' => [$text, PDO::PARAM_STR],
+            'user_id' => [$userId, PDO::PARAM_INT],
+            'activity_category' => [$activityCategory->value, PDO::PARAM_INT],
+            'start_time' => [$startTime, PDO::PARAM_STR],
+            'end_time' => [$endTime, PDO::PARAM_STR],
+            'frequency' => [$frequency, PDO::PARAM_INT],
         ];
 
         return Database::insert($query, $params);
     }
 
-    public function getEmailsByStatus(EmailStatus $status): array
+    public function updateSentCount(int $id, int $sent_count)
     {
-        $query = "SELECT * FROM public.email WHERE status = :status";
+        $query = "UPDATE email_reminder
+             SET sent_count = :sent_count
+             WHERE id = :id";
         $params = [
-            'status' => [EmailStatus::Queue->value, PDO::PARAM_STR],
+            'id' => [$id, PDO::PARAM_INT],
+            'sent_count' => [$sent_count, PDO::PARAM_INT],
+        ];
+        return Database::update($query, $params);
+    }
+    public function increaseSentCount(int $id, int $amount = 1)
+    {
+        $query = "UPDATE email_reminder
+              SET sent_count = sent_count + :amount
+              WHERE id = :id";
+
+        $params = [
+            'id' => [$id, PDO::PARAM_INT],
+            'amount' => [$amount, PDO::PARAM_INT],
+        ];
+
+        return Database::update($query, $params);
+    }
+
+    public function updatePendingCount(int $id, int $pending_count)
+    {
+        $query = "UPDATE email_reminder
+             SET pending_count = :pending_count
+             WHERE id = :id";
+        $params = [
+            'id' => [$id, PDO::PARAM_INT],
+            'pending_count' => [$pending_count, PDO::PARAM_INT],
+        ];
+        return Database::update($query, $params);
+    }
+
+    public function decreasePendingCount(int $id, int $amount = 1)
+    {
+        $query = "UPDATE email_reminder
+              SET pending_count = pending_count - :amount
+              WHERE id = :id";
+
+        $params = [
+            'id' => [$id, PDO::PARAM_INT],
+            'amount' => [$amount, PDO::PARAM_INT],
+        ];
+
+        return Database::update($query, $params);
+    }
+
+    public function updateFailedCount(int $id, int $failed_count)
+    {
+        $query = "UPDATE email_reminder
+             SET failed_count = :failed_count
+             WHERE id = :id";
+        $params = [
+            'id' => [$id, PDO::PARAM_INT],
+            'failed_count' => [$failed_count, PDO::PARAM_INT],
+        ];
+        return Database::update($query, $params);
+    }
+
+    public function increaseFailedCount(int $id, int $amount = 1)
+    {
+        $query = "UPDATE email_reminder
+              SET failed_count = failed_count + :amount
+              WHERE id = :id";
+
+        $params = [
+            'id' => [$id, PDO::PARAM_INT],
+            'amount' => [$amount, PDO::PARAM_INT],
+        ];
+
+        return Database::update($query, $params);
+    }
+
+    public function disableEmailReminder(int $userId, ActivityCategory $activityCategory)
+    {
+        $query = "UPDATE email_reminder
+              SET is_enabled = false
+              WHERE user_id = :user_id AND activity_category = :activity_category";
+
+        $params = [
+            'user_id' => [$userId, PDO::PARAM_INT],
+            'activity_category' => [$activityCategory->value, PDO::PARAM_INT],
+        ];
+
+        return Database::update($query, $params);
+    }
+
+    public function getAllEnabledEmailReminders()
+    {
+        $query = "SELECT * FROM email_reminder WHERE is_enabled = :is_enabled";
+        $params = [
+            'is_enabled' => [true, PDO::PARAM_BOOL]
         ];
         return Database::select($query, $params)->fetchAll();
     }
 
-    public function markEmailSent(int $id)
+    public function getRecipient(int $userId)
     {
-        $query = "UPDATE public.email
-             SET status = :status, sent_at = CURRENT_TIMESTAMP AT TIME ZONE 'Asia/Kathmandu'
-             WHERE id = :id";
+        $query = "SELECT email, first_name FROM users WHERE user_id = :user_id";
         $params = [
-            'status' => [EmailStatus::Sent->value, PDO::PARAM_STR],
-            'id' => [$id, PDO::PARAM_INT],
-        ];
-        return Database::update($query, $params);
-    }
-
-    public function updateEmailStatus(int $id, EmailStatus $status)
-    {
-        $query = "UPDATE public.email
-            SET status = :status, sent_at = CURRENT_TIMESTAMP AT TIME ZONE 'Asia/Kathmandu'
-            WHERE id = :id";
-
-        $params = [
-            'status' => [$status->value, PDO::PARAM_INT],
-            'id' => [$id, PDO::PARAM_INT],
+            'user_id' => [$userId, PDO::PARAM_INT],
         ];
 
-        return Database::update($query, $params);
+        return Database::select($query, $params)->fetchAll();
     }
 }

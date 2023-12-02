@@ -9,7 +9,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 // Insert the quality sleep data into database and if the primary key is duplicate then update the data from user to database.
 $response = [];
 foreach ($data as $date => $row) {
-    $query = "INSERT INTO public.stay_hydrated(user_id, date, target, intaked)
+    $query = "INSERT INTO stay_hydrated(user_id, date, target, intaked)
     VALUES(:uid, :date, :target,:intaked)
     ON CONFLICT (user_id, date)
     DO UPDATE SET target = EXCLUDED.target,

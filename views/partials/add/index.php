@@ -5,7 +5,7 @@
     <article class="card">
         <header class="card__header one">
 
-            <?php require_svg('add/daily-exercise.svg.php') ?>
+            <?php require_svg('add/daily-exercise.svg') ?>
 
         </header>
         <div class="card__content">
@@ -19,7 +19,7 @@
     <article class="card">
         <header class="card__header four">
 
-            <?php require_svg('add/stay-hydrated.svg.php') ?>
+            <?php require_svg('add/stay-hydrated.svg') ?>
 
         </header>
         <div class="card__content">
@@ -34,7 +34,7 @@
     <article class="card">
         <header class="card__header three">
 
-            <?php require_svg('add/balanced-nutrition.svg.php') ?>
+            <?php require_svg('add/balanced-nutrition.svg') ?>
 
         </header>
         <div class="card__content">
@@ -49,7 +49,7 @@
     <article class="card">
         <header class="card__header five">
 
-            <?php require_svg('add/quality-sleep.svg.php') ?>
+            <?php require_svg('add/quality-sleep.svg') ?>
 
         </header>
         <div class="card__content">

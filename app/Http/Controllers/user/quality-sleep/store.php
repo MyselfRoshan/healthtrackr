@@ -12,7 +12,7 @@ foreach ($data as $date => $row) {
     $wakeup_time = "{$row['wakeup']['hour']}:{$row['wakeup']['minute']}";
     $sleep_duration = "{$row['duration']['hour']}:{$row['duration']['minute']}";
 
-    $query = "INSERT INTO public.quality_sleep(user_id, bed_time, wakeup_time, sleep_duration, date)
+    $query = "INSERT INTO quality_sleep(user_id, bed_time, wakeup_time, sleep_duration, date)
         VALUES(:uid,:bed_time,:wakeup_time,:sleep_duration,:date)
         ON CONFLICT (user_id, date)
         DO UPDATE SET bed_time = EXCLUDED.bed_time,

@@ -47,6 +47,8 @@ if (isset($session->user)) {
     $router->post("/{$session->user['username']}/add/daily-exercise/notification", 'user/notification/store.php')->only('auth');
     $router->post("/{$session->user['username']}/add/stay-hydrated/notification", 'user/notification/store.php')->only('auth');
     $router->post("/{$session->user['username']}/add/quality-sleep/notification", 'user/notification/store.php')->only('auth');
+
+    $router->get("/{$session->user['username']}/notification", 'user/notification/data.php')->only('auth');
     // Profile
     $router->get("/{$session->user['username']}", 'user/index.php')->only('auth');
     $router->get("/{$session->user['username']}/charts", 'user/charts.php')->only('auth');
@@ -56,5 +58,4 @@ if (isset($session->user)) {
 
 
     $router->get("/{$session->user['username']}/reminder", 'user/reminder.php')->only('auth');
-    $router->get("/{$session->user['username']}/goal", 'user/goal.php')->only('auth');
 }
