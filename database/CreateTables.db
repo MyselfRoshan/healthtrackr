@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS users
+CREATE TABLE users
 (
   user_id SERIAL PRIMARY KEY,
 	first_name VARCHAR (50) NOT NULL,
@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS users
 	created_on TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
 	last_login TIMESTAMP(0),
 	timezone VARCHAR (40),
-	profile_pic VARCHAR(50),
   reset_token_hash VARCHAR (255),
   reset_token_expires_at TIMESTAMP(0)
 );
@@ -18,7 +17,8 @@ CREATE TABLE profile (
     user_id INT REFERENCES users(user_id) ON DELETE CASCADE,
     age INT,
     height NUMERIC(5, 2),
-    weight INT
+    weight INT,
+    profile_pic VARCHAR(50)
 );
 
 CREATE TABLE daily_exercise (

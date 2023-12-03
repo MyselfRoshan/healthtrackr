@@ -6,7 +6,7 @@ const bedTime = document.getElementById("bed-time");
 const wakeupTime = document.getElementById("wakeup-time");
 const sleepDuration = document.querySelector(".sleep-time");
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   // Initial load and change event
   const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY/MM/DD");
 

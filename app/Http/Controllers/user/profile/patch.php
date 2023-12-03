@@ -3,7 +3,6 @@
 use App\Session;
 use Database\Database;
 // extract($_POST);
-
 $upload_dir = BASE_PATH . 'public/uploads/';
 $session = Session::getInstance();
 $uploaded = false;
@@ -19,23 +18,39 @@ if ($_FILES['profile_pic']['error'] == UPLOAD_ERR_OK) {
 }
 if ($uploaded) {
     // Delete previous profile picture
-    $query = "SELECT profile_pic FROM users WHERE email = :email";
+    $query = "SELECT profile_pic FROM profile WHERE user_id = :id";
     $params = [
-        "email" => [$session->user['email'], PDO::PARAM_STR]
+        "id" => [$session->user['id'], PDO::PARAM_STR]
     ];
     $user = Database::select($query, $params)->fetch();
     if (isset($user['profile_pic']))
         unlink(BASE_PATH . "public/{$user['profile_pic']}");
 
     // Add new uploaded profile picture
-    $query = "UPDATE users
+    $queryCheck = "SELECT user_id FROM profile WHERE user_id = :id";
+    $paramsCheck = ['id' => [$session->user['id'], PDO::PARAM_STR]];
+    $result = Database::select($queryCheck, $paramsCheck)->fetch();
+    if ($result) {
+        // User_id exists, perform an update
+        $query = "UPDATE profile
     SET profile_pic = :profile_pic
-    WHERE email = :email";
-    $params = [
-        "profile_pic" => ["/uploads/{$new_name}", PDO::PARAM_STR],
-        "email" => [$session->user['email'], PDO::PARAM_STR]
-    ];
+    WHERE user_id = :id";
+        $params = [
+            "profile_pic" => ["/uploads/{$new_name}", PDO::PARAM_STR],
+            "id" => [$session->user['id'], PDO::PARAM_STR]
+        ];
 
-    Database::update($query, $params);
+        Database::update($query, $params);
+    } else {
+        // User_id doesn't exist, perform an insert
+        $query = "INSERT INTO profile (user_id, profile_pic)
+        VALUES (:id, :profile_pic);";
+        $params = [
+            "profile_pic" => ["/uploads/{$new_name}", PDO::PARAM_STR],
+            "id" => [$session->user['id'], PDO::PARAM_STR]
+        ];
+
+        Database::update($query, $params);
+    }
     redirect("/{$session->user['username']}/profile");
 }

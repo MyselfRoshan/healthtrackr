@@ -21,7 +21,14 @@ if (!$form->validate($_POST)) {
     ]);
 } else {
     $column = Validate::isEmail($usrname_email) ? 'email' : 'username';
-    $query = "SELECT user_id,first_name,username,email,profile_pic FROM users WHERE {$column} = :params";
+    $query = "SELECT
+        user_id,
+        first_name,
+        username,
+        email,
+        (SELECT profile_pic FROM profile WHERE profile.user_id = users.user_id) AS profile_pic
+    FROM users
+    WHERE {$column} = :params";
     $params = [
         "params" => [$usrname_email, PDO::PARAM_STR]
     ];
@@ -49,7 +56,5 @@ if (!$form->validate($_POST)) {
     if (isset($remember_me)) {
         setcookie("remember_me", json_encode($payload), $expiry_date);
     }
-    // setcookie("first_name", $user['first_name'], $expiry_date);
-
     redirect("/{$session->user['username']}");
 }

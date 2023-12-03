@@ -13,14 +13,12 @@ $query = "SELECT
             last_login,
             created_on,
             timezone,
-            profile_pic,
             (SELECT age FROM profile WHERE user_id = :id) AS age,
             (SELECT weight FROM profile WHERE user_id = :id) AS weight,
-            (SELECT height FROM profile WHERE user_id = :id) AS height
-          FROM
-            users
-          WHERE
-            user_id = :id";
+            (SELECT height FROM profile WHERE user_id = :id) AS height,
+            (SELECT profile_pic FROM profile WHERE user_id = :id) AS profile_pic
+          FROM users
+          WHERE user_id = :id";
 $params = [
   "id" => [$session->user['id'], PDO::PARAM_STR]
 ];
@@ -33,13 +31,8 @@ $user['weight'] = $user['weight'] === 0 ? '' : $user['weight'];
 $user['last_login'] = timeago($user['last_login']);
 $user['created_on'] = getUserDate($user['created_on'], $user['timezone'])->format('jS, F Y');
 $user['profile_pic'] = $user['profile_pic'] ?? "/resources/images/default-profile.png";
+// d($user['profile_pic']);
 $session->profile_pic = $user['profile_pic'];
-// d(new DateTime($user['created_on'], new DateTimeZone($user['timezone'])));
-// $session->regenerateID();
-// $session->user = [
-//     'username' => $user['username'],
-//     'email' => $user['email']
-// ];
 require_view('user/profile.view.php', [
   'scripts' => [
     "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",

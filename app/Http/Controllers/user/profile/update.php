@@ -20,14 +20,12 @@ if (!$form->validate($_POST)) {
             last_login,
             created_on,
             timezone,
-            profile_pic,
             (SELECT age FROM profile WHERE user_id = :id) AS age,
             (SELECT weight FROM profile WHERE user_id = :id) AS weight,
-            (SELECT height FROM profile WHERE user_id = :id) AS height
-          FROM
-            users
-          WHERE
-            user_id = :id";
+            (SELECT height FROM profile WHERE user_id = :id) AS height,
+            (SELECT profile_pic FROM profile WHERE user_id = :id) AS profile_pic
+          FROM users
+          WHERE user_id = :id";
   $params = [
     "id" => [$session->user['id'], PDO::PARAM_STR]
   ];
@@ -90,8 +88,7 @@ if (!$form->validate($_POST)) {
   } else {
     // User_id doesn't exist, perform an insert
     $query = "INSERT INTO profile (user_id, age, height, weight)
-        VALUES (:id, :age, :height, :weight);
-    ";
+        VALUES (:id, :age, :height, :weight);";
   }
   $params = [
     'id' => [$session->user['id'], PDO::PARAM_STR],

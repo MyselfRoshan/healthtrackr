@@ -57,5 +57,6 @@ if (isset($session->user)) {
     $router->patch("/{$session->user['username']}/profile", 'user/profile/patch.php')->only('auth');
 
 
-    $router->get("/{$session->user['username']}/reminder", 'user/reminder.php')->only('auth');
+    $router->get("/{$session->user['username']}/reminder", 'user/reminder/create.php')->only('auth');
+    $router->post("/{$session->user['username']}/reminder", 'user/reminder/store.php')->only('auth');
 }
