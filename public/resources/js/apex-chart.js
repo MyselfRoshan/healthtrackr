@@ -175,7 +175,7 @@ async function fetchDataAndRender() {
       `🎉 Welcome aboard, <span class='text-secondary'>${Cookie.get(
         "first_name",
       )}</span> 🎉`,
-      'To get started, kindly add your data in the "Add" section for it to appear on the dashboard.',
+      `To get started, kindly <a class="text-tertiary" href="${window.location.href}/add">add your data</a> in the "Add" page for it to appear on the dashboard.`,
       20,
     );
   }

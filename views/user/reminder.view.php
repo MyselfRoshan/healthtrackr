@@ -9,8 +9,8 @@
     <?php require_view("partials/sidebar.php", ['r']) ?>
     <div class="dashboard__content">
       <div class="wrapper m-16">
-        <!-- <?php require_view("partials/reminder.php", ['user' => $user, 'alerts' => $alerts]) ?> -->
-        <?php require_view("partials/reminder.php", ['alerts' => $alerts]) ?>
+        <?php require_view("partials/reminder.php", ['is_enabled' => $is_enabled, 'reminders' => $reminders])
+        ?>
       </div>
     </div>
   </div>

@@ -69,84 +69,96 @@
 //     height: 0;
 //   }
 // }
-/* .reminder-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+
+.reminder {
+  &__container {
+    --grid-gap: 1rem;
+    height: calc(100vh - 12rem);
+  }
+
+  &__non {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+
+    &-img {
+      width: 37rem;
+      height: 37rem;
+      padding: 2rem;
+      border: none;
+      background: radial-gradient(
+        var(--clr-yellow) 40%,
+        var(--clr-secondary) 100%
+      );
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: zoom 5000ms ease-in-out infinite alternate;
+    }
+
+    @keyframes zoom {
+      0% {
+        scale: 1;
+        border-radius: 0.5rem;
+      }
+      100% {
+        scale: 1.05;
+        border-radius: 60%;
+        // border-radius: 0% 100% 50% 100%/0% 50% 50% 100%;
+
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    .message {
+      font-family: var(--ff-expletus), Courier New, Courier, monospace;
+      font-size: var(--fs-500);
+      font-weight: var(--fw-500);
+      // color: var(--clr-accent);
+      color: var(--clr-accent);
+      letter-spacing: 0.5px;
+    }
+  }
 }
 
 .reminder-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-
-.reminder-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-  color: #333;
-}
-
-label {
-  display: block;
-  margin: 10px 0 5px;
-  font-weight: bold;
-  color: #555;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #45a049;
-} */
-
-.reminder-container {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.reminder-card {
+  position: relative;
   --flex-gap: 1rem;
+  background: var(--bg);
   grid-template-columns: 2fr 1fr;
-  // border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 1rem;
   width: 100%;
   padding: 20px;
   margin: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--clr-dark-100);
   transition: box-shadow 0.3s ease;
 
   &:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px var(--clr-dark-200);
+  }
+
+  & .btn {
+    background: var(--bg);
+
+    font-weight: var(--fw-700);
+    font-size: 1rem;
+    box-shadow: 0 4px 8px var(--clr-dark-100);
+    transition: box-shadow 0.3s ease, scale 250ms ease-in;
+
+    // Old
+    --br: 0.25rem;
+    font-family: var(--ff-inter);
+    color: var(--clr-light);
+    margin-top: 1rem;
+
+    // Old
+    &:hover {
+      scale: 1.01;
+      box-shadow: 0 8px 16px var(--clr-dark-200);
+      background: var(--bg) !important;
+    }
   }
 
   &.one {
-    background: linear-gradient(
+    --bg: linear-gradient(
       to bottom left,
       var(--card1-gradient-color1),
       var(--card1-gradient-color2)
@@ -154,7 +166,7 @@ button:hover {
   }
 
   &.two {
-    background: linear-gradient(
+    --bg: linear-gradient(
       to bottom left,
       var(--card2-gradient-color1),
       var(--card2-gradient-color2)
@@ -162,7 +174,7 @@ button:hover {
   }
 
   &.three {
-    background: linear-gradient(
+    --bg: linear-gradient(
       to bottom left,
       var(--card3-gradient-color1),
       var(--card3-gradient-color2)
@@ -170,7 +182,7 @@ button:hover {
   }
 
   &.four {
-    background: linear-gradient(
+    --bg: linear-gradient(
       to bottom left,
       var(--card4-gradient-color1),
       var(--card4-gradient-color2)
@@ -178,7 +190,7 @@ button:hover {
   }
 
   &.five {
-    background: linear-gradient(
+    --bg: linear-gradient(
       to bottom left,
       rgba(255, 139, 139, 1) 0%,
       rgba(252, 176, 69, 1) 100%
@@ -203,7 +215,7 @@ button:hover {
     --flow-gap: 0.25rem;
     --oc: var(--clr-light-400);
     --foc: var(--clr-light);
-    --c: var(--clr-dark-900);
+    --c: var(--clr-accent);
     --bg: var(--clr-light-300);
     --fbg: var(--clr-dark-100);
     --fc: var(--clr-light);
@@ -211,58 +223,10 @@ button:hover {
 
     //   width: 280px;
     padding: 8px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
     &:is(focus-visible, :focus) + ion-icon {
       color: var(--clr-light);
     }
   }
-
-  // button {
-  //   color: white;
-  //   padding: 10px 20px;
-  //   border: none;
-  //   border-radius: 4px;
-  //   cursor: pointer;
-  //   transition: background-color 0.3s ease;
-  // }
-  .btn {
-    --br: 5px;
-    // background-color: #4caf50;
-    padding: 0.625em 1em;
-    width: 130px;
-    font-family: var(--ff-inter);
-    color: var(--clr-light);
-
-    &:hover {
-      --bg: var(--clr-tertiary);
-    }
-  }
 }
-
-// label {
-//   display: block;
-//   margin: 10px 0 5px;
-//   font-weight: bold;
-//   color: #555;
-// }
-
-// input {
-//   width: 280px;
-//   padding: 8px;
-//   margin-bottom: 15px;
-//   box-sizing: border-box;
-//   border: 1px solid #ccc;
-//   border-radius: 4px;
-// }
-
-/* Additional styles for each reminder card */
-.exercise {
-  border-color: #3498db;
-}
-
-.water {
-  border-color: #2ecc71;
-}
-
-/* Add styles for other activity categories as needed */

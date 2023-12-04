@@ -19,10 +19,6 @@ if (!$form->validate($_POST)) {
         'alerts' => $form->getAlerts()
     ]);
 } else {
-    // $timeZone=json_decode($_COOKIE['timeZone']);
-    // Timezone::detect_timezone_id($timeZone->offset, $timeZone->dst);
-    // $query = "INSERT INTO users(first_name, last_name, username, email, password, last_login)
-    // VALUES(:fname,:lname,:username,:email,:password, CURRENT_TIMESTAMP)";
     $query = "INSERT INTO users(first_name, last_name, username, email, password, timezone, last_login)
     VALUES(:fname,:lname,:username,:email,:password,:timezone,CURRENT_TIMESTAMP)";
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);

@@ -88,7 +88,8 @@ class Notification {
     this.addHTML(titleEl, title);
 
     const descriptionEl = this.createDiv("notidesc");
-    this.addText(descriptionEl, description);
+    // this.addText(descriptionEl, description);
+    this.addHTML(descriptionEl, description);
 
     // Append elements to each other
     notiEl.appendChild(notiCardEl);

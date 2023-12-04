@@ -8,8 +8,11 @@
 
 <body>
   <section class="page-not-found">
-    <img class="page-not-found-img" src="/resources/images/404.jpg" alt="Oops!!! Something Went wrong. Error 404 Page Not Found" />
-    <a href="/">&leftarrow; Back to Home</a>
+    <!-- <img class="page-not-found-img" src="/resources/images/404.jpg" alt="Oops!!! Something Went wrong. Error 404 Page Not Found" /> -->
+    <?php require_svg("404.svg") ?>
+    <!-- <a href="/">&leftarrow; Back to Home</a> -->
+    <a href="/">
+      < Back to Home</a>
   </section>
 </body>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Helper\Time;
 use App\Session;
 use Database\Database;
 
@@ -28,7 +29,7 @@ $user = Database::select($query, $params)->fetch();
 $user['age'] = $user['age'] === 0 ? '' : $user['age'];
 $user['height'] = floatval($user['height']) == 0 ? '' : $user['height'];
 $user['weight'] = $user['weight'] === 0 ? '' : $user['weight'];
-$user['last_login'] = timeago($user['last_login']);
+$user['last_login'] = Time::ago($user['last_login']);
 $user['created_on'] = getUserDate($user['created_on'], $user['timezone'])->format('jS, F Y');
 $user['profile_pic'] = $user['profile_pic'] ?? "/resources/images/default-profile.png";
 // d($user['profile_pic']);

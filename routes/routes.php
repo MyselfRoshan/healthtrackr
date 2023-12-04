@@ -37,7 +37,6 @@ if (isset($session->user)) {
     // Balanced Nutrition
     $router->get("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
     // $router->post("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
-
     // Quality Sleep
     $router->get("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/create.php')->only('auth');
     $router->get("/{$session->user['username']}/add/quality-sleep/data", 'user/quality-sleep/data.php')->only('auth');
@@ -58,5 +57,5 @@ if (isset($session->user)) {
 
 
     $router->get("/{$session->user['username']}/reminder", 'user/reminder/create.php')->only('auth');
-    $router->post("/{$session->user['username']}/reminder", 'user/reminder/store.php')->only('auth');
+    $router->patch("/{$session->user['username']}/reminder", 'user/reminder/patch.php')->only('auth');
 }

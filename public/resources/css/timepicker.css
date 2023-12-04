@@ -275,7 +275,8 @@ button {
   top: 100%;
 }
 .picker__frame {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   min-width: 256px;
   width: 300px;
   max-height: 350px;

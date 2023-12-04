@@ -1,5 +1,6 @@
 async function ajax(url, method = "get", data = {}) {
-  method = method.toLowerCase();
+  // method = method.toLowerCase();
+  method = method.toUpperCase();
 
   let options = {
     method: method,
@@ -9,11 +10,13 @@ async function ajax(url, method = "get", data = {}) {
     },
   };
 
-  const csrfMethods = new Set(["post", "put", "delete", "patch"]);
+  // const csrfMethods = new Set(["post", "put", "delete", "patch"]);
+  const csrfMethods = new Set(["POST", "PUT", "DELETE", "PATCH"]);
 
   if (csrfMethods.has(method)) {
     options.body = data;
-  } else if (method === "get") {
+    // } else if (method === "get") {
+  } else if (method === "GET") {
     url += `?${new URLSearchParams(data).toString()}`;
   }
 

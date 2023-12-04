@@ -1,14 +1,146 @@
 .page-not-found {
   position: relative;
   a {
-    // inset-inline: 0;
     position: absolute;
-    // margin-inline: 5rem;
     inset-block-start: 4rem;
     inset-inline-start: 5rem;
-    color: var(--clr-light);
-    font-family: var(--ff-expletus);
+    color: var(--clr-accent);
+    // font-family: var(--ff-expletus);
+    font-family: var(--ff-inter);
     font-size: var(--fs-700);
+    font-weight: 800;
     text-decoration: none;
+  }
+  svg {
+    margin: auto;
+    height: 100vh;
+  }
+  svg#freepik_stories-404-error-lost-in-space:not(.animated) .animable {
+    opacity: 0;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--background-complete--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideUp;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--Moon--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideDown;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--Planets--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomIn;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--Numbers--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomIn;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--text-2--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideDown;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--texts-1--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) fadeIn;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--Satellite--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) lightSpeedLeft;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--Rocks--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomOut;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--Dog--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideRight;
+    animation-delay: 0s;
+  }
+  svg#freepik_stories-404-error-lost-in-space.animated
+    #freepik--Character--inject-224 {
+    animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideRight;
+    animation-delay: 0s;
+  }
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: inherit;
+    }
+  }
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes lightSpeedLeft {
+    from {
+      transform: translate3d(-50%, 0, 0) skewX(20deg);
+      opacity: 0;
+    }
+    60% {
+      transform: skewX(-10deg);
+      opacity: 1;
+    }
+    80% {
+      transform: skewX(2deg);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes zoomOut {
+    0% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes slideRight {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }

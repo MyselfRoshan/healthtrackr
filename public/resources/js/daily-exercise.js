@@ -181,7 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
       selectExercise.value = Exercise[date].name;
       targetExerciseDuration.value = Exercise[date].target;
       actualExerciseDuration.value = Exercise[date].actual;
-
       updateExerciseInstructions(selectExercise.value);
     }
   }

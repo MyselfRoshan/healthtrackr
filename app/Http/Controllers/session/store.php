@@ -56,5 +56,6 @@ if (!$form->validate($_POST)) {
     if (isset($remember_me)) {
         setcookie("remember_me", json_encode($payload), $expiry_date);
     }
+    setcookie("first_name", $user['first_name'], $expiry_date);
     redirect("/{$session->user['username']}");
 }

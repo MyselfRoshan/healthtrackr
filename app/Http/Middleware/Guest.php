@@ -9,8 +9,10 @@ class Guest
     public function handle()
     {
         $session = Session::getInstance();
-        if ($session->user ?? false && isset($_COOKIE['remember_me'])) {
+        if (isset($_COOKIE['remember_me'])) {
             $session->user = json_decode($_COOKIE['remember_me'], true);
+            redirect("/{$session->user['username']}");
+        } elseif ($session->user ?? false) {
             redirect("/{$session->user['username']}");
         }
     }
