@@ -2,18 +2,46 @@
   position: relative;
   a {
     position: absolute;
-    inset-block-start: 4rem;
+    inset-block-start: 5rem;
     inset-inline-start: 5rem;
     color: var(--clr-accent);
-    // font-family: var(--ff-expletus);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     font-family: var(--ff-inter);
     font-size: var(--fs-700);
     font-weight: 800;
     text-decoration: none;
+    animation: zoom-txt 3000ms ease-in-out infinite alternate;
+
+    @keyframes zoom-txt {
+      0% {
+        scale: 1.1;
+      }
+      100% {
+        scale: 1;
+      }
+    }
+    .svg {
+      width: 2.25rem;
+    }
   }
+  @keyframes zoom-svg {
+    0% {
+      scale: 0.8;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+
   svg {
+    animation: zoom-svg 9s ease-in-out infinite alternate;
+
     margin: auto;
-    height: 100vh;
+    height: 100%;
+    // width: 100%;
   }
   svg#freepik_stories-404-error-lost-in-space:not(.animated) .animable {
     opacity: 0;
