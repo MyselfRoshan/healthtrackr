@@ -82,3 +82,7070 @@ corn is working
 corn is working
 corn is working
 corn is working
+corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(21)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.794949)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(33)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.205051)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(22)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.763107)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(32)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.236893)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(23)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.762806)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(31)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.237194)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(24)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.761768)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(30)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.238232)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(25)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.765757)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(29)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.234243)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(26)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.767933)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(28)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.232067)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(27)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.769479)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(27)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.230521)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(28)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.767751)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(26)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.232249)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(29)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.764989)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(25)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.235011)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(30)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.768196)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(24)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.231804)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(31)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.765551)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(23)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.234449)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(32)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.773425)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(22)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.226575)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(33)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.801805)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(21)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.198195)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(34)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.778114)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(20)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.221886)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(35)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.773582)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(19)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.226418)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(36)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.778328)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(18)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.221672)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(37)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.779279)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(17)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.220721)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(38)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.780816)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(16)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.219184)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(39)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.780037)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(15)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.219963)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(40)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.779059)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(14)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.220941)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(41)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.781034)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(13)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.218966)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(42)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.763259)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(12)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.236741)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(43)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.754794)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(11)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.245206)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(44)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.785356)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(10)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.214644)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(45)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.784476)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(9)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.215524)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(46)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.789938)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(8)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.210062)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(47)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.761051)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(7)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.238949)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(48)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.756049)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(6)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.243951)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(49)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.794259)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(5)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.205741)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(11)
+  ["i"]=>
+  int(50)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.79239)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(4)
+  ["i"]=>
+  int(4)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.20761)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+
+Fatal error: Uncaught Exception: SQLSTATE[08006] [7] could not translate host name "postgres" to address: Name does not resolve in /var/www/database/Database.php:43
+Stack trace:
+#0 /var/www/app/Models/Email.php(134): Database\Database::select('SELECT * FROM e...', Array)
+#1 /var/www/scripts/email.php(19): App\Models\Email->getAllEnabledEmailReminders()
+#2 {main}
+  thrown in /var/www/database/Database.php on line 43
+corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(38)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.94313)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(16)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.05687)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(39)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.897166)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(15)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.102834)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(40)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.880775)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(14)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.119225)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(41)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.882164)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(13)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.117836)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(42)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.882502)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(12)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.117498)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(43)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.913578)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(11)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.086422)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(44)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.884246)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(10)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.115754)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(45)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.885611)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(9)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.114389)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(46)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.879295)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(8)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.120705)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(47)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.905672)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(7)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.094328)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(48)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.904775)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(6)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.095225)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(49)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.894837)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(5)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.105163)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(50)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.892707)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(4)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.107293)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(51)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.895923)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(3)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.104077)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(52)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.920279)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(2)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.079721)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(53)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.927274)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(1)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.072726)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(54)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.930562)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(0)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.069438)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(55)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.91903)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(59)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.08097)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(56)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.940583)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(58)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.059417)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(57)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.903999)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(57)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.096001)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(58)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.934013)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(56)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.065987)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(13)
+  ["i"]=>
+  int(59)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.922705)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(55)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.077295)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(0)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.915299)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(54)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.084701)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(1)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.910491)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(53)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.089509)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(2)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.90843)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(52)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.09157)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(3)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.920326)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(51)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.079674)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(4)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.915364)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(50)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.084636)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(5)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.909525)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(49)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.090475)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(6)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.915097)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(48)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.084903)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(7)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.911828)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(47)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.088172)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(8)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.945266)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(46)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.054734)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(9)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.944742)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(45)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.055258)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(10)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.921689)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(44)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.078311)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(11)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.918338)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(43)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.081662)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(12)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.918863)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(42)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.081137)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(13)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.947919)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(41)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.052081)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(14)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.958054)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(40)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.041946)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(15)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.930221)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(39)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.069779)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(16)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.927337)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(38)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.072663)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(17)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.926097)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(37)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.073903)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(18)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.929747)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(36)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.070253)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(19)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.928959)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(35)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.071041)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(20)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.935098)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(34)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.064902)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(21)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.930386)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(33)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.069614)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(22)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.93128)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(32)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.06872)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(23)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.940589)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(31)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.059411)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(24)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.931507)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(30)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.068493)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(25)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.92685)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(29)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.07315)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(26)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.924631)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(28)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.075369)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(27)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.928548)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(27)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.071452)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(28)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.955744)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(26)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.044256)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(29)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.933228)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(25)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.066772)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(30)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.975329)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(24)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.024671)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(31)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.970086)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(23)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.029914)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(32)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.961022)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(22)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.038978)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(33)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.96828)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(21)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.03172)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(34)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.935895)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(20)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.064105)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(35)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.945648)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(19)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.054352)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(36)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.940966)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(18)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.059034)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(37)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.939283)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(17)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.060717)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(38)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.940263)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(16)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.059737)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(39)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.94334)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(15)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.05666)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(40)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.942739)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(14)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.057261)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(41)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.971813)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(13)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.028187)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(42)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.947385)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(12)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.052615)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(43)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.946285)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(11)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.053715)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(44)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.977863)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(10)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.022137)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(45)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.953914)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(9)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.046086)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(46)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.955024)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(8)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.044976)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(47)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.994351)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(7)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.005649)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(48)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.956998)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(6)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.043002)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(49)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.958805)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(5)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.041195)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(50)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.960008)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(4)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.039992)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(51)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.986385)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(3)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.013615)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(52)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.962668)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(2)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.037332)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(53)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.973259)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(1)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.026741)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(54)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.964054)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(1)
+  ["i"]=>
+  int(0)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.035946)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(55)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.972406)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(59)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.027594)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(56)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.989744)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(58)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.010256)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(57)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.972535)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(57)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.027465)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(58)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.996358)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(56)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.003642)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(14)
+  ["i"]=>
+  int(59)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.971107)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(55)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.028893)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(0)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.975582)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(54)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.024418)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(1)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.972448)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(53)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.027552)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(2)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.97598)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(52)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.02402)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(3)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.97664)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(51)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.02336)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(4)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.981972)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(50)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.018028)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(5)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.978904)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(49)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.021096)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(6)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.981819)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(48)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.018181)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(7)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.976584)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(47)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.023416)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(8)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.982605)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(46)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.017395)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(9)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.984517)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(45)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.015483)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(10)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.982239)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(44)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.017761)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(11)
+  ["s"]=>
+  int(1)
+  ["f"]=>
+  float(0.010539)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(43)
+  ["s"]=>
+  int(58)
+  ["f"]=>
+  float(0.989461)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(12)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.993328)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(42)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.006672)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(13)
+  ["s"]=>
+  int(1)
+  ["f"]=>
+  float(0.025174)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(41)
+  ["s"]=>
+  int(58)
+  ["f"]=>
+  float(0.974826)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(24)
+  ["s"]=>
+  int(12)
+  ["f"]=>
+  float(0.620073)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(30)
+  ["s"]=>
+  int(47)
+  ["f"]=>
+  float(0.379927)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(25)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.61442)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(29)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.38558)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(26)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.592859)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(28)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.407141)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(27)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.593036)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(27)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.406964)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(28)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.603026)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(2)
+  ["i"]=>
+  int(26)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.396974)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(29)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.618934)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(15)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.381066)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(30)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.621813)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(0)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.621813)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#16 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(31)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.694542)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#17 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(1)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.694542)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(32)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.644544)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(2)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.644544)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#16 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(33)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.696342)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#17 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(3)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.696342)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(34)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.648436)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(4)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.648436)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(35)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.652654)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(5)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.652654)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(36)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.624999)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(6)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.624999)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(37)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.60191)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(7)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.60191)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(38)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.596476)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(8)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.596476)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(39)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.621553)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(9)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.621553)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(40)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.596148)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(10)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.596148)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(41)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.599989)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(11)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.599989)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(42)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.599544)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(12)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.599544)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(43)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.5982)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(13)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.5982)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(44)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.602585)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(14)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.602585)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(45)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.604969)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(15)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.604969)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#11 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(46)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.613109)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#12 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(16)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.613109)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+corn is working
+corn is working
+<pre>object(DateInterval)#16 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(49)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.696807)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#17 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(5)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.303193)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#16 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(50)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.695355)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#17 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(4)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.304645)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(51)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.652628)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(3)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.347372)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(52)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.632029)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(2)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.367971)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+<pre>object(DateInterval)#13 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(15)
+  ["i"]=>
+  int(53)
+  ["s"]=>
+  int(0)
+  ["f"]=>
+  float(0.628823)
+  ["invert"]=>
+  int(1)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre><pre>object(DateInterval)#14 (10) {
+  ["y"]=>
+  int(0)
+  ["m"]=>
+  int(0)
+  ["d"]=>
+  int(0)
+  ["h"]=>
+  int(0)
+  ["i"]=>
+  int(1)
+  ["s"]=>
+  int(59)
+  ["f"]=>
+  float(0.371177)
+  ["invert"]=>
+  int(0)
+  ["days"]=>
+  int(0)
+  ["from_string"]=>
+  bool(false)
+}
+</pre>corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
+corn is working
