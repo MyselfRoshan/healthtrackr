@@ -3,4 +3,4 @@ config/env.php
 .env
 vendor/
 **/uploads/*
-docker/log/corn/*
+docker/log/cron/*
