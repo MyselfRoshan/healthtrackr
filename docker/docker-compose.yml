@@ -72,7 +72,7 @@ services:
     build: ./cron
     volumes:
       - ../:/var/www
-      - ./log/corn:/var/log/cron
+      - ./log/cron:/var/log/cron
 
 volumes:
   psql-data:
