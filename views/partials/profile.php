@@ -28,15 +28,15 @@
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Age:</dt>
-        <dd><?php echo $user['age'] ?? "{$user['age']} years" ?> </dd>
+        <dd><?= $user['age'] !== null && intval($user['age']) !== 0 ? "{$user['age']} years" : '-' ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Height:</dt>
-        <dd><?= toFeetInches($user['height']) ?></dd>
+        <dd><?= toFeetInches($user['height']) ?? '-' ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Weight:</dt>
-        <dd><?php echo $user['weight'] ?? "{$user['weight']}kg" ?></dd>
+        <dd><?= $user['weight'] !== null && $user['weight'] !== 0 ? "{$user['weight']} kg" : '-' ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Last login:</dt>
@@ -96,18 +96,6 @@
 
         </small>
       </div>
-      <!-- <div class="input-container">
-        <label class="label fs-300 fw-500 text-dark-400 fw-600" for="password" id="label-password">
-          Password
-        </label>
-        <input type="password" id="password" class="input-text" name="password" value="<?= $user['password'] ?>" aria-labelledby="label-password" />
-        <ion-icon name="eye-outline" id="toggle-password" class="fs-600 text-dark-400 ms-auto me-6 mt-9"></ion-icon>
-        <small class="validation-alerts">
-
-          <?= $alerts['password'] ?? '' ?>
-
-        </small>
-      </div> -->
       <div class="input-container">
         <label class="label fs-300 fw-500 text-dark-400 fw-600" for="age" id="label-age">
           Age
@@ -151,7 +139,3 @@
     </div>
   </form>
 </section>
-<?php
-// $date = new DateTime($user['created_on']);
-// dd($date->format('D jS, F Y h:i A'));
-?>

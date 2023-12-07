@@ -1,0 +1,28 @@
+#addUser {
+  //   grid-template-columns: repeat(auto-fill, minmax(min(100%, 600px), 1fr));
+
+  .profile {
+    &__change {
+      grid-column: span 6;
+    }
+  }
+
+  .form-container {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+  }
+  option {
+    background: var(--clr-accent);
+    color: hsl(42, 100%, 50%);
+    font-weight: 700;
+
+    &:hover {
+      background: var(--clr-light);
+      color: var(--clr-accent);
+    }
+  }
+  //   select option {
+  //     font-size: 14px;
+  //     background-color: #f8f8f8;
+  //     color: #333;
+  //   }
+}

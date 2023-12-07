@@ -6,7 +6,7 @@ use App\Http\Middleware\Validate;
 
 class SigninForm
 {
-    private array $alerts = [];
+    protected array $alerts = [];
 
     /**
      * @param array $postRequestArray provide $_POST array as an argument
@@ -22,9 +22,6 @@ class SigninForm
             $this->alerts['usrname_email'] = "*Username or email is required";
         elseif (!Validate::userExits($usrname_email))
             $this->alerts['usrname_email'] = "Username or email doesn't exist";
-
-
-        // Email validation
 
         // Password validation
         if (Validate::isEmpty($password))
