@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require_view("partials/head.php", ['scripts' => $scripts]) ?>
+
 <body>
 
   <section class="signin">

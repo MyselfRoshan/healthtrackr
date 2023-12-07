@@ -2,6 +2,8 @@
 
 namespace App\Helper;
 
+use DateTime;
+
 class Time
 {
     public static function to24Hrs($time12hr)
@@ -14,31 +16,25 @@ class Time
         return date("h:i A", strtotime($time24hr));
     }
 
-    public static function ago($date)
+    public static function ago($dateString)
     {
-        if (!isset($date)) return '-';
-        else {
-            $timestamp = strtotime($date);
+        if (!isset($dateString)) return '-';
+        $date = new DateTime($dateString);
+        $now = new DateTime();
+        $diff = $now->diff($date);
 
-            $strTime = array("second", "minute", "hour", "day", "month", "year");
-            $length = array("60", "60", "24", "30", "12", "10");
-
-            $currentTime = time();
-            if ($currentTime >= $timestamp) {
-                $diff = time() - $timestamp;
-                for ($i = 0; $diff >= $length[$i] && $i < count($length) - 1; $i++) {
-                    $diff = $diff / $length[$i];
-                }
-
-                $diff = round($diff);
-
-                // Check if pluralization is needed
-                if ($diff > 1) {
-                    return $diff . " " . $strTime[$i] . "s ago";
-                } else {
-                    return $diff . " " . $strTime[$i] . " ago";
-                }
-            }
+        if ($diff->y > 0) {
+            return $date->format('M j, Y');
+        } elseif ($diff->m > 0) {
+            return $date->format('M j');
+        } elseif ($diff->d > 0) {
+            return $diff->d == 1 ? 'yesterday' : $diff->d . ' days ago';
+        } elseif ($diff->h > 0) {
+            return $diff->h == 1 ? 'an hour ago' : $diff->h . ' hours ago';
+        } elseif ($diff->i > 0) {
+            return $diff->i == 1 ? 'a minute ago' : $diff->i . ' minutes ago';
+        } else {
+            return 'just now';
         }
     }
 }

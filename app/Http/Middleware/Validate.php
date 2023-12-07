@@ -123,4 +123,43 @@ class Validate
         if (!empty($user))
             return password_verify($plainPassword, $user['password']);
     }
+    /**
+     * Check if the provided password matches the password stored for the user with the given ID.
+     *
+     * @param int    $userId         The ID of the user.
+     * @param string $plainPassword  The plain text password to be checked.
+     *
+     * @return bool True if the password matches, false otherwise.
+     */
+    public static function passwordMatchesById($user_id, $plainPassword)
+    {
+        if (!trim($user_id)) return false;
+        $query = "SELECT password FROM users WHERE user_id = :user_id";
+        $params = [
+            'user_id' => [$user_id, PDO::PARAM_INT]
+        ];
+        $user = Database::select($query, $params)->fetch();
+        if (!empty($user)) {
+            return password_verify($plainPassword, $user['password']);
+        }
+    }
+
+    /**
+     * Check if a user is an admin based on their username or email.
+     *
+     * @param string $valueToBeChecked The username or email of the user.
+     *
+     * @return bool True if the user is an admin, false otherwise.
+     */
+    public static function isAdmin($valueToBeChecked)
+    {
+        $column = static::isEmail($valueToBeChecked) ? 'email' : 'username';
+        $query = "SELECT is_admin FROM users WHERE {$column} = :params";
+        $params = [
+            "params" => [$valueToBeChecked, PDO::PARAM_STR]
+        ];
+        $result = Database::select($query, $params)->fetch();
+
+        return !empty($result) && $result['is_admin'] == 1;
+    }
 }

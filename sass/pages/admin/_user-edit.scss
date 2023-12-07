@@ -1,0 +1,65 @@
+.password-change {
+  //   grid-row: 1;
+  grid-column: span 3;
+  border-radius: 0.5rem;
+  border: 2px solid var(--clr-primary);
+  width: 100%;
+  //   background: radial-gradient(var(--clr-yellow) 0%, var(--clr-secondary) 100%);
+  background: radial-gradient(var(--clr-tertiary) 0%, var(--clr-primary) 100%);
+
+  .input-text {
+    --flow-gap: 0.25rem;
+    --oc: var(--clr-light-400);
+    --foc: var(--clr-light);
+    --c: var(--clr-dark-900);
+    --fbg: var(--clr-dark-100);
+    --fc: var(--clr-light);
+    --iw: 100%;
+
+    &:is(focus-visible, :focus) + ion-icon {
+      color: var(--clr-light);
+    }
+  }
+  .label {
+    display: block;
+  }
+  .label:has(+ .input-text:focus) {
+    color: var(--clr-light);
+  }
+
+  .input-container {
+    position: relative;
+  }
+  .toggle-password {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    inset: 0;
+  }
+
+  .btn {
+    --hew: 12rem;
+    --bs: var(--clr-secondary-600);
+    --hbg: var(--clr-yellow);
+    --bg: linear-gradient(
+      10deg,
+      var(--clr-secondary) 0%,
+      var(--clr-yellow) 100%
+    );
+    display: inline;
+    font-weight: var(--fw-700);
+  }
+}
+
+.profile {
+  &__change {
+    .toggle-container {
+      --flex-gap: 1rem;
+      justify-content: start;
+      align-items: center;
+      label {
+        background-color: red;
+      }
+    }
+  }
+}

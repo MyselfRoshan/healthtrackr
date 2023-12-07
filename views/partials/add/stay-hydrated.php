@@ -3,7 +3,7 @@
     <h1 class="ff-leauge-gothic fs-700 text-accent">
       Stay Hydrated
     </h1>
-    <div class="d-flex">
+    <div class="toggle-container d-flex">
       <span class="text-tertiary fw-500">
         Send email reminder
       </span>

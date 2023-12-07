@@ -32,8 +32,9 @@
 
 .bg-gradient {
   background: linear-gradient(
-    135deg,
-    var(--clr-primary-800),
-    var(--clr-secondary-600)
-  );
+      135deg,
+      var(--clr-primary-800),
+      var(--clr-secondary-600)
+    ),
+    var(--clr-light);
 }

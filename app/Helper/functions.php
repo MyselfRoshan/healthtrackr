@@ -120,13 +120,11 @@ function generateTimeArray(string $start_time, string $end_time, int $repeat)
 function toFeetInches($decimalHeight)
 {
     // Extract feet and inches
-    if (isset($height)) {
+    if (floatval($decimalHeight) != 0) {
         $height = explode(".", $decimalHeight);
-
-        // Build the string representation
         $result = $height[0] . "'";
         $result .= $height[1] . "\"";
         return $result;
     }
-    return null;
+    return '-';
 }
