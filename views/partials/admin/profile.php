@@ -14,6 +14,11 @@
         <ion-icon name="checkmark"></ion-icon>
       </button>
     </form>
+    <small class="validation-alerts text-center">
+
+      <?= $alerts['profile_pic'] ?? '' ?>
+
+    </small>
     <h3 class="fs-600 fw-600 d-flex ff-expletus text-accent my-6 mx-auto">
       <?= $user['username'] ?>
     </h3>

@@ -1,16 +1,21 @@
 <section id="addUser" class="profile__section d-grid">
     <form method="POST" enctype="multipart/form-data" class="profile__change flow px-10 py-12">
         <h3 class="fs-700 fw-600 text-accent">Add User</h3>
-        <!-- <div class="profile__pic my-10">
+        <div class="profile__pic mt-10">
             <img id="profile__pic" src="<?= $user['profile_pic'] ?? "/resources/images/default-profile.png" ?>" alt="Profile picture" />
             <div id="upload" class="round-right">
-                <input type="file" id="profile__pic-uploader" name="profile_pic" accept=".png, .jpg, .jpeg" />
+                <input type="file" id="profile__pic-uploader" name="profile_pic" accept=".png, .jpg, .jpeg" size="" />
                 <ion-icon name="camera-outline"></ion-icon>
             </div>
             <button type="button" id="cancel" class="round-left d-none">
                 <ion-icon name="close"></ion-icon>
             </button>
-        </div> -->
+        </div>
+        <small class="validation-alerts">
+
+            <?= $alerts['profile_pic'] ?? '' ?>
+
+        </small>
         <div class="form-container py-4">
             <div class="input-container">
                 <label class="label fs-300 fw-500 text-dark-400 fw-600" for="fname" id="label-fname">
@@ -109,7 +114,8 @@
                     <?php
                     $timezoneList = timezone_identifiers_list();
                     foreach ($timezoneList as $timezone) {
-                        $selected = ($timezone === "Asia/Kathmandu") ? "selected" : "";
+                        $selectedTimezone = $user['timezone'] ?? 'Asia/Kathmandu';
+                        $selected = ($timezone === $selectedTimezone) ? "selected" : "";
                         echo "<option class='text-light' value='{$timezone}' {$selected}>{$timezone}</option>";
                     }
                     ?>

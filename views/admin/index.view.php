@@ -8,7 +8,7 @@
     <?php require_view("partials/admin/sidebar.php", ['d']) ?>
     <div class="dashboard__content">
       <div class="wrapper m-16">
-        <?php require_view("partials/admin/dashboard.php", ['users' => $users]) ?>
+        <?php require_view("partials/admin/dashboard.php", ['count' => $count]) ?>
       </div>
     </div>
   </div>

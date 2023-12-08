@@ -1,16 +1,18 @@
 <header>
-    <h1 class="ff-leauge-gothic fs-700 text-accent text-center">Admin Dashboard</h1>
+    <h1 class="ff-leauge-gothic fs-700 text-accent text-center mb-10">Admin Dashboard</h1>
 </header>
-<!-- <div class="d-grid charts-container pt-16">
-    <div id="water" class="charts"></div>
-    <div id="exercise__bar-chart" class="charts"></div>
-    <div id="sleep" class="charts"></div>
-    <div id="exercise__radar-chart" class="charts"></div>
-</div> -->
-<div class="d-grid">
-    <p class="title">Users</p>
-    <div class="body">
-        <?= $users['count'] ?>
+<div class="dashboard__container d-grid">
+    <div class="dashboard__metric">
+        <p class="title fs-500 fw-700 text-secondary">Normal Users</p>
+        <div class="body fs-500 fw-700 text-center text-secondary">
+            <?= $count['normal_users'] ?>
+        </div>
+    </div>
+    <div class="dashboard__metric">
+        <p class="title fs-500 fw-700 text-secondary">Admin Users</p>
+        <div class="body fs-500 fw-700 text-center text-secondary">
+            <?= $count['admin_users'] ?>
+        </div>
     </div>
 </div>
-<div class="notification"></div>
+<!-- <div class="notification"></div> -->

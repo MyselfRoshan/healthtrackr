@@ -17,3 +17,17 @@ cancel.addEventListener("click", () => {
   confirm.classList.add("d-none");
   upload.classList.remove("d-none");
 });
+
+document
+  .querySelector("#fname")
+  .addEventListener("input", e => onlyAlphabets(e));
+document
+  .querySelector("#lname")
+  .addEventListener("input", e => onlyAlphabets(e));
+
+// Only letters a-z and A-z allowed
+function onlyAlphabets(e) {
+  let inputValue = e.target.value;
+  let sanitizedValue = inputValue.replace(/[^a-zA-Z]/g, "");
+  e.target.value = sanitizedValue;
+}

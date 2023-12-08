@@ -63,7 +63,6 @@ class ProfileForm
         elseif (!Validate::isNumericInRange($height, 3, 8))
             $this->alerts['height'] = "Please enter a valid height between 3 feet 5 inches and 8 feet.";
 
-
         // Weight validation
         if (Validate::isEmpty($weight))
             $weight = null;
