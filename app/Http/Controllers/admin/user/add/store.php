@@ -3,15 +3,13 @@
 use App\Http\Forms\AdminUserAddForm;
 use Database\Database;
 
+// Extracting variables from $_POST
 extract($_POST);
-/* To Do insert the profile pic by viewing the profile pic from updat.php method in /profile */
-// d($_FILES['profile_pic']);
-// d($_POST);
-// If $alerts is found redirect to same page else redirect to login page
 
 $form = new AdminUserAddForm();
-if (!$form->validate($_POST)) {
 
+if (!$form->validate($_POST, $_FILES)) {
+    // Display the add user form with alerts
     require_view('admin/user/add.view.php', [
         'scripts' => [
             "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
@@ -24,8 +22,9 @@ if (!$form->validate($_POST)) {
         'user' => $_POST
     ]);
 } else {
+    // Insert new user data into the 'users' table
     $query = "INSERT INTO users(first_name, last_name, username, email, password, timezone, is_admin)
-    VALUES(:fname, :lname, :username, :email, :password, :timezone), is_admin;";
+    VALUES(:fname, :lname, :username, :email, :password, :timezone, :is_admin);";
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
 
@@ -42,19 +41,38 @@ if (!$form->validate($_POST)) {
     $userResult = Database::insert($query, $params);
 
     if ($userResult) {
-        // Assuming you have the corresponding data for the profile table
-        $profileQuery = "INSERT INTO profile(user_id, age, height, weight)
-        VALUES((SELECT user_id FROM users WHERE username = :username), :age, :height, :weight);";
+        // Insert profile data into the 'profile' table
+        $profileQuery = "INSERT INTO profile(user_id, age, height, weight";
+        $profileValues = "VALUES((SELECT user_id FROM users WHERE username = :username), :age, :height, :weight";
 
-        $profileParams = [
-            'username' => [$username, PDO::PARAM_STR],
-            'age' => [intval($age), PDO::PARAM_INT],
-            'height' => [$height, PDO::PARAM_STR],
-            'weight' => [intval($weight), PDO::PARAM_INT],
-        ];
+        if ($_FILES['profile_pic']['error'] != UPLOAD_ERR_NO_FILE) {
+            // Handle profile picture upload
+            $upload_dir = BASE_PATH . 'public/uploads/';
+            $temp_name = $_FILES['profile_pic']['tmp_name'];
+            $img_extension = pathinfo($_FILES['profile_pic']['name'], PATHINFO_EXTENSION);
+            $new_name = uniqid('IMG-', true) . "." . $img_extension;
+            $save_path = $upload_dir . $new_name;
+            move_uploaded_file($temp_name, $save_path);
 
-        Database::insert($profileQuery, $profileParams);
+            $profileQuery .= ", profile_pic";
+            $profileValues .= ", :profile_pic";
 
+            $profileParams = [
+                'profile_pic' => ["/uploads/{$new_name}", PDO::PARAM_STR],
+            ];
+        }
+
+        $profileQuery .= ")";
+        $profileValues .= ");";
+
+        $profileParams['username'] = [$username, PDO::PARAM_STR];
+        $profileParams['age'] = [intval($age), PDO::PARAM_INT];
+        $profileParams['height'] = [floatval($height), PDO::PARAM_STR];
+        $profileParams['weight'] = [intval($weight), PDO::PARAM_INT];
+
+        Database::insert($profileQuery . $profileValues, $profileParams);
+
+        // Redirect after successful user addition
         redirect('/admin/user/add');
     }
 }

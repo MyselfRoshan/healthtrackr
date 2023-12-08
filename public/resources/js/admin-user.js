@@ -17,23 +17,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   let userId = null;
+
   deleteBtns.forEach(deleteBtn => {
     deleteBtn.addEventListener("click", function () {
       userId = this.getAttribute("data-user-id");
       modal.showModal();
-
-      yesBtn.addEventListener("click", () => {
-        fetchData(userId);
-        modal.close();
-        new Notification(document.querySelector(".notification")).create(
-          "<ion-icon name='checkmark-circle'></ion-icon> User Deleted",
-          `The user with id <span class='fs-300 text-red'>${userId}</span> has been successfully deleted.`,
-          4,
-          true,
-        );
-        setTimeout(() => location.reload(), 4000);
-      });
     });
+  });
+
+  yesBtn.addEventListener("click", () => {
+    if (userId) {
+      fetchData(userId);
+      modal.close();
+      new Notification(document.querySelector(".notification")).create(
+        "<ion-icon name='checkmark-circle'></ion-icon> User Deleted",
+        `The user with id <span class='fs-300 text-red'>${userId}</span> has been successfully deleted.`,
+        4,
+        true,
+      );
+      setTimeout(() => location.reload(), 4000);
+    }
   });
 
   async function fetchData(id) {

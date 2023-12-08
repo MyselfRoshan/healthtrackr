@@ -101,5 +101,5 @@ if (!$form->validate($_POST)) {
   // Execute the query
   Database::update($query, $params);
 
-  redirect("/{$session->user['username']}/profile");
+  redirect("/admin/profile");
 }

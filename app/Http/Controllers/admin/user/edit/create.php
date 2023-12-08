@@ -37,8 +37,6 @@ require_view('admin/user/edit.view.php', [
     "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
     "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
     "src='/resources/js/dashboardSidebar.js'",
-    "type='module' src='/resources/js/admin-user.js'",
-    "src='/resources/js/profile.js'",
     "src='/resources/js/user-edit.js'",
   ],
   'user' => $user,

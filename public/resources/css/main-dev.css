@@ -3778,6 +3778,17 @@ div.ndp-nepali-box a {
   color: var(--clr-light);
 }
 
+.dashboard__container {
+  --grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+}
+.dashboard__metric {
+  background: var(--clr-accent);
+  color: var(--clr-light);
+  padding: 2rem 4rem;
+  border-radius: 0.5rem;
+}
+
 .responsive-table {
   /* Modal Content */
 }
@@ -3958,7 +3969,12 @@ div.ndp-nepali-box a {
 }
 
 #addUser .profile__change {
-  grid-column: span 6;
+  grid-column: 1/-1;
+}
+@media (min-width: 90em) {
+  #addUser .profile__change {
+    grid-column: span 6;
+  }
 }
 #addUser .form-container {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
