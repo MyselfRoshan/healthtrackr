@@ -15,6 +15,7 @@ $query = "SELECT
             created_on,
             timezone,
             (SELECT age FROM profile WHERE user_id = :id) AS age,
+            (SELECT dob FROM profile WHERE user_id = :id) AS dob,
             (SELECT weight FROM profile WHERE user_id = :id) AS weight,
             (SELECT height FROM profile WHERE user_id = :id) AS height,
             (SELECT profile_pic FROM profile WHERE user_id = :id) AS profile_pic
@@ -38,7 +39,8 @@ require_view('user/profile.view.php', [
   'scripts' => [
     "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
     "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
-    "src='/resources/js/profile.js'",
+    "src='/resources/js/nepali-datepicker.min.js'",
+    "type='module' src='/resources/js/profile.js'",
     "src='/resources/js/dashboardSidebar.js'"
   ],
   'user' => $user,

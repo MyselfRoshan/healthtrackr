@@ -27,7 +27,7 @@ $user = Database::select($query, $params)->fetch();
 
 // d($user);
 $user['age'] = $user['age'] === 0 ? '' : $user['age'];
-$user['height'] = $user['height'] == '0' ? '' : $user['height'];
+$user['height'] = $user['height'] === 0 ? '' : $user['height'];
 $user['weight'] = $user['weight'] === 0 ? '' : $user['weight'];
 $user['last_login'] = Time::ago($user['last_login']);
 $user['created_on'] = getUserDate($user['created_on'], $user['timezone'])->format('jS, F Y');
@@ -37,8 +37,9 @@ require_view('admin/profile.view.php', [
   'scripts' => [
     "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
     "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
-    "src='/resources/js/profile.js'",
-    "src='/resources/js/dashboardSidebar.js'"
+    "src='/resources/js/nepali-datepicker.min.js'",
+    "type='module' src='/resources/js/profile.js'",
+    "src='/resources/js/dashboardSidebar.js'",
   ],
   'user' => $user,
   'alerts' => []

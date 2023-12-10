@@ -18,26 +18,27 @@
 
     <label for="exercise">Select Exercise:</label>
     <select id="exercise" name="exercise">
-      <option value="" selected aria-selected="true" disabled>
+      <!-- <option value="" selected aria-selected="true" disabled>
         -- Select --
-      </option>
+      </option> -->
+      <option value="jogging" selected>Jogging</option>
       <option value="yoga">Yoga</option>
       <option value="badminton">Badminton</option>
-      <option value="jogging">Jogging</option>
       <option value="pushups">Pushups</option>
       <option value="jumping_jacks">Jumping jacks</option>
-      <!-- Add more exercise options here -->
-    </select><br />
+    </select>
 
     <div id="exerciseSteps">
       <!-- Exercise instructions will be populated here -->
     </div>
 
-    <label for="targetExerciseDuration">Set Target (Min: 10 minutes):</label>
+    <label for="targetExerciseDuration">Set Target (Min: 1 minute):</label>
     <input type="number" id="targetExerciseDuration" name="targetExerciseDuration" value="30" />
+    <p id="targetCalorieToBeBurn"></p>
 
     <label for="actualExerciseDuration">Duration (minutes):</label>
     <input type="number" id="actualExerciseDuration" name="actualExerciseDuration" value="30" />
+    <p id="actualCalorieBurned"></p>
 
     <button type="submit" class="btn btn-m">Save Exercise</button>
   </form>

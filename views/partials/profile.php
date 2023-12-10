@@ -97,10 +97,13 @@
         </small>
       </div>
       <div class="input-container">
-        <label class="label fs-300 fw-500 text-dark-400 fw-600" for="age" id="label-age">
-          Age
+        <label class="label fs-300 fw-500 text-dark-400 fw-600" for="dob" id="label-dob">
+          Date of Birth
         </label>
-        <input type="number" id="age" class="input-text" name="age" value="<?= $user['age'] ?>" aria-labelledby="label-age" />
+        <!-- <input type="number" id="age" class="input-text" name="age" value="<?= $user['age'] ?>" aria-labelledby="label-age" /> -->
+        <input type="text" id="dob" class="ndp-nepali-calendar input-text" name="dob" data-default="<?= $user['dob'] ?>" aria-labelledby="label-dob" readonly />
+        <input type="hidden" id="age" name="age" readonly />
+
         <small class="validation-alerts">
 
           <?= $alerts['age'] ?? '' ?>
@@ -109,9 +112,9 @@
       </div>
       <div class="input-container">
         <label class="label fs-300 fw-500 text-dark-400 fw-600" for="height" id="label-height">
-          Height (ft)
+          Height (cm)
         </label>
-        <input type="text" inputmode="numeric" id="height" name="height" class=" input-text" name="height" value="<?= $user['height'] ?>" aria-labelledby=" label-height">
+        <input type="number" inputmode="numeric" id="height" class="input-text" name="height" value="<?= $user['height'] ?>" aria-labelledby="label-height" />
         <small class="validation-alerts">
 
           <?= $alerts['height'] ?? '' ?>
@@ -131,7 +134,7 @@
       </div>
     </div>
     <div class="btn-container">
-      <button class="btn btn-m btn__hover-effect text-light">
+      <button class="a btn btn-m btn__hover-effect text-light">
         <span></span>
         Update Info
         <span></span>

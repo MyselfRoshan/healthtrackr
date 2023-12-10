@@ -117,7 +117,8 @@
         <label class="label fs-300 fw-500 text-dark-400 fw-600" for="age" id="label-age">
           Age
         </label>
-        <input type="number" id="age" class="input-text" name="age" value="<?= $user['age'] ?>" aria-labelledby="label-age" />
+        <input type="text" id="selectDate" name="selectDate" class="ndp-nepali-calendar" autocomplete="off" readonly="readonly">
+        <!-- <input type="number" id="age" class="ndp-nepali-calendar input-text" name="age" value="<?= $user['age'] ?>" aria-labelledby="label-age" /> -->
         <small class="validation-alerts">
 
           <?= $alerts['age'] ?? '' ?>

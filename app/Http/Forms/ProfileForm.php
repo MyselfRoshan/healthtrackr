@@ -51,17 +51,17 @@ class ProfileForm
         //     $this->alerts['password'] = "At least one uppercase,one lowercase and one special character";
 
         // Age validation
-        if (Validate::isEmpty($age))
-            $age = null;
-        elseif (!Validate::isIntegerInRange($age, 10, 80))
-            $this->alerts['age'] = "Please enter a valid age between 10 and 80 years.";
+        // if (Validate::isEmpty($age))
+        //     $age = null;
+        // elseif (!Validate::isIntegerInRange($age, 10, 80))
+        //     $this->alerts['age'] = "Please enter a valid age between 10 and 80 years.";
 
 
         // Height validation
         if (Validate::isEmpty($height))
             $height = null;
-        elseif (!Validate::isNumericInRange($height, 3, 8))
-            $this->alerts['height'] = "Please enter a valid height between 3 feet 5 inches and 8 feet.";
+        elseif (!Validate::isIntegerInRange($height, 100, 250))
+            $this->alerts['height'] = "Please enter a valid height between 100 and 250 cm.";
 
         // Weight validation
         if (Validate::isEmpty($weight))
