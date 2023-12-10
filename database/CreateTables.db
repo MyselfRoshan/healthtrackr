@@ -14,11 +14,18 @@ CREATE TABLE users
   reset_token_expires_at TIMESTAMP(0)
 );
 
+CREATE OR REPLACE FUNCTION calculate_age(dob DATE) RETURNS SMALLINT AS $$
+BEGIN
+  RETURN EXTRACT(YEAR FROM AGE(CURRENT_DATE, dob));
+END;
+$$ LANGUAGE plpgsql IMMUTABLE;
+
 CREATE TABLE profile (
     user_id INT REFERENCES users(user_id) ON DELETE CASCADE,
-    age INT,
-    height NUMERIC(5, 2),
-    weight INT,
+    dob DATE,
+    age SMALLINT GENERATED ALWAYS AS (calculate_age(dob)) STORED,
+    height SMALLINT,
+    weight SMALLINT,
     profile_pic VARCHAR(50)
 );
 

@@ -6,7 +6,7 @@ use App\Session;
 use Database\Database;
 
 extract($_POST);
-
+// d($_POST);
 // If $alerts is found redirect to same page else redirect to login page
 
 $form = new ProfileForm();
@@ -22,6 +22,7 @@ if (!$form->validate($_POST)) {
             created_on,
             timezone,
             (SELECT age FROM profile WHERE user_id = :id) AS age,
+            (SELECT dob FROM profile WHERE user_id = :id) AS dob,
             (SELECT weight FROM profile WHERE user_id = :id) AS weight,
             (SELECT height FROM profile WHERE user_id = :id) AS height,
             (SELECT profile_pic FROM profile WHERE user_id = :id) AS profile_pic
@@ -32,6 +33,7 @@ if (!$form->validate($_POST)) {
   ];
   $user = Database::select($query, $params)->fetch();
   $user['age'] = $user['age'] === 0 ? '' : $user['age'];
+  $user['dob'] = str_replace('-', '/', $user['dob']);
   $user['height'] = $user['height'] == '0' ? '' : $user['height'];
   $user['weight'] = $user['weight'] === 0 ? '' : $user['weight'];
 
@@ -81,7 +83,7 @@ if (!$form->validate($_POST)) {
     // User_id exists, perform an update
     $query = "UPDATE profile
         SET
-          age = :age,
+          dob = :age,
           height = :height,
           weight = :weight
         WHERE
@@ -89,12 +91,12 @@ if (!$form->validate($_POST)) {
     ";
   } else {
     // User_id doesn't exist, perform an insert
-    $query = "INSERT INTO profile (user_id, age, height, weight)
+    $query = "INSERT INTO profile (user_id, dob, height, weight)
         VALUES (:id, :age, :height, :weight);";
   }
   $params = [
     'id' => [$session->user['id'], PDO::PARAM_STR],
-    'age' => [intval($age), PDO::PARAM_INT],
+    'age' => [$age, PDO::PARAM_INT],
     'height' => [floatval($height), PDO::PARAM_STR],
     'weight' => [intval($weight), PDO::PARAM_INT],
   ];

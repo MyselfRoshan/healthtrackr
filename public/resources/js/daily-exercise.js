@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   updateExerciseData(currentDate);
   fetchExerciseInstructions();
+  updateCalorieBurn();
 
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
@@ -101,6 +102,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Function to update calorie burn
+  function updateCalorieBurn() {
+    const targetCalorieToBeBurn = document.getElementById(
+      "targetCalorieToBeBurn",
+    );
+    const actualCalorieBurned = document.getElementById("actualCalorieBurned");
+    targetCalorieToBeBurn.innerText =
+      parseFloat(
+        exerciseInstructions[selectExercise.value].calorieBurnPerMinute,
+      ) * parseFloat(targetExerciseDuration.value);
+    actualCalorieBurned.innerText =
+      parseFloat(
+        exerciseInstructions[selectExercise.value].calorieBurnPerMinute,
+      ) * parseFloat(actualExerciseDuration.value);
+  }
+
+  // Function to update calorie burn
+  function calculateFatBurn(metValue, weightKg, durationMinutes) {
+    const durationHours = durationMinutes / 60;
+    const totalCaloriesBurned = metValue * weightKg * durationHours;
+    const fatBurnPercentage = metValue < 5 ? 0.5 : 0.3; // Adjust based on intensity
+    const fatBurn = totalCaloriesBurned * fatBurnPercentage;
+    return fatBurn;
+  }
+
   // Function to update exercise instructions based on the selected exercise
   function updateExerciseInstructions(selectedExercise) {
     const exerciseStepsContainer = document.getElementById("exerciseSteps");
@@ -155,6 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputValue = inputValue.replace(/\D/g, "");
       inputValue = Math.min(max, Math.max(min, inputValue));
       e.target.value = inputValue;
+      updateCalorieBurn();
       updateLocalStorage();
     });
   }

@@ -29,10 +29,6 @@ class Validate
     {
         return intval($value) >= $min && intval($value) <= $max;
     }
-    public static function isNumericInRange(float $value, float|int $min, float|int $max)
-    {
-        return floatval($value) >= $min && floatval($value) <= $max;
-    }
     public static function password($value)
     {
         return preg_match('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,255}$/m', $value);
