@@ -25,6 +25,7 @@ composer dump-autoload -o
   - [E charts](https://github.com/apache/echarts) : [Demo dashboard](https://colorlib.com/polygon/gentelella/echarts.html)
 - [x] Add send notification toggle in each and every add section card (USE php corn job to send notification).
 - [x] Creation of Notification System to send through email.
-- [ ] Make admin dashboard if have time
-- [ ] Add "Delete" button in profile to delete account.
+- [x] Make admin dashboard if have time
+- [x] Add "Delete" button in profile to delete account.
+- [ ] Refactor age into date of birth and height into int(cm) from feet
 - [ ] Implement token system to login in rather tha user id
