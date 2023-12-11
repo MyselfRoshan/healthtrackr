@@ -25,7 +25,7 @@ class Validate
     {
         return strlen($value) >= $min && strlen($value) <= $max;
     }
-    public static function isIntegerInRange(int $value, int $min, int $max)
+    public static function isIntegerInRange($value, $min, $max)
     {
         return intval($value) >= $min && intval($value) <= $max;
     }

@@ -44,9 +44,9 @@ use App\Helper\Time;
                         <td data-cell="last login"><?= Time::ago($user['last_login']) ?></td>
                         <td data-cell="timezone"><?= $user['timezone'] ?></td>
                         <td data-cell="is admin"><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
-                        <td data-cell="age"><?= $user['age'] !== null && intval($user['age']) !== 0 ? "{$user['age']} years" : '-' ?></td>
-                        <td data-cell="height"><?= !floatval($user['height']) ? '-' : toFeetInches($user['height']) ?></td>
-                        <td data-cell="weight"><?= !intval($user['weight']) ? '-' : "{$user['weight']} kg" ?></td>
+                        <td data-cell="age"><?= formatMesurement($user['age'], 'years old') ?></td>
+                        <td data-cell="height"><?= formatMesurement($user['height'], 'cm') ?></td>
+                        <td data-cell="weight"><?= formatMesurement($user['weight'], 'kg')  ?></td>
                         <td data-cell="actions">
                             <a href="/admin/user/edit?user_id=<?= $user['user_id'] ?>" class="edit">
                                 <!-- Edit -->

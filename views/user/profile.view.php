@@ -5,7 +5,10 @@
 
 <body>
     <div class="dashboard">
-        <?php require_view("partials/sidebar.php") ?>
+        <?php $_SESSION['is_admin']
+            ? require_view("partials/admin/sidebar.php")
+            : require_view("partials/sidebar.php")
+        ?>
         <div class="dashboard__content">
             <div class="wrapper m-16">
                 <?php require_view("partials/profile.php", ['user' => $user, 'alerts' => $alerts]) ?>

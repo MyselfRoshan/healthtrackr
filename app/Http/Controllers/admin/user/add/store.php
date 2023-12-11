@@ -14,8 +14,9 @@ if (!$form->validate($_POST, $_FILES)) {
         'scripts' => [
             "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
             "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
+            "src='/resources/js/nepali-datepicker.min.js'",
+            "type='module' src='/resources/js/profile.js'",
             "src='/resources/js/dashboardSidebar.js'",
-            "src='/resources/js/profile.js'",
             "src='/resources/js/user-add.js'",
         ],
         'alerts' => $form->getAlerts(),
@@ -42,8 +43,12 @@ if (!$form->validate($_POST, $_FILES)) {
 
     if ($userResult) {
         // Insert profile data into the 'profile' table
-        $profileQuery = "INSERT INTO profile(user_id, age, height, weight";
-        $profileValues = "VALUES((SELECT user_id FROM users WHERE username = :username), :age, :height, :weight";
+        $profileQuery = "INSERT INTO profile(user_id, height, weight" . (!empty($dob) ? ", dob" : "");
+        $profileValues = "VALUES((SELECT user_id FROM users WHERE username = :username), :height, :weight"
+            . (!empty($dob) ? ", :dob" : "");
+
+        if (!empty($dob))
+            $profileParams['dob'] = [$dob, PDO::PARAM_STR];
 
         if ($_FILES['profile_pic']['error'] != UPLOAD_ERR_NO_FILE) {
             // Handle profile picture upload
@@ -66,8 +71,7 @@ if (!$form->validate($_POST, $_FILES)) {
         $profileValues .= ");";
 
         $profileParams['username'] = [$username, PDO::PARAM_STR];
-        $profileParams['age'] = [intval($age), PDO::PARAM_INT];
-        $profileParams['height'] = [floatval($height), PDO::PARAM_STR];
+        $profileParams['height'] = [intval($height), PDO::PARAM_INT];
         $profileParams['weight'] = [intval($weight), PDO::PARAM_INT];
 
         Database::insert($profileQuery . $profileValues, $profileParams);

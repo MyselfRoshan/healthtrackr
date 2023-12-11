@@ -38,14 +38,19 @@ if (isset($session->user) && $session->is_admin) {
     // Add User
     $router->get('/admin/user/add', 'admin/user/add/create.php')->only('admin');
     $router->post('/admin/user/add', 'admin/user/add/store.php')->only('admin');
+
     // Admin profile
-    $router->get("/admin/profile", 'admin/profile/create.php')->only('admin');
-    $router->put("/admin/profile", 'admin/profile/update.php')->only('admin');
-    $router->patch("/admin/profile", 'admin/profile/patch.php')->only('admin');
+    $router->get("/profile", 'profile/create.php')->only('admin');
+    $router->put("/profile", 'profile/update.php')->only('admin');
+    $router->patch("/profile", 'profile/patch.php')->only('admin');
 }
 
 // User
 if (isset($session->user)) {
+    // Dashboard
+    $router->get("/{$session->user['username']}", 'user/index.php')->only('auth');
+    $router->get("/{$session->user['username']}/charts", 'user/charts.php')->only('auth');
+
     // Add
     $router->get("/{$session->user['username']}/add", 'user/add.php')->only('auth');
 
@@ -68,20 +73,18 @@ if (isset($session->user)) {
     $router->get("/{$session->user['username']}/add/quality-sleep/data", 'user/quality-sleep/data.php')->only('auth');
     $router->post("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/store.php')->only('auth');
 
-    // Notification
+    // Reminder
     $router->post("/{$session->user['username']}/add/daily-exercise/notification", 'user/notification/store.php')->only('auth');
     $router->post("/{$session->user['username']}/add/stay-hydrated/notification", 'user/notification/store.php')->only('auth');
     $router->post("/{$session->user['username']}/add/quality-sleep/notification", 'user/notification/store.php')->only('auth');
 
+    // Customize Reminder
     $router->get("/{$session->user['username']}/notification", 'user/notification/data.php')->only('auth');
 
     // Profile
-    $router->get("/{$session->user['username']}", 'user/index.php')->only('auth');
-    $router->get("/{$session->user['username']}/charts", 'user/charts.php')->only('auth');
-    $router->get("/{$session->user['username']}/profile", 'user/profile/create.php')->only('auth');
-    $router->put("/{$session->user['username']}/profile", 'user/profile/update.php')->only('auth');
-    $router->patch("/{$session->user['username']}/profile", 'user/profile/patch.php')->only('auth');
-
+    $router->get("/profile", 'profile/create.php')->only('auth');
+    $router->put("/profile", 'profile/update.php')->only('auth');
+    $router->patch("/profile", 'profile/patch.php')->only('auth');
 
     $router->get("/{$session->user['username']}/reminder", 'user/reminder/create.php')->only('auth');
     $router->patch("/{$session->user['username']}/reminder", 'user/reminder/patch.php')->only('auth');

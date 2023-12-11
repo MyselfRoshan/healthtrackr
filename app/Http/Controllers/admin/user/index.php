@@ -20,7 +20,7 @@ $query = "SELECT
     FROM users LEFT JOIN profile
     ON users.user_id = profile.user_id";
 $users = Database::select($query)->fetchAll();
-// d($users);
+
 require_view('admin/user/index.view.php', [
     'scripts' => [
         "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
