@@ -3,9 +3,10 @@ CREATE TABLE users
   user_id SERIAL PRIMARY KEY,
 	first_name VARCHAR (50) NOT NULL,
 	last_name VARCHAR (50) NOT NULL,
+  is_admin BOOLEAN NOT NULL DEFAULT false,
 	username VARCHAR (50) UNIQUE NOT NULL,
 	password VARCHAR (255) NOT NULL,
-	email VARCHAR(25) UNIQUE NOT NULL,
+	email VARCHAR(255) UNIQUE NOT NULL,
 	created_on TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
 	last_login TIMESTAMP(0),
 	timezone VARCHAR (40),
@@ -13,11 +14,18 @@ CREATE TABLE users
   reset_token_expires_at TIMESTAMP(0)
 );
 
+CREATE OR REPLACE FUNCTION calculate_age(dob DATE) RETURNS SMALLINT AS $$
+BEGIN
+  RETURN EXTRACT(YEAR FROM AGE(CURRENT_DATE, dob));
+END;
+$$ LANGUAGE plpgsql IMMUTABLE;
+
 CREATE TABLE profile (
     user_id INT REFERENCES users(user_id) ON DELETE CASCADE,
-    age INT,
-    height NUMERIC(5, 2),
-    weight INT,
+    dob DATE,
+    age SMALLINT GENERATED ALWAYS AS (calculate_age(dob)) STORED,
+    height SMALLINT,
+    weight SMALLINT,
     profile_pic VARCHAR(50)
 );
 

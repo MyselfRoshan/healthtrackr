@@ -117,16 +117,7 @@ function generateTimeArray(string $start_time, string $end_time, int $repeat)
 //     return $time_array;
 // }
 
-function toFeetInches($decimalHeight)
+function formatMesurement($value, $unit = '')
 {
-    // Extract feet and inches
-    if (isset($height)) {
-        $height = explode(".", $decimalHeight);
-
-        // Build the string representation
-        $result = $height[0] . "'";
-        $result .= $height[1] . "\"";
-        return $result;
-    }
-    return null;
+    return $value != null && intval($value) != 0 ? "{$value} {$unit}" : '-';
 }

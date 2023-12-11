@@ -28,15 +28,15 @@
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Age:</dt>
-        <dd><?php echo $user['age'] ?? "{$user['age']} years" ?> </dd>
+        <dd><?= formatMesurement($user['age'], 'years old') ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Height:</dt>
-        <dd><?= toFeetInches($user['height']) ?></dd>
+        <dd><?= formatMesurement($user['height'], 'cm') ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Weight:</dt>
-        <dd><?php echo $user['weight'] ?? "{$user['weight']}kg" ?></dd>
+        <dd><?= formatMesurement($user['weight'], 'kg') ?></dd>
       </div>
       <div class="details d-flex my-2 text-accent">
         <dt class="text-light fw-600">Last login:</dt>
@@ -96,34 +96,18 @@
 
         </small>
       </div>
-      <!-- <div class="input-container">
-        <label class="label fs-300 fw-500 text-dark-400 fw-600" for="password" id="label-password">
-          Password
-        </label>
-        <input type="password" id="password" class="input-text" name="password" value="<?= $user['password'] ?>" aria-labelledby="label-password" />
-        <ion-icon name="eye-outline" id="toggle-password" class="fs-600 text-dark-400 ms-auto me-6 mt-9"></ion-icon>
-        <small class="validation-alerts">
-
-          <?= $alerts['password'] ?? '' ?>
-
-        </small>
-      </div> -->
       <div class="input-container">
-        <label class="label fs-300 fw-500 text-dark-400 fw-600" for="age" id="label-age">
-          Age
+        <label class="label fs-300 fw-500 text-dark-400 fw-600" for="nepaliDOB" id="label-dob">
+          Date of Birth
         </label>
-        <input type="number" id="age" class="input-text" name="age" value="<?= $user['age'] ?>" aria-labelledby="label-age" />
-        <small class="validation-alerts">
-
-          <?= $alerts['age'] ?? '' ?>
-
-        </small>
+        <input type="text" id="nepaliDOB" class="ndp-nepali-calendar input-text" data-default="<?= $user['dob'] ?>" aria-labelledby="label-dob" readonly />
+        <input type="hidden" id="englishDOB" name="dob" readonly />
       </div>
       <div class="input-container">
         <label class="label fs-300 fw-500 text-dark-400 fw-600" for="height" id="label-height">
-          Height (ft)
+          Height (cm)
         </label>
-        <input type="text" inputmode="numeric" id="height" name="height" class=" input-text" name="height" value="<?= $user['height'] ?>" aria-labelledby=" label-height">
+        <input type="text" inputmode="numeric" id="height" class="input-text" name="height" value="<?= $user['height'] ?>" aria-labelledby="label-height" />
         <small class="validation-alerts">
 
           <?= $alerts['height'] ?? '' ?>
@@ -134,7 +118,7 @@
         <label class="label fs-300 fw-500 text-dark-400 fw-600" for="weight" id="label-weight">
           Weight (kg)
         </label>
-        <input type="number" inputmode="numeric" id="weight" class="input-text" name="weight" value="<?= $user['weight'] ?>" aria-labelledby="label-weight" />
+        <input type="text" inputmode="numeric" id="weight" class="input-text" name="weight" value="<?= $user['weight'] ?>" aria-labelledby="label-weight" />
         <small class="validation-alerts">
 
           <?= $alerts['weight'] ?? '' ?>
@@ -143,7 +127,7 @@
       </div>
     </div>
     <div class="btn-container">
-      <button class="btn btn-m btn__hover-effect text-light">
+      <button class="a btn btn-m btn__hover-effect text-light">
         <span></span>
         Update Info
         <span></span>
@@ -151,7 +135,3 @@
     </div>
   </form>
 </section>
-<?php
-// $date = new DateTime($user['created_on']);
-// dd($date->format('D jS, F Y h:i A'));
-?>

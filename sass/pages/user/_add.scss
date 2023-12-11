@@ -1,15 +1,4 @@
 .dashboard__content {
-  --color-text: #616161;
-  --color-text-btn: var(--clr-light);
-  --card1-gradient-color1: #f12711;
-  --card1-gradient-color2: #f5af19;
-  --card2-gradient-color1: #7f00ff;
-  --card2-gradient-color2: #e100ff;
-  --card3-gradient-color1: #3f2b96;
-  --card3-gradient-color2: #a8c0ff;
-  --card4-gradient-color1: #11998e;
-  --card4-gradient-color2: #38ef7d;
-
   grid-column: 2;
   header {
     --justify-content: space-between;
@@ -17,52 +6,7 @@
     h2 {
       text-transform: uppercase;
     }
-
-    // notification toggle start
-    #send-reminder__toggle {
-      height: 0;
-      width: 0;
-      visibility: hidden;
-      display: none;
-    }
-
-    label {
-      cursor: pointer;
-      text-indent: -9999px;
-      width: 42px;
-      height: 22px;
-      background: var(--clr-ash);
-      display: block;
-      border-radius: 10px;
-      position: relative;
-
-      &::after {
-        content: "";
-        --diameter: 16px;
-        --spacing: 3px;
-        position: absolute;
-        top: var(--spacing);
-        left: var(--spacing);
-        width: var(--diameter);
-        height: var(--diameter);
-        background: #fff;
-        border-radius: var(--diameter);
-        transition: 0.3s;
-      }
-
-      &:active::after {
-        width: 13px;
-      }
-    }
-    input:checked + label {
-      background: var(--clr-primary);
-      &::after {
-        left: calc(100% - 3px);
-        transform: translateX(-100%);
-      }
-    }
   }
-  // notification toggle end
 
   .cards {
     --grid-gap: 2rem;

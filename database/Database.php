@@ -51,6 +51,7 @@ class Database
         try {
             $statement = self::prepareBindAndExecute($query, $params);
             $result = $statement->rowCount();
+
             $statement = null;
 
             return $result;
@@ -95,7 +96,7 @@ class Database
      * Method to prepare, bind and execute the query
      * @param query sql query string
      * @param params bind parameter to the specified variable name with its tyoe
-     * 
+     *
      * Example: $params = ['param' => [$param_value, PDO::PARAM_STR]]
      */
     private static function prepareBindAndExecute(string $query = "", array $params = [])

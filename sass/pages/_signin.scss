@@ -1,12 +1,33 @@
 @use "../abstracts/layout-scale" as *;
 @use "../abstracts/mixins" as *;
 .signin {
+  // For admin only
+  &.admin {
+    height: 100vh;
+
+    .signin {
+      &__logo {
+        width: 11rem;
+      }
+      &__form {
+        height: 100%;
+        // background: var();
+        // backdrop-filter: blur(0.35rem);
+        // border-left: 4px solid var(--clr-light-300);
+        // border-right: 4px solid var(--clr-light-300);
+        // backdrop-filter: blur(0.35rem);
+        // background: var(--clr-light-400);
+        background: var(--clr-dark-100);
+      }
+    }
+  }
   // change container property
   .container {
     --cpy: 0;
     --cpx: 0;
     --cw: min(100%, 90rem);
-    height: min(100dvh, 56.25rem);
+    // height: min(100dvh, 56.25rem);
+    height: 100%;
   }
 
   &__illustration {
@@ -19,7 +40,7 @@
     align-self: center;
     overflow: hidden;
     > svg {
-      max-height: 39rem;
+      // max-height: 39rem;
       aspect-ratio: 1;
     }
   }
@@ -128,7 +149,7 @@
     --fbs: var(--clr-tertiary-200);
 
     // padding
-    --px:3rem;
+    --px: 3rem;
 
     &:focus {
       + #toggle-password {
@@ -151,7 +172,7 @@
       &:nth-last-of-type(3) {
         @include mediaquery(xl) {
           --flow-gap: 2.5rem;
-          
+
           .validation-alerts {
             --flow-gap: 1rem;
           }

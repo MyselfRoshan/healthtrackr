@@ -15,6 +15,7 @@
 @use "./block/notification";
 @use "./block/inputfield";
 @use "./block/button";
+@use "./block/send-reminder__toggle";
 @use "./block/validation-alerts";
 @use "./block/nepali-date-picker";
 
@@ -31,3 +32,8 @@
 @use "./pages/user/stay-hydrate";
 @use "./pages/user/quality-sleep";
 @use "./pages/user/reminder";
+
+@use "./pages/admin/admin-index";
+@use "./pages/admin/user";
+@use "./pages/admin/user-edit";
+@use "./pages/admin/user-add";

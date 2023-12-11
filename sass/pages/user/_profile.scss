@@ -3,6 +3,7 @@
     border-radius: 8px;
     border: 2px solid var(--clr-primary);
     grid-column: span 3;
+    grid-row: 1;
     width: 100%;
     background: linear-gradient(
       120deg,
@@ -123,6 +124,7 @@
       border-radius: 50%;
       width: 12rem;
       aspect-ratio: 1;
+      object-fit: cover;
     }
   }
 
@@ -131,6 +133,7 @@
     // max-width: 30rem;
     // width: min(90%, 25rem);
     grid-column: 4/-1;
+    grid-row: span 2;
     border-radius: 0.5rem;
     border: 2px solid var(--clr-primary);
     width: 100%;
@@ -167,8 +170,8 @@
       --flow-gap: none;
       display: grid;
       gap: 1.5rem;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+      // grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 324px), 1fr));
     }
     .input-container {
       position: relative;

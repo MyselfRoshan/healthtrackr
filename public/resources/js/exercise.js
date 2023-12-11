@@ -16,6 +16,7 @@ export default {
       "Exhale and return to a standing position.",
     ],
     videos: [],
+    calorieBurnPerMinute: 3.5,
   },
   badminton: {
     steps: [
@@ -24,6 +25,7 @@ export default {
       "Keep your eye on the shuttlecock and move to hit it.",
     ],
     videos: [],
+    calorieBurnPerMinute: 6.0,
   },
   jogging: {
     steps: [
@@ -37,6 +39,7 @@ export default {
       "Slow down to a walk to cool down and stretch after your jog.",
     ],
     videos: [],
+    calorieBurnPerMinute: 7.0,
   },
   pushups: {
     steps: [
@@ -48,6 +51,7 @@ export default {
       "Repeat for the desired number of repetitions.",
     ],
     videos: [],
+    calorieBurnPerMinute: 3.8,
   },
   jumping_jacks: {
     steps: [
@@ -58,5 +62,6 @@ export default {
       "Repeat the jumping motion while maintaining a steady pace.",
     ],
     videos: [],
+    calorieBurnPerMinute: 8.0,
   },
 };

@@ -4,8 +4,7 @@
 <div class="reminder__container d-grid">
     <!-- No Reminder -->
     <?php if (!$is_enabled) : ?>
-        <div class="reminder__non">
-            <!-- <div class="icon">&#128273;</div> -->
+        <div class="reminder__non mt-6">
             <div class="reminder__non-img">
                 <?php require_svg("reminder/no-reminder.svg") ?>
             </div>

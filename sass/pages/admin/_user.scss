@@ -1,0 +1,146 @@
+.responsive-table {
+  // overflow-x: auto;
+  // Are yous sure modal
+
+  /* Modal Content */
+  .modal {
+    // background-color: #fefefe;
+    background-color: var(--clr-accent);
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    color: var(--clr-light);
+    border: 0.125rem solid var(--clr-light);
+    border-radius: 0.5rem;
+
+    &::backdrop {
+      background: hsla(0, 0%, 0%, 0.5);
+    }
+    /* Close button */
+    .close {
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: var(--clr-light-400);
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    /* Buttons */
+    .button-container {
+      margin-top: 20px;
+      --flex-gap: 1rem;
+
+      .btn-yes {
+        background: var(--clr-primary);
+        color: var(--clr-light);
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background: var(--clr-tertiary);
+        }
+      }
+
+      .btn-no {
+        background-color: #f44336;
+        color: var(--clr-light);
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #d32f2f;
+        }
+      }
+    }
+  }
+  // End of Are yous sure modal
+  .edit,
+  .delete-btn {
+    cursor: pointer;
+    background: transparent;
+    font-size: 1.4rem;
+    border: none;
+    font-size: var(--fs-500);
+    transition: scale 250ms ease-in;
+
+    &:hover {
+      scale: 1.2;
+    }
+  }
+  .delete-btn {
+    color: red;
+  }
+
+  .edit {
+    text-decoration: none;
+    color: var(--clr-dark-400);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    isolation: isolate;
+    // margin-bottom: 20px;
+  }
+
+  th,
+  td {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  th {
+    font-weight: var(--fw-700);
+    // background-color: var(--clr-primary-800);
+    // background-color: var(--clr-secondary-800);
+    background-color: var(--clr-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  tr:nth-child(even) {
+    // background-color: var(--clr-primary-150);
+    background-color: var(--clr-secondary-100);
+  }
+
+  tr:hover {
+    background-color: var(--clr-secondary-400);
+  }
+}
+
+.no-data-message {
+  text-align: center;
+  font-size: 18px;
+  color: hsl(0 0% 50%);
+  margin-top: 50px;
+}
+.user {
+  &__profile-pic {
+    --_d: 4rem;
+    height: var(--_d);
+    width: var(--_d);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__fullname {
+    // flex-wrap: wrap;
+    --grid-gap: var(--fs-400);
+  }
+  &__name {
+    text-align: center;
+  }
+}

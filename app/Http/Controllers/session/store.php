@@ -51,6 +51,7 @@ if (!$form->validate($_POST)) {
             'email' => $user['email'],
         ];
     $session->user = $payload;
+    $session->is_admin = false;
     $session->profile_pic = $user['profile_pic'];
     $expiry_date = time() + (30 * 24 * 60 * 60); // 30 days
     if (isset($remember_me)) {
