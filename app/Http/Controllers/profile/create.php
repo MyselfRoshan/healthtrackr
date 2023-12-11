@@ -22,18 +22,16 @@ $query = "SELECT
           FROM users
           WHERE user_id = :id";
 $params = [
-  "id" => [$session->user['id'], PDO::PARAM_STR]
+  "id" => [$session->user['id'], PDO::PARAM_INT]
 ];
 $user = Database::select($query, $params)->fetch();
 
-// d($user);
-$user['age'] = $user['age'] === 0 ? '' : $user['age'];
-$user['height'] = floatval($user['height']) == 0 ? '' : $user['height'];
-$user['weight'] = $user['weight'] === 0 ? '' : $user['weight'];
+$user['age'] = $user['age'] == 0 ? '' : $user['age'];
+$user['height'] = $user['height'] == 0 ? '' : $user['height'];
+$user['weight'] = $user['weight'] == 0 ? '' : $user['weight'];
 $user['last_login'] = Time::ago($user['last_login']);
 $user['created_on'] = getUserDate($user['created_on'], $user['timezone'])->format('jS, F Y');
 $user['profile_pic'] = $user['profile_pic'] ?? "/resources/images/default-profile.png";
-// d($user['profile_pic']);
 $session->profile_pic = $user['profile_pic'];
 require_view('user/profile.view.php', [
   'scripts' => [

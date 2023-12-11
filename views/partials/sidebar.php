@@ -39,7 +39,8 @@ if (!isset($attributes[0])) $attributes[0] = '';
         </a> -->
         <div class="profile">
 
-            <a href="/<?= $_SESSION['user']['username'] ?>/profile" class="profile__pic">
+            <!-- <a href="/<?= $_SESSION['user']['username'] ?>/profile" class="profile__pic"> -->
+            <a href="/profile" class="profile__pic">
                 <img src=<?= $_SESSION['profile_pic'] ?? "/resources/images/default-profile.png" ?> alt="Profile picture" />
             </a>
             <div class="profile__desc d-flex">

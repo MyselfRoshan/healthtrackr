@@ -22,20 +22,20 @@ class AdminSigninForm
             $this->alerts['usrname_email'] = "*Username or email is required";
         elseif (!Validate::userExits($usrname_email))
             $this->alerts['usrname_email'] = "Username or email doesn't exist";
+        elseif (!Validate::isAdmin($usrname_email))
+            $this->alerts['usrname_email'] = "Oops! Admins are only allowed to login here.";
 
         // Password validation
         if (Validate::isEmpty($password))
             $this->alerts['password'] = "*Password is required";
-        else if (Validate::userExits($usrname_email) && !Validate::length($password))
+        else if (Validate::userExits($usrname_email) && !Validate::length($password) && Validate::isAdmin($usrname_email))
             $this->alerts['password'] = "Incorrect password";
-        elseif (Validate::userExits($usrname_email) && !Validate::password($password))
+        elseif (Validate::userExits($usrname_email) && !Validate::password($password) && Validate::isAdmin($usrname_email))
             $this->alerts['password'] = "Incorrect password";
         elseif (Validate::isEmpty($usrname_email) && !Validate::isEmpty($password))
             $this->alerts['usrname_email'] = "*Username or email is required";
-        elseif (Validate::userExits($usrname_email) && !Validate::passwordMatches($usrname_email, $password))
+        elseif (Validate::userExits($usrname_email) && !Validate::passwordMatches($usrname_email, $password) && Validate::isAdmin($usrname_email))
             $this->alerts['password'] = "Incorrect password";
-        elseif (!Validate::isAdmin($usrname_email))
-            $this->alerts['password'] = "Oops! Admins are only allowed to login here.";
 
         return empty($this->alerts);
     }

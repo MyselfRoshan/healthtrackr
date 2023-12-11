@@ -3406,6 +3406,8 @@ div.ndp-nepali-box a {
   border-radius: 50%;
   width: 12rem;
   aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .profile__change {
   grid-column: 4/-1;
@@ -3967,6 +3969,11 @@ div.ndp-nepali-box a {
 .profile__change .toggle-container label {
   background-color: red;
 }
+.profile__change option {
+  color: var(--clr-light);
+  background: var(--clr-secondary);
+  font-weight: var(--fw-600);
+}
 
 #addUser .profile__change {
   grid-column: 1/-1;
@@ -3978,13 +3985,4 @@ div.ndp-nepali-box a {
 }
 #addUser .form-container {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
-}
-#addUser option {
-  background: var(--clr-accent);
-  color: hsl(42, 100%, 50%);
-  font-weight: 700;
-}
-#addUser option:hover {
-  background: var(--clr-light);
-  color: var(--clr-accent);
 }/*# sourceMappingURL=main-dev.css.map */

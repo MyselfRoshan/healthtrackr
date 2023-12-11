@@ -32,7 +32,6 @@ class SignupForm
         elseif (Validate::duplicate('users', 'username', $username))
             $this->alerts['username'] = "User with this username already exists";
 
-
         // Email validation
         if (Validate::isEmpty($email))
             $this->alerts['email'] = "*Email is required";

@@ -76,19 +76,17 @@
             </div>
 
             <div class="input-container">
-                <label class="label fs-300 fw-500 text-dark-400 fw-600" for="age" id="label-age">
-                    Age
+                <label class="label fs-300 fw-500 text-dark-400 fw-600" for="nepaliDOB" id="label-dob">
+                    Date of Birth
                 </label>
-                <input type="number" id="age" class="input-text" name="age" aria-labelledby="label-age" value="<?= $user['age'] ?? '' ?>" />
-                <small class="validation-alerts">
-
-                    <?= $alerts['age'] ?? '' ?>
-
-                </small>
+                <!-- To get input from dob-nepali and provide it to dob for post request -->
+                <input type="text" id="nepaliDOB" class="ndp-nepali-calendar input-text" data-default="<?= $user['dob'] ?? '' ?>" aria-labelledby="label-dob" readonly />
+                <input type="hidden" id="englishDOB" name="dob" readonly />
             </div>
+
             <div class="input-container">
                 <label class="label fs-300 fw-500 text-dark-400 fw-600" for="height" id="label-height">
-                    Height (ft)
+                    Height (cm)
                 </label>
                 <input type="text" inputmode="numeric" id="height" name="height" class=" input-text" name="height" aria-labelledby=" label-height" value="<?= $user['height'] ?? '' ?>">
                 <small class="validation-alerts">
@@ -101,7 +99,7 @@
                 <label class="label fs-300 fw-500 text-dark-400 fw-600" for="weight" id="label-weight">
                     Weight (kg)
                 </label>
-                <input type="number" inputmode="numeric" id="weight" class="input-text" name="weight" aria-labelledby="label-weight" value="<?= $user['weight'] ?? '' ?>" />
+                <input type="text" inputmode="numeric" id="weight" class="input-text" name="weight" aria-labelledby="label-weight" value="<?= $user['weight'] ?? '' ?>" />
                 <small class="validation-alerts">
 
                     <?= $alerts['weight'] ?? '' ?>

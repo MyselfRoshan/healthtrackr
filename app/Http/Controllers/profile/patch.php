@@ -95,6 +95,6 @@ if (!$form->validate($_FILES)) {
 
             Database::update($query, $params);
         }
-        redirect("/{$session->user['username']}/profile");
+        redirect("/profile");
     }
 }

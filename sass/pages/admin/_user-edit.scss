@@ -61,5 +61,11 @@
         background-color: red;
       }
     }
+
+    option {
+      color: var(--clr-light);
+      background: var(--clr-secondary);
+      font-weight: var(--fw-600);
+    }
   }
 }

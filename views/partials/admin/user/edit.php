@@ -17,15 +17,23 @@
             </div>
             <div class="details d-flex my-2 text-accent">
                 <dt class="text-light fw-600">Age:</dt>
-                <dd><?= $user['age'] !== null && intval($user['age']) !== 0 ? "{$user['age']} years" : '-' ?></dd>
+                <dd><?= formatMesurement($user['age'], 'years old') ?></dd>
             </div>
             <div class="details d-flex my-2 text-accent">
                 <dt class="text-light fw-600">Height:</dt>
-                <dd><?= toFeetInches($user['height']) ?? '-' ?></dd>
+                <dd><?= formatMesurement($user['height'], 'cm') ?></dd>
             </div>
             <div class="details d-flex my-2 text-accent">
                 <dt class="text-light fw-600">Weight:</dt>
-                <dd><?= $user['weight'] !== null && intval($user['weight']) !== 0 ? "{$user['weight']} kg" : '-' ?></dd>
+                <dd><?= formatMesurement($user['weight'], 'kg') ?></dd>
+            </div>
+            <div class="details d-flex my-2 text-accent">
+                <dt class="text-light fw-600">Timezone:</dt>
+                <dd><?= $user['timezone'] ?></dd>
+            </div>
+            <div class="details d-flex my-2 text-accent">
+                <dt class="text-light fw-600">Is Admin:</dt>
+                <dd><?= $user['is_admin'] ? 'Yes' : 'No' ?></dd>
             </div>
             <div class="details d-flex my-2 text-accent">
                 <dt class="text-light fw-600">Last login:</dt>
@@ -102,19 +110,17 @@
             </div>
 
             <div class="input-container">
-                <label class="label fs-300 fw-500 text-dark-400 fw-600" for="age" id="label-age">
-                    Age
+                <label class="label fs-300 fw-500 text-dark-400 fw-600" for="nepaliDOB" id="label-dob">
+                    Date of Birth
                 </label>
-                <input type="number" id="age" class="input-text" name="age" value="<?= $user['age'] ?>" aria-labelledby="label-age" />
-                <small class="validation-alerts">
-
-                    <?= $alerts['age'] ?? '' ?>
-
-                </small>
+                <!-- To get input from dob-nepali and provide it to dob for post request -->
+                <input type="text" id="nepaliDOB" class="ndp-nepali-calendar input-text" data-default="<?= $user['dob'] ?>" aria-labelledby="label-dob" readonly />
+                <input type="hidden" id="englishDOB" name="dob" readonly />
             </div>
+
             <div class="input-container">
                 <label class="label fs-300 fw-500 text-dark-400 fw-600" for="height" id="label-height">
-                    Height (ft)
+                    Height (cm)
                 </label>
                 <input type="text" inputmode="numeric" id="height" name="height" class=" input-text" name="height" value="<?= $user['height'] ?>" aria-labelledby=" label-height">
                 <small class="validation-alerts">
@@ -127,7 +133,7 @@
                 <label class="label fs-300 fw-500 text-dark-400 fw-600" for="weight" id="label-weight">
                     Weight (kg)
                 </label>
-                <input type="number" inputmode="numeric" id="weight" class="input-text" name="weight" value="<?= $user['weight'] ?>" aria-labelledby="label-weight" />
+                <input type="text" inputmode="numeric" id="weight" class="input-text" name="weight" value="<?= $user['weight'] ?>" aria-labelledby="label-weight" />
                 <small class="validation-alerts">
 
                     <?= $alerts['weight'] ?? '' ?>

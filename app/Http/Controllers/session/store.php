@@ -26,7 +26,6 @@ if (!$form->validate($_POST)) {
         first_name,
         username,
         email,
-        is_admin,
         (SELECT profile_pic FROM profile WHERE profile.user_id = users.user_id) AS profile_pic
     FROM users
     WHERE {$column} = :params";
@@ -52,7 +51,7 @@ if (!$form->validate($_POST)) {
             'email' => $user['email'],
         ];
     $session->user = $payload;
-    $session->is_admin = $user['is_admin'];
+    $session->is_admin = false;
     $session->profile_pic = $user['profile_pic'];
     $expiry_date = time() + (30 * 24 * 60 * 60); // 30 days
     if (isset($remember_me)) {
