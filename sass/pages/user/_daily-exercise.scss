@@ -1,8 +1,17 @@
 /* Exercise form container */
 .daily-exercise {
-  position: relative;
-  #exerciseForm {
-    margin-bottom: 20px;
+  grid-row: span 2;
+
+  &.wrapper {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 2rem;
+    align-items: start;
+    position: relative;
+
+    #exerciseForm {
+      margin-bottom: 20px;
+    }
   }
 
   /* Exercise dropdown styling */
@@ -12,7 +21,6 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    // background-color: #f9f9f9;
     background-color: var(--clr-tertiary-800);
     font-size: 16px;
     color: #333;
@@ -20,64 +28,86 @@
 
   /* Exercise steps styling */
   #exerciseSteps {
-    display: none;
     counter-reset: step-counter;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-    &.active {
-      display: block;
+    /* Header for exercise steps */
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    /* Step styling */
+    .step {
+      --align-items: center;
+      --justify-items: start;
+      font-size: 16px;
+      color: #555;
+
+      &::before {
+        counter-increment: step-counter;
+        content: "Step " counter(step-counter) ".";
+        display: inline-block;
+        width: 4.875rem;
+      }
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 25px;
+      height: 25px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 25px;
+      margin-right: 10px;
+    }
+
+    .step-instruction {
+      flex-grow: 1;
     }
   }
-
-  /* Header for exercise steps */
-  #exerciseSteps h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-
-  /* Step styling */
-  .step {
-    //   display: flex;
-    --align-items: center;
-    --justify-items: start;
-    font-size: 16px;
-    color: #555;
-
-    &::before {
-      counter-increment: step-counter;
-      content: "Step" counter(step-counter) ". ";
-      display: inline-block;
-      width: 3.875rem;
-    }
-  }
-
-  .step-number {
-    flex-shrink: 0;
-    width: 25px;
-    height: 25px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 25px;
-    margin-right: 10px;
-  }
-
-  .step-instruction {
-    flex-grow: 1;
-  }
-
-  /* ... Rest of the styles ... */
 
   /* Videos container */
   #exerciseVideos {
-    margin-bottom: 20px;
+    ul {
+      display: grid;
+    }
+
+    li {
+      list-style: none;
+      margin-bottom: 2rem;
+
+      &:last-of-type {
+        margin-bottom: 0rem;
+      }
+
+      iframe {
+        width: 100%;
+        max-height: 20rem;
+        aspect-ratio: 16/9;
+        border: none;
+        border-radius: 0.25rem;
+        background: linear-gradient(
+          to right,
+          rgba(130, 130, 130, 0.2) 8%,
+          rgba(130, 130, 130, 0.3) 18%,
+          rgba(130, 130, 130, 0.2) 33%
+        );
+        background-size: 800px 100px;
+        animation: wave-squares 2s infinite ease-out;
+      }
+    }
+
+    @keyframes wave-squares {
+      0% {
+        background-position: -468px 0;
+      }
+      100% {
+        background-position: 468px 0;
+      }
+    }
   }
 
   /* Button styling */
@@ -112,4 +142,26 @@
       padding: 10px;
     }
   }
+}
+
+#exercise-stats {
+  padding: 2rem;
+
+  .exercise-info {
+    margin: 5px 0;
+    --justify-content: space-between;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px double var(--clr-primary);
+  }
+}
+
+#exercise-instructions {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#exercise-videos {
+  padding: 2rem;
+  grid-column: 2;
+  grid-row: span 3;
 }

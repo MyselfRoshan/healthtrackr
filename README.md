@@ -31,3 +31,7 @@ composer dump-autoload -o
 - [ ] Refactor exercise and add calorie burn, fat burn ,etc exercise metrices
 - [ ] Add Balanced nutrition section
 - [ ] Implement token system to login in rather tha user id
+
+# References
+
+- [Visit](https://golf.procon.org/met-values-for-800-activities/) for exercise MET values
