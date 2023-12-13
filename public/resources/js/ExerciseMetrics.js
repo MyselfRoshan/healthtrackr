@@ -1,4 +1,49 @@
-class ExerciseMetrics {
+// export default class ExerciseMetrics {
+//   constructor() {
+//     this.caloriesBurned = 0;
+//     this.fatBurn = 0;
+//     this.vo2Max = 0;
+//     this.totalHeartRate = 0;
+//     this.totalDuration = 0;
+//     this.intensity = 0;
+//   }
+
+//   // Method to calculate calories burned
+//   calculateCaloriesBurned(weight, height, age, exerciseDuration, metValue) {
+//     // Adjusted Harris-Benedict equation for total daily energy expenditure (TDEE)
+//     const basalMetabolicRate = 10 * weight + 6.25 * height - 5 * age + 5;
+//     // Adjust as needed
+//     const exerciseCaloriesBurned = (metValue * weight * exerciseDuration) / 60; // MET value per minute
+
+//     // Total calories burned including basal metabolic rate and exercise
+//     this.caloriesBurned = basalMetabolicRate + exerciseCaloriesBurned;
+//     return this.caloriesBurned;
+//   }
+
+//   // Method to calculate fat burn
+//   calculateFatBurn() {
+//     // Assuming a percentage of calories burned comes from fat
+//     const fatPercentage = 0.4; // Adjust as needed
+//     this.fatBurn = fatPercentage * this.caloriesBurned;
+//     return this.fatBurn;
+//   }
+
+//   // Method to calculate VO2 max
+//   calculateVO2Max(weight, exerciseDuration) {
+//     // Assuming a formula based on weight, exercise duration, and calories burned
+//     this.vo2Max = (10 * this.caloriesBurned) / (weight * exerciseDuration); // Adjust as needed
+//     return this.vo2Max;
+//   }
+
+//   // Method to calculate exercise intensity
+//   calculateExerciseIntensity(exerciseDuration) {
+//     // Assuming a formula based on calories burned and exercise duration
+//     this.intensity = this.caloriesBurned / exerciseDuration; // Adjust as needed
+//     return this.intensity.toFixed.toFixed;
+//   }
+// }
+
+export default class ExerciseMetrics {
   constructor() {
     this.caloriesBurned = 0;
     this.fatBurn = 0;
@@ -9,56 +54,50 @@ class ExerciseMetrics {
   }
 
   // Method to calculate calories burned
-  calculateCaloriesBurned(weight, exerciseDuration, caloriesPerMinute) {
-    // Assuming a basic formula, you may replace it with a more accurate one
-    this.caloriesBurned = caloriesPerMinute * exerciseDuration;
-    return this.caloriesBurned;
-  }
-  calculateCaloriesBurned(
-    weight,
-    height,
-    exerciseDuration,
-    calorieBurnPerMinute,
-    met,
-  ) {
-    // Convert height from cm to meters
-    var heightInMeters = height / 100;
+  calculateCaloriesBurned(weight, height, age, exerciseDuration, metValue) {
+    // Use average values for Nepal if any of the values is not set or equal to 0
+    if (!age || age === 0) age = 25; // Average age
+    if (!weight || weight === 0) weight = 63; // Average weight in kilograms
+    if (!height || height === 0) height = 165; // Average height in centimeters
 
-    // Calculate MET-adjusted calorie burn
-    var calorieBurn = weight * 0.035 * met * exerciseDuration;
+    // Adjusted Harris-Benedict equation for total daily energy expenditure (TDEE)
+    const basalMetabolicRate = 10 * weight + 6.25 * height - 5 * age + 5;
+    // Adjust as needed
+    const exerciseCaloriesBurned = (metValue * weight * exerciseDuration) / 60; // MET value per minute
 
-    // Calculate total calorie burn
-    var totalCalorieBurn =
-      calorieBurn + calorieBurnPerMinute * exerciseDuration;
+    // Total calories burned including basal metabolic rate and exercise
+    this.caloriesBurned = basalMetabolicRate + exerciseCaloriesBurned;
 
-    return totalCalorieBurn.toFixed(2); // Round to two decimal places
+    // Replace Infinity with null
+    return isFinite(this.caloriesBurned) ? this.caloriesBurned : null;
   }
 
   // Method to calculate fat burn
   calculateFatBurn() {
-    // Assuming a basic formula, you may replace it with a more accurate one
-    this.fatBurn = 0.5 * this.caloriesBurned; // Adjust as needed
-    return this.fatBurn;
+    // Assuming a percentage of calories burned comes from fat
+    const fatPercentage = 0.4; // Adjust as needed
+    this.fatBurn = fatPercentage * this.caloriesBurned;
+
+    // Replace Infinity with null
+    return isFinite(this.fatBurn) ? this.fatBurn : null;
   }
 
   // Method to calculate VO2 max
-  calculateVO2Max() {
-    // Assuming a basic formula, you may replace it with a more accurate one
-    this.vo2Max = 15 * (this.totalHeartRate / this.totalDuration); // Adjust as needed
-    return this.vo2Max;
-  }
+  calculateVO2Max(weight, exerciseDuration) {
+    // Assuming a formula based on weight, exercise duration, and calories burned
+    if (!weight || weight === 0) weight = 63; // Average weight in kilograms
+    this.vo2Max = (10 * this.caloriesBurned) / (weight * exerciseDuration);
 
-  // Method to calculate average heart rate
-  calculateAverageHeartRate(heartRates) {
-    const totalHeartRate = heartRates.reduce((sum, rate) => sum + rate, 0);
-    this.totalHeartRate = totalHeartRate;
-    return totalHeartRate / heartRates.length;
+    // Replace Infinity with null
+    return isFinite(this.vo2Max) ? this.vo2Max : null;
   }
 
   // Method to calculate exercise intensity
-  calculateExerciseIntensity() {
-    // Assuming a basic formula, you may replace it with a more accurate one
-    this.intensity = this.caloriesBurned / this.totalDuration; // Adjust as needed
-    return this.intensity;
+  calculateExerciseIntensity(exerciseDuration) {
+    // Assuming a formula based on calories burned and exercise duration
+    this.intensity = this.caloriesBurned / exerciseDuration;
+
+    // Replace Infinity with null
+    return isFinite(this.intensity) ? this.intensity.toFixed(2) : null; // Round to 2 decimal places
   }
 }

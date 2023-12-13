@@ -172,10 +172,13 @@ async function fetchDataAndRender() {
     isObjEmpty(sleepData)
   ) {
     new Notification(document.querySelector(".notification")).create(
-      `🎉 Welcome aboard, <span class='text-secondary'>${Cookie.get(
-        "first_name",
-      )}</span> 🎉`,
-      `To get started, kindly <a class="text-tertiary" href="${window.location.href}/add">add your data</a> in the "Add" page for it to appear on the dashboard.`,
+      `🎉 Welcome aboard, <span class="text-secondary">${
+        Cookie.getObj("user").first_name
+      }</span> 🎉`,
+      `To get started, kindly <a class="text-tertiary" href="${window.location.href}/add">save your data</a> in the <span class="text-secondary italic">Add page</span> for it to appear on the dashboard.
+       <br />
+       <br />
+       Also navigate to <span class="text-secondary italic">Profile page</span>, and please <a class="text-tertiary" href="./profile">insert your age, height, and weight</a> to get the most accurate health tracking stas.`,
       20,
     );
   }
