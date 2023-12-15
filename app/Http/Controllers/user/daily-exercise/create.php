@@ -5,7 +5,6 @@ require_view('user/daily-exercise.view.php', [
         "type='module' src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'",
         "nomodule src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'",
         "src='/resources/js/nepali-datepicker.min.js'",
-        "type='module' src='/resources/js/Notification.js'",
         "type='module' src='/resources/js/sendReminder.js'",
         "src='/resources/js/dashboardSidebar.js'",
         "type='module' src='/resources/js/daily-exercise.js'",

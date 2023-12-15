@@ -1,0 +1,128 @@
+{
+  "yoga": {
+    "steps": [
+      "Start with a comfortable standing position.",
+      "Inhale deeply and raise your arms above your head.",
+      "Exhale slowly as you bend forward at your hips, keeping your back straight.",
+      "Inhale and step your right leg back into a lunge.",
+      "Exhale and bring your hands to the floor, framing your left foot.",
+      "Inhale and step back to plank position.",
+      "Exhale as you lower yourself to the ground.",
+      "Inhale and lift your chest into cobra pose.",
+      "Exhale and push back into downward-facing dog pose.",
+      "Inhale and step your right foot forward into a lunge.",
+      "Exhale and step your left foot forward to meet your right.",
+      "Inhale and rise up, reaching your arms overhead.",
+      "Exhale and return to a standing position."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=v7AYKMP6rOE",
+      "https://www.youtube.com/watch?v=pWobp3phsEU"
+    ],
+    "metValue": 2.3
+  },
+  "badminton": {
+    "steps": [
+      "Hold the racket with a firm grip.",
+      "Position yourself in a ready stance with knees slightly bent.",
+      "Keep your eye on the shuttlecock and move to hit it."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=MsHMCZlcrXM&pp",
+      "https://www.youtube.com/watch?v=DnUwBz2BVYM"
+    ],
+    "metValue": 5.5
+  },
+  "jogging": {
+    "steps": [
+      "Put on comfortable running shoes and attire.",
+      "Start with a brisk walk to warm up your muscles.",
+      "Begin jogging at a comfortable pace.",
+      "Maintain good posture and keep your core engaged.",
+      "Breathe deeply and rhythmically as you run.",
+      "Choose a route with a mix of terrains for variety.",
+      "Pay attention to your surroundings and be cautious of traffic.",
+      "Slow down to a walk to cool down and stretch after your jog."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=kVnyY17VS9Y",
+      "https://www.youtube.com/watch?v=_kGESn8ArrU"
+    ],
+    "metValue": 7.0
+  },
+  "pushups": {
+    "steps": [
+      "Start in a plank position with your hands slightly wider than shoulder-width apart.",
+      "Engage your core and lower yourself down by bending your elbows.",
+      "Keep your body in a straight line from head to heels.",
+      "Pause when your chest is just above the ground.",
+      "Exhale as you push back up to the starting position.",
+      "Repeat for the desired number of repetitions."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=IODxDxX7oi4",
+      "https://www.youtube.com/watch?v=9-DlYB4vO4U"
+    ],
+    "metValue": 3.8
+  },
+  "cycling": {
+    "steps": [
+      "Adjust your bike to the appropriate height.",
+      "Start pedaling at a moderate pace.",
+      "Maintain a steady rhythm and focus on proper form.",
+      "Increase or decrease resistance based on your fitness level.",
+      "Continue cycling for the desired duration.",
+      "Cool down by slowing your pace and stretching."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=yg5cUbsm7qY",
+      "https://www.youtube.com/watch?v=ZiGE3-L4vyg"
+    ],
+    "metValue": 8.0
+  },
+  "swimming": {
+    "steps": [
+      "Enter the water and warm up with some gentle swimming.",
+      "Choose a swimming stroke (e.g., freestyle, breaststroke, backstroke).",
+      "Swim at a moderate to vigorous pace.",
+      "Focus on proper breathing and technique.",
+      "Continue swimming for the desired duration.",
+      "Cool down with some easy laps and stretching in the water."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=gh5mAtmeR3Y",
+      "https://www.youtube.com/watch?v=Rr_CnIfr5u8"
+    ],
+    "metValue": 7.0
+  },
+  "weight_lifting": {
+    "steps": [
+      "Warm up with light cardiovascular activity.",
+      "Select your weights based on your fitness goals.",
+      "Perform weightlifting exercises for various muscle groups.",
+      "Maintain proper form and control during each repetition.",
+      "Rest between sets as needed.",
+      "Cool down with stretching exercises for flexibility."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=2fCKd-BQOhw",
+      "https://www.youtube.com/watch?v=GViX8riaHX4"
+    ],
+    "metValue": 3.0
+  },
+  "hiking": {
+    "steps": [
+      "Select a hiking trail suitable for your fitness level.",
+      "Wear proper hiking shoes and carry essentials.",
+      "Start with a moderate pace and gradually increase intensity.",
+      "Enjoy the scenery and nature as you hike.",
+      "Stay hydrated and take breaks as needed.",
+      "Cool down with a gentle walk and stretching."
+    ],
+    "videos": [
+      "https://www.youtube.com/watch?v=edElLWvSVLk",
+      "https://www.youtube.com/watch?v=lrESF9eecxk"
+    ],
+    "metValue": 6.0
+  }
+}

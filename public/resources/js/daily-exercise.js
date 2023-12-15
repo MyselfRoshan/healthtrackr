@@ -1,7 +1,11 @@
 import ajax from "./ajax.js";
-import exerciseInstructions from "./exercise.js";
+import Cookie from "./Cookie.js";
+import exerciseInstructions from "./exercise.json" assert { type: "json" };
 import Notification from "./Notification.js";
-
+import ExerciseMetrics from "./ExerciseMetrics.js";
+/**
+ * TO DO use fet instead of import for exerciseInstructions as it is not supported by firefox
+ */
 // Select DOM elements
 const selectExercise = document.getElementById("exercise");
 const targetExerciseDuration = document.getElementById(
@@ -25,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   updateExerciseData(currentDate);
   fetchExerciseInstructions();
-  updateCalorieBurn();
+  updateExerciseInstructions(selectExercise.value);
+  updateExerciseMetrics();
 
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     onChange: handleDateChange,
   });
 
-  handleInputField(targetExerciseDuration, 10, 120);
+  handleInputField(targetExerciseDuration, 1, 120);
   handleInputField(actualExerciseDuration, 0, 120);
 
   // Event listener for form submission enable clicking after 5 seconds
@@ -102,29 +107,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Function to update calorie burn
-  function updateCalorieBurn() {
-    const targetCalorieToBeBurn = document.getElementById(
-      "targetCalorieToBeBurn",
+  // Function to update exercise statistics
+  function updateExerciseMetrics() {
+    const exerciseMetrics = new ExerciseMetrics();
+    const metValue = exerciseInstructions[selectExercise.value].metValue;
+    const age = Cookie.getObj("user").age;
+    const height = Cookie.getObj("user").height;
+    const weight = Cookie.getObj("user").weight;
+    exerciseMetrics.calculateCaloriesBurned(
+      weight,
+      height,
+      age,
+      actualExerciseDuration.value,
+      metValue,
     );
-    const actualCalorieBurned = document.getElementById("actualCalorieBurned");
-    targetCalorieToBeBurn.innerText =
-      parseFloat(
-        exerciseInstructions[selectExercise.value].calorieBurnPerMinute,
-      ) * parseFloat(targetExerciseDuration.value);
-    actualCalorieBurned.innerText =
-      parseFloat(
-        exerciseInstructions[selectExercise.value].calorieBurnPerMinute,
-      ) * parseFloat(actualExerciseDuration.value);
-  }
+    exerciseMetrics.calculateFatBurn();
+    exerciseMetrics.calculateVO2Max(weight, actualExerciseDuration.value);
+    exerciseMetrics.calculateExerciseIntensity(actualExerciseDuration.value);
 
-  // Function to update calorie burn
-  function calculateFatBurn(metValue, weightKg, durationMinutes) {
-    const durationHours = durationMinutes / 60;
-    const totalCaloriesBurned = metValue * weightKg * durationHours;
-    const fatBurnPercentage = metValue < 5 ? 0.5 : 0.3; // Adjust based on intensity
-    const fatBurn = totalCaloriesBurned * fatBurnPercentage;
-    return fatBurn;
+    const calorieBurn = document.getElementById("calorieBurned");
+    const fatBurn = document.getElementById("fatBurned");
+    const vo2Max = document.getElementById("vo2Max");
+    const intensity = document.getElementById("intensity");
+
+    calorieBurn.innerText = `${exerciseMetrics.caloriesBurned.toFixed(2)} cal`;
+    fatBurn.innerText = `${exerciseMetrics.fatBurn.toFixed(2)} cal`;
+    vo2Max.innerText = `${exerciseMetrics.vo2Max.toFixed(2)}  ml/min/kg`;
+    intensity.innerText = `${exerciseMetrics.intensity.toFixed(2)} cal/min`;
   }
 
   // Function to update exercise instructions based on the selected exercise
@@ -133,14 +142,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const exerciseVideosContainer = document.getElementById("exerciseVideos");
 
     const stepsList = document.createElement("ol");
-    const header = document.createElement("li");
-    header.textContent = "Instructions:";
-    header.classList.add("fs-500");
-    stepsList.appendChild(header);
 
     exerciseInstructions[selectedExercise].steps.forEach(instruction => {
       const stepItem = document.createElement("li");
-      stepItem.classList.add("step", "flow");
+      stepItem.classList.add("step");
       stepItem.textContent = instruction;
       stepsList.style.listStyle = "none";
       stepsList.appendChild(stepItem);
@@ -151,18 +156,46 @@ document.addEventListener("DOMContentLoaded", () => {
     exerciseStepsContainer.classList.add("active");
     exerciseStepsContainer.appendChild(stepsList);
 
+    /* New video list */
+    // Create a new videos list
     const videosList = document.createElement("ul");
+
     exerciseInstructions[selectedExercise].videos.forEach(videoUrl => {
       const videoItem = document.createElement("li");
-      const videoLink = document.createElement("a");
-      videoLink.href = videoUrl;
-      videoLink.textContent = "Watch Video";
-      videoItem.appendChild(videoLink);
+
+      // Extract the video ID from the YouTube URL
+      const videoId = extractVideoId(videoUrl);
+      const videoIframe = document.createElement("iframe");
+      videoIframe.src = `https://www.youtube.com/embed/${videoId}`;
+      videoIframe.allowFullscreen = true;
+      videoIframe.allow =
+        "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+      videoItem.appendChild(videoIframe);
+
+      // Append the list item to the list
       videosList.appendChild(videoItem);
     });
 
-    exerciseVideosContainer.innerHTML = ""; // Clear previous videos
-    exerciseVideosContainer.appendChild(videosList);
+    // Clear previous videos in the exerciseVideosContainer
+    exerciseVideosContainer.innerHTML = "";
+
+    // Check if the videosList is not empty
+    if (videosList.children.length > 0) {
+      // Append the new list to the exerciseVideosContainer
+      exerciseVideosContainer.appendChild(videosList);
+    } else {
+      // If there are no videos, display a message
+      const noVideosMessage = document.createElement("p");
+      noVideosMessage.textContent = "No videos available for this exercise.";
+      exerciseVideosContainer.appendChild(noVideosMessage);
+    }
+
+    // Function to extract video ID from YouTube URL
+    function extractVideoId(url) {
+      const regex = /[?&]v=([^?&]+)/;
+      const match = url.match(regex);
+      return match ? match[1] : null;
+    }
   }
 
   // Function to fetch exercise instructions from JSON file
@@ -170,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selectExercise.addEventListener("change", function () {
       const selectedExercise = this.value;
       updateExerciseInstructions(selectedExercise);
+      updateExerciseMetrics();
       updateLocalStorage();
     });
   }
@@ -181,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputValue = inputValue.replace(/\D/g, "");
       inputValue = Math.min(max, Math.max(min, inputValue));
       e.target.value = inputValue;
-      updateCalorieBurn();
+      updateExerciseMetrics();
       updateLocalStorage();
     });
   }
@@ -189,6 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to handle date change
   function handleDateChange() {
     updateExerciseData(selectDate.value);
+    updateExerciseMetrics();
     updateLocalStorage();
   }
 

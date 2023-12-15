@@ -26,6 +26,9 @@ if (!$form->validate($_POST)) {
         first_name,
         username,
         email,
+        (SELECT age FROM profile WHERE profile.user_id = users.user_id) AS age,
+        (SELECT weight FROM profile WHERE profile.user_id = users.user_id) AS weight,
+        (SELECT height FROM profile WHERE profile.user_id = users.user_id) AS height,
         (SELECT profile_pic FROM profile WHERE profile.user_id = users.user_id) AS profile_pic
     FROM users
     WHERE {$column} = :params";
@@ -44,12 +47,18 @@ if (!$form->validate($_POST)) {
 
     $session = Session::getInstance();
     $session->regenerateID();
-    $payload
-        = [
-            'id' => $user['user_id'],
-            'username' => $user['username'],
-            'email' => $user['email'],
-        ];
+    $user_info = [
+        'first_name' => $user['first_name'],
+        'last_name' => $user['first_name'],
+        'age' => $user['age'],
+        'height' => $user['height'],
+        'weight' => $user['weight'],
+    ];
+    $payload = [
+        'id' => $user['user_id'],
+        'username' => $user['username'],
+        'email' => $user['email'],
+    ];
     $session->user = $payload;
     $session->is_admin = false;
     $session->profile_pic = $user['profile_pic'];
@@ -57,6 +66,6 @@ if (!$form->validate($_POST)) {
     if (isset($remember_me)) {
         setcookie("remember_me", json_encode($payload), $expiry_date);
     }
-    setcookie("first_name", $user['first_name'], $expiry_date);
+    setcookie("user", json_encode($user_info), $expiry_date);
     redirect("/{$session->user['username']}");
 }

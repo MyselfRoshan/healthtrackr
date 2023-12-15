@@ -24,6 +24,10 @@ class Cookie {
     }
     return null;
   }
+
+  static getObj(name) {
+    return JSON.parse(decodeURIComponent(Cookie.get(name)));
+  }
 }
 
 export default Cookie;

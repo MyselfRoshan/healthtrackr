@@ -567,6 +567,10 @@ body {
   max-width: 50ch;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .d-flex {
   display: flex;
   gap: var(--flex-gap, 0);
@@ -1830,7 +1834,8 @@ body {
   padding: 4rem;
   background-color: var(--clr-light);
   border-radius: 1rem;
-  box-shadow: 0px 0px 13px var(--clr-dark-400);
+  border: 1px solid var(--clr-dark-100);
+  box-shadow: 0 4px 8px var(--clr-dark-100);
 }
 .add-wrapper input {
   width: 100%;
@@ -3462,18 +3467,22 @@ div.ndp-nepali-box a {
 
 /* Exercise form container */
 .daily-exercise {
-  position: relative;
+  grid-row: span 2;
   /* Exercise dropdown styling */
   /* Exercise steps styling */
-  /* Header for exercise steps */
-  /* Step styling */
-  /* ... Rest of the styles ... */
   /* Videos container */
   /* Button styling */
   /* Input and select styling */
   /* Responsive layout adjustments */
 }
-.daily-exercise #exerciseForm {
+.daily-exercise.wrapper {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 2rem;
+  align-items: start;
+  position: relative;
+}
+.daily-exercise.wrapper #exerciseForm {
   margin-bottom: 20px;
 }
 .daily-exercise #exercise {
@@ -3487,36 +3496,28 @@ div.ndp-nepali-box a {
   color: #333;
 }
 .daily-exercise #exerciseSteps {
-  display: none;
   counter-reset: step-counter;
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.daily-exercise #exerciseSteps.active {
-  display: block;
+  /* Header for exercise steps */
+  /* Step styling */
 }
 .daily-exercise #exerciseSteps h2 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #333;
 }
-.daily-exercise .step {
+.daily-exercise #exerciseSteps .step {
   --align-items: center;
   --justify-items: start;
   font-size: 16px;
   color: #555;
 }
-.daily-exercise .step::before {
+.daily-exercise #exerciseSteps .step::before {
   counter-increment: step-counter;
-  content: "Step" counter(step-counter) ". ";
+  content: "Step " counter(step-counter) ".";
   display: inline-block;
-  width: 3.875rem;
+  width: 4.875rem;
 }
-.daily-exercise .step-number {
+.daily-exercise #exerciseSteps .step-number {
   flex-shrink: 0;
   width: 25px;
   height: 25px;
@@ -3527,11 +3528,36 @@ div.ndp-nepali-box a {
   line-height: 25px;
   margin-right: 10px;
 }
-.daily-exercise .step-instruction {
+.daily-exercise #exerciseSteps .step-instruction {
   flex-grow: 1;
 }
-.daily-exercise #exerciseVideos {
-  margin-bottom: 20px;
+.daily-exercise #exerciseVideos ul {
+  display: grid;
+}
+.daily-exercise #exerciseVideos li {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.daily-exercise #exerciseVideos li:last-of-type {
+  margin-bottom: 0rem;
+}
+.daily-exercise #exerciseVideos li iframe {
+  width: 100%;
+  max-height: 20rem;
+  aspect-ratio: 16/9;
+  border: none;
+  border-radius: 0.25rem;
+  background: linear-gradient(to right, rgba(130, 130, 130, 0.2) 8%, rgba(130, 130, 130, 0.3) 18%, rgba(130, 130, 130, 0.2) 33%);
+  background-size: 800px 100px;
+  animation: wave-squares 2s infinite ease-out;
+}
+@keyframes wave-squares {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
 }
 .daily-exercise .btn {
   --br: 5px;
@@ -3558,6 +3584,27 @@ div.ndp-nepali-box a {
   .daily-exercise #exerciseForm {
     padding: 10px;
   }
+}
+
+#exercise-stats {
+  padding: 2rem;
+}
+#exercise-stats .exercise-info {
+  margin: 5px 0;
+  --justify-content: space-between;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px double var(--clr-primary);
+}
+
+#exercise-instructions {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#exercise-videos {
+  padding: 2rem;
+  grid-column: 2;
+  grid-row: span 3;
 }
 
 .glass-quote {
