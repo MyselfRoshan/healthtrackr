@@ -130,10 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const vo2Max = document.getElementById("vo2Max");
     const intensity = document.getElementById("intensity");
 
-    calorieBurn.innerText = `${exerciseMetrics.caloriesBurned.toFixed(2)} cal`;
-    fatBurn.innerText = `${exerciseMetrics.fatBurn.toFixed(2)} cal`;
-    vo2Max.innerText = `${exerciseMetrics.vo2Max.toFixed(2)}  ml/min/kg`;
-    intensity.innerText = `${exerciseMetrics.intensity.toFixed(2)} cal/min`;
+    calorieBurn.innerText = exerciseMetrics.getCaloriesBurned();
+    fatBurn.innerText = exerciseMetrics.getFatBurn();
+    vo2Max.innerText = exerciseMetrics.getVo2Max();
+    intensity.innerText = exerciseMetrics.getIntensity();
   }
 
   // Function to update exercise instructions based on the selected exercise

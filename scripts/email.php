@@ -97,8 +97,8 @@ foreach ($enabledEmails as $enabledEmail) {
             require base_path("config/email_data.php");
             $wakeupTimeDifference = $now->diff($start_time);
             $bedTimeDifference = $now->diff($end_time);
-            d($wakeupTimeDifference);
-            d($bedTimeDifference);
+            // d($wakeupTimeDifference);
+            // d($bedTimeDifference);
             // if ($start_time <= $now && $wakeupTimeDifference->i ===0 && $wakeupTimeDifference->h === 0) {
             if ($wakeupTimeDifference->h === 0 && $wakeupTimeDifference->i === 0 && $wakeupTimeDifference->s <= 59) {
                 $m = new Mail(
