@@ -34,7 +34,6 @@
         echo "Exercise file not found.";
       }
       ?>
-
     </select>
 
     <label for="targetExerciseDuration">Set Target Exercise Duration (Minimum :- 1 minute) (Maximum :- 120 minutes):</label>
