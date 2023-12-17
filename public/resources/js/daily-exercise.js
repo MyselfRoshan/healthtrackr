@@ -4,7 +4,7 @@ import exerciseInstructions from "./exercise.json" assert { type: "json" };
 import Notification from "./Notification.js";
 import ExerciseMetrics from "./ExerciseMetrics.js";
 /**
- * TO DO use fet instead of import for exerciseInstructions as it is not supported by firefox
+ * TO DO use fetch instead of import for exerciseInstructions as it is not supported by firefox
  */
 // Select DOM elements
 const selectExercise = document.getElementById("exercise");
@@ -200,8 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to fetch exercise instructions from JSON file
   function fetchExerciseInstructions() {
-    selectExercise.addEventListener("change", function () {
-      const selectedExercise = this.value;
+    selectExercise.addEventListener("change", e => {
+      const selectedExercise = e.target.value;
       updateExerciseInstructions(selectedExercise);
       updateExerciseMetrics();
       updateLocalStorage();

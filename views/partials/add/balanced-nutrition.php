@@ -16,7 +16,15 @@
         <label for="selectDate">Select Date:</label>
         <input type="text" id="selectDate" name="selectDate" />
 
-        <label for="food">Select Exercise:</label>
+        <label for="mealType">Select Meal Type:</label>
+        <select id="mealType" name="meal_type">
+            <option value="breakfast">Breakfast</option>
+            <option value="launch">Launch</option>
+            <option value="snack">Snack</option>
+            <option value="dinner">Dinner</option>
+        </select>
+
+        <label for="food">Select Food:</label>
         <select id="food" name="food">
             <?php
             $foodFilePath = BASE_PATH . 'public/resources/js/food.json';
@@ -28,7 +36,7 @@
 
                 foreach ($foods as $foodValue => $value) {
                     $foodName = ucwords(str_replace('_', ' ', $foodValue));
-                    echo "<option value='{$foodValue}' selected>{$foodName}</option>";
+                    echo "<option value='{$foodValue}'>{$foodName}</option>";
                 }
             } else {
                 echo "Food file not found.";
@@ -37,8 +45,8 @@
 
         </select>
         <!-- Use unit from json instead of time -->
-        <label for="serving">Amount:</label>
-        <input type="number" id="serving" name="serving" value="1" />
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" />
         <span id="unit"></span>
         <button type="submit" class="btn btn-m">Save Exercise</button>
     </form>

@@ -25,6 +25,7 @@ if (isset($data['exercise_reminder']) && $data['exercise_reminder']) {
         ActivityCategory::Exercise
     );
 }
+
 if (isset($data['sleep_reminder']) && $data['sleep_reminder']) {
     $email->queue(
         $session->user['id'],
@@ -52,5 +53,20 @@ if (isset($data['water_reminder']) && $data['water_reminder']) {
     $email->disableEmailReminder(
         $session->user['id'],
         ActivityCategory::Water
+    );
+}
+
+if (isset($data['food_reminder']) && $data['food_reminder']) {
+    $email->queue(
+        $session->user['id'],
+        ActivityCategory::Food,
+        '06:15',
+        '20:00',
+        4
+    );
+} else {
+    $email->disableEmailReminder(
+        $session->user['id'],
+        ActivityCategory::Food
     );
 }
