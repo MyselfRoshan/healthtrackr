@@ -3686,6 +3686,16 @@ div.ndp-nepali-box a {
   box-shadow: inset 0 0 15px hsl(195, 63%, 29%), 0 0 10px 2px hsl(195, 84%, 76%);
 }
 
+#food-composition {
+  padding: 2rem;
+}
+#food-composition .food-info {
+  margin: 5px 0;
+  --justify-content: space-between;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px double var(--clr-primary);
+}
+
 .quality-sleep .btn {
   --br: 5px;
   padding: 0.625em 1em;

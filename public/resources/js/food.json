@@ -1,0 +1,98 @@
+{
+  "Dal Bhat": {
+    "composition_per_unit": {
+      "carbohydrate": "50g",
+      "protein": "20g",
+      "fat": "5g",
+      "fiber": "8g",
+      "calories": "350kcal",
+      "vitamin_A": "500IU",
+      "vitamin_C": "10mg"
+    },
+    "unit": "plate"
+  },
+  "Vegetable Momo": {
+    "composition_per_unit": {
+      "carbohydrate": "5g",
+      "protein": "2.5g",
+      "fat": "1.67g",
+      "fiber": "0.5g",
+      "calories": "41.67kcal",
+      "vitamin_B6": "0.1mg",
+      "iron": "1.5mg"
+    },
+    "unit": "piece"
+  },
+  "Buff Momo": {
+    "composition_per_unit": {
+      "carbohydrate": "6g",
+      "protein": "7g",
+      "fat": "4g",
+      "fiber": "0.5g",
+      "calories": "70kcal",
+      "zinc": "2mg",
+      "selenium": "10mcg"
+    },
+    "unit": "piece"
+  },
+  "Chicken Momo": {
+    "composition_per_unit": {
+      "carbohydrate": "7g",
+      "protein": "9g",
+      "fat": "5g",
+      "fiber": "0.5g",
+      "calories": "80kcal",
+      "niacin": "5mg",
+      "phosphorus": "100mg"
+    },
+    "unit": "piece"
+  },
+  "Gundruk": {
+    "composition_per_unit": {
+      "carbohydrate": "15g",
+      "protein": "5g",
+      "fat": "2g",
+      "fiber": "4g",
+      "calories": "100kcal",
+      "calcium": "150mg",
+      "potassium": "300mg"
+    },
+    "unit": "cup"
+  },
+  "Sel Roti": {
+    "composition_per_unit": {
+      "carbohydrate": "20g",
+      "protein": "2.5g",
+      "fat": "4g",
+      "fiber": "1g",
+      "calories": "150kcal",
+      "magnesium": "30mg",
+      "sodium": "200mg"
+    },
+    "unit": "piece"
+  },
+  "Ghurma Achar": {
+    "composition_per_unit": {
+      "carbohydrate": "5g",
+      "protein": "1g",
+      "fat": "2.5g",
+      "fiber": "0.5g",
+      "calories": "40kcal",
+      "vitamin_K": "5mcg",
+      "folate": "10mcg"
+    },
+    "unit": "tablespoon"
+  },
+  "Yomari": {
+    "composition_per_unit": {
+      "carbohydrate": "25g",
+      "protein": "8g",
+      "fat": "12g",
+      "fiber": "5g",
+      "calories": "200kcal",
+      "vitamin_D": "2.5mcg",
+      "copper": "0.5mg"
+    },
+    "unit": "piece"
+  }
+}

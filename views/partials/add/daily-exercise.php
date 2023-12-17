@@ -28,21 +28,20 @@
 
         foreach ($exercises as $exerciseValue => $value) {
           $exerciseName = ucwords(str_replace('_', ' ', $exerciseValue));
-          echo "<option value='{$exerciseValue}' selected>{$exerciseName}</option>";
+          echo "<option value='{$exerciseValue}' >{$exerciseName}</option>";
         }
       } else {
         echo "Exercise file not found.";
       }
       ?>
-
     </select>
 
     <label for="targetExerciseDuration">Set Target Exercise Duration (Minimum :- 1 minute) (Maximum :- 120 minutes):</label>
-    <input type="number" id="targetExerciseDuration" name="targetExerciseDuration" value="30" />
+    <input type="number" inputmode="numeric" id="targetExerciseDuration" name="targetExerciseDuration" value="30" />
     <p id="targetCalorieToBeBurn"></p>
 
     <label for="actualExerciseDuration">Performed Exercise Duration (minutes):</label>
-    <input type="number" id="actualExerciseDuration" name="actualExerciseDuration" value="30" />
+    <input type="number" inputmode="numeric" id="actualExerciseDuration" name="actualExerciseDuration" value="30" />
     <button type="submit" class="btn btn-m">Save Exercise</button>
   </form>
 </section>

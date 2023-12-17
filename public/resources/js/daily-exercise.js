@@ -4,7 +4,7 @@ import exerciseInstructions from "./exercise.json" assert { type: "json" };
 import Notification from "./Notification.js";
 import ExerciseMetrics from "./ExerciseMetrics.js";
 /**
- * TO DO use fet instead of import for exerciseInstructions as it is not supported by firefox
+ * TO DO use fetch instead of import for exerciseInstructions as it is not supported by firefox
  */
 // Select DOM elements
 const selectExercise = document.getElementById("exercise");
@@ -130,10 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const vo2Max = document.getElementById("vo2Max");
     const intensity = document.getElementById("intensity");
 
-    calorieBurn.innerText = `${exerciseMetrics.caloriesBurned.toFixed(2)} cal`;
-    fatBurn.innerText = `${exerciseMetrics.fatBurn.toFixed(2)} cal`;
-    vo2Max.innerText = `${exerciseMetrics.vo2Max.toFixed(2)}  ml/min/kg`;
-    intensity.innerText = `${exerciseMetrics.intensity.toFixed(2)} cal/min`;
+    calorieBurn.innerText = exerciseMetrics.getCaloriesBurned();
+    fatBurn.innerText = exerciseMetrics.getFatBurn();
+    vo2Max.innerText = exerciseMetrics.getVo2Max();
+    intensity.innerText = exerciseMetrics.getIntensity();
   }
 
   // Function to update exercise instructions based on the selected exercise
@@ -200,8 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to fetch exercise instructions from JSON file
   function fetchExerciseInstructions() {
-    selectExercise.addEventListener("change", function () {
-      const selectedExercise = this.value;
+    selectExercise.addEventListener("change", e => {
+      const selectedExercise = e.target.value;
       updateExerciseInstructions(selectedExercise);
       updateExerciseMetrics();
       updateLocalStorage();

@@ -65,8 +65,9 @@ if (isset($session->user)) {
     $router->post("/{$session->user['username']}/add/stay-hydrated", 'user/stay-hydrated/store.php')->only('auth');
 
     // Balanced Nutrition
-    $router->get("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
-    // $router->post("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition.php')->only('auth');
+    $router->get("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition/create.php')->only('auth');
+    $router->get("/{$session->user['username']}/add/balanced-nutrition/data", 'user/balanced-nutrition/data.php')->only('auth');
+    $router->post("/{$session->user['username']}/add/balanced-nutrition", 'user/balanced-nutrition/store.php')->only('auth');
 
     // Quality Sleep
     $router->get("/{$session->user['username']}/add/quality-sleep", 'user/quality-sleep/create.php')->only('auth');
@@ -76,6 +77,7 @@ if (isset($session->user)) {
     // Reminder
     $router->post("/{$session->user['username']}/add/daily-exercise/notification", 'user/notification/store.php')->only('auth');
     $router->post("/{$session->user['username']}/add/stay-hydrated/notification", 'user/notification/store.php')->only('auth');
+    $router->post("/{$session->user['username']}/add/balanced-nutrition/notification", 'user/notification/store.php')->only('auth');
     $router->post("/{$session->user['username']}/add/quality-sleep/notification", 'user/notification/store.php')->only('auth');
 
     // Customize Reminder
