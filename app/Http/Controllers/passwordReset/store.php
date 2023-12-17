@@ -20,7 +20,6 @@ if (!$form->validate($_POST)) {
         'alerts' => $form->getAlerts()
     ]);
 } else {
-    // TO DO get reset_token_expires_at from database and insert into the app not from PAsswordReset
     $session = Session::getInstance();
     // If reset token expired regenerate new one and save to the database
     if ((!isset($session->reset_token) && !isset($session->reset_token_expires_at)) || strtotime($session->reset_token_expires_at) <= time()) {
