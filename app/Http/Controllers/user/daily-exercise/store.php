@@ -30,6 +30,3 @@ if (isset($data)) {
         Database::insert($query, $params);
     }
 }
-echo json_encode($_POST);
-// echo json_encode("ho");
-// echo "ho";

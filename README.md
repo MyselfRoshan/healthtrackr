@@ -28,7 +28,7 @@ composer dump-autoload -o
 - [x] Make admin dashboard if have time
 - [x] Add "Delete" button in profile to delete account.
 - [x] Refactor age into date of birth and height into int (cm) from feet
-- [ ] Refactor exercise and add calorie burn, fat burn ,etc exercise metrices
+- [x] Refactor exercise and add calorie burn, fat burn ,etc exercise metrices
 - [ ] Add Balanced nutrition section
 - [ ] Implement token system to login in rather tha user id
 

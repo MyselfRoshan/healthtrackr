@@ -75,8 +75,6 @@ async function saveToDatabase(form, submitButton) {
       "patch",
       JSON.stringify(formDataObject),
     );
-    // console.log(response);
-    // console.log(await response.json());
     if (response.status === 200) {
       new Notification(document.querySelector(".notification")).create(
         "<ion-icon class='fs-500' name='checkmark-circle'></ion-icon> Success",

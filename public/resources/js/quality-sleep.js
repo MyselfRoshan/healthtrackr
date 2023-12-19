@@ -96,12 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       submitButton.disabled = true;
       const n = new Notification(document.querySelector(".notification"));
-      console.log(
-        n.create(
-          "<ion-icon name='close-circle'></ion-icon></ion-icon> Error",
-          `Wait for 5 seconds before clicking again.`,
-          6,
-        ),
+      n.create(
+        "<ion-icon name='close-circle'></ion-icon></ion-icon> Error",
+        `Wait for 5 seconds before clicking again.`,
+        6,
       );
       let countdown = 4;
       const countdownInterval = setInterval(() => {
@@ -127,8 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "post",
       localStorage.getItem("Sleep"),
     );
-    console.log(response);
-    // console.log(response.json());
     if (response.status === 200) {
       new Notification(document.querySelector(".notification")).create(
         "<ion-icon name='checkmark-circle'></ion-icon> Success",

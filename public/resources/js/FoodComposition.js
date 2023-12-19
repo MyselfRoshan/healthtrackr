@@ -53,7 +53,7 @@
 //   }
 // }
 
-export default class Food {
+export default class FoodComposition {
   constructor(name, composition, unit, quantity = 1) {
     this.name = name;
     this.unit = unit;

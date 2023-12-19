@@ -6,15 +6,15 @@ async function fetchData(endpoint, storageKey) {
   try {
     const response = await ajax(`${window.location.href}${endpoint}`);
     const data = await response.json();
+    // if (storageKey === "Food") console.log(data);
     localStorage.setItem(storageKey, JSON.stringify(data));
-    console.log(data);
     return data;
   } catch (error) {
     console.error(`Error setting ${storageKey} data:`, error);
     return null;
   }
 }
-function renderChart(dates, targets, intaked) {
+function renderWaterChart(dates, targets, intaked) {
   const optionsLine = {
     chart: {
       height: 400,
@@ -127,24 +127,14 @@ function renderChart(dates, targets, intaked) {
     optionsLine,
   );
   chartLine.render();
-
-  console.log("Rendering chart with data");
 }
-/**
- * TODO: If waterData && exerciseData && sleepData then show data else print loading
- *
- *
- *       If !waterData.length && !sleepData.length && !exerciseData.length
- *          Show: Welcome user for first login
- *       Else if any of the waterData, sleepData or exerciseData are empty dont show any chart
- *       Do for sleepData
- *
- */
+
 async function fetchDataAndRender() {
-  const [exerciseData, sleepData, waterData] = await Promise.all([
+  const [exerciseData, waterData, FoodData, sleepData] = await Promise.all([
     fetchData("/add/daily-exercise/data", "Exercise"),
-    fetchData("/add/quality-sleep/data", "Sleep"),
     fetchData("/add/stay-hydrated/data", "Water"),
+    fetchData("/add/balanced-nutrition/data", "Food"),
+    fetchData("/add/quality-sleep/data", "Sleep"),
     fetchData("/notification", "Reminder"),
   ]);
   function convertAndSort(obj) {
@@ -186,7 +176,6 @@ async function fetchDataAndRender() {
     /* Exercise Bar Chart */
     const [exerciseDates, exerciseNames, exerciseTargets, exerciseActual] =
       convertAndSort(exerciseData);
-    console.log(convertAndSort(exerciseData));
     const exerciseSeries = [
       {
         name: "Actual",
@@ -308,9 +297,6 @@ async function fetchDataAndRender() {
     const averageStats = calculateExerciseStats(exerciseData);
     const [exerciseRadarNames, exerciseAvgTargets, exerciseAvgActual] =
       convertAndSort(averageStats);
-
-    console.log("Distinct Exercises:", averageStats, exerciseRadarNames);
-
     const radarOptions = {
       series: [
         { name: "Target", data: exerciseAvgTargets },
@@ -341,14 +327,12 @@ async function fetchDataAndRender() {
   }
   if (!isObjEmpty(waterData)) {
     const [waterDates, waterTargets, waterIntaked] = convertAndSort(waterData);
-    renderChart(waterDates, waterTargets, waterIntaked);
+    renderWaterChart(waterDates, waterTargets, waterIntaked);
   }
   if (!isObjEmpty(sleepData)) {
     // Call the function for sleepData
     const [sleepDates, sleepBed, sleepWakeup, sleepDuration] =
       convertAndSort(sleepData);
-    const formattedSleepBed = sleepBed.map(formatTime);
-    const formattedSleepWakeup = sleepWakeup.map(formatTime);
     const formattedSleepDuration = sleepDuration.map(formatTime);
     function timeToMinutes(time) {
       const [hours, minutes] = time.split(":").map(Number);
@@ -371,52 +355,7 @@ async function fetchDataAndRender() {
 
       return `${hoursString} ${minutesString}`.trim();
     }
-    // console.log(
-    //   timeToMinutes(formattedSleepWakeup[0]),
-    //   formattedSleepDuration.map(timeToMinutes),
-    //   timeToMinutes(formattedSleepBed[0]),
-    // );
-    // var optionsCircle4 = {
-    //   chart: {
-    //     type: "radialBar",
-    //     height: 350,
-    //     width: 380,
-    //   },
-    //   plotOptions: {
-    //     radialBar: {
-    //       size: undefined,
-    //       inverseOrder: true,
-    //       hollow: {
-    //         margin: 5,
-    //         // size: "48%",
-    //         background: "transparent",
-    //       },
-    //       track: {
-    //         show: false,
-    //       },
-    //       startAngle: -180,
-    //       endAngle: 180,
-    //     },
-    //   },
-    //   stroke: {
-    //     lineCap: "round",
-    //   },
-    //   series: [
-    //     timeToMinutes(formattedSleepWakeup[0]),
-    //     timeToMinutes(formattedSleepDuration[0]),
-    //     timeToMinutes(formattedSleepBed[0]),
-    //   ],
-    //   labels: ["Wakeup Time", "Sleep Duration", "Bed Time"],
-    //   legend: {
-    //     show: true,
-    //     floating: true,
-    //     position: "right",
-    //     offsetX: 20,
-    //     offsetY: 240,
-    //   },
-    // };
     var dates = [];
-    var spikes = [5, -5, 3, -3, 8, -8];
     for (var i = 0; i < sleepDates.length; i++) {
       var innerArr = [
         // NepaliFunctions.BS2AD(sleepDates[i]),
@@ -426,8 +365,6 @@ async function fetchDataAndRender() {
       ];
       dates.push(innerArr);
     }
-    console.log(dates);
-    console.log(formattedSleepDuration);
     var options = {
       series: [
         {
@@ -516,7 +453,7 @@ async function fetchDataAndRender() {
       tooltip: {
         shared: false,
         y: {
-          formatter: function (val, a, b) {
+          formatter: function (val) {
             return minutesToTimeWithHoursAndMinutes(val);
           },
         },
