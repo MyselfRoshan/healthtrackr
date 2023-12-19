@@ -64,12 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       submitButton.disabled = true;
       const n = new Notification(document.querySelector(".notification"));
-      console.log(
-        n.create(
-          "<ion-icon name='close-circle'></ion-icon></ion-icon> Error",
-          `Wait for 5 seconds before clicking again.`,
-          6,
-        ),
+      n.create(
+        "<ion-icon name='close-circle'></ion-icon></ion-icon> Error",
+        `Wait for 5 seconds before clicking again.`,
+        6,
       );
       let countdown = 4;
       const countdownInterval = setInterval(() => {
@@ -97,8 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "post",
       localStorage.getItem("Exercise"),
     );
-    console.log(response);
-    // console.log(response.json());
     if (response.status === 200) {
       new Notification(document.querySelector(".notification")).create(
         "<ion-icon name='checkmark-circle'></ion-icon> Success",
@@ -171,20 +167,14 @@ document.addEventListener("DOMContentLoaded", () => {
       videoIframe.allow =
         "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
       videoItem.appendChild(videoIframe);
-
-      // Append the list item to the list
       videosList.appendChild(videoItem);
     });
 
-    // Clear previous videos in the exerciseVideosContainer
     exerciseVideosContainer.innerHTML = "";
 
-    // Check if the videosList is not empty
     if (videosList.children.length > 0) {
-      // Append the new list to the exerciseVideosContainer
       exerciseVideosContainer.appendChild(videosList);
     } else {
-      // If there are no videos, display a message
       const noVideosMessage = document.createElement("p");
       noVideosMessage.textContent = "No videos available for this exercise.";
       exerciseVideosContainer.appendChild(noVideosMessage);

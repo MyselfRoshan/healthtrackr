@@ -43,11 +43,4 @@ async function handleReminderClick() {
     "post",
     JSON.stringify(Reminder),
   );
-
-  // console.log(response);
-  // console.log(await response.json());
-
-  if (response.status === 200) {
-    console.log("Saved Successfully");
-  }
 }

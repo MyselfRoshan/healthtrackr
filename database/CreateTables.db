@@ -46,6 +46,15 @@ CREATE TABLE stay_hydrated (
   PRIMARY KEY (user_id, date)
 );
 
+CREATE TABLE balanced_nutrition (
+  user_id INTEGER NOT NULL REFERENCES users(user_id),
+  date VARCHAR(10) NOT NULL,
+  meal_type VARCHAR(10) NOT NULL,
+  food VARCHAR(50) NOT NULL,
+  quantity SMALLINT NOT NULL,
+  PRIMARY KEY (user_id, date, meal_type)
+);
+
 CREATE TABLE quality_sleep (
   user_id INTEGER NOT NULL REFERENCES users(user_id),
   date VARCHAR(10) NOT NULL,

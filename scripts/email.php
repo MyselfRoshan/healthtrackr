@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Enums\ActivityCategory;
 use App\Enums\EmailStatus;
 use App\Helper\Mail;
+use App\Helper\Time;
 use App\Models\Email;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -24,13 +25,17 @@ foreach ($enabledEmails as $enabledEmail) {
         $email->updateFailedCount($enabledEmail['id'], 0);
         $email->updateSentCount($enabledEmail['id'], 0);
     } else {
+        /**  TO DO
+         *  Use Time::countFutureIntervals instead of subtratcing fom sent and failed count
+         *
+         */
         $pending_count = $enabledEmail['frequency'] - intval($enabledEmail['sent_count']) - intval($enabledEmail['failed_count']);
         $email->updatePendingCount($enabledEmail['id'], $pending_count);
     }
 
     if (intval($enabledEmail['activity_category']) === ActivityCategory::Exercise->value) {
         $users = $email->getRecipient($enabledEmail['user_id']);
-        $scheduleTimeStamps = generateTimeArray($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
+        $scheduleTimeStamps = Time::generateIntervals($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
         foreach ($scheduleTimeStamps as $key => $scheduleTimeStamp) {
             $now = new DateTime();
             $scheduledTime = new DateTime($scheduleTimeStamp);
@@ -86,7 +91,7 @@ foreach ($enabledEmails as $enabledEmail) {
     }
     if (intval($enabledEmail['activity_category']) === ActivityCategory::Sleep->value) {
         $users = $email->getRecipient($enabledEmail['user_id']);
-        // $scheduleTimeStamps = generateTimeArray($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
+        // $scheduleTimeStamps = Time::generateIntervals($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
         // foreach ($scheduleTimeStamps as $key => $scheduleTimeStamp) {
         $now = new DateTime();
         $start_time = new DateTime($enabledEmail['start_time']);
@@ -132,7 +137,7 @@ foreach ($enabledEmails as $enabledEmail) {
     }
     if (intval($enabledEmail['activity_category']) === ActivityCategory::Water->value) {
         $users = $email->getRecipient($enabledEmail['user_id']);
-        $scheduleTimeStamps = generateTimeArray($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
+        $scheduleTimeStamps = Time::generateIntervals($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
         foreach ($scheduleTimeStamps as $key => $scheduleTimeStamp) {
             $now = new DateTime();
             $scheduledTime = new DateTime($scheduleTimeStamp);
@@ -157,6 +162,41 @@ foreach ($enabledEmails as $enabledEmail) {
                 }
             }
         }
+    }
+
+    /**  TO DO
+     *  Add Food email in /config/email_data.php
+     *  Also schedule email according to time
+     *
+     */
+    if (intval($enabledEmail['activity_category']) === ActivityCategory::Food->value) {
+        $users = $email->getRecipient($enabledEmail['user_id']);
+        $scheduleTimeStamps = Time::generateIntervals($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
+        d(Time::countFutureIntervals($scheduleTimeStamps));
+        // foreach ($scheduleTimeStamps as $key => $scheduleTimeStamp) {
+        //     $now = new DateTime();
+        //     $scheduledTime = new DateTime($scheduleTimeStamp);
+        //     // d($scheduledTime);
+        //     $timeDifference = $now->getTimestamp() - $scheduledTime->getTimestamp();
+        //     foreach ($users as $user) {
+        //         require base_path("config/email_data.php");
+        //         $timeDifference = $now->diff($scheduledTime);
+        //         if ($scheduledTime <= $now && $timeDifference->i === 0) {
+        //             $m = new Mail(
+        //                 $user['email'],
+        //                 $EMAIL['water']['subject'],
+        //                 $EMAIL['water']['body']
+        //             );
+        //             $result = $m->send();
+        //             if ($result) {
+        //                 $email->decreasePendingCount($enabledEmail['id']);
+        //                 $email->increaseSentCount($enabledEmail['id']);
+        //             } else {
+        //                 $email->increaseFailedCount($enabledEmail['id']);
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
 

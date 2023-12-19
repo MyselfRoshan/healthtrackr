@@ -49,7 +49,7 @@ foreach ($enabledEmails as $enabledEmail) {
 
     switch (intval($enabledEmail['activity_category'])) {
         case ActivityCategory::Exercise->value:
-            $scheduleTimeStamps = generateTimeArray($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
+            $scheduleTimeStamps = Time::generateIntervalsArray($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
             foreach ($scheduleTimeStamps as $scheduleTimeStamp) {
                 $scheduledTime = new DateTime($scheduleTimeStamp);
                 $timeDifference = $now->diff($scheduledTime);
@@ -87,7 +87,7 @@ foreach ($enabledEmails as $enabledEmail) {
             break;
 
         case ActivityCategory::Water->value:
-            $scheduleTimeStamps = generateTimeArray($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
+            $scheduleTimeStamps = Time::generateIntervalsArray($enabledEmail['start_time'], $enabledEmail['end_time'], $enabledEmail['frequency']);
             foreach ($scheduleTimeStamps as $scheduleTimeStamp) {
                 $scheduledTime = new DateTime($scheduleTimeStamp);
                 $timeDifference = $now->diff($scheduledTime);

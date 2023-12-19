@@ -1,29 +1,24 @@
-import Food from "./Food.js";
+import FoodComposition from "./FoodComposition.js";
 import ajax from "./ajax.js";
-// import Cookie from "./Cookie.js";
-
-/** TO DO
- * select specific food items according to different meal type
- * save the value to the local storage
- * cave the data to the database if saved button clicked by user
- */
+import Notification from "./Notification.js";
 import foodsData from "./food.json" assert { type: "json" };
-// import Notification from "./Notification.js";
+
+// import Cookie from "./Cookie.js";
 
 // Select DOM elements
 const selectFood = document.getElementById("food");
-const mealType = document.getElementById("mealType");
+const selectMealType = document.getElementById("mealType");
 const quantity = document.getElementById("quantity");
 document.addEventListener("DOMContentLoaded", () => {
   const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY/MM/DD");
-  let Exercise = JSON.parse(localStorage.getItem("Food")) ?? {};
-  //   {
-  //     [currentDate]: {
-  //       name: "",
-  //       target: 30,
-  //       actual: 30,
-  //     },
-  //   };
+  let Food = JSON.parse(localStorage.getItem("Food")) ?? {
+    [currentDate]: {
+      breakfast: { name: "", quantity: 1 },
+      // dinner: { name: "", quantity: 1 },
+      // snack: { name: "", quantity: 1 },
+      // launch: { name: "", quantity: 1 },
+    },
+  };
 
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
@@ -38,26 +33,92 @@ document.addEventListener("DOMContentLoaded", () => {
     onChange: handleDateChange,
   });
 
-  selectFood.addEventListener("change", e => {
-    updateFoodsData(e.target.value);
-    // updateExerciseMetrics();
-    // updateLocalStorage();
+  updateLocalStorage();
+
+  selectMealType.addEventListener("change", e => {
+    updateFoodData(selectDate.value);
+    updateLocalStorage();
   });
 
-  updateFoodsData(selectFood.value);
+  selectFood.addEventListener("change", e => {
+    updateFoodCompositionData(e.target.value);
+    updateLocalStorage();
+  });
+
+  updateFoodCompositionData(selectFood.value);
 
   quantity.addEventListener("input", e => {
     onlyNumbers(e);
-    updateFoodsData(selectFood.value, e.target.value);
+    updateFoodCompositionData(selectFood.value, e.target.value);
+    updateLocalStorage();
+  });
+
+  // Event listener for form submission enable clicking after 5 seconds
+  let canClick = true;
+  document.querySelector("#activity-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const submitButton = document.querySelector("[type=submit]");
+
+    if (canClick) {
+      // Execute your function here
+      saveToDatabase();
+      canClick = false;
+      setTimeout(() => {
+        canClick = true;
+      }, 5000);
+    } else {
+      submitButton.disabled = true;
+      const n = new Notification(document.querySelector(".notification"));
+      n.create(
+        "<ion-icon name='close-circle'></ion-icon></ion-icon> Error",
+        `Wait for 5 seconds before clicking again.`,
+        6,
+      );
+      let countdown = 4;
+      const countdownInterval = setInterval(() => {
+        n.updateDescription(
+          `Wait for ${countdown} second${
+            countdown === 1 ? "" : "s"
+          } before clicking again.`,
+        );
+        countdown--;
+
+        if (countdown < 0) {
+          clearInterval(countdownInterval);
+          submitButton.disabled = false;
+        }
+      }, 1000);
+    }
   });
 
   /* Functions */
   // Function to handle date change
-  function handleDateChange() {}
+  function handleDateChange() {
+    updateFoodData(selectDate.value);
+    updateLocalStorage();
+  }
+
+  // Function saves Exercise obj to Database
+  async function saveToDatabase() {
+    const response = await ajax(
+      `${window.location.href}`,
+      "post",
+      localStorage.getItem("Food"),
+    );
+    console.log(response);
+    // console.log(await response.json());
+
+    if (response.status === 200) {
+      new Notification(document.querySelector(".notification")).create(
+        "<ion-icon name='checkmark-circle'></ion-icon> Success",
+        "Exercise data saved successfully",
+      );
+    }
+  }
 
   // Function to update the displayed information for a selected food based on its quantity.
-  function updateFoodsData(selectedFood, quantity = 1) {
-    const food = new Food(
+  function updateFoodCompositionData(selectedFood, quantity = 1) {
+    const food = new FoodComposition(
       selectedFood,
       foodsData[selectedFood].composition_per_unit,
       foodsData[selectedFood].unit,
@@ -65,6 +126,37 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     food.displayInfo();
+  }
+
+  // Function to update local storage
+  function updateLocalStorage() {
+    if (!Food[selectDate.value]) {
+      Food[selectDate.value] = {
+        breakfast: { name: "", quantity: 1 },
+        // dinner: { name: "", quantity: 1 },
+        // snack: { name: "", quantity: 1 },
+        // launch: { name: "", quantity: 1 },
+      };
+    }
+    Food[selectDate.value][selectMealType.value] = {
+      name: selectFood.value,
+      quantity: parseInt(quantity.value),
+    };
+    localStorage.setItem("Food", JSON.stringify(Food));
+  }
+
+  // Function to update food data based on selected date
+  function updateFoodData(date) {
+    if (date in Food) {
+      const mealTypes = Object.keys(Food[date]);
+      mealTypes.forEach(meal => {
+        if (selectMealType.value === meal) {
+          selectFood.value = Food[date][meal].name;
+          quantity.value = Food[date][meal].quantity;
+          updateFoodCompositionData(selectFood.value, quantity.value);
+        }
+      });
+    }
   }
 
   // Only positive numbers 0-9 are allowed
