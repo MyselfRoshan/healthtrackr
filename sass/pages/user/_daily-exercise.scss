@@ -1,6 +1,8 @@
 /* Exercise form container */
 .daily-exercise {
-  grid-row: span 2;
+  &.add-wrapper {
+    grid-row: span 2;
+  }
 
   &.wrapper {
     display: grid;
