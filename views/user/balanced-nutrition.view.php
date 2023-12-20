@@ -7,7 +7,7 @@
     <div class="dashboard">
         <?php require_view("partials/sidebar.php") ?>
         <div class="dashboard__content">
-            <div class="wrapper m-16">
+            <div class="balanced-nutrition wrapper m-16">
                 <?php require_view("partials/add/balanced-nutrition.php") ?>
             </div>
         </div>
