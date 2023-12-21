@@ -18,7 +18,8 @@ foreach ($data as $d) {
         ...$meal,
         $d['meal_type'] => [
             'name' => $d['food'],
-            'quantity' => $d['quantity'],
+            'targetQuantity' => $d['target_quantity'],
+            'actualQuantity' => $d['actual_quantity'],
         ]
     ];
     $food = [

@@ -37,12 +37,12 @@
     </select>
 
     <label for="targetExerciseDuration">Set Target Exercise Duration (Minimum :- 1 minute) (Maximum :- 120 minutes):</label>
-    <input type="number" inputmode="numeric" id="targetExerciseDuration" name="targetExerciseDuration" value="30" />
+    <input type="number" inputmode="numeric" id="targetExerciseDuration" name="targetExerciseDuration" value="1" />
     <p id="targetCalorieToBeBurn"></p>
 
     <label for="actualExerciseDuration">Performed Exercise Duration (minutes):</label>
-    <input type="number" inputmode="numeric" id="actualExerciseDuration" name="actualExerciseDuration" value="30" />
-    <button type="submit" class="btn btn-m">Save Exercise</button>
+    <input type="number" inputmode="numeric" id="actualExerciseDuration" name="actualExerciseDuration" value="0" />
+    <button type="submit" class="btn btn-m mt-4 fw-500">Save Exercise</button>
   </form>
 </section>
 <div id="exercise-stats" class="add-wrapper">

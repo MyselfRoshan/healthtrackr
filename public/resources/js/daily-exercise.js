@@ -1,12 +1,10 @@
 import ajax from "./ajax.js";
 import Cookie from "./Cookie.js";
-import exerciseInstructions from "./exercise.json" assert { type: "json" };
 import Notification from "./Notification.js";
 import ExerciseMetrics from "./ExerciseMetrics.js";
-/**
- * TO DO use fetch instead of import for exerciseInstructions as it is not supported by firefox
- */
+
 // Select DOM elements
+let exerciseInstructions = {};
 const selectExercise = document.getElementById("exercise");
 const targetExerciseDuration = document.getElementById(
   "targetExerciseDuration",
@@ -22,15 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY/MM/DD");
   let Exercise = JSON.parse(localStorage.getItem("Exercise")) ?? {
     [currentDate]: {
-      name: "",
-      target: 30,
-      actual: 30,
+      name: "yoga",
+      target: 1,
+      actual: 0,
     },
   };
-  updateExerciseData(currentDate);
+
   fetchExerciseInstructions();
-  updateExerciseInstructions(selectExercise.value);
-  updateExerciseMetrics();
+  // updateLocalStorage();
 
   selectDate.value = currentDate;
   selectDate.nepaliDatePicker({
@@ -47,6 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   handleInputField(targetExerciseDuration, 1, 120);
   handleInputField(actualExerciseDuration, 0, 120);
+
+  selectExercise.addEventListener("change", e => {
+    const selectedExercise = e.target.value;
+    updateExerciseInstructions(selectedExercise);
+    updateExerciseMetrics();
+    updateLocalStorage();
+  });
 
   // Event listener for form submission enable clicking after 5 seconds
   let canClick = true;
@@ -100,6 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "<ion-icon name='checkmark-circle'></ion-icon> Success",
         "Exercise data saved successfully",
       );
+    }
+  }
+
+  // Function to fetch exercise instructions from JSON file
+  async function fetchExerciseInstructions() {
+    const response = await ajax(`/resources/js/exercise.json`);
+    console.log(response);
+    exerciseInstructions = await response.json();
+    if (exerciseInstructions) {
+      updateExerciseInstructions(selectExercise.value);
+      updateExerciseData(currentDate);
+      updateExerciseMetrics();
     }
   }
 
@@ -186,16 +202,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const match = url.match(regex);
       return match ? match[1] : null;
     }
-  }
-
-  // Function to fetch exercise instructions from JSON file
-  function fetchExerciseInstructions() {
-    selectExercise.addEventListener("change", e => {
-      const selectedExercise = e.target.value;
-      updateExerciseInstructions(selectedExercise);
-      updateExerciseMetrics();
-      updateLocalStorage();
-    });
   }
 
   // Function to handle input field updates

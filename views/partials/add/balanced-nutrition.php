@@ -45,30 +45,32 @@
 
         </select>
         <!-- Use unit from json instead of time -->
-        <label for="quantity">Target Quantity:</label>
-        <input type="number" id="targetQuantity" name="target_quantity" value="1" />
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" value="1" />
+        <label for="targetQuantity">Target Quantity (<span id="targetUnit"></span>):</label>
+        <input type="number" id="targetQuantity" name="target_quantity" value="1" min="1" max="20" />
+        <!-- <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" /> -->
         <!-- Change quanity as same as stay hydrated -->
         <div class="glass__controller d-flex">
-            <button type="button" class="glass-remove">
+            <button type="button" class="quantity-remove">
                 <ion-icon name="remove"></ion-icon>
             </button>
             <div class="glass-info d-flex">
                 <p>
-                    <span class="glass-to-intake fs-1000 fw-500">0</span>
+                    <span>
+                        Actual:
+                        <span id="quantity" class="quantity">Actual: 0</span>
+                    </span>
                     /
-                    <span class="glass-target">8 Glasses</span>
+                    <span id="targetQuantityValue">1</span>
                 </p>
-                <p class="water-to-intake d-flex fw-500">(0 ml)</p>
+                <p id="unit"></p>
             </div>
 
-            <button type="button" class="glass-add">
+            <button type="button" class="quantity-add">
                 <ion-icon name="add"></ion-icon>
             </button>
         </div>
-        <span id="unit"></span>
-        <button type="submit" class="btn btn-m">Save Exercise</button>
+        <button type="submit" class="btn btn-m mx-auto mt-4 fw-500">Save Meal</button>
     </form>
 </section>
 

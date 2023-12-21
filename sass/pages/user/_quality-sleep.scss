@@ -1,13 +1,15 @@
 .quality-sleep {
   .btn {
     --br: 5px;
-    padding: 0.625em 1em;
-    width: 130px;
+    --bg: var(--clr-dark-100);
+    padding: 0.625em 2em;
     font-family: var(--ff-inter);
-    color: var(--clr-light);
+    color: var(--clr-dark);
+    box-shadow: inset 0 0 20px var(--clr-dark);
 
-    &:hover {
-      --bg: var(--clr-tertiary);
+    &:is(:hover, :focus-visible) {
+      box-shadow: inset 0 0 13px var(--clr-dark),
+        0 0 10px 2px var(--clr-dark-400);
     }
   }
 }

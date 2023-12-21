@@ -1,22 +1,25 @@
 import FoodComposition from "./FoodComposition.js";
 import ajax from "./ajax.js";
 import Notification from "./Notification.js";
-import foodsData from "./food.json" assert { type: "json" };
-
-// import Cookie from "./Cookie.js";
 
 // Select DOM elements
+let foodsData = {};
 const selectFood = document.getElementById("food");
 const selectMealType = document.getElementById("mealType");
 const quantity = document.getElementById("quantity");
+const targetQuantity = document.getElementById("targetQuantity");
+const quantityAdd = document.querySelector(".quantity-add");
+const quantityRemove = document.querySelector(".quantity-remove");
+const maximumQuantityTarget = targetQuantity.max;
+const minimumQuantityTarget = 0;
 document.addEventListener("DOMContentLoaded", () => {
   const currentDate = NepaliFunctions.GetCurrentBsDate("YYYY/MM/DD");
   let Food = JSON.parse(localStorage.getItem("Food")) ?? {
     [currentDate]: {
-      breakfast: { name: "", quantity: 1 },
-      // dinner: { name: "", quantity: 1 },
-      // snack: { name: "", quantity: 1 },
-      // launch: { name: "", quantity: 1 },
+      breakfast: { name: "", targetQuantity: 1, actualQuantity: 0 },
+      // dinner: { name: "", targetQuantity: 1, actualQuantity: 0 },
+      // snack: { name: "", targetQuantity: 1, actualQuantity: 0 },
+      // launch: { name: "", targetQuantity: 1, actualQuantity: 0 },
     },
   };
 
@@ -33,7 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
     onChange: handleDateChange,
   });
 
-  updateLocalStorage();
+  let quantityValue = Number(quantity.textContent);
+  // if (quantityValue === minimumQuantityTarget - 1)
+  if (quantityValue === minimumQuantityTarget)
+    quantityRemove.setAttribute("disabled", "true");
+  if (quantityValue === maximumQuantityTarget - 1)
+    quantityAdd.setAttribute("disabled", "true");
+
+  fetchFoodData();
 
   selectMealType.addEventListener("change", e => {
     updateFoodData(selectDate.value);
@@ -41,15 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   selectFood.addEventListener("change", e => {
-    updateFoodCompositionData(e.target.value);
+    updateFoodCompositionData(e.target.value, quantity.textContent);
     updateLocalStorage();
   });
 
-  updateFoodCompositionData(selectFood.value);
-
-  quantity.addEventListener("input", e => {
+  targetQuantity.addEventListener("change", e => {
     onlyNumbers(e);
-    updateFoodCompositionData(selectFood.value, e.target.value);
+    document.getElementById("targetQuantityValue").textContent = e.target.value;
     updateLocalStorage();
   });
 
@@ -91,6 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  quantityAdd.addEventListener("click", () => handleQuantityAction(true));
+  quantityRemove.addEventListener("click", () => handleQuantityAction(false));
+
   /* Functions */
   // Function to handle date change
   function handleDateChange() {
@@ -105,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "post",
       localStorage.getItem("Food"),
     );
-    console.log(response);
+    // console.log(response);
     // console.log(await response.json());
 
     if (response.status === 200) {
@@ -113,6 +124,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "<ion-icon name='checkmark-circle'></ion-icon> Success",
         "Exercise data saved successfully",
       );
+    }
+  }
+
+  async function fetchFoodData() {
+    const response = await ajax(`/resources/js/food.json`);
+    foodsData = await response.json();
+    if (foodsData) {
+      updateFoodCompositionData(selectFood.value);
+      updateFoodData(currentDate);
+      updateLocalStorage();
     }
   }
 
@@ -132,15 +153,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateLocalStorage() {
     if (!Food[selectDate.value]) {
       Food[selectDate.value] = {
-        breakfast: { name: "", quantity: 1 },
-        // dinner: { name: "", quantity: 1 },
-        // snack: { name: "", quantity: 1 },
-        // launch: { name: "", quantity: 1 },
+        breakfast: { name: "", targetQuantity: 1, actualQuantity: 0 },
+        // dinner: { name: "", targetQuantity: 1, actualQuantity: 0 },
+        // snack: { name: "", targetQuantity: 1, actualQuantity: 0 },
+        // launch: { name: "", targetQuantity: 1, actualQuantity: 0 },
       };
     }
     Food[selectDate.value][selectMealType.value] = {
       name: selectFood.value,
-      quantity: parseInt(quantity.value),
+      targetQuantity: parseInt(targetQuantity.value),
+      actualQuantity: parseInt(quantity.textContent),
     };
     localStorage.setItem("Food", JSON.stringify(Food));
   }
@@ -152,8 +174,9 @@ document.addEventListener("DOMContentLoaded", () => {
       mealTypes.forEach(meal => {
         if (selectMealType.value === meal) {
           selectFood.value = Food[date][meal].name;
-          quantity.value = Food[date][meal].quantity;
-          updateFoodCompositionData(selectFood.value, quantity.value);
+          targetQuantity.value = Food[date][meal].targetQuantity;
+          quantity.textContent = Food[date][meal].actualQuantity;
+          updateFoodCompositionData(selectFood.value, quantity.textContent);
         }
       });
     }
@@ -164,5 +187,31 @@ document.addEventListener("DOMContentLoaded", () => {
     let inputValue = event.target.value;
     let sanitizedValue = inputValue.replace(/[^0-9]/g, "");
     event.target.value = sanitizedValue;
+  }
+
+  function handleQuantityAction(increase) {
+    let quantityValue = Number(quantity.textContent);
+
+    quantityValue += increase ? 1 : -1;
+    quantity.textContent = quantityValue;
+    updateFoodCompositionData(selectFood.value, quantityValue);
+    updateLocalStorage();
+    if (increase) {
+      if (quantityValue < maximumQuantityTarget) {
+        quantityRemove.removeAttribute("disabled");
+      }
+
+      if (quantityValue === maximumQuantityTarget) {
+        quantityAdd.setAttribute("disabled", "true");
+      }
+    } else {
+      if (quantityValue > minimumQuantityTarget) {
+        quantityAdd.removeAttribute("disabled");
+      }
+
+      if (quantityValue === minimumQuantityTarget) {
+        quantityRemove.setAttribute("disabled", "true");
+      }
+    }
   }
 });

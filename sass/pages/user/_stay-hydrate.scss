@@ -80,12 +80,15 @@
   }
 
   &-water__form {
-    .btn-m {
+    .btn {
+      --br: 5px;
+      padding: 0.625em 2em;
+      font-family: var(--ff-inter);
       --bg: hsl(195, 84%, 76%);
       color: var(--clr-black);
       box-shadow: inset 0 0 25px hsl(195, 63%, 29%);
 
-      &:is(:hover, :focus-within) {
+      &:is(:hover, :focus-visible) {
         box-shadow: inset 0 0 15px hsl(195, 63%, 29%),
           0 0 10px 2px hsl(195, 84%, 76%);
       }

@@ -115,12 +115,15 @@
   /* Button styling */
   .btn {
     --br: 5px;
+    --bg: var(--card1-gradient-color2);
     padding: 0.625em 1em;
     font-family: var(--ff-inter);
     color: var(--clr-light);
+    box-shadow: inset 0 0 20px var(--card1-gradient-color1);
 
-    &:hover {
-      --bg: var(--clr-tertiary);
+    &:is(:hover, :focus-visible) {
+      box-shadow: inset 0 0 13px var(--card1-gradient-color1),
+        0 0 10px 2px var(--clr-yellow);
     }
   }
 
@@ -136,13 +139,6 @@
     font-size: 16px;
     background-color: #f9f9f9;
     color: #333;
-  }
-
-  /* Responsive layout adjustments */
-  @media (max-width: 600px) {
-    #exerciseForm {
-      padding: 10px;
-    }
   }
 }
 
