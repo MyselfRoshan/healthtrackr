@@ -37,7 +37,7 @@
         <ion-icon name="add"></ion-icon>
       </button>
     </div>
-    <button type="submit" class="btn btn-m mt-4 mx-auto">Save</button>
+    <button type="submit" class="btn btn-m mt-4 fw-500 mx-auto">Save</button>
   </form>
 </section>
 <div class="notification"></div>

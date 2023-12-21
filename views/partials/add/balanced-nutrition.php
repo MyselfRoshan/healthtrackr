@@ -1,4 +1,4 @@
-<section class="daily-exercise add-wrapper">
+<section class="balanced-nutrition add-wrapper">
     <header class="d-flex pb-8">
         <h1 class="ff-leauge-gothic fs-700 text-accent">
             Balanced Nutrition
@@ -45,10 +45,32 @@
 
         </select>
         <!-- Use unit from json instead of time -->
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" value="1" />
-        <span id="unit"></span>
-        <button type="submit" class="btn btn-m">Save Exercise</button>
+        <label for="targetQuantity">Target Quantity (<span id="targetUnit"></span>):</label>
+        <input type="number" id="targetQuantity" name="target_quantity" value="1" min="1" max="20" />
+        <!-- <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" /> -->
+        <!-- Change quanity as same as stay hydrated -->
+        <div class="glass__controller d-flex">
+            <button type="button" class="quantity-remove">
+                <ion-icon name="remove"></ion-icon>
+            </button>
+            <div class="glass-info d-flex">
+                <p>
+                    <span>
+                        Actual:
+                        <span id="quantity" class="quantity">Actual: 0</span>
+                    </span>
+                    /
+                    <span id="targetQuantityValue">1</span>
+                </p>
+                <p id="unit"></p>
+            </div>
+
+            <button type="button" class="quantity-add">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </div>
+        <button type="submit" class="btn btn-m mx-auto mt-4 fw-500">Save Meal</button>
     </form>
 </section>
 

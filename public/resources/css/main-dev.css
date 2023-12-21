@@ -3467,13 +3467,14 @@ div.ndp-nepali-box a {
 
 /* Exercise form container */
 .daily-exercise {
-  grid-row: span 2;
   /* Exercise dropdown styling */
   /* Exercise steps styling */
   /* Videos container */
   /* Button styling */
   /* Input and select styling */
-  /* Responsive layout adjustments */
+}
+.daily-exercise.add-wrapper {
+  grid-row: span 2;
 }
 .daily-exercise.wrapper {
   display: grid;
@@ -3561,12 +3562,14 @@ div.ndp-nepali-box a {
 }
 .daily-exercise .btn {
   --br: 5px;
+  --bg: var(--card1-gradient-color2);
   padding: 0.625em 1em;
   font-family: var(--ff-inter);
   color: var(--clr-light);
+  box-shadow: inset 0 0 20px var(--card1-gradient-color1);
 }
-.daily-exercise .btn:hover {
-  --bg: var(--clr-tertiary);
+.daily-exercise .btn:is(:hover, :focus-visible) {
+  box-shadow: inset 0 0 13px var(--card1-gradient-color1), 0 0 10px 2px var(--clr-yellow);
 }
 .daily-exercise input[type=datetime-local],
 .daily-exercise input[type=number],
@@ -3579,11 +3582,6 @@ div.ndp-nepali-box a {
   font-size: 16px;
   background-color: #f9f9f9;
   color: #333;
-}
-@media (max-width: 600px) {
-  .daily-exercise #exerciseForm {
-    padding: 10px;
-  }
 }
 
 #exercise-stats {
@@ -3677,19 +3675,76 @@ div.ndp-nepali-box a {
   background-color: hsl(192, 13.8%, 78.6%);
   box-shadow: none;
 }
-.glass-water__form .btn-m {
+.glass-water__form .btn {
+  --br: 5px;
+  padding: 0.625em 2em;
+  font-family: var(--ff-inter);
   --bg: hsl(195, 84%, 76%);
   color: var(--clr-black);
   box-shadow: inset 0 0 25px hsl(195, 63%, 29%);
 }
-.glass-water__form .btn-m:is(:hover, :focus-within) {
+.glass-water__form .btn:is(:hover, :focus-visible) {
   box-shadow: inset 0 0 15px hsl(195, 63%, 29%), 0 0 10px 2px hsl(195, 84%, 76%);
 }
 
-#food-composition {
+.balanced-nutrition {
+  /* Input and select styling */
+  /* Button styling */
+  /* Firefox */
+}
+.balanced-nutrition.wrapper {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 2rem;
+  align-items: start;
+  position: relative;
+}
+.balanced-nutrition input[type=datetime-local],
+.balanced-nutrition select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+.balanced-nutrition .btn {
+  --br: 5px;
+  --bg: var(--card3-gradient-color2);
+  padding: 0.625em 1em;
+  font-family: var(--ff-inter);
+  color: var(--clr-dark);
+  box-shadow: inset 0 0 20px var(--card3-gradient-color1);
+}
+.balanced-nutrition .btn:is(:hover, :focus-visible) {
+  box-shadow: inset 0 0 13px var(--card3-gradient-color1), 0 0 10px 2px var(--card3-gradient-color2);
+}
+.balanced-nutrition .quantity {
+  font-size: var(--fs-1000);
+  font-weight: var(--fw-500);
+}
+.balanced-nutrition .quantity-add, .balanced-nutrition .quantity-remove {
+  padding: 0.3em;
+  display: flex;
+  font-size: var(--fs-800);
+  border: none;
+  border-radius: 50%;
+  background-color: var(--card3-gradient-color2);
+  box-shadow: inset 0 0 20px var(--card3-gradient-color1);
+}
+.balanced-nutrition .quantity-add:is(:hover, :focus-visible), .balanced-nutrition .quantity-remove:is(:hover, :focus-visible) {
+  box-shadow: inset 0 0 13px var(--card3-gradient-color1), 0 0 10px 2px var(--card3-gradient-color2);
+}
+.balanced-nutrition .quantity-add:is(disabled:hover, :disabled), .balanced-nutrition .quantity-remove:is(disabled:hover, :disabled) {
+  background-color: hsl(192, 13.8%, 78.6%);
+  box-shadow: none;
+}
+.balanced-nutrition #food-composition {
   padding: 2rem;
 }
-#food-composition .food-info {
+.balanced-nutrition #food-composition .food-info {
   margin: 5px 0;
   --justify-content: space-between;
   padding-bottom: 0.3rem;
@@ -3698,13 +3753,14 @@ div.ndp-nepali-box a {
 
 .quality-sleep .btn {
   --br: 5px;
-  padding: 0.625em 1em;
-  width: 130px;
+  --bg: var(--clr-dark-100);
+  padding: 0.625em 2em;
   font-family: var(--ff-inter);
-  color: var(--clr-light);
+  color: var(--clr-dark);
+  box-shadow: inset 0 0 20px var(--clr-dark);
 }
-.quality-sleep .btn:hover {
-  --bg: var(--clr-tertiary);
+.quality-sleep .btn:is(:hover, :focus-visible) {
+  box-shadow: inset 0 0 13px var(--clr-dark), 0 0 10px 2px var(--clr-dark-400);
 }
 
 .reminder__container {

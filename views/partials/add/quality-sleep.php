@@ -24,7 +24,7 @@
       Sleep time:
       <span class="sleep-time">8 hours and 0 minutes</span>
     </p>
-    <button type="submit" id="save-button" class="btn btn-m mt-4">
+    <button type="submit" id="save-button" class="btn btn-m mt-4 fw-500">
       Save
     </button>
   </form>

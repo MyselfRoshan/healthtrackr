@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let glassToIntakeValue = Number(glassToIntake.textContent);
   if (glassToIntakeValue === minimumGlassTarget - 1)
     glassRemove.setAttribute("disabled", "true");
-  if (glassToIntakeValue === maximumGlassTarget - 1)
+  if (glassToIntakeValue === maximumGlassTarget)
     glassAdd.setAttribute("disabled", "true");
 
   setGlassTarget.addEventListener("input", handleSetGlassTargetChange);
@@ -160,14 +160,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleGlassAction(increase) {
     let glassToIntakeValue = Number(glassToIntake.textContent);
 
-    if (increase) {
-      glassToIntake.textContent = glassToIntakeValue + 1;
-    } else {
-      glassToIntake.textContent = glassToIntakeValue - 1;
-    }
+    glassToIntakeValue += increase ? 1 : -1;
+    glassToIntake.textContent = glassToIntakeValue;
 
     waterToIntake.textContent = `(${
-      parseInt(glassToIntake.textContent) * waterPerGlass
+      parseInt(glassToIntakeValue) * waterPerGlass
     } ml)`;
     waterLevel(increase ? "increase" : "decrease");
 
@@ -176,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         glassRemove.removeAttribute("disabled");
       }
 
-      if (glassToIntakeValue === maximumGlassTarget - 1) {
+      if (glassToIntakeValue === maximumGlassTarget) {
         glassAdd.setAttribute("disabled", "true");
       }
     } else {
@@ -184,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         glassAdd.removeAttribute("disabled");
       }
 
-      if (glassToIntakeValue === minimumGlassTarget) {
+      if (glassToIntakeValue === minimumGlassTarget - 1) {
         glassRemove.setAttribute("disabled", "true");
       }
     }

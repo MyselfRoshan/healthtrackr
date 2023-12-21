@@ -51,7 +51,8 @@ CREATE TABLE balanced_nutrition (
   date VARCHAR(10) NOT NULL,
   meal_type VARCHAR(10) NOT NULL,
   food VARCHAR(50) NOT NULL,
-  quantity SMALLINT NOT NULL,
+  target_quantity SMALLINT NOT NULL,
+  actual_quantity SMALLINT NOT NULL,
   PRIMARY KEY (user_id, date, meal_type)
 );
 

@@ -72,7 +72,7 @@ export default class FoodComposition {
 
       const dtElement = document.createElement("dt");
       dtElement.className = "text-accent fw-700";
-      dtElement.textContent = nutrient;
+      dtElement.textContent = nutrient.replace("_", " ");
 
       const ddElement = document.createElement("dd");
       ddElement.id = `${nutrient}`;
@@ -83,6 +83,7 @@ export default class FoodComposition {
       foodInfoList.appendChild(nutrientDiv);
     }
 
+    document.getElementById("targetUnit").textContent = this.unit;
     document.getElementById("unit").textContent = this.unit;
   }
 
